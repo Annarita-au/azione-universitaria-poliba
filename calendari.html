@@ -1,396 +1,397 @@
-```html
 <!DOCTYPE html>
+
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Calendari | Azione Universitaria PoliBa</title>
+```
+<title>Calendari | Azione Universitaria PoliBa</title>
 
-    <style>
+<style>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f7fb;
-            color: #1f2937;
-            line-height: 1.6;
-        }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f7fb;
+        color: #1d2939;
+        line-height: 1.6;
+    }
 
-        header {
-            background: #ffffff;
-            border-bottom: 1px solid #e5e7eb;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    header {
+        background: linear-gradient(135deg, #003b7a, #0066cc);
+        color: white;
+        padding: 22px 20px;
+    }
 
-        .navbar {
-            max-width: 1150px;
-            margin: auto;
-            padding: 18px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .header-content {
+        max-width: 1100px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
 
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: #123c69;
-            text-decoration: none;
-        }
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+    }
 
-        nav {
-            display: flex;
-            gap: 25px;
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #0052a3, #0084ff);
+        color: white;
+        padding: 60px 20px;
+    }
+
+    .hero-content {
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 19px;
+        max-width: 750px;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: 45px auto;
+        padding: 0 20px;
+    }
+
+    .courses {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+
+    .course-card {
+        background: white;
+        padding: 28px;
+        border-radius: 16px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .course-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 22px rgba(0,0,0,0.11);
+    }
+
+    .course-card h2 {
+        color: #003b7a;
+        margin-bottom: 10px;
+        font-size: 22px;
+    }
+
+    .course-card p {
+        color: #667085;
+        margin-bottom: 20px;
+    }
+
+    .course-card a {
+        display: inline-block;
+        background: #0052a3;
+        color: white;
+        text-decoration: none;
+        padding: 11px 18px;
+        border-radius: 9px;
+        font-weight: bold;
+    }
+
+    .course-card a:hover {
+        background: #003b7a;
+    }
+
+    .back {
+        text-align: center;
+        margin: 45px 0;
+    }
+
+    .back a {
+        display: inline-block;
+        background: #0052a3;
+        color: white;
+        text-decoration: none;
+        padding: 14px 24px;
+        border-radius: 10px;
+        font-weight: bold;
+    }
+
+    .back a:hover {
+        background: #003b7a;
+    }
+
+    footer {
+        background: #003b7a;
+        color: white;
+        text-align: center;
+        padding: 25px 20px;
+        margin-top: 50px;
+    }
+
+    @media (max-width: 750px) {
+
+        .header-content {
+            flex-direction: column;
+            text-align: center;
         }
 
         nav a {
-            text-decoration: none;
-            color: #374151;
-            font-weight: 600;
-        }
-
-        nav a:hover {
-            color: #123c69;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #123c69, #1d70b8);
-            color: white;
-            padding: 70px 25px;
-        }
-
-        .hero-content {
-            max-width: 1150px;
-            margin: auto;
+            margin: 0 8px;
         }
 
         .hero h1 {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            max-width: 750px;
-        }
-
-        .container {
-            max-width: 1150px;
-            margin: 50px auto;
-            padding: 0 25px;
-        }
-
-        .section-title {
-            font-size: 30px;
-            color: #123c69;
-            margin-bottom: 30px;
+            font-size: 32px;
         }
 
         .courses {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 500px) {
+
+        .hero {
+            padding: 45px 20px;
+        }
+
+        .hero h1 {
+            font-size: 28px;
         }
 
         .course-card {
-            background: white;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-            transition: transform 0.2s, box-shadow 0.2s;
+            padding: 22px;
         }
+    }
 
-        .course-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.10);
-        }
+</style>
+```
 
-        .course-card h2 {
-            color: #123c69;
-            margin-bottom: 12px;
-            font-size: 22px;
-        }
-
-        .course-card p {
-            color: #6b7280;
-            margin-bottom: 20px;
-        }
-
-        .button {
-            display: inline-block;
-            background: #123c69;
-            color: white;
-            text-decoration: none;
-            padding: 11px 18px;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: 0.2s;
-        }
-
-        .button:hover {
-            background: #0d2e50;
-        }
-
-        footer {
-            background: #123c69;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
-        }
-
-        footer p {
-            margin: 5px 0;
-        }
-
-        @media (max-width: 800px) {
-
-            .courses {
-                grid-template-columns: 1fr;
-            }
-
-            nav {
-                gap: 12px;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            .navbar {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-        }
-
-    </style>
 </head>
 
 <body>
 
 <header>
 
-    <div class="navbar">
+```
+<div class="header-content">
 
-        <a href="index.html" class="logo">
-            Azione Universitaria PoliBa
-        </a>
-
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="calendari.html">Calendari</a>
-            <a href="#">Matricole</a>
-            <a href="#">Avvisi</a>
-            <a href="#">Chi siamo</a>
-        </nav>
-
+    <div class="logo">
+        Azione Universitaria PoliBa
     </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="calendari.html">Calendari</a>
+    </nav>
+
+</div>
+```
 
 </header>
 
-
 <section class="hero">
 
-    <div class="hero-content">
+```
+<div class="hero-content">
 
-        <h1>📅 Calendari delle lezioni</h1>
+    <h1>📅 Calendari dei corsi</h1>
 
-        <p>
-            Consulta le pagine dedicate ai principali corsi di laurea
-            del Politecnico di Bari e trova rapidamente orari,
-            calendari, avvisi e informazioni utili.
-        </p>
+    <p>
+        Consulta la pagina dedicata al tuo corso di laurea
+        per trovare orari, calendario accademico, informazioni
+        sul percorso di studi e comunicazioni utili.
+    </p>
 
-    </div>
+</div>
+```
 
 </section>
 
-
 <main class="container">
 
-    <h2 class="section-title">
-        🎓 Corsi di Ingegneria
-    </h2>
-
-    <div class="courses">
+```
+<div class="courses">
 
 
-        <!-- INGEGNERIA INFORMATICA -->
+    <div class="course-card">
 
-        <div class="course-card">
+        <h2>💻 Ingegneria Informatica</h2>
 
-            <h2>💻 Ingegneria Informatica</h2>
+        <p>
+            Ingegneria Informatica e dell'Automazione
+        </p>
 
-            <p>
-                Orari delle lezioni, calendario accademico,
-                avvisi e informazioni utili.
-            </p>
-
-            <a href="informatica.html" class="button">
-                Vai al calendario →
-            </a>
-
-        </div>
-
-
-        <!-- INGEGNERIA GESTIONALE -->
-
-        <div class="course-card">
-
-            <h2>⚙️ Ingegneria Gestionale</h2>
-
-            <p>
-                Orari delle lezioni, calendario accademico,
-                avvisi e informazioni utili.
-            </p>
-
-            <a href="gestionale.html" class="button">
-                Vai al calendario →
-            </a>
-
-        </div>
-
-
-        <!-- SISTEMI MEDICALI -->
-
-        <div class="course-card">
-
-            <h2>🩺 Ingegneria dei Sistemi Medicali</h2>
-
-            <p>
-                Orari delle lezioni, calendario accademico,
-                avvisi e informazioni utili.
-            </p>
-
-            <a href="medicali.html" class="button">
-                Vai al calendario →
-            </a>
-
-        </div>
-
-
-        <!-- MANAGEMENT ENGINEERING FOR INNOVATION -->
-
-        <div class="course-card">
-
-            <h2>🌍 Management Engineering for Innovation</h2>
-
-            <p>
-                Orari delle lezioni, calendario accademico,
-                avvisi e informazioni utili.
-            </p>
-
-            <a href="#" class="button">
-                Vai al calendario →
-            </a>
-
-        </div>
-
-
-        <!-- INGEGNERIA MECCANICA -->
-
-        <div class="course-card">
-
-            <h2>🔧 Ingegneria Meccanica</h2>
-
-            <p>
-                Orari delle lezioni, calendario accademico,
-                avvisi e informazioni utili.
-            </p>
-
-            <a href="#" class="button">
-                Vai al calendario →
-            </a>
-
-        </div>
-
-
-        <!-- INGEGNERIA CIVILE -->
-
-        <div class="course-card">
-
-            <h2>🏗️ Ingegneria Civile</h2>
-
-            <p>
-                Orari delle lezioni, calendario accademico,
-                avvisi e informazioni utili.
-            </p>
-
-            <a href="#" class="button">
-                Vai al calendario →
-            </a>
-
-        </div>
-
-
-        <!-- INGEGNERIA EDILE -->
-
-        <div class="course-card">
-
-            <h2>🏠 Ingegneria Edile</h2>
-
-            <p>
-                Orari delle lezioni, calendario accademico,
-                avvisi e informazioni utili.
-            </p>
-
-            <a href="#" class="button">
-                Vai al calendario →
-            </a>
-
-        </div>
-
-
-        <!-- INGEGNERIA ELETTRONICA -->
-
-        <div class="course-card">
-
-            <h2>⚡ Ingegneria Elettronica</h2>
-
-            <p>
-                Orari delle lezioni, calendario accademico,
-                avvisi e informazioni utili.
-            </p>
-
-            <a href="#" class="button">
-                Vai al calendario →
-            </a>
-
-        </div>
+        <a href="informatica.html">
+            Vai al corso →
+        </a>
 
     </div>
 
-</main>
 
+    <div class="course-card">
+
+        <h2>⚙️ Ingegneria Gestionale</h2>
+
+        <p>
+            Organizzazione, innovazione, economia e gestione
+            dei sistemi industriali.
+        </p>
+
+        <a href="gestionale.html">
+            Vai al corso →
+        </a>
+
+    </div>
+
+
+    <div class="course-card">
+
+        <h2>🩺 Ingegneria dei Sistemi Medicali</h2>
+
+        <p>
+            Tecnologie, ingegneria e applicazioni
+            al settore biomedicale.
+        </p>
+
+        <a href="medicali.html">
+            Vai al corso →
+        </a>
+
+    </div>
+
+
+    <div class="course-card">
+
+        <h2>🌍 Management Engineering for Innovation</h2>
+
+        <p>
+            Corso internazionale in lingua inglese con
+            mobilità obbligatoria e percorsi all'estero.
+        </p>
+
+        <a href="management.html">
+            Vai al corso →
+        </a>
+
+    </div>
+
+
+    <div class="course-card">
+
+        <h2>⚙️ Ingegneria Meccanica</h2>
+
+        <p>
+            Progettazione, produzione, energia, materiali
+            e sistemi meccanici.
+        </p>
+
+        <a href="meccanica.html">
+            Vai al corso →
+        </a>
+
+    </div>
+
+
+    <div class="course-card">
+
+        <h2>🏗️ Ingegneria Civile e Ambientale</h2>
+
+        <p>
+            Costruzioni, infrastrutture, territorio,
+            ambiente e sostenibilità.
+        </p>
+
+        <a href="civile.html">
+            Vai al corso →
+        </a>
+
+    </div>
+
+
+    <div class="course-card">
+
+        <h2>🏠 Ingegneria Edile</h2>
+
+        <p>
+            Progettazione edilizia, materiali, costruzioni,
+            recupero e sostenibilità.
+        </p>
+
+        <a href="edile.html">
+            Vai al corso →
+        </a>
+
+    </div>
+
+
+    <div class="course-card">
+
+        <h2>📡 Ingegneria Elettronica e delle Tecnologie Internet</h2>
+
+        <p>
+            Elettronica, telecomunicazioni, informatica,
+            automatica e tecnologie digitali.
+        </p>
+
+        <a href="elettronica.html">
+            Vai al corso →
+        </a>
+
+    </div>
+
+
+</div>
+
+
+<div class="back">
+
+    <a href="index.html">
+        ← Torna alla Home
+    </a>
+
+</div>
+```
+
+</main>
 
 <footer>
 
-    <p>
-        <strong>Azione Universitaria PoliBa</strong>
-    </p>
+```
+<p>
+    © 2026 Azione Universitaria PoliBa
+</p>
 
-    <p>
-        Studenti per gli studenti.
-    </p>
+<p>
+    Informazione e rappresentanza per gli studenti.
+</p>
+```
 
 </footer>
 
 </body>
 </html>
-```
+
