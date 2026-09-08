@@ -7,184 +7,402 @@
     <title>Azione Universitaria PoliBa</title>
 
     <style>
-        body {
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f7fa;
-            color: #172033;
+            padding: 0;
         }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
 
         header {
-            background: #123c69;
-            color: white;
-            padding: 25px 40px;
-            text-align: center;
+            background: #ffffff;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 32px;
+        .logo {
+            font-size: 21px;
+            font-weight: 800;
+            color: #123c69;
         }
 
-        header p {
-            margin-top: 8px;
-            font-size: 16px;
+        .logo span {
+            color: #2b6cb0;
         }
 
         nav {
-            background: white;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            display: flex;
+            gap: 25px;
         }
 
         nav a {
-            color: #123c69;
             text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
+            color: #26364d;
+            font-weight: 600;
         }
+
+        nav a:hover {
+            color: #123c69;
+        }
+
+        /* HERO */
 
         .hero {
+            background: linear-gradient(135deg, #123c69, #1f5d96);
+            color: white;
+            padding: 90px 7%;
             text-align: center;
-            padding: 70px 20px;
         }
 
-        .hero h2 {
-            font-size: 38px;
-            margin-bottom: 15px;
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
         }
 
         .hero p {
-            font-size: 18px;
-            color: #555;
+            max-width: 700px;
+            margin: auto;
+            font-size: 20px;
+            opacity: 0.95;
         }
 
-        .buttons {
+        .hero-buttons {
             margin-top: 35px;
         }
 
-        .button {
+        .hero-button {
             display: inline-block;
-            background: #123c69;
-            color: white;
             padding: 15px 25px;
-            margin: 8px;
+            margin: 7px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
+            background: white;
+            color: #123c69;
         }
 
-        .button:hover {
-            background: #0d2d4f;
+        .hero-button:hover {
+            transform: translateY(-2px);
         }
+
+        /* SEZIONI */
 
         .section {
-            max-width: 1000px;
+            max-width: 1150px;
             margin: auto;
-            padding: 40px 20px;
+            padding: 70px 7%;
         }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: #123c69;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #667085;
+        }
+
+        /* CARDS */
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 22px;
         }
 
         .card {
             background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon {
+            font-size: 35px;
+            margin-bottom: 15px;
         }
 
         .card h3 {
             color: #123c69;
+            margin-bottom: 10px;
+            font-size: 21px;
         }
+
+        .card p {
+            color: #667085;
+            margin-bottom: 18px;
+        }
+
+        .card a {
+            color: #1f5d96;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* INFO */
+
+        .info {
+            background: white;
+        }
+
+        .info-box {
+            background: #eef4fa;
+            padding: 30px;
+            border-radius: 14px;
+            text-align: center;
+        }
+
+        .info-box h3 {
+            color: #123c69;
+            margin-bottom: 10px;
+        }
+
+        /* FOOTER */
 
         footer {
             background: #123c69;
             color: white;
             text-align: center;
-            padding: 25px;
-            margin-top: 40px;
+            padding: 40px 20px;
+            margin-top: 30px;
+        }
+
+        footer h3 {
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            opacity: 0.85;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- NAVBAR -->
+
     <header>
-        <h1>Azione Universitaria PoliBa</h1>
-        <p>Informazioni, strumenti e servizi per gli studenti del Politecnico di Bari</p>
+
+        <div class="logo">
+            Azione Universitaria <span>PoliBa</span>
+        </div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Calendari</a>
+            <a href="#">Matricole</a>
+            <a href="#">Avvisi</a>
+            <a href="#">Chi siamo</a>
+        </nav>
+
     </header>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Calendari</a>
-        <a href="#">Matricole</a>
-        <a href="#">Avvisi</a>
-        <a href="#">Chi siamo</a>
-    </nav>
+
+    <!-- HERO -->
 
     <section class="hero">
-        <h2>Il PoliBa, più semplice.</h2>
+
+        <h1>Il PoliBa, più semplice.</h1>
 
         <p>
-            Tutte le informazioni utili per vivere l'università,
-            raccolte in un unico posto.
+            Informazioni, strumenti e servizi per gli studenti
+            del Politecnico di Bari, raccolti in un unico posto.
         </p>
 
-        <div class="buttons">
-            <a href="#" class="button">📅 Calendari delle lezioni</a>
-            <a href="#" class="button">🎓 Guida alle matricole</a>
-            <a href="#" class="button">📢 Avvisi e scadenze</a>
+        <div class="hero-buttons">
+
+            <a href="#" class="hero-button">
+                📅 Calendari delle lezioni
+            </a>
+
+            <a href="#" class="hero-button">
+                🎓 Guida alle matricole
+            </a>
+
         </div>
+
     </section>
 
+
+    <!-- SERVIZI -->
+
     <section class="section">
-        <h2>In evidenza</h2>
+
+        <div class="section-title">
+
+            <h2>Tutto quello che ti serve</h2>
+
+            <p>
+                Le informazioni più utili, senza dover cercare
+                in mille posti diversi.
+            </p>
+
+        </div>
+
 
         <div class="cards">
 
             <div class="card">
-                <h3>📅 Calendari</h3>
+
+                <div class="icon">📅</div>
+
+                <h3>Calendari</h3>
+
                 <p>
                     Consulta rapidamente il calendario delle lezioni
                     del tuo corso di laurea.
                 </p>
+
+                <a href="#">Vai ai calendari →</a>
+
             </div>
 
+
             <div class="card">
-                <h3>🎓 Matricole</h3>
+
+                <div class="icon">🎓</div>
+
+                <h3>Matricole</h3>
+
                 <p>
-                    Una guida semplice per orientarti tra Esse3,
-                    esami, OFA e vita universitaria.
+                    Tutto ciò che serve per iniziare l'università:
+                    Esse3, OFA, esami e servizi.
                 </p>
+
+                <a href="#">Guida matricole →</a>
+
             </div>
 
+
             <div class="card">
-                <h3>📢 Avvisi</h3>
+
+                <div class="icon">📢</div>
+
+                <h3>Avvisi</h3>
+
                 <p>
-                    Scadenze, comunicazioni e informazioni importanti
-                    per gli studenti.
+                    Scadenze, comunicazioni e informazioni
+                    importanti per gli studenti.
                 </p>
+
+                <a href="#">Vedi gli avvisi →</a>
+
             </div>
 
+
             <div class="card">
-                <h3>💙 Rappresentanza</h3>
+
+                <div class="icon">💙</div>
+
+                <h3>Rappresentanza</h3>
+
                 <p>
-                    Scopri le attività, le proposte e il lavoro
+                    Scopri il lavoro, le proposte e le attività
                     di Azione Universitaria PoliBa.
                 </p>
+
+                <a href="#">Scopri di più →</a>
+
             </div>
 
         </div>
+
     </section>
 
+
+    <!-- INFO -->
+
+    <section class="section info">
+
+        <div class="section-title">
+
+            <h2>In evidenza</h2>
+
+            <p>
+                Le informazioni che non dovresti perderti.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <h3>📢 Comunicazioni e scadenze</h3>
+
+            <p>
+                Qui troverai le principali scadenze,
+                comunicazioni del Politecnico e informazioni
+                utili per la tua vita universitaria.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
     <footer>
-        <p>Azione Universitaria PoliBa</p>
-        <p>Dalla parte dello studente.</p>
+
+        <h3>Azione Universitaria PoliBa</h3>
+
+        <p>
+            Dalla parte dello studente.
+        </p>
+
+        <p style="margin-top: 15px;">
+            © 2026 Azione Universitaria PoliBa
+        </p>
+
     </footer>
 
 </body>
