@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -7,6 +8,7 @@
     <title>Ingegneria Gestionale | Azione Universitaria PoliBa</title>
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -53,16 +55,16 @@
             background: linear-gradient(135deg, #123c69, #1f5d96);
             color: white;
             text-align: center;
-            padding: 65px 20px;
+            padding: 70px 20px;
         }
 
         .hero .icon {
-            font-size: 50px;
+            font-size: 52px;
             margin-bottom: 15px;
         }
 
         .hero h1 {
-            font-size: 40px;
+            font-size: 42px;
             margin-bottom: 15px;
         }
 
@@ -72,86 +74,214 @@
         }
 
         .section {
-            max-width: 1100px;
+            max-width: 1150px;
             margin: auto;
             padding: 55px 7%;
         }
 
-        .section h2 {
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
             color: #123c69;
-            margin-bottom: 25px;
-            font-size: 28px;
+            font-size: 30px;
+            margin-bottom: 10px;
         }
 
-        .info-box {
-            background: white;
-            padding: 25px;
-            border-radius: 14px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-            margin-bottom: 30px;
-        }
-
-        .info-box p {
+        .section-title p {
             color: #667085;
             line-height: 1.6;
         }
 
-        .year {
-            background: #eaf2fb;
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 55px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            border: 1px solid #edf0f5;
+        }
+
+        .info-card .icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .info-card h3 {
             color: #123c69;
-            padding: 12px 18px;
-            border-radius: 8px;
-            display: inline-block;
-            font-weight: bold;
-            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+
+        .info-card p {
+            color: #667085;
+            line-height: 1.5;
         }
 
         .schedule {
             background: white;
-            border-radius: 14px;
+            border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.07);
             overflow: hidden;
+            margin-bottom: 55px;
         }
 
         .schedule-header {
             background: #123c69;
             color: white;
-            padding: 20px;
+            padding: 22px 25px;
         }
 
         .schedule-header h3 {
-            font-size: 21px;
+            font-size: 22px;
+            margin-bottom: 5px;
         }
 
-        .empty {
-            padding: 45px 25px;
+        .schedule-header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .schedule-empty {
+            padding: 50px 25px;
             text-align: center;
         }
 
-        .empty .big-icon {
-            font-size: 45px;
+        .schedule-empty .big-icon {
+            font-size: 50px;
             margin-bottom: 15px;
         }
 
-        .empty h3 {
+        .schedule-empty h3 {
+            color: #123c69;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .schedule-empty p {
+            color: #667085;
+            max-width: 650px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        .days {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .day {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            overflow: hidden;
+            border: 1px solid #edf0f5;
+        }
+
+        .day h3 {
+            background: #eaf2fb;
+            color: #123c69;
+            padding: 15px;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        .day-content {
+            padding: 25px 15px;
+            text-align: center;
+            color: #98a2b3;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .academic-calendar {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-bottom: 55px;
+        }
+
+        .calendar-item {
+            background: white;
+            padding: 22px;
+            border-radius: 13px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border-left: 5px solid #123c69;
+        }
+
+        .calendar-item strong {
+            display: block;
+            color: #123c69;
+            margin-bottom: 6px;
+        }
+
+        .calendar-item span {
+            color: #667085;
+            line-height: 1.5;
+        }
+
+        .curricula {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 55px;
+        }
+
+        .curriculum {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            text-align: center;
+        }
+
+        .curriculum h3 {
             color: #123c69;
             margin-bottom: 10px;
         }
 
-        .empty p {
+        .curriculum p {
             color: #667085;
-            line-height: 1.6;
-            max-width: 600px;
-            margin: auto;
+            line-height: 1.5;
+        }
+
+        .useful-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .useful-links a {
+            display: block;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #123c69;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            transition: 0.2s;
+        }
+
+        .useful-links a:hover {
+            transform: translateY(-3px);
         }
 
         .back {
             display: inline-block;
-            margin-top: 25px;
+            margin-top: 40px;
             background: #123c69;
             color: white;
-            padding: 12px 20px;
-            border-radius: 7px;
+            padding: 13px 20px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
         }
@@ -166,6 +296,23 @@
             text-align: center;
             padding: 35px;
             margin-top: 20px;
+        }
+
+        @media (max-width: 850px) {
+
+            .info-grid,
+            .curricula {
+                grid-template-columns: 1fr;
+            }
+
+            .days {
+                grid-template-columns: 1fr;
+            }
+
+            .academic-calendar,
+            .useful-links {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 700px) {
@@ -184,104 +331,524 @@
             .hero h1 {
                 font-size: 32px;
             }
+
+            .section {
+                padding: 45px 6%;
+            }
         }
+
     </style>
 </head>
 
 <body>
 
-    <header>
 
-        <div class="logo">
-            Azione Universitaria PoliBa
-        </div>
+<header>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="calendari.html">Calendari</a>
-            <a href="#">Matricole</a>
-            <a href="#">Avvisi</a>
-            <a href="#">Chi siamo</a>
-        </nav>
+    <div class="logo">
+        Azione Universitaria PoliBa
+    </div>
 
-    </header>
+    <nav>
 
-
-    <section class="hero">
-
-        <div class="icon">⚙️</div>
-
-        <h1>Ingegneria Gestionale</h1>
-
-        <p>
-            Calendario delle lezioni e informazioni utili
-        </p>
-
-    </section>
-
-
-    <section class="section">
-
-        <div class="info-box">
-
-            <h2>📚 Ingegneria Gestionale</h2>
-
-            <p>
-                In questa pagina troverai il calendario delle lezioni,
-                le informazioni sugli insegnamenti e gli aggiornamenti
-                utili per gli studenti di Ingegneria Gestionale.
-            </p>
-
-            <div class="year">
-                Anno Accademico 2026/2027
-            </div>
-
-        </div>
-
-
-        <div class="schedule">
-
-            <div class="schedule-header">
-
-                <h3>📅 Orario delle lezioni</h3>
-
-            </div>
-
-            <div class="empty">
-
-                <div class="big-icon">🗓️</div>
-
-                <h3>Calendario in aggiornamento</h3>
-
-                <p>
-                    Il calendario dettagliato delle lezioni
-                    verrà inserito non appena saranno disponibili
-                    gli orari ufficiali del Politecnico di Bari.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <a class="back" href="calendari.html">
-            ← Torna ai calendari
+        <a href="index.html">
+            Home
         </a>
 
-    </section>
+        <a href="calendari.html">
+            Calendari
+        </a>
+
+        <a href="#">
+            Matricole
+        </a>
+
+        <a href="#">
+            Avvisi
+        </a>
+
+        <a href="#">
+            Chi siamo
+        </a>
+
+    </nav>
+
+</header>
 
 
-    <footer>
+<section class="hero">
+
+    <div class="icon">
+        ⚙️
+    </div>
+
+    <h1>
+        Ingegneria Gestionale
+    </h1>
+
+    <p>
+        Calendario delle lezioni e informazioni utili
+        per gli studenti di Ingegneria Gestionale.
+    </p>
+
+</section>
+
+
+<section class="section">
+
+
+    <div class="section-title">
+
+        <h2>
+            📚 Informazioni sul corso
+        </h2>
 
         <p>
-            Azione Universitaria PoliBa
+            Ingegneria Gestionale — Laurea triennale
         </p>
 
-        <p style="margin-top: 8px;">
-            Dalla parte dello studente.
+    </div>
+
+
+    <div class="info-grid">
+
+
+        <div class="info-card">
+
+            <div class="icon">
+                🎓
+            </div>
+
+            <h3>
+                Classe
+            </h3>
+
+            <p>
+                LT03-R — Ingegneria Gestionale
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="icon">
+                📍
+            </div>
+
+            <h3>
+                Sede
+            </h3>
+
+            <p>
+                Politecnico di Bari — Bari
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="icon">
+                ⏱️
+            </div>
+
+            <h3>
+                Durata
+            </h3>
+
+            <p>
+                3 anni
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="section-title">
+
+        <h2>
+            📅 Orario delle lezioni
+        </h2>
+
+        <p>
+            Anno Accademico 2026/2027
         </p>
 
-    </footer>
+    </div>
+
+
+    <div class="schedule">
+
+
+        <div class="schedule-header">
+
+            <h3>
+                🗓️ Calendario settimanale
+            </h3>
+
+            <p>
+                Gli orari ufficiali saranno inseriti appena disponibili.
+            </p>
+
+        </div>
+
+
+        <div class="days">
+
+
+            <div class="day">
+
+                <h3>
+                    Lunedì
+                </h3>
+
+                <div class="day-content">
+                    Orario in aggiornamento
+                </div>
+
+            </div>
+
+
+            <div class="day">
+
+                <h3>
+                    Martedì
+                </h3>
+
+                <div class="day-content">
+                    Orario in aggiornamento
+                </div>
+
+            </div>
+
+
+            <div class="day">
+
+                <h3>
+                    Mercoledì
+                </h3>
+
+                <div class="day-content">
+                    Orario in aggiornamento
+                </div>
+
+            </div>
+
+
+            <div class="day">
+
+                <h3>
+                    Giovedì
+                </h3>
+
+                <div class="day-content">
+                    Orario in aggiornamento
+                </div>
+
+            </div>
+
+
+            <div class="day">
+
+                <h3>
+                    Venerdì
+                </h3>
+
+                <div class="day-content">
+                    Orario in aggiornamento
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="section-title">
+
+        <h2>
+            🗓️ Calendario accademico
+        </h2>
+
+        <p>
+            Principali periodi dell'anno accademico 2026/2027.
+        </p>
+
+    </div>
+
+
+    <div class="academic-calendar">
+
+
+        <div class="calendar-item">
+
+            <strong>
+                Inizio lezioni
+            </strong>
+
+            <span>
+                21 settembre 2026
+            </span>
+
+        </div>
+
+
+        <div class="calendar-item">
+
+            <strong>
+                Pausa esoneri
+            </strong>
+
+            <span>
+                2 – 6 novembre 2026
+            </span>
+
+        </div>
+
+
+        <div class="calendar-item">
+
+            <strong>
+                Recupero lezioni
+            </strong>
+
+            <span>
+                21 – 23 dicembre 2026
+            </span>
+
+        </div>
+
+
+        <div class="calendar-item">
+
+            <strong>
+                Festività natalizie
+            </strong>
+
+            <span>
+                24 dicembre 2026 – 6 gennaio 2027
+            </span>
+
+        </div>
+
+
+        <div class="calendar-item">
+
+            <strong>
+                Recupero lezioni
+            </strong>
+
+            <span>
+                7 – 8 gennaio 2027
+            </span>
+
+        </div>
+
+
+        <div class="calendar-item">
+
+            <strong>
+                Fine lezioni
+            </strong>
+
+            <span>
+                8 gennaio 2027
+            </span>
+
+        </div>
+
+
+        <div class="calendar-item">
+
+            <strong>
+                Periodo esami
+            </strong>
+
+            <span>
+                11 gennaio – 26 febbraio 2027
+            </span>
+
+        </div>
+
+
+        <div class="calendar-item">
+
+            <strong>
+                Anno accademico
+            </strong>
+
+            <span>
+                2026/2027
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="section-title">
+
+        <h2>
+            🎯 Curricula
+        </h2>
+
+        <p>
+            Il corso di Ingegneria Gestionale prevede tre curricula.
+        </p>
+
+    </div>
+
+
+    <div class="curricula">
+
+
+        <div class="curriculum">
+
+            <h3>
+                🏭 Industriale
+            </h3>
+
+            <p>
+                Percorso orientato ai sistemi e ai processi
+                dell'area industriale.
+            </p>
+
+        </div>
+
+
+        <div class="curriculum">
+
+            <h3>
+                💻 Informazione
+            </h3>
+
+            <p>
+                Percorso orientato alle tecnologie
+                e ai sistemi dell'informazione.
+            </p>
+
+        </div>
+
+
+        <div class="curriculum">
+
+            <h3>
+                🏗️ Infrastrutture
+            </h3>
+
+            <p>
+                Percorso orientato alla gestione
+                delle infrastrutture e dei relativi sistemi.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="section-title">
+
+        <h2>
+            📢 Avvisi
+        </h2>
+
+        <p>
+            Qui verranno raccolte le comunicazioni importanti
+            relative al corso.
+        </p>
+
+    </div>
+
+
+    <div class="schedule">
+
+        <div class="schedule-empty">
+
+            <div class="big-icon">
+                📢
+            </div>
+
+            <h3>
+                Nessun avviso inserito
+            </h3>
+
+            <p>
+                Gli aggiornamenti e le comunicazioni importanti
+                verranno pubblicati in questa sezione.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="section-title">
+
+        <h2>
+            🔗 Link utili
+        </h2>
+
+        <p>
+            Risorse ufficiali per gli studenti.
+        </p>
+
+    </div>
+
+
+    <div class="useful-links">
+
+
+        <a href="https://poliba.it/it/ingegneria-gestionale" target="_blank">
+            🎓 Pagina ufficiale del corso
+        </a>
+
+
+        <a href="https://www.poliba.it/" target="_blank">
+            🌐 Sito ufficiale PoliBa
+        </a>
+
+
+        <a href="https://www.dmmm.poliba.it/" target="_blank">
+            🏛️ Dipartimento DMMM
+        </a>
+
+
+        <a href="https://www.poliba.it/it/didattica" target="_blank">
+            📚 Area Didattica PoliBa
+        </a>
+
+
+    </div>
+
+
+    <a class="back" href="calendari.html">
+        ← Torna ai calendari
+    </a>
+
+
+</section>
+
+
+<footer>
+
+    <p>
+        Azione Universitaria PoliBa
+    </p>
+
+    <p style="margin-top: 8px;">
+        Dalla parte dello studente.
+    </p>
+
+</footer>
+
 
 </body>
 </html>
+```
