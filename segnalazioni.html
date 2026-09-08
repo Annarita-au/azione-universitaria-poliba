@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -105,7 +104,6 @@
 
         .category {
             background: #eef5ff;
-            border: 2px solid transparent;
             border-radius: 14px;
             padding: 20px;
             text-align: center;
@@ -124,68 +122,46 @@
             padding: 35px;
             border-radius: 18px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            text-align: center;
         }
 
         .form-box h2 {
             color: #0b4ea2;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
         }
 
-        .form-group {
-            margin-bottom: 22px;
-        }
-
-        label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        input,
-        select,
-        textarea {
-            width: 100%;
-            padding: 13px 15px;
-            border: 1px solid #ccd5e0;
-            border-radius: 10px;
-            font-size: 15px;
-            font-family: inherit;
-            background: #ffffff;
-        }
-
-        input:focus,
-        select:focus,
-        textarea:focus {
-            outline: none;
-            border-color: #0b4ea2;
-            box-shadow: 0 0 0 3px rgba(11,78,162,0.10);
-        }
-
-        textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .optional {
-            font-weight: normal;
-            color: #6d7684;
-            font-size: 13px;
-        }
-
-        .privacy {
-            background: #f2f6fb;
-            padding: 18px;
-            border-radius: 12px;
-            margin: 25px 0;
-            font-size: 14px;
+        .form-box p {
+            max-width: 700px;
+            margin: 0 auto 25px;
             color: #4d5968;
+        }
+
+        .form-preview {
+            background: #f2f6fb;
+            border-radius: 14px;
+            padding: 22px;
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .form-preview div {
+            padding: 10px 0;
+            border-bottom: 1px solid #dbe3ec;
+        }
+
+        .form-preview div:last-child {
+            border-bottom: none;
+        }
+
+        .form-preview strong {
+            color: #0b4ea2;
         }
 
         .button {
             display: inline-block;
             background: #0b4ea2;
             color: white;
-            padding: 14px 28px;
+            padding: 15px 30px;
             border-radius: 10px;
             border: none;
             font-size: 16px;
@@ -198,6 +174,16 @@
         .button:hover {
             background: #083b7c;
             transform: translateY(-1px);
+        }
+
+        .privacy {
+            background: #f2f6fb;
+            padding: 18px;
+            border-radius: 12px;
+            margin: 25px 0;
+            font-size: 14px;
+            color: #4d5968;
+            text-align: left;
         }
 
         .back {
@@ -222,6 +208,7 @@
         footer p {
             opacity: 0.8;
             font-size: 14px;
+            margin: 4px 0;
         }
 
         @media (max-width: 700px) {
@@ -257,6 +244,10 @@
             .form-box,
             .intro {
                 padding: 25px 20px;
+            }
+
+            .button {
+                width: 100%;
             }
         }
 
@@ -357,179 +348,64 @@
 
     <section class="form-box">
 
-        <h2>Invia la tua segnalazione</h2>
+        <h2>📝 Invia la tua segnalazione</h2>
 
-        <form>
+        <p>
+            Cliccando sul pulsante qui sotto accederai al modulo ufficiale
+            di Azione Universitaria PoliBa, dove potrai inserire tutti
+            i dettagli della tua segnalazione.
+        </p>
 
-            <div class="form-group">
 
-                <label for="categoria">
-                    Categoria
-                </label>
+        <div class="form-preview">
 
-                <select id="categoria" name="categoria" required>
-
-                    <option value="">
-                        Seleziona una categoria
-                    </option>
-
-                    <option value="didattica">
-                        📚 Didattica
-                    </option>
-
-                    <option value="esami">
-                        📝 Esami
-                    </option>
-
-                    <option value="aule">
-                        🏫 Aule e strutture
-                    </option>
-
-                    <option value="servizi-online">
-                        💻 Servizi online
-                    </option>
-
-                    <option value="erasmus">
-                        🎓 Erasmus
-                    </option>
-
-                    <option value="tasse">
-                        💰 Tasse e borse
-                    </option>
-
-                    <option value="servizi-studenti">
-                        🚌 Servizi agli studenti
-                    </option>
-
-                    <option value="altro">
-                        🔎 Altro
-                    </option>
-
-                </select>
-
+            <div>
+                <strong>📌 Categoria</strong><br>
+                Scegli l'ambito del problema.
             </div>
 
-
-            <div class="form-group">
-
-                <label for="corso">
-                    Corso di studio
-                    <span class="optional">(facoltativo)</span>
-                </label>
-
-                <select id="corso" name="corso">
-
-                    <option value="">
-                        Seleziona il corso
-                    </option>
-
-                    <option value="informatica">
-                        Ingegneria Informatica
-                    </option>
-
-                    <option value="gestionale">
-                        Ingegneria Gestionale
-                    </option>
-
-                    <option value="medicali">
-                        Ingegneria dei Sistemi Medicali
-                    </option>
-
-                    <option value="management">
-                        Management Engineering for Innovation
-                    </option>
-
-                    <option value="meccanica">
-                        Ingegneria Meccanica
-                    </option>
-
-                    <option value="civile">
-                        Ingegneria Civile e Ambientale
-                    </option>
-
-                    <option value="edile">
-                        Ingegneria Edile
-                    </option>
-
-                    <option value="elettronica">
-                        Ingegneria Elettronica e delle Tecnologie Internet
-                    </option>
-
-                    <option value="altro">
-                        Altro corso
-                    </option>
-
-                </select>
-
+            <div>
+                <strong>🎓 Corso di studio</strong><br>
+                Indica il tuo corso, se vuoi.
             </div>
 
-
-            <div class="form-group">
-
-                <label for="oggetto">
-                    Oggetto della segnalazione
-                </label>
-
-                <input
-                    type="text"
-                    id="oggetto"
-                    name="oggetto"
-                    placeholder="Es. Problema con l'aula durante la lezione"
-                    required
-                >
-
+            <div>
+                <strong>📝 Oggetto</strong><br>
+                Riassumi brevemente il problema.
             </div>
 
-
-            <div class="form-group">
-
-                <label for="descrizione">
-                    Descrivi il problema
-                </label>
-
-                <textarea
-                    id="descrizione"
-                    name="descrizione"
-                    placeholder="Raccontaci cosa è successo e, se possibile, indica dove e quando si è verificato..."
-                    required
-                ></textarea>
-
+            <div>
+                <strong>💬 Descrizione</strong><br>
+                Raccontaci cosa è successo.
             </div>
 
-
-            <div class="form-group">
-
-                <label for="contatto">
-                    Contatto
-                    <span class="optional">(facoltativo)</span>
-                </label>
-
-                <input
-                    type="text"
-                    id="contatto"
-                    name="contatto"
-                    placeholder="Email o altro contatto, se vuoi essere ricontattato"
-                >
-
+            <div>
+                <strong>📧 Contatto</strong><br>
+                Lascia un recapito solo se vuoi essere ricontattato.
             </div>
 
-
-            <div class="privacy">
-
-                🔒 <strong>La tua privacy</strong><br>
-
-                Inserisci un contatto soltanto se vuoi essere ricontattato
-                per ricevere aggiornamenti sulla segnalazione.
-                In caso contrario puoi lasciare il campo vuoto.
-
-            </div>
+        </div>
 
 
-            <button type="submit" class="button">
-                Invia segnalazione →
-            </button>
+        <div class="privacy">
 
-        </form>
+            🔒 <strong>La tua privacy</strong><br><br>
+
+            Nel modulo puoi scegliere se lasciare un contatto per essere
+            ricontattato. Se preferisci non essere contattato, puoi
+            semplicemente non inserirlo.
+
+        </div>
+
+
+        <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSettthzuny83NXBZ1jIjM0goTW7YtCxa5A-CcOvxIKtwjKLRg/viewform?usp=header"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button"
+        >
+            Invia segnalazione →
+        </a>
 
     </section>
 
@@ -559,4 +435,4 @@
 
 </body>
 </html>
-```
+
