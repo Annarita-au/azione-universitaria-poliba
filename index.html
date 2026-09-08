@@ -131,7 +131,7 @@
 
     .cards {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
         gap: 22px;
     }
 
@@ -280,200 +280,220 @@
 
 <body>
 
-```
 <header>
 
-    <a href="index.html" class="logo">
-        Azione Universitaria PoliBa
-    </a>
+```
+<a href="index.html" class="logo">
+    Azione Universitaria PoliBa
+</a>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="calendari.html">Calendari</a>
-        <a href="matricole.html">Matricole</a>
-        <a href="avvisi.html">Avvisi</a>
-        <a href="rappresentanza.html">Rappresentanza</a>
-    </nav>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="calendari.html">Calendari</a>
+    <a href="matricole.html">Matricole</a>
+    <a href="avvisi.html">Avvisi</a>
+    <a href="rappresentanza.html">Rappresentanza</a>
+    <a href="segnalazioni.html">Segnalazioni</a>
+</nav>
+```
 
 </header>
 
-
 <section class="hero">
 
-    <h1>🎓 Azione Universitaria PoliBa</h1>
+```
+<h1>🎓 Azione Universitaria PoliBa</h1>
 
-    <p>
-        Uno spazio pensato dagli studenti per gli studenti del
-        Politecnico di Bari: informazioni, servizi, rappresentanza
-        e strumenti utili per vivere al meglio l'università.
-    </p>
+<p>
+    Uno spazio pensato dagli studenti per gli studenti del
+    Politecnico di Bari: informazioni, servizi, rappresentanza
+    e strumenti utili per vivere al meglio l'università.
+</p>
 
-    <div class="buttons">
+<div class="buttons">
 
-        <a href="calendari.html" class="btn btn-primary">
-            📅 Consulta i Calendari
+    <a href="calendari.html" class="btn btn-primary">
+        📅 Consulta i Calendari
+    </a>
+
+    <a href="matricole.html" class="btn btn-secondary">
+        🎓 Guida alle Matricole
+    </a>
+
+    <a href="segnalazioni.html" class="btn btn-secondary">
+        🆘 Segnala un problema
+    </a>
+
+</div>
+```
+
+</section>
+
+<main class="container">
+
+```
+<section>
+
+    <div class="section-title">
+
+        <h2>Tutto quello che ti serve</h2>
+
+        <p>
+            Accedi rapidamente alle sezioni principali del sito.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <a href="calendari.html" class="card">
+
+            <div class="icon">📅</div>
+
+            <h3>Calendari</h3>
+
+            <p>
+                Consulta i calendari e accedi alle pagine
+                dei principali corsi di laurea.
+            </p>
+
         </a>
 
-        <a href="matricole.html" class="btn btn-secondary">
-            🎓 Guida alle Matricole
+
+        <a href="matricole.html" class="card">
+
+            <div class="icon">🎓</div>
+
+            <h3>Matricole</h3>
+
+            <p>
+                Una guida pratica per orientarti
+                nei primi passi della vita universitaria.
+            </p>
+
         </a>
+
+
+        <a href="avvisi.html" class="card">
+
+            <div class="icon">📢</div>
+
+            <h3>Avvisi</h3>
+
+            <p>
+                Comunicazioni, scadenze e informazioni
+                utili per gli studenti.
+            </p>
+
+        </a>
+
+
+        <a href="rappresentanza.html" class="card">
+
+            <div class="icon">🤝</div>
+
+            <h3>Rappresentanza</h3>
+
+            <p>
+                Scopri il nostro lavoro e le attività
+                dedicate agli studenti.
+            </p>
+
+        </a>
+
+
+        <a href="segnalazioni.html" class="card">
+
+            <div class="icon">🆘</div>
+
+            <h3>Segnalazioni</h3>
+
+            <p>
+                Hai riscontrato un problema?
+                Inviaci una segnalazione e aiutaci
+                a portarlo all'attenzione dei rappresentanti.
+            </p>
+
+        </a>
+
 
     </div>
 
 </section>
 
 
-<main class="container">
+<section class="highlight">
+
+    <h2>📌 In evidenza</h2>
+
+    <p>
+        Il sito è in continua costruzione e verrà aggiornato
+        con nuovi strumenti, informazioni e servizi utili
+        per la comunità studentesca del PoliBa.
+    </p>
 
 
-    <section>
+    <div class="highlight-boxes">
 
-        <div class="section-title">
 
-            <h2>Tutto quello che ti serve</h2>
+        <div class="highlight-box">
+
+            <h3>📚 Didattica</h3>
 
             <p>
-                Accedi rapidamente alle sezioni principali del sito.
+                Informazioni e strumenti per aiutarti
+                a organizzare meglio il tuo percorso universitario.
             </p>
 
         </div>
 
 
-        <div class="cards">
+        <div class="highlight-box">
 
+            <h3>🗣️ Rappresentanza</h3>
 
-            <a href="calendari.html" class="card">
-
-                <div class="icon">📅</div>
-
-                <h3>Calendari</h3>
-
-                <p>
-                    Consulta i calendari e accedi alle pagine
-                    dei principali corsi di laurea.
-                </p>
-
-            </a>
-
-
-            <a href="matricole.html" class="card">
-
-                <div class="icon">🎓</div>
-
-                <h3>Matricole</h3>
-
-                <p>
-                    Una guida pratica per orientarti
-                    nei primi passi della vita universitaria.
-                </p>
-
-            </a>
-
-
-            <a href="avvisi.html" class="card">
-
-                <div class="icon">📢</div>
-
-                <h3>Avvisi</h3>
-
-                <p>
-                    Comunicazioni, scadenze e informazioni
-                    utili per gli studenti.
-                </p>
-
-            </a>
-
-
-            <a href="rappresentanza.html" class="card">
-
-                <div class="icon">🤝</div>
-
-                <h3>Rappresentanza</h3>
-
-                <p>
-                    Scopri il nostro lavoro e le attività
-                    dedicate agli studenti.
-                </p>
-
-            </a>
-
+            <p>
+                Uno spazio per conoscere le attività
+                e le proposte portate avanti dagli studenti.
+            </p>
 
         </div>
 
-    </section>
 
+        <div class="highlight-box">
 
-    <section class="highlight">
+            <h3>🚀 Opportunità</h3>
 
-        <h2>📌 In evidenza</h2>
-
-        <p>
-            Il sito è in continua costruzione e verrà aggiornato
-            con nuovi strumenti, informazioni e servizi utili
-            per la comunità studentesca del PoliBa.
-        </p>
-
-
-        <div class="highlight-boxes">
-
-
-            <div class="highlight-box">
-
-                <h3>📚 Didattica</h3>
-
-                <p>
-                    Informazioni e strumenti per aiutarti
-                    a organizzare meglio il tuo percorso universitario.
-                </p>
-
-            </div>
-
-
-            <div class="highlight-box">
-
-                <h3>🗣️ Rappresentanza</h3>
-
-                <p>
-                    Uno spazio per conoscere le attività
-                    e le proposte portate avanti dagli studenti.
-                </p>
-
-            </div>
-
-
-            <div class="highlight-box">
-
-                <h3>🚀 Opportunità</h3>
-
-                <p>
-                    In futuro troverai qui iniziative,
-                    opportunità e progetti dedicati agli studenti.
-                </p>
-
-            </div>
-
+            <p>
+                In futuro troverai qui iniziative,
+                opportunità e progetti dedicati agli studenti.
+            </p>
 
         </div>
 
-    </section>
 
+    </div>
+
+</section>
+```
 
 </main>
 
-
 <footer>
 
-    <p>
-        © 2026 Azione Universitaria PoliBa
-    </p>
+```
+<p>
+    © 2026 Azione Universitaria PoliBa
+</p>
 
-    <p>
-        Informazione, rappresentanza e servizi per gli studenti.
-    </p>
+<p>
+    Informazione, rappresentanza e servizi per gli studenti.
+</p>
+```
 
 </footer>
-```
 
 </body>
 </html>
-
