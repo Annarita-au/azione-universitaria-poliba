@@ -82,10 +82,7 @@
         font-weight: bold;
     }
 
-    .filter-btn:hover {
-        background: #003b73;
-    }
-
+    .filter-btn:hover,
     .filter-btn.active {
         background: #003b73;
     }
@@ -228,7 +225,7 @@
 
     .modal-content h2 {
         color: #003b73;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         padding-right: 30px;
     }
 
@@ -316,14 +313,12 @@
     <p>Informazione, rappresentanza e supporto agli studenti.</p>
 </footer>
 
-<!-- FINESTRA DETTAGLIO -->
-
 <div id="modal" class="modal" onclick="chiudiSeFuori(event)">
     <div class="modal-content">
         <span class="close" onclick="chiudiModal()">&times;</span>
 
 ```
-    <div id="modal-important"></div>
+    <div id="modal-important" class="modal-important"></div>
     <h2 id="modal-title"></h2>
     <div id="modal-meta" class="modal-meta"></div>
     <div id="modal-text" class="modal-text"></div>
@@ -392,7 +387,7 @@ function mostraAvvisi(avvisi) {
 
             <div class="meta">
                 ${escapeHTML(avviso.categoria || "")}
-                ${avviso.data ? " • " + escapeHTML(avviso.data) : ""}
+                ${avviso.data ? " • " + escapeHTML(formattaData(avviso.data)) : ""}
             </div>
 
             <div class="anteprima">
@@ -445,13 +440,13 @@ function apriModal(avviso) {
         avviso.titolo || "";
 
     document.getElementById("modal-meta").textContent =
-        (avviso.categoria || "") +
-        (avviso.data ? " • " + avviso.data : "");
+        (avviso.categoria ? "Categoria: " + avviso.categoria : "") +
+        (avviso.data ? " • Data: " + formattaData(avviso.data) : "");
 
     document.getElementById("modal-text").textContent =
         avviso.testo || "";
 
-    document.getElementById("modal-important").innerHTML =
+    document.getElementById("modal-important").textContent =
         avviso.importante
         ? "🚨 IMPORTANTE"
         : "";
@@ -482,6 +477,21 @@ document.addEventListener("keydown", function(event) {
     }
 
 });
+
+function formattaData(data) {
+
+    if (!data) return "";
+
+    const valore = String(data);
+
+    const match = valore.match(/^(\d{4})-(\d{2})-(\d{2})/);
+
+    if (match) {
+        return match[3] + "/" + match[2] + "/" + match[1];
+    }
+
+    return valore;
+}
 
 function escapeHTML(testo) {
 
