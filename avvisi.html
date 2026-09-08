@@ -138,6 +138,7 @@
 
     .testo {
         color: #444;
+        white-space: pre-line;
     }
 
     .loading,
@@ -253,8 +254,7 @@
 <section class="hero">
     <h1>📢 Avvisi</h1>
     <p>
-        Tutte le comunicazioni utili per gli studenti,
-        aggiornate direttamente dalla bacheca di Azione Universitaria PoliBa.
+        Una bacheca unica per trovare comunicazioni, scadenze e informazioni importanti per gli studenti.
     </p>
 </section>
 
@@ -262,6 +262,7 @@
 
 ```
 <div class="filters">
+
     <button class="filter-btn active" onclick="filtraAvvisi('Tutti', this)">
         Tutti
     </button>
@@ -285,6 +286,7 @@
     <button class="filter-btn" onclick="filtraAvvisi('Scadenze', this)">
         Scadenze
     </button>
+
 </div>
 
 <div id="avvisi">
@@ -294,19 +296,44 @@
 </div>
 
 <section class="categories">
+
     <h2>Categorie</h2>
 
     <div class="category-grid">
-        <div class="category">📚 Didattica</div>
-        <div class="category">📝 Esami</div>
-        <div class="category">✈️ Erasmus</div>
-        <div class="category">🎓 Vita universitaria</div>
-        <div class="category">⏰ Scadenze</div>
+
+        <div class="category">
+            📚<br>
+            <strong>Didattica</strong>
+        </div>
+
+        <div class="category">
+            📝<br>
+            <strong>Esami</strong>
+        </div>
+
+        <div class="category">
+            ✈️<br>
+            <strong>Erasmus</strong>
+        </div>
+
+        <div class="category">
+            🎓<br>
+            <strong>Vita universitaria</strong>
+        </div>
+
+        <div class="category">
+            ⏰<br>
+            <strong>Scadenze</strong>
+        </div>
+
     </div>
+
 </section>
 
 <section class="report">
+
     <h2>Hai trovato un problema?</h2>
+
     <p>
         Segnalaci una criticità o una situazione che riguarda gli studenti.
     </p>
@@ -314,10 +341,13 @@
     <a href="segnalazioni.html">
         Invia una segnalazione
     </a>
+
 </section>
 
 <div class="back">
-    <a href="index.html">← Torna alla Home</a>
+    <a href="index.html">
+        ← Torna alla Home
+    </a>
 </div>
 ```
 
@@ -329,8 +359,7 @@
 
 <script>
 
-    const URL_AVVISI =
-        "https://script.google.com/macros/s/AKfycbzX0r_ySf8e6VYFN_zZYSkLx8w6oHTAo1HuNFIacBkjtr3wTlMZM2BmKDF99luxJAfGkw/exec";
+    const URL_AVVISI = "https://script.google.com/macros/s/AKfycbzX0r_ySf8e6VYFN_zZYSkLx8w6oHTAo1HuNFIacBkjtr3wTlMZM2BmKDF99luxJAfGkw/exec";
 
     let tuttiGliAvvisi = [];
 
@@ -340,8 +369,7 @@
 
         const script = document.createElement("script");
 
-        const callbackName =
-            "riceviAvvisi_" + Date.now();
+        const callbackName = "riceviAvvisi_" + Date.now();
 
         window[callbackName] = function(avvisi) {
 
@@ -354,20 +382,16 @@
             script.remove();
         };
 
-        script.src =
-            URL_AVVISI +
-            "?callback=" +
-            callbackName;
+        script.src = URL_AVVISI + "?callback=" + callbackName;
 
         script.onerror = function() {
 
-            contenitore.innerHTML = `
-                <div class="error">
-                    <strong>Non è stato possibile caricare gli avvisi.</strong>
-                    <br><br>
-                    Riprova tra qualche secondo.
-                </div>
-            `;
+            contenitore.innerHTML =
+                '<div class="error">' +
+                '<strong>Non è stato possibile caricare gli avvisi.</strong>' +
+                '<br><br>' +
+                'Riprova tra qualche secondo.' +
+                '</div>';
 
             delete window[callbackName];
 
@@ -379,18 +403,16 @@
 
     function mostraAvvisi(avvisi) {
 
-        const contenitore =
-            document.getElementById("avvisi");
+        const contenitore = document.getElementById("avvisi");
 
         if (!avvisi || avvisi.length === 0) {
 
-            contenitore.innerHTML = `
-                <div class="empty">
-                    <strong>Nessun avviso pubblicato.</strong>
-                    <br>
-                    Gli avvisi verranno pubblicati qui appena disponibili.
-                </div>
-            `;
+            contenitore.innerHTML =
+                '<div class="empty">' +
+                '<strong>Nessun avviso pubblicato.</strong>' +
+                '<br>' +
+                'Gli avvisi verranno pubblicati qui appena disponibili.' +
+                '</div>';
 
             return;
         }
@@ -401,40 +423,43 @@
 
             const elemento = document.createElement("article");
 
-            elemento.className =
-                "avviso" +
-                (avviso.importante ? " importante" : "");
+            elemento.className = "avviso";
 
-            elemento.dataset.categoria =
-                avviso.categoria || "";
+            if (avviso.importante) {
+                elemento.classList.add("importante");
+            }
 
-            elemento.innerHTML = `
+            elemento.dataset.categoria = avviso.categoria || "";
 
-                <div class="avviso-top">
+            let badge;
 
-                    <h2>
-                        ${escapeHtml(avviso.titolo || "")}
-                    </h2>
+            if (avviso.importante) {
 
-                    ${
-                        avviso.importante
-                        ? '<span class="badge importante">IMPORTANTE</span>'
-                        : `<span class="badge">
-                            ${escapeHtml(avviso.categoria || "Avviso")}
-                          </span>`
-                    }
+                badge = '<span class="badge importante">IMPORTANTE</span>';
 
-                </div>
+            } else {
 
-                <div class="data">
-                    ${escapeHtml(avviso.data || "")}
-                </div>
+                badge =
+                    '<span class="badge">' +
+                    escapeHtml(avviso.categoria || "Avviso") +
+                    '</span>';
+            }
 
-                <div class="testo">
-                    ${escapeHtml(avviso.testo || "")}
-                </div>
+            elemento.innerHTML =
+                '<div class="avviso-top">' +
+                    '<h2>' +
+                        escapeHtml(avviso.titolo || "") +
+                    '</h2>' +
+                    badge +
+                '</div>' +
 
-            `;
+                '<div class="data">' +
+                    escapeHtml(avviso.data || "") +
+                '</div>' +
+
+                '<div class="testo">' +
+                    escapeHtml(avviso.testo || "") +
+                '</div>';
 
             contenitore.appendChild(elemento);
         });
@@ -442,16 +467,13 @@
 
     function filtraAvvisi(categoria, pulsante) {
 
-        document
-            .querySelectorAll(".filter-btn")
-            .forEach(function(btn) {
-                btn.classList.remove("active");
-            });
+        document.querySelectorAll(".filter-btn").forEach(function(btn) {
+            btn.classList.remove("active");
+        });
 
         pulsante.classList.add("active");
 
-        const elementi =
-            document.querySelectorAll(".avviso");
+        const elementi = document.querySelectorAll(".avviso");
 
         elementi.forEach(function(elemento) {
 
