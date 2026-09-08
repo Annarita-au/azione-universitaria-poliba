@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Management Engineering for Innovation | Azione Universitaria PoliBa</title>
+
+<style>
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f7fb;
+        color: #172033;
+        line-height: 1.6;
+    }
+
+    header {
+        background: linear-gradient(135deg, #061a40, #0b4ea2);
+        color: white;
+        padding: 18px 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 21px;
+        font-weight: bold;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 22px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #0b4ea2, #1877d3);
+        color: white;
+        padding: 70px 7%;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        max-width: 800px;
+        font-size: 18px;
+        opacity: 0.95;
+    }
+
+    .container {
+        width: 86%;
+        max-width: 1200px;
+        margin: 40px auto;
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+        margin-bottom: 45px;
+    }
+
+    .info-card {
+        background: white;
+        padding: 25px;
+        border-radius: 14px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+        text-align: center;
+    }
+
+    .info-card strong {
+        display: block;
+        font-size: 15px;
+        color: #0b4ea2;
+        margin-bottom: 7px;
+    }
+
+    .info-card span {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    section {
+        margin-bottom: 50px;
+    }
+
+    section h2 {
+        color: #0b4ea2;
+        font-size: 28px;
+        margin-bottom: 22px;
+    }
+
+    .schedule {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 15px;
+    }
+
+    .day {
+        background: white;
+        padding: 22px;
+        border-radius: 14px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+    }
+
+    .day h3 {
+        color: #0b4ea2;
+        margin-bottom: 12px;
+    }
+
+    .day p {
+        color: #667085;
+        font-size: 14px;
+    }
+
+    .calendar-box {
+        background: white;
+        border-radius: 16px;
+        padding: 28px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+    }
+
+    .calendar-item {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 13px 0;
+        border-bottom: 1px solid #e6eaf0;
+    }
+
+    .calendar-item:last-child {
+        border-bottom: none;
+    }
+
+    .calendar-item strong {
+        color: #0b4ea2;
+    }
+
+    .tracks {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .track {
+        background: white;
+        padding: 28px;
+        border-radius: 16px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+    }
+
+    .track h3 {
+        color: #0b4ea2;
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .track p {
+        color: #4b5563;
+    }
+
+    .mobility {
+        background: linear-gradient(135deg, #eaf3ff, #f7fbff);
+        border-left: 5px solid #0b4ea2;
+        padding: 28px;
+        border-radius: 14px;
+    }
+
+    .mobility h3 {
+        color: #0b4ea2;
+        margin-bottom: 12px;
+    }
+
+    .notice {
+        background: white;
+        padding: 28px;
+        border-radius: 16px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+    }
+
+    .notice p {
+        color: #667085;
+    }
+
+    .links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .link-card {
+        background: white;
+        padding: 20px;
+        border-radius: 14px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+    }
+
+    .link-card a {
+        color: #0b4ea2;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .link-card a:hover {
+        text-decoration: underline;
+    }
+
+    .back {
+        text-align: center;
+        margin: 50px 0;
+    }
+
+    .back a {
+        display: inline-block;
+        background: #0b4ea2;
+        color: white;
+        text-decoration: none;
+        padding: 13px 24px;
+        border-radius: 9px;
+        font-weight: bold;
+    }
+
+    .back a:hover {
+        background: #083d82;
+    }
+
+    footer {
+        background: #061a40;
+        color: white;
+        text-align: center;
+        padding: 28px 7%;
+        margin-top: 60px;
+    }
+
+    footer p {
+        font-size: 14px;
+        opacity: 0.85;
+    }
+
+    @media (max-width: 900px) {
+
+        .info-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .schedule {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .tracks,
+        .links {
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+    @media (max-width: 600px) {
+
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        nav a {
+            margin-left: 0;
+            margin-right: 15px;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+        }
+
+        .info-grid,
+        .schedule {
+            grid-template-columns: 1fr;
+        }
+
+        .calendar-item {
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .container {
+            width: 90%;
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+<header>
+
+```
+<div class="logo">
+    AZIONE UNIVERSITARIA POLIBA
+</div>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="calendari.html">Calendari</a>
+    <a href="#">Matricole</a>
+    <a href="#">Avvisi</a>
+</nav>
+```
+
+</header>
+
+<div class="hero">
+
+```
+<h1>🌍 Management Engineering for Innovation</h1>
+
+<p>
+    Corso di Laurea Triennale internazionale in lingua inglese,
+    con mobilità strutturata e obbligatoria presso le università partner
+    PUT in Polonia o THWS in Germania.
+</p>
+```
+
+</div>
+
+<div class="container">
+
+```
+<div class="info-grid">
+
+    <div class="info-card">
+        <strong>Classe</strong>
+        <span>L-9 R</span>
+    </div>
+
+    <div class="info-card">
+        <strong>Sede</strong>
+        <span>Bari</span>
+    </div>
+
+    <div class="info-card">
+        <strong>Durata</strong>
+        <span>3 anni</span>
+    </div>
+
+    <div class="info-card">
+        <strong>Lingua</strong>
+        <span>English</span>
+    </div>
+
+</div>
+
+
+<section>
+
+    <h2>📅 Orario settimanale</h2>
+
+    <div class="schedule">
+
+        <div class="day">
+            <h3>Lunedì</h3>
+            <p>Orario in aggiornamento</p>
+        </div>
+
+        <div class="day">
+            <h3>Martedì</h3>
+            <p>Orario in aggiornamento</p>
+        </div>
+
+        <div class="day">
+            <h3>Mercoledì</h3>
+            <p>Orario in aggiornamento</p>
+        </div>
+
+        <div class="day">
+            <h3>Giovedì</h3>
+            <p>Orario in aggiornamento</p>
+        </div>
+
+        <div class="day">
+            <h3>Venerdì</h3>
+            <p>Orario in aggiornamento</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <h2>🗓️ Calendario accademico 2026/2027</h2>
+
+    <div class="calendar-box">
+
+        <div class="calendar-item">
+            <strong>Inizio lezioni</strong>
+            <span>21 settembre 2026</span>
+        </div>
+
+        <div class="calendar-item">
+            <strong>Pausa esoneri</strong>
+            <span>2 – 6 novembre 2026</span>
+        </div>
+
+        <div class="calendar-item">
+            <strong>Recupero lezioni</strong>
+            <span>21 – 23 dicembre 2026</span>
+        </div>
+
+        <div class="calendar-item">
+            <strong>Festività natalizie</strong>
+            <span>24 dicembre 2026 – 6 gennaio 2027</span>
+        </div>
+
+        <div class="calendar-item">
+            <strong>Recupero lezioni</strong>
+            <span>7 – 8 gennaio 2027</span>
+        </div>
+
+        <div class="calendar-item">
+            <strong>Fine lezioni</strong>
+            <span>8 gennaio 2027</span>
+        </div>
+
+        <div class="calendar-item">
+            <strong>Periodo esami</strong>
+            <span>11 gennaio – 26 febbraio 2027</span>
+        </div>
+
+        <div class="calendar-item">
+            <strong>Anno accademico</strong>
+            <span>2026/2027</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <h2>🌍 Percorsi internazionali</h2>
+
+    <div class="tracks">
+
+        <div class="track">
+
+            <h3>🇵🇱 Percorso PUT</h3>
+
+            <p>
+                Il percorso prevede la mobilità internazionale presso
+                la Poznań University of Technology in Polonia.
+            </p>
+
+            <p style="margin-top: 12px;">
+                <strong>3° semestre:</strong> PUT<br>
+                <strong>4° – 5° semestre:</strong> PoliBa<br>
+                <strong>6° semestre:</strong> PUT
+            </p>
+
+        </div>
+
+
+        <div class="track">
+
+            <h3>🇩🇪 Percorso THWS</h3>
+
+            <p>
+                Il percorso prevede la mobilità internazionale presso
+                la Technical University of Applied Sciences
+                Würzburg-Schweinfurt in Germania.
+            </p>
+
+            <p style="margin-top: 12px;">
+                <strong>3° semestre:</strong> THWS<br>
+                <strong>4° – 5° semestre:</strong> PoliBa<br>
+                <strong>6° semestre:</strong> THWS
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <div class="mobility">
+
+        <h3>✈️ Mobilità internazionale obbligatoria</h3>
+
+        <p>
+            Il corso prevede una mobilità internazionale strutturata
+            e obbligatoria per un totale di due semestri presso
+            l'università partner scelta tra PUT e THWS.
+        </p>
+
+        <p style="margin-top: 12px;">
+            Il percorso può inoltre consentire il conseguimento
+            di un doppio titolo secondo gli accordi con l'università partner.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <h2>📚 Cosa si studia</h2>
+
+    <div class="tracks">
+
+        <div class="track">
+
+            <h3>⚙️ Ingegneria e sistemi industriali</h3>
+
+            <p>
+                Analisi e gestione dei sistemi industriali,
+                dei processi produttivi e delle tecnologie.
+            </p>
+
+        </div>
+
+
+        <div class="track">
+
+            <h3>📊 Management e organizzazione</h3>
+
+            <p>
+                Organizzazione aziendale, gestione dei processi,
+                project management e controllo delle attività.
+            </p>
+
+        </div>
+
+
+        <div class="track">
+
+            <h3>🤖 Innovazione e tecnologie digitali</h3>
+
+            <p>
+                Tecnologie digitali, intelligenza artificiale
+                e trasformazione digitale dei sistemi produttivi.
+            </p>
+
+        </div>
+
+
+        <div class="track">
+
+            <h3>🚀 Innovation Management</h3>
+
+            <p>
+                Progettazione e gestione dell'innovazione,
+                valutazione delle tecnologie e miglioramento continuo.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <h2>📢 Avvisi</h2>
+
+    <div class="notice">
+
+        <p>
+            Nessun avviso disponibile al momento.
+            Gli aggiornamenti relativi a lezioni, esami,
+            mobilità e attività didattiche saranno pubblicati qui.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <h2>🔗 Link utili</h2>
+
+    <div class="links">
+
+        <div class="link-card">
+            <a href="https://www.poliba.it/it/management-engineering-innovation" target="_blank">
+                Pagina ufficiale del corso PoliBa
+            </a>
+        </div>
+
+        <div class="link-card">
+            <a href="https://www.poliba.it/" target="_blank">
+                Sito ufficiale Politecnico di Bari
+            </a>
+        </div>
+
+        <div class="link-card">
+            <a href="https://www.dmmm.poliba.it/" target="_blank">
+                Dipartimento di Meccanica, Matematica e Management
+            </a>
+        </div>
+
+        <div class="link-card">
+            <a href="https://www.poliba.it/it/didattica" target="_blank">
+                Area Didattica PoliBa
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="back">
+
+    <a href="calendari.html">
+        ← Torna ai Calendari
+    </a>
+
+</div>
+```
+
+</div>
+
+<footer>
+
+```
+<p>
+    © 2026 Azione Universitaria PoliBa — Studenti, rappresentanza, futuro.
+</p>
+```
+
+</footer>
+
+</body>
+</html>
