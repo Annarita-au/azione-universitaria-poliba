@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ingegneria Gestionale | Azione Universitaria PoliBa</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+        }
+
+        header {
+            background: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 800;
+            color: #123c69;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #26364d;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #123c69;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #123c69, #1f5d96);
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .hero .icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 55px 7%;
+        }
+
+        .section h2 {
+            color: #123c69;
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
+
+        .info-box {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            margin-bottom: 30px;
+        }
+
+        .info-box p {
+            color: #667085;
+            line-height: 1.6;
+        }
+
+        .year {
+            background: #eaf2fb;
+            color: #123c69;
+            padding: 12px 18px;
+            border-radius: 8px;
+            display: inline-block;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .schedule {
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            overflow: hidden;
+        }
+
+        .schedule-header {
+            background: #123c69;
+            color: white;
+            padding: 20px;
+        }
+
+        .schedule-header h3 {
+            font-size: 21px;
+        }
+
+        .empty {
+            padding: 45px 25px;
+            text-align: center;
+        }
+
+        .empty .big-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .empty h3 {
+            color: #123c69;
+            margin-bottom: 10px;
+        }
+
+        .empty p {
+            color: #667085;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 25px;
+            background: #123c69;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back:hover {
+            background: #1f5d96;
+        }
+
+        footer {
+            background: #123c69;
+            color: white;
+            text-align: center;
+            padding: 35px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            Azione Universitaria PoliBa
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="calendari.html">Calendari</a>
+            <a href="#">Matricole</a>
+            <a href="#">Avvisi</a>
+            <a href="#">Chi siamo</a>
+        </nav>
+
+    </header>
+
+
+    <section class="hero">
+
+        <div class="icon">⚙️</div>
+
+        <h1>Ingegneria Gestionale</h1>
+
+        <p>
+            Calendario delle lezioni e informazioni utili
+        </p>
+
+    </section>
+
+
+    <section class="section">
+
+        <div class="info-box">
+
+            <h2>📚 Ingegneria Gestionale</h2>
+
+            <p>
+                In questa pagina troverai il calendario delle lezioni,
+                le informazioni sugli insegnamenti e gli aggiornamenti
+                utili per gli studenti di Ingegneria Gestionale.
+            </p>
+
+            <div class="year">
+                Anno Accademico 2026/2027
+            </div>
+
+        </div>
+
+
+        <div class="schedule">
+
+            <div class="schedule-header">
+
+                <h3>📅 Orario delle lezioni</h3>
+
+            </div>
+
+            <div class="empty">
+
+                <div class="big-icon">🗓️</div>
+
+                <h3>Calendario in aggiornamento</h3>
+
+                <p>
+                    Il calendario dettagliato delle lezioni
+                    verrà inserito non appena saranno disponibili
+                    gli orari ufficiali del Politecnico di Bari.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <a class="back" href="calendari.html">
+            ← Torna ai calendari
+        </a>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            Azione Universitaria PoliBa
+        </p>
+
+        <p style="margin-top: 8px;">
+            Dalla parte dello studente.
+        </p>
+
+    </footer>
+
+</body>
+</html>
