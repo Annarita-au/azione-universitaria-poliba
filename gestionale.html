@@ -9,7 +9,6 @@
 <title>Ingegneria Gestionale | Azione Universitaria PoliBa</title>
 
 <style>
-
     * {
         box-sizing: border-box;
         margin: 0;
@@ -25,27 +24,29 @@
 
     header {
         background: #ffffff;
-        border-bottom: 1px solid #e4eaf1;
-        padding: 18px 7%;
+        padding: 18px 6%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 20px;
-        flex-wrap: wrap;
+        gap: 25px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
     }
 
     .logo {
-        color: #1557b0;
         font-size: 22px;
         font-weight: 800;
-        text-decoration: none;
+        color: #1557b0;
+        white-space: nowrap;
     }
 
     nav {
         display: flex;
-        gap: 18px;
         flex-wrap: wrap;
         justify-content: center;
+        gap: 18px;
     }
 
     nav a {
@@ -62,8 +63,13 @@
     .hero {
         background: linear-gradient(135deg, #1557b0, #2879d8);
         color: white;
-        padding: 70px 7%;
         text-align: center;
+        padding: 65px 20px;
+    }
+
+    .hero-icon {
+        font-size: 48px;
+        margin-bottom: 12px;
     }
 
     .hero h1 {
@@ -72,26 +78,59 @@
     }
 
     .hero p {
-        font-size: 18px;
         max-width: 750px;
         margin: auto;
+        font-size: 17px;
         opacity: 0.95;
     }
 
     .container {
-        width: 86%;
-        max-width: 1150px;
+        width: min(1100px, 92%);
         margin: 45px auto;
     }
 
-    .section {
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 18px;
         margin-bottom: 45px;
     }
 
-    .section h2 {
+    .info-card,
+    .section-card,
+    .day-card,
+    .curriculum-card,
+    .activity-card,
+    .link-card {
+        background: #ffffff;
+        border-radius: 18px;
+        box-shadow: 0 5px 20px rgba(25, 55, 90, 0.07);
+    }
+
+    .info-card {
+        padding: 22px;
+        border-top: 4px solid #1557b0;
+    }
+
+    .info-card h3 {
+        color: #183b68;
+        margin-bottom: 7px;
+        font-size: 16px;
+    }
+
+    .info-card p {
+        color: #65758a;
+        font-size: 15px;
+    }
+
+    section {
+        margin-bottom: 45px;
+    }
+
+    section h2 {
         color: #183b68;
         font-size: 28px;
-        margin-bottom: 20px;
+        margin-bottom: 18px;
     }
 
     .section-intro {
@@ -99,202 +138,148 @@
         margin-bottom: 20px;
     }
 
-    .info-grid {
+    .schedule {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 18px;
-    }
-
-    .info-card {
-        background: #ffffff;
-        border-radius: 18px;
-        padding: 25px;
-        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
-        border-left: 5px solid #1557b0;
-    }
-
-    .info-card h3 {
-        color: #183b68;
-        margin-bottom: 8px;
-    }
-
-    .info-card p {
-        color: #65758a;
-    }
-
-    .calendar-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         gap: 16px;
     }
 
-    .calendar-card {
-        background: #ffffff;
-        border-radius: 16px;
+    .day-card {
         padding: 20px;
-        border-left: 4px solid #1557b0;
-        box-shadow: 0 6px 20px rgba(21, 87, 176, 0.07);
+        border-left: 5px solid #1557b0;
     }
 
-    .calendar-card strong {
-        display: block;
-        color: #183b68;
-        margin-bottom: 6px;
+    .day-card h3 {
+        color: #1557b0;
+        margin-bottom: 10px;
     }
 
-    .calendar-card span {
-        color: #65758a;
+    .day-card p {
+        color: #69798c;
+        font-size: 14px;
     }
 
-    .schedule {
+    .calendar {
+        display: grid;
+        gap: 12px;
+    }
+
+    .calendar-item {
         background: #ffffff;
-        border-radius: 18px;
-        padding: 25px;
-        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
-        overflow-x: auto;
+        border-radius: 15px;
+        padding: 17px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        box-shadow: 0 4px 15px rgba(25, 55, 90, 0.06);
     }
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        min-width: 650px;
+    .calendar-item strong {
+        color: #183b68;
     }
 
-    th {
-        background: #1557b0;
-        color: white;
-        padding: 14px;
-        text-align: left;
+    .calendar-item span {
+        color: #65758a;
+        text-align: right;
     }
 
-    td {
-        padding: 14px;
-        border-bottom: 1px solid #e6ebf1;
-        color: #526276;
-    }
-
-    tr:last-child td {
-        border-bottom: none;
-    }
-
-    .curricula {
+    .curriculum-grid,
+    .activity-grid,
+    .links-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
         gap: 18px;
     }
 
-    .curriculum {
-        background: #ffffff;
-        border-radius: 18px;
-        padding: 25px;
-        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
-        text-align: center;
+    .curriculum-card,
+    .activity-card,
+    .link-card {
+        padding: 24px;
+    }
+
+    .curriculum-card {
         border-top: 4px solid #1557b0;
     }
 
-    .curriculum h3 {
+    .curriculum-card h3,
+    .activity-card h3,
+    .link-card h3 {
         color: #183b68;
         margin-bottom: 10px;
     }
 
-    .curriculum p {
-        color: #65758a;
+    .curriculum-card p,
+    .activity-card p,
+    .link-card p {
+        color: #69798c;
         font-size: 14px;
     }
 
-    .year-grid {
+    .study-years {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 18px;
+        gap: 15px;
     }
 
     .year-card {
         background: #ffffff;
-        border-radius: 18px;
-        padding: 25px;
-        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
+        border-radius: 16px;
+        padding: 20px;
+        border-left: 5px solid #1557b0;
+        box-shadow: 0 4px 15px rgba(25, 55, 90, 0.06);
     }
 
     .year-card h3 {
-        color: #1557b0;
-        margin-bottom: 12px;
-    }
-
-    .year-card p {
-        color: #65758a;
+        color: #183b68;
         margin-bottom: 8px;
     }
 
-    .important-box {
-        background: #eaf2ff;
+    .year-card p {
+        color: #69798c;
+    }
+
+    .notice {
+        background: #eef5ff;
         border-left: 5px solid #1557b0;
-        border-radius: 12px;
+        border-radius: 14px;
         padding: 20px;
-        color: #29496d;
+        color: #52657a;
     }
 
-    .placeholder {
-        background: #ffffff;
-        border-radius: 16px;
-        padding: 22px;
-        color: #65758a;
-        box-shadow: 0 6px 20px rgba(21, 87, 176, 0.07);
-    }
-
-    .placeholder a,
-    .important-box a {
-        color: #1557b0;
-        font-weight: 700;
-        text-decoration: none;
-    }
-
-    .placeholder a:hover,
-    .important-box a:hover {
-        text-decoration: underline;
-    }
-
-    .links {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 15px;
-    }
-
-    .link-card {
-        background: #ffffff;
-        border-radius: 15px;
-        padding: 20px;
-        text-decoration: none;
+    .notice strong {
         color: #183b68;
-        font-weight: 700;
-        box-shadow: 0 6px 20px rgba(21, 87, 176, 0.07);
-        transition: 0.2s;
     }
 
-    .link-card:hover {
-        transform: translateY(-3px);
-        color: #1557b0;
-    }
-
-    .back-button {
+    .button {
         display: inline-block;
-        margin-top: 25px;
+        margin-top: 18px;
+        background: #1557b0;
+        color: white;
         padding: 12px 20px;
-        background: white;
-        color: #1557b0;
         border-radius: 10px;
         text-decoration: none;
         font-weight: 700;
     }
 
-    .back-button:hover {
-        background: #eef5ff;
+    .button:hover {
+        background: #124b98;
+    }
+
+    .link-card a {
+        color: #1557b0;
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+    .link-card a:hover {
+        text-decoration: underline;
     }
 
     footer {
         background: #102a49;
         color: white;
         text-align: center;
-        padding: 28px 7%;
+        padding: 28px 20px;
         margin-top: 60px;
     }
 
@@ -304,36 +289,33 @@
     }
 
     @media (max-width: 700px) {
-
         header {
-            justify-content: center;
+            flex-direction: column;
+            padding: 16px 5%;
+        }
+
+        nav {
+            gap: 12px;
         }
 
         .hero {
-            padding: 55px 6%;
+            padding: 50px 18px;
         }
 
         .hero h1 {
             font-size: 32px;
         }
 
-        .hero p {
-            font-size: 16px;
+        .calendar-item {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
         }
 
-        .container {
-            width: 90%;
-        }
-
-        nav {
-            gap: 10px;
-        }
-
-        nav a {
-            font-size: 13px;
+        .calendar-item span {
+            text-align: left;
         }
     }
-
 </style>
 ```
 
@@ -342,12 +324,9 @@
 <body>
 
 <header>
+    <div class="logo">Azione Universitaria PoliBa</div>
 
 ```
-<a href="index.html" class="logo">
-    Azione Universitaria PoliBa
-</a>
-
 <nav>
     <a href="index.html">Home</a>
     <a href="calendari.html">Calendari</a>
@@ -361,18 +340,15 @@
 </header>
 
 <section class="hero">
+    <div class="hero-icon">⚙️</div>
 
 ```
 <h1>Ingegneria Gestionale</h1>
 
 <p>
-    Informazioni, calendario accademico, organizzazione del corso
-    e risorse utili per gli studenti di Ingegneria Gestionale.
+    Calendario delle lezioni e informazioni utili per gli studenti
+    di Ingegneria Gestionale.
 </p>
-
-<a href="calendari.html" class="back-button">
-    ← Torna ai Calendari
-</a>
 ```
 
 </section>
@@ -380,400 +356,327 @@
 <main class="container">
 
 ```
-<section class="section">
+<div class="info-grid">
 
-    <h2>Il corso</h2>
+    <div class="info-card">
+        <h3>Percorso</h3>
+        <p>Ingegneria Gestionale</p>
+    </div>
 
-    <div class="info-grid">
+    <div class="info-card">
+        <h3>Sede</h3>
+        <p>Politecnico di Bari</p>
+    </div>
 
-        <div class="info-card">
-            <h3>Percorso</h3>
-            <p>Laurea Triennale in Ingegneria Gestionale</p>
+    <div class="info-card">
+        <h3>Durata</h3>
+        <p>3 anni</p>
+    </div>
+
+    <div class="info-card">
+        <h3>Anno accademico</h3>
+        <p>2026/2027</p>
+    </div>
+
+</div>
+
+<!-- ORARIO LEZIONI -->
+
+<section>
+    <h2>🕐 Orario delle lezioni</h2>
+
+    <p class="section-intro">
+        L'orario settimanale sarà inserito e aggiornato sulla base
+        delle comunicazioni ufficiali del Politecnico di Bari.
+    </p>
+
+    <div class="schedule">
+
+        <div class="day-card">
+            <h3>Lunedì</h3>
+            <p>Orario in aggiornamento</p>
         </div>
 
-        <div class="info-card">
-            <h3>Sede</h3>
-            <p>Politecnico di Bari</p>
+        <div class="day-card">
+            <h3>Martedì</h3>
+            <p>Orario in aggiornamento</p>
         </div>
 
-        <div class="info-card">
-            <h3>Durata</h3>
-            <p>3 anni — 180 CFU</p>
+        <div class="day-card">
+            <h3>Mercoledì</h3>
+            <p>Orario in aggiornamento</p>
         </div>
 
-        <div class="info-card">
-            <h3>Anno accademico</h3>
-            <p>2026/2027</p>
+        <div class="day-card">
+            <h3>Giovedì</h3>
+            <p>Orario in aggiornamento</p>
+        </div>
+
+        <div class="day-card">
+            <h3>Venerdì</h3>
+            <p>Orario in aggiornamento</p>
         </div>
 
     </div>
-
 </section>
 
+<!-- CALENDARIO ACCADEMICO -->
 
-<section class="section">
-
+<section>
     <h2>🗓️ Calendario accademico</h2>
 
     <p class="section-intro">
-        Le principali date previste per l'anno accademico 2026/2027.
+        Principali date del calendario didattico dell'anno accademico 2026/2027.
     </p>
 
-    <div class="calendar-grid">
+    <div class="calendar">
 
-        <div class="calendar-card">
+        <div class="calendar-item">
             <strong>Inizio lezioni</strong>
             <span>21 settembre 2026</span>
         </div>
 
-        <div class="calendar-card">
+        <div class="calendar-item">
             <strong>Pausa esoneri</strong>
             <span>2–6 novembre 2026</span>
         </div>
 
-        <div class="calendar-card">
+        <div class="calendar-item">
             <strong>Recupero lezioni</strong>
             <span>21–23 dicembre 2026</span>
         </div>
 
-        <div class="calendar-card">
+        <div class="calendar-item">
             <strong>Festività natalizie</strong>
             <span>24 dicembre 2026 – 6 gennaio 2027</span>
         </div>
 
-        <div class="calendar-card">
+        <div class="calendar-item">
             <strong>Recupero lezioni</strong>
             <span>7–8 gennaio 2027</span>
         </div>
 
-        <div class="calendar-card">
+        <div class="calendar-item">
             <strong>Fine lezioni</strong>
             <span>8 gennaio 2027</span>
         </div>
 
-        <div class="calendar-card">
+        <div class="calendar-item">
             <strong>Periodo esami</strong>
             <span>11 gennaio – 26 febbraio 2027</span>
         </div>
 
     </div>
-
 </section>
 
+<!-- PERCORSI -->
 
-<section class="section">
-
-    <h2>Orario delle lezioni</h2>
-
-    <p class="section-intro">
-        L'orario settimanale verrà inserito non appena saranno disponibili
-        i dati ufficiali aggiornati.
-    </p>
-
-    <div class="schedule">
-
-        <table>
-
-            <thead>
-                <tr>
-                    <th>Giorno</th>
-                    <th>Mattina</th>
-                    <th>Pomeriggio</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td>Lunedì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Martedì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Mercoledì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Giovedì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Venerdì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-</section>
-
-
-<section class="section">
-
-    <h2>Curricula</h2>
+<section>
+    <h2>📚 Percorsi di studio</h2>
 
     <p class="section-intro">
-        Il corso prevede tre possibili percorsi di approfondimento.
+        Il corso prevede diversi ambiti di approfondimento all'interno
+        del percorso di Ingegneria Gestionale.
     </p>
 
-    <div class="curricula">
+    <div class="curriculum-grid">
 
-        <div class="curriculum">
+        <div class="curriculum-card">
             <h3>Industriale</h3>
             <p>
-                Percorso orientato ai processi, alla produzione
-                e alla gestione industriale.
+                Percorso orientato ai processi industriali, alla gestione
+                della produzione e all'organizzazione dei sistemi produttivi.
             </p>
         </div>
 
-        <div class="curriculum">
+        <div class="curriculum-card">
             <h3>Informazione</h3>
             <p>
-                Percorso orientato ai sistemi informativi,
-                alla tecnologia e alla gestione dell'informazione.
+                Percorso con maggiore attenzione agli strumenti informatici,
+                digitali e quantitativi applicati alla gestione.
             </p>
         </div>
 
-        <div class="curriculum">
+        <div class="curriculum-card">
             <h3>Infrastrutture</h3>
             <p>
-                Percorso orientato alla gestione delle infrastrutture
-                e dei sistemi complessi.
+                Percorso dedicato alla gestione e organizzazione di sistemi
+                infrastrutturali e complessi.
             </p>
         </div>
 
     </div>
-
 </section>
 
+<!-- PIANO DI STUDI -->
 
-<section class="section">
-
-    <h2>📚 Piano di studi</h2>
+<section>
+    <h2>📖 Piano di studi</h2>
 
     <p class="section-intro">
-        Il piano dettagliato degli insegnamenti e dei relativi CFU
-        verrà aggiornato con i dati ufficiali dell'anno accademico 2026/2027.
+        La struttura degli insegnamenti sarà completata con i dati
+        ufficiali del corso di studio.
     </p>
 
-    <div class="year-grid">
+    <div class="study-years">
 
         <div class="year-card">
-            <h3>1° anno</h3>
-
-            <p>
-                Insegnamenti fondamentali del percorso
-                di Ingegneria Gestionale.
-            </p>
-
-            <p>
-                <strong>Piano dettagliato:</strong>
-                in aggiornamento.
-            </p>
+            <h3>Primo anno</h3>
+            <p>Insegnamenti e CFU in aggiornamento.</p>
         </div>
 
         <div class="year-card">
-            <h3>2° anno</h3>
-
-            <p>
-                Proseguimento della formazione ingegneristica
-                e approfondimenti del percorso scelto.
-            </p>
-
-            <p>
-                <strong>Piano dettagliato:</strong>
-                in aggiornamento.
-            </p>
+            <h3>Secondo anno</h3>
+            <p>Insegnamenti e CFU in aggiornamento.</p>
         </div>
 
         <div class="year-card">
-            <h3>3° anno</h3>
-
-            <p>
-                Approfondimenti finali, attività a scelta,
-                tirocinio e prova finale.
-            </p>
-
-            <p>
-                <strong>Piano dettagliato:</strong>
-                in aggiornamento.
-            </p>
+            <h3>Terzo anno</h3>
+            <p>Insegnamenti e CFU in aggiornamento.</p>
         </div>
 
     </div>
-
 </section>
 
+<!-- ATTIVITÀ -->
 
-<section class="section">
-
+<section>
     <h2>🎓 Attività formative</h2>
 
-    <div class="info-grid">
+    <div class="activity-grid">
 
-        <div class="info-card">
-            <h3>Esami a scelta</h3>
-
+        <div class="activity-card">
+            <h3>12 CFU a scelta</h3>
             <p>
-                Sono previsti 12 CFU di attività formative
-                a scelta dello studente.
+                Crediti destinati alle attività formative a scelta dello studente.
             </p>
         </div>
 
-        <div class="info-card">
-            <h3>Tirocinio</h3>
-
+        <div class="activity-card">
+            <h3>6 CFU di tirocinio</h3>
             <p>
-                Sono previsti 6 CFU dedicati al tirocinio.
+                Attività di tirocinio prevista nel percorso formativo.
             </p>
         </div>
 
-        <div class="info-card">
+        <div class="activity-card">
             <h3>Prova finale</h3>
-
             <p>
-                Il percorso di laurea si conclude
-                con la prova finale.
+                Attività conclusiva del percorso di laurea.
             </p>
         </div>
 
-        <div class="info-card">
-            <h3>Totale</h3>
-
+        <div class="activity-card">
+            <h3>180 CFU</h3>
             <p>
-                Il corso di laurea prevede complessivamente
-                180 CFU.
+                Totale dei crediti formativi previsti per la laurea triennale.
             </p>
         </div>
 
     </div>
-
 </section>
 
+<!-- APPELLI -->
 
-<section class="section">
+<section>
+    <h2>📝 Appelli d'esame</h2>
 
-    <h2>📝 Esami</h2>
-
-    <div class="important-box">
-
-        <strong>Appelli d'esame</strong>
-
-        <p>
-            Le date degli appelli saranno inserite nella pagina
-            non appena disponibili e verificate.
-        </p>
-
+    <div class="notice">
+        <strong>Calendario degli appelli in aggiornamento.</strong>
+        <br>
+        Le date degli esami saranno inserite sulla base delle comunicazioni
+        ufficiali e degli appelli pubblicati dal Politecnico di Bari.
     </div>
-
 </section>
 
+<!-- AVVISI -->
 
-<section class="section">
+<section>
+    <h2>📢 Avvisi per Ingegneria Gestionale</h2>
 
-    <h2>📢 Avvisi per Gestionale</h2>
+    <div class="notice">
+        <strong>Consulta la bacheca Avvisi</strong>
+        <br>
+        Gli avvisi generali e le comunicazioni per gli studenti vengono
+        pubblicati nella bacheca del sito.
+        <br>
 
-    <div class="placeholder">
-
-        Gli avvisi specifici per gli studenti di Ingegneria Gestionale
-        saranno pubblicati qui.
-
-        <br><br>
-
-        <a href="avvisi.html">
-            Vai alla bacheca generale degli avvisi →
+        <a class="button" href="avvisi.html">
+            Vai agli Avvisi
         </a>
-
     </div>
-
 </section>
 
+<!-- SEGNALAZIONI -->
 
-<section class="section">
-
+<section>
     <h2>🆘 Segnala un problema</h2>
 
-    <div class="important-box">
-
-        <p>
-            Hai trovato un problema con l'orario, un esame,
-            una comunicazione o un'attività didattica?
-        </p>
+    <div class="notice">
+        Hai riscontrato un problema con lezioni, esami, servizi universitari
+        o organizzazione del corso?
 
         <br>
 
-        <a href="segnalazioni.html">
-            Invia una segnalazione →
+        <a class="button" href="segnalazioni.html">
+            Invia una segnalazione
         </a>
-
     </div>
-
 </section>
 
+<!-- LINK UTILI -->
 
-<section class="section">
-
+<section>
     <h2>🔗 Link utili</h2>
 
-    <div class="links">
+    <div class="links-grid">
 
-        <a
-            href="https://poliba.it/"
-            target="_blank"
-            class="link-card">
-            Politecnico di Bari →
-        </a>
+        <div class="link-card">
+            <h3>Politecnico di Bari</h3>
+            <p>
+                <a href="https://poliba.it/" target="_blank">
+                    Sito ufficiale PoliBa →
+                </a>
+            </p>
+        </div>
 
-        <a
-            href="https://www.poliba.it/it/didattica"
-            target="_blank"
-            class="link-card">
-            Didattica PoliBa →
-        </a>
+        <div class="link-card">
+            <h3>Didattica</h3>
+            <p>
+                <a href="https://www.poliba.it/it/didattica" target="_blank">
+                    Area didattica →
+                </a>
+            </p>
+        </div>
 
-        <a
-            href="https://www.dmmm.poliba.it/"
-            target="_blank"
-            class="link-card">
-            DMMM →
-        </a>
+        <div class="link-card">
+            <h3>Dipartimento</h3>
+            <p>
+                <a href="https://www.dmmm.poliba.it/" target="_blank">
+                    Sito del Dipartimento →
+                </a>
+            </p>
+        </div>
 
-        <a
-            href="avvisi.html"
-            class="link-card">
-            Bacheca Avvisi →
-        </a>
+        <div class="link-card">
+            <h3>Avvisi</h3>
+            <p>
+                <a href="avvisi.html">
+                    Bacheca degli avvisi →
+                </a>
+            </p>
+        </div>
 
     </div>
-
 </section>
 ```
 
 </main>
 
 <footer>
-
-```
-<p>
-    Azione Universitaria PoliBa — Ingegneria Gestionale
-</p>
-```
-
+    <p>
+        © 2026 Azione Universitaria PoliBa — Informazione, rappresentanza e servizi per gli studenti.
+    </p>
 </footer>
 
 </body>
