@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 
 <html lang="it">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 ```
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Avvisi | Azione Universitaria PoliBa</title>
 
 <style>
@@ -20,211 +18,239 @@
 
     body {
         font-family: Arial, sans-serif;
-        background: #f4f7fb;
-        color: #172033;
+        background: #f5f5f5;
+        color: #222;
     }
 
     header {
-        background: #0057b8;
+        background: #8b0000;
         color: white;
         padding: 20px;
         text-align: center;
     }
 
     header h1 {
-        font-size: 28px;
-        margin-bottom: 8px;
-    }
-
-    header p {
-        font-size: 15px;
+        margin-bottom: 15px;
     }
 
     nav {
-        background: white;
-        padding: 12px;
-        text-align: center;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
     }
 
     nav a {
+        color: white;
         text-decoration: none;
-        color: #0057b8;
-        font-weight: bold;
-        margin: 0 10px;
+        padding: 8px 12px;
+        border-radius: 6px;
+        transition: 0.2s;
     }
 
-    main {
-        max-width: 1000px;
-        margin: 35px auto;
-        padding: 0 20px;
+    nav a:hover {
+        background: rgba(255,255,255,0.2);
     }
 
-    .intro {
+    .hero {
+        background: white;
         text-align: center;
-        margin-bottom: 25px;
+        padding: 45px 20px 30px;
     }
 
-    .intro h2 {
-        color: #0057b8;
-        margin-bottom: 8px;
+    .hero h2 {
+        font-size: 34px;
+        color: #8b0000;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        color: #666;
+        font-size: 17px;
     }
 
     .filtri {
+        max-width: 1000px;
+        margin: 25px auto;
+        padding: 0 20px;
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
         gap: 10px;
-        justify-content: center;
-        margin-bottom: 25px;
     }
 
-    .filtri button {
+    .filtro {
         border: none;
-        background: white;
-        color: #0057b8;
-        border: 1px solid #0057b8;
-        padding: 9px 15px;
+        background: #ddd;
+        color: #333;
+        padding: 10px 18px;
         border-radius: 20px;
         cursor: pointer;
-        font-weight: bold;
+        font-size: 14px;
+        transition: 0.2s;
     }
 
-    .filtri button:hover,
-    .filtri button.attivo {
-        background: #0057b8;
+    .filtro:hover {
+        background: #ccc;
+    }
+
+    .filtro.attivo {
+        background: #8b0000;
         color: white;
     }
 
     #lista-avvisi {
-        display: grid;
-        gap: 16px;
+        max-width: 1000px;
+        margin: 0 auto 50px;
+        padding: 0 20px;
     }
 
     .avviso {
         background: white;
         border-radius: 12px;
-        padding: 20px;
-        box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        padding: 22px;
+        margin-bottom: 18px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.08);
         cursor: pointer;
-        transition: transform 0.15s ease, box-shadow 0.15s ease;
+        transition: 0.2s;
+        border-left: 5px solid #8b0000;
     }
 
     .avviso:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+    }
+
+    .avviso.importante {
+        border-left: 5px solid #d4a000;
+    }
+
+    .badge-importante {
+        display: inline-block;
+        background: #fff1b8;
+        color: #705500;
+        padding: 5px 9px;
+        border-radius: 5px;
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 10px;
     }
 
     .avviso h3 {
-        color: #0057b8;
+        color: #8b0000;
+        font-size: 21px;
         margin-bottom: 8px;
     }
 
     .meta {
-        font-size: 13px;
-        color: #687386;
-        margin-bottom: 10px;
+        color: #777;
+        font-size: 14px;
+        margin-bottom: 12px;
     }
 
-    .anteprima {
-        color: #394457;
+    .testo {
+        color: #444;
         line-height: 1.5;
     }
 
-    .importante {
-        display: inline-block;
-        color: #d62828;
-        font-weight: bold;
-        font-size: 12px;
-        margin-bottom: 8px;
-    }
-
     .nessun-avviso {
-        text-align: center;
         background: white;
         padding: 30px;
         border-radius: 12px;
-        color: #687386;
+        text-align: center;
+        color: #777;
     }
+
+    /* MODALE */
 
     .modal {
         display: none;
         position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.55);
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
         z-index: 1000;
-    }
-
-    .modal.aperta {
-        display: flex;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+        padding: 20px;
+        overflow-y: auto;
     }
 
     .modal-contenuto {
         background: white;
         max-width: 700px;
-        width: 100%;
-        max-height: 85vh;
-        overflow-y: auto;
-        border-radius: 14px;
-        padding: 28px;
+        margin: 70px auto;
+        border-radius: 15px;
+        padding: 30px;
         position: relative;
+        animation: apertura 0.2s ease;
+    }
+
+    @keyframes apertura {
+        from {
+            transform: translateY(-15px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
 
     .chiudi {
         position: absolute;
-        right: 18px;
-        top: 14px;
-        border: none;
-        background: none;
-        font-size: 28px;
+        right: 20px;
+        top: 15px;
+        font-size: 30px;
         cursor: pointer;
-        color: #555;
+        color: #777;
     }
 
-    .modal-contenuto h2 {
-        color: #0057b8;
+    .chiudi:hover {
+        color: #8b0000;
+    }
+
+    #modal-titolo {
+        color: #8b0000;
         margin-bottom: 10px;
         padding-right: 30px;
     }
 
-    .modal-meta {
-        color: #687386;
+    #modal-meta {
+        color: #777;
         font-size: 14px;
-        margin-bottom: 18px;
+        margin-bottom: 20px;
     }
 
-    .modal-testo {
-        line-height: 1.65;
-        white-space: pre-wrap;
-        color: #273247;
+    #modal-testo {
+        color: #333;
+        line-height: 1.7;
+        white-space: pre-line;
     }
 
     footer {
-        margin-top: 50px;
-        background: #172033;
+        background: #222;
         color: white;
         text-align: center;
-        padding: 20px;
-        font-size: 14px;
+        padding: 25px 20px;
+        margin-top: 40px;
     }
 
     @media (max-width: 600px) {
 
-        nav a {
-            display: inline-block;
-            margin: 5px 7px;
+        .hero h2 {
+            font-size: 28px;
         }
 
-        header h1 {
-            font-size: 24px;
+        .avviso {
+            padding: 18px;
         }
 
-        main {
-            margin-top: 25px;
+        .modal-contenuto {
+            margin: 30px auto;
+            padding: 22px;
         }
-
     }
 
 </style>
@@ -237,103 +263,90 @@
 <header>
 
 ```
-<h1>📢 Avvisi</h1>
+<h1>Azione Universitaria PoliBa</h1>
 
-<p>
-    Le comunicazioni utili per gli studenti del PoliBa
-</p>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="calendari.html">Calendari</a>
+    <a href="matricole.html">Matricole</a>
+    <a href="avvisi.html">Avvisi</a>
+    <a href="rappresentanza.html">Rappresentanza</a>
+    <a href="segnalazioni.html">Segnalazioni</a>
+</nav>
 ```
 
 </header>
 
-<nav>
+<section class="hero">
 
 ```
-<a href="index.html">Home</a>
-<a href="calendari.html">Calendari</a>
-<a href="matricole.html">Matricole</a>
-<a href="avvisi.html">Avvisi</a>
-<a href="rappresentanza.html">Rappresentanza</a>
-<a href="segnalazioni.html">Segnalazioni</a>
+<h2>📢 Avvisi</h2>
+
+<p>
+    Tutte le comunicazioni e gli aggiornamenti per gli studenti di PoliBa.
+</p>
 ```
 
-</nav>
-
-<main>
-
-```
-<div class="intro">
-
-    <h2>Bacheca degli avvisi</h2>
-
-    <p>
-        Consulta le comunicazioni più recenti.
-    </p>
-
-</div>
+</section>
 
 <div class="filtri">
 
-    <button class="attivo" onclick="filtra('Tutti', this)">
-        Tutti
-    </button>
+```
+<button class="filtro attivo" onclick="filtra('Tutti', this)">
+    Tutti
+</button>
 
-    <button onclick="filtra('Didattica', this)">
-        Didattica
-    </button>
+<button class="filtro" onclick="filtra('Didattica', this)">
+    Didattica
+</button>
 
-    <button onclick="filtra('Esami', this)">
-        Esami
-    </button>
+<button class="filtro" onclick="filtra('Esami', this)">
+    Esami
+</button>
 
-    <button onclick="filtra('Erasmus', this)">
-        Erasmus
-    </button>
+<button class="filtro" onclick="filtra('Erasmus', this)">
+    Erasmus
+</button>
 
-    <button onclick="filtra('Vita universitaria', this)">
-        Vita universitaria
-    </button>
+<button class="filtro" onclick="filtra('Vita universitaria', this)">
+    Vita universitaria
+</button>
 
-    <button onclick="filtra('Scadenze', this)">
-        Scadenze
-    </button>
+<button class="filtro" onclick="filtra('Scadenze', this)">
+    Scadenze
+</button>
+```
 
 </div>
 
 <div id="lista-avvisi">
 
-    <div class="nessun-avviso">
-        Caricamento avvisi...
-    </div>
-
+```
+<div class="nessun-avviso">
+    Caricamento avvisi…
 </div>
 ```
 
-</main>
+</div>
 
-<div id="modal"
-     class="modal"
-     onclick="chiudiSeFuori(event)">
+<!-- MODALE -->
+
+<div id="modal" class="modal" onclick="chiudiModal(event)">
 
 ```
 <div class="modal-contenuto">
 
-    <button class="chiudi"
-            onclick="chiudiModal()">
-        ×
-    </button>
+    <span class="chiudi" onclick="chiudiModal()">
+        &times;
+    </span>
 
     <div id="modal-importante"></div>
 
     <h2 id="modal-titolo"></h2>
 
-    <div id="modal-meta"
-         class="modal-meta">
-    </div>
+    <div id="modal-meta"></div>
 
-    <div id="modal-testo"
-         class="modal-testo">
-    </div>
+    <div id="modal-testo"></div>
 
 </div>
 ```
@@ -343,274 +356,260 @@
 <footer>
 
 ```
-Azione Universitaria PoliBa
+<p>
+    © Azione Universitaria PoliBa
+</p>
 ```
 
 </footer>
 
 <script>
 
-const URL_AVVISI =
-    "https://script.google.com/macros/s/AKfycbzX0r_ySf8e6VYFN_zZYSkLx8w6oHTAo1HuNFIacBkjtr3wTlMZM2BmKDF99luxJAfGkw/exec";
+    const URL_AVVISI =
+        "https://script.google.com/macros/s/AKfycbzX0r_ySf8e6VYFN_zZYSkLx8w6oHTAo1HuNFIacBkjtr3wTlMZM2BmKDF99luxJAfGkw/exec";
 
-let tuttiGliAvvisi = [];
+    let tuttiGliAvvisi = [];
+    let categoriaAttiva = "Tutti";
 
-let categoriaAttuale = "Tutti";
 
+    /* FORMATTA LA DATA */
 
-function formattaData(data) {
+    function formattaData(data) {
 
-    if (!data) {
-        return "";
+        if (!data) {
+            return "";
+        }
+
+        const d = new Date(data);
+
+        if (isNaN(d.getTime())) {
+            return data;
+        }
+
+        const giorno = String(d.getDate()).padStart(2, "0");
+        const mese = String(d.getMonth() + 1).padStart(2, "0");
+        const anno = d.getFullYear();
+
+        return giorno + "/" + mese + "/" + anno;
     }
 
-    const valore = String(data);
 
-    const match =
-        valore.match(/^(\d{4})-(\d{2})-(\d{2})/);
+    /* CARICAMENTO AVVISI */
 
-    if (match) {
+    function caricaAvvisi() {
 
-        return match[3] + "/" +
-               match[2] + "/" +
-               match[1];
+        const script = document.createElement("script");
 
+        script.src =
+            URL_AVVISI +
+            "?callback=riceviAvvisi&t=" +
+            new Date().getTime();
+
+        document.body.appendChild(script);
     }
 
-    return valore;
 
-}
+    /* RICEZIONE DATI */
 
+    function riceviAvvisi(dati) {
 
-function dataPerOrdinamento(data) {
+        if (!Array.isArray(dati)) {
 
-    if (!data) {
-        return 0;
+            document.getElementById("lista-avvisi").innerHTML =
+                '<div class="nessun-avviso">' +
+                'Nessun avviso disponibile.' +
+                '</div>';
+
+            return;
+        }
+
+        tuttiGliAvvisi = dati;
+
+        mostraAvvisi();
     }
 
-    const valore = String(data);
 
-    const match =
-        valore.match(/^(\d{4})-(\d{2})-(\d{2})/);
+    /* MOSTRA AVVISI */
 
-    if (match) {
+    function mostraAvvisi() {
 
-        return new Date(
-            Number(match[1]),
-            Number(match[2]) - 1,
-            Number(match[3])
-        ).getTime();
+        const contenitore =
+            document.getElementById("lista-avvisi");
 
-    }
+        let avvisi = tuttiGliAvvisi.filter(function(avviso) {
 
-    const parsed = Date.parse(valore);
-
-    return isNaN(parsed) ? 0 : parsed;
-
-}
-
-
-function escapeHTML(testo) {
-
-    const div =
-        document.createElement("div");
-
-    div.textContent =
-        testo == null ? "" : String(testo);
-
-    return div.innerHTML;
-
-}
-
-
-function mostraAvvisi() {
-
-    const contenitore =
-        document.getElementById("lista-avvisi");
-
-    let avvisi =
-        tuttiGliAvvisi.filter(function(avviso) {
-
-            if (categoriaAttuale === "Tutti") {
+            if (categoriaAttiva === "Tutti") {
                 return true;
             }
 
-            return avviso.categoria ===
-                   categoriaAttuale;
+            return avviso.categoria === categoriaAttiva;
 
         });
 
 
-    avvisi.sort(function(a, b) {
+        if (avvisi.length === 0) {
 
-        return dataPerOrdinamento(b.data) -
-               dataPerOrdinamento(a.data);
+            contenitore.innerHTML =
+                '<div class="nessun-avviso">' +
+                'Nessun avviso disponibile in questa categoria.' +
+                '</div>';
 
-    });
+            return;
+        }
 
 
-    if (avvisi.length === 0) {
+        contenitore.innerHTML = "";
 
-        contenitore.innerHTML =
-            '<div class="nessun-avviso">' +
-            'Nessun avviso disponibile.' +
-            '</div>';
 
-        return;
+        avvisi.forEach(function(avviso, indice) {
+
+            const elemento = document.createElement("div");
+
+            elemento.className = "avviso";
+
+            if (avviso.importante) {
+                elemento.classList.add("importante");
+            }
+
+
+            let importanteHTML = "";
+
+            if (avviso.importante) {
+
+                importanteHTML =
+                    '<div class="badge-importante">' +
+                    '⚠ IMPORTANTE' +
+                    '</div>';
+
+            }
+
+
+            elemento.innerHTML =
+
+                importanteHTML +
+
+                "<h3>" +
+                escapeHTML(avviso.titolo) +
+                "</h3>" +
+
+                '<div class="meta">' +
+                escapeHTML(avviso.categoria) +
+                " • " +
+                formattaData(avviso.data) +
+                "</div>" +
+
+                '<div class="testo">' +
+                escapeHTML(avviso.testo) +
+                "</div>";
+
+
+            elemento.addEventListener("click", function() {
+
+                apriModal(avviso);
+
+            });
+
+
+            contenitore.appendChild(elemento);
+
+        });
 
     }
 
 
-    contenitore.innerHTML = "";
+    /* FILTRI */
+
+    function filtra(categoria, pulsante) {
+
+        categoriaAttiva = categoria;
 
 
-    avvisi.forEach(function(avviso) {
-
-        const elemento =
-            document.createElement("div");
-
-        elemento.className = "avviso";
-
-
-        let importanteHTML = "";
-
-
-        if (avviso.importante) {
-
-            importanteHTML =
-                '<div class="importante">' +
-                '⚠ IMPORTANTE' +
-                '</div>';
-
-        }
-
-
-        elemento.innerHTML =
-            importanteHTML +
-            "<h3>" +
-            escapeHTML(avviso.titolo) +
-            "</h3>" +
-
-            '<div class="meta">' +
-            escapeHTML(avviso.categoria || "") +
-            " • " +
-            escapeHTML(formattaData(avviso.data)) +
-            "</div>" +
-
-            '<div class="anteprima">' +
-            escapeHTML(avviso.testo || "") +
-            "</div>";
-
-
-        elemento.addEventListener(
-            "click",
-            function() {
-                apriModal(avviso);
-            }
-        );
-
-
-        contenitore.appendChild(elemento);
-
-    });
-
-}
-
-
-function filtra(categoria, pulsante) {
-
-    categoriaAttuale = categoria;
-
-
-    document
-        .querySelectorAll(".filtri button")
-        .forEach(function(button) {
+        document.querySelectorAll(".filtro").forEach(function(button) {
 
             button.classList.remove("attivo");
 
         });
 
 
-    pulsante.classList.add("attivo");
+        pulsante.classList.add("attivo");
 
 
-    mostraAvvisi();
-
-}
-
-
-function apriModal(avviso) {
-
-    const modal =
-        document.getElementById("modal");
-
-
-    document.getElementById(
-        "modal-titolo"
-    ).textContent =
-        avviso.titolo || "";
-
-
-    document.getElementById(
-        "modal-meta"
-    ).textContent =
-        (avviso.categoria || "") +
-        " • " +
-        formattaData(avviso.data);
-
-
-    document.getElementById(
-        "modal-testo"
-    ).textContent =
-        avviso.testo || "";
-
-
-    if (avviso.importante) {
-
-        document.getElementById(
-            "modal-importante"
-        ).innerHTML =
-            '<div class="importante">' +
-            '⚠ IMPORTANTE' +
-            '</div>';
-
-    } else {
-
-        document.getElementById(
-            "modal-importante"
-        ).innerHTML = "";
+        mostraAvvisi();
 
     }
 
 
-    modal.classList.add("aperta");
+    /* APRI MODALE */
 
-}
+    function apriModal(avviso) {
 
+        const modal =
+            document.getElementById("modal");
 
-function chiudiModal() {
-
-    document
-        .getElementById("modal")
-        .classList.remove("aperta");
-
-}
+        const importante =
+            document.getElementById("modal-importante");
 
 
-function chiudiSeFuori(event) {
+        if (avviso.importante) {
 
-    if (event.target.id === "modal") {
+            importante.innerHTML =
+                '<div class="badge-importante">' +
+                '⚠ IMPORTANTE' +
+                '</div>';
 
-        chiudiModal();
+        } else {
+
+            importante.innerHTML = "";
+
+        }
+
+
+        document.getElementById("modal-titolo").textContent =
+            avviso.titolo;
+
+
+        document.getElementById("modal-meta").textContent =
+            avviso.categoria +
+            " • " +
+            formattaData(avviso.data);
+
+
+        document.getElementById("modal-testo").textContent =
+            avviso.testo;
+
+
+        modal.style.display = "block";
+
+        document.body.style.overflow = "hidden";
 
     }
 
-}
+
+    /* CHIUDI MODALE */
+
+    function chiudiModal(event) {
+
+        const modal =
+            document.getElementById("modal");
 
 
-document.addEventListener(
-    "keydown",
-    function(event) {
+        if (
+            !event ||
+            event.target === modal
+        ) {
+
+            modal.style.display = "none";
+
+            document.body.style.overflow = "";
+
+        }
+
+    }
+
+
+    /* ESCAPE */
+
+    document.addEventListener("keydown", function(event) {
 
         if (event.key === "Escape") {
 
@@ -618,54 +617,32 @@ document.addEventListener(
 
         }
 
-    }
-);
+    });
 
 
-function caricaAvvisi() {
+    /* SICUREZZA TESTO */
 
-    const script =
-        document.createElement("script");
+    function escapeHTML(testo) {
 
+        if (testo === null || testo === undefined) {
+            return "";
+        }
 
-    script.src =
-        URL_AVVISI +
-        "?callback=riceviAvvisi&t=" +
-        new Date().getTime();
-
-
-    document.body.appendChild(script);
-
-}
-
-
-function riceviAvvisi(dati) {
-
-    if (!Array.isArray(dati)) {
-
-        document.getElementById(
-            "lista-avvisi"
-        ).innerHTML =
-            '<div class="nessun-avviso">' +
-            'Nessun avviso disponibile.' +
-            '</div>';
-
-        return;
+        return String(testo)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
 
     }
 
 
-    tuttiGliAvvisi = dati;
+    /* AVVIO */
 
-    mostraAvvisi();
-
-}
-
-
-caricaAvvisi();
+    caricaAvvisi();
 
 </script>
 
 </body>
-
 </html>
