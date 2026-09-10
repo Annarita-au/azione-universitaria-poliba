@@ -19,172 +19,210 @@
     body {
         font-family: Arial, Helvetica, sans-serif;
         background: #f4f7fb;
-        color: #1d2939;
+        color: #1d2a3a;
         line-height: 1.6;
     }
 
     header {
-        background: linear-gradient(135deg, #003b7a, #0066cc);
-        color: white;
-        padding: 22px 20px;
-    }
-
-    .header-content {
-        max-width: 1100px;
-        margin: auto;
+        background: #ffffff;
+        padding: 18px 7%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 20px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        position: sticky;
+        top: 0;
+        z-index: 100;
     }
 
     .logo {
-        font-size: 22px;
-        font-weight: bold;
+        font-size: 21px;
+        font-weight: 800;
+        color: #1557b0;
+        text-decoration: none;
+    }
+
+    nav {
+        display: flex;
+        gap: 25px;
+        flex-wrap: wrap;
     }
 
     nav a {
-        color: white;
         text-decoration: none;
-        margin-left: 20px;
-        font-weight: bold;
+        color: #26384d;
+        font-weight: 600;
+        transition: 0.2s;
     }
 
     nav a:hover {
-        text-decoration: underline;
+        color: #1557b0;
     }
 
     .hero {
-        background: linear-gradient(135deg, #0052a3, #0084ff);
+        background: linear-gradient(135deg, #1557b0, #2879d8);
         color: white;
-        padding: 60px 20px;
-    }
-
-    .hero-content {
-        max-width: 1100px;
-        margin: auto;
+        padding: 70px 7%;
+        text-align: center;
     }
 
     .hero h1 {
         font-size: 42px;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
     }
 
     .hero p {
-        font-size: 19px;
-        max-width: 750px;
+        max-width: 780px;
+        margin: auto;
+        font-size: 18px;
+        opacity: 0.95;
     }
 
     .container {
-        max-width: 1100px;
-        margin: 45px auto;
-        padding: 0 20px;
+        width: 86%;
+        max-width: 1150px;
+        margin: 45px auto 70px;
+    }
+
+    .intro {
+        text-align: center;
+        margin-bottom: 35px;
+    }
+
+    .intro h2 {
+        color: #183b68;
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+
+    .intro p {
+        color: #65758a;
     }
 
     .courses {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         gap: 22px;
     }
 
     .course-card {
         background: white;
         padding: 28px;
-        border-radius: 16px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        border-radius: 18px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+        transition: transform 0.2s, box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
     }
 
     .course-card:hover {
         transform: translateY(-4px);
-        box-shadow: 0 8px 22px rgba(0,0,0,0.11);
+        box-shadow: 0 10px 28px rgba(0,0,0,0.10);
     }
 
     .course-card h2 {
-        color: #003b7a;
+        color: #183b68;
+        font-size: 21px;
         margin-bottom: 10px;
-        font-size: 22px;
     }
 
     .course-card p {
-        color: #667085;
-        margin-bottom: 20px;
+        color: #65758a;
+        margin-bottom: 22px;
+        flex-grow: 1;
     }
 
     .course-card a {
         display: inline-block;
-        background: #0052a3;
+        background: #1557b0;
         color: white;
         text-decoration: none;
         padding: 11px 18px;
         border-radius: 9px;
         font-weight: bold;
+        text-align: center;
+        transition: 0.2s;
     }
 
     .course-card a:hover {
-        background: #003b7a;
+        background: #124a96;
     }
 
     .back {
         text-align: center;
-        margin: 45px 0;
+        margin-top: 45px;
     }
 
     .back a {
         display: inline-block;
-        background: #0052a3;
-        color: white;
+        background: #ffffff;
+        color: #1557b0;
         text-decoration: none;
-        padding: 14px 24px;
+        padding: 12px 22px;
         border-radius: 10px;
         font-weight: bold;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        transition: 0.2s;
     }
 
     .back a:hover {
-        background: #003b7a;
+        transform: translateY(-2px);
     }
 
     footer {
-        background: #003b7a;
+        background: #102a49;
         color: white;
         text-align: center;
-        padding: 25px 20px;
-        margin-top: 50px;
+        padding: 35px 7%;
+        margin-top: 70px;
     }
 
-    @media (max-width: 750px) {
+    footer p {
+        opacity: 0.85;
+        font-size: 14px;
+        margin: 4px 0;
+    }
 
-        .header-content {
+    @media (max-width: 850px) {
+
+        header {
             flex-direction: column;
-            text-align: center;
+            gap: 12px;
         }
 
-        nav a {
-            margin: 0 8px;
+        nav {
+            justify-content: center;
+            gap: 15px;
         }
 
         .hero h1 {
-            font-size: 32px;
+            font-size: 34px;
         }
 
-        .courses {
-            grid-template-columns: 1fr;
-        }
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 600px) {
 
         .hero {
-            padding: 45px 20px;
+            padding: 55px 6%;
         }
 
         .hero h1 {
-            font-size: 28px;
+            font-size: 30px;
+        }
+
+        .hero p {
+            font-size: 16px;
+        }
+
+        .container {
+            width: 90%;
         }
 
         .course-card {
-            padding: 22px;
+            padding: 23px;
         }
+
     }
 
 </style>
@@ -197,18 +235,18 @@
 <header>
 
 ```
-<div class="header-content">
+<a href="index.html" class="logo">
+    Azione Universitaria PoliBa
+</a>
 
-    <div class="logo">
-        Azione Universitaria PoliBa
-    </div>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="calendari.html">Calendari</a>
-    </nav>
-
-</div>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="calendari.html">Calendari</a>
+    <a href="matricole.html">Matricole</a>
+    <a href="avvisi.html">Avvisi</a>
+    <a href="rappresentanza.html">Rappresentanza</a>
+    <a href="segnalazioni.html">Segnalazioni</a>
+</nav>
 ```
 
 </header>
@@ -216,17 +254,13 @@
 <section class="hero">
 
 ```
-<div class="hero-content">
+<h1>📅 Calendari dei corsi</h1>
 
-    <h1>📅 Calendari dei corsi</h1>
-
-    <p>
-        Consulta la pagina dedicata al tuo corso di laurea
-        per trovare orari, calendario accademico, informazioni
-        sul percorso di studi e comunicazioni utili.
-    </p>
-
-</div>
+<p>
+    Scegli il tuo corso di laurea per consultare
+    il calendario delle lezioni e le informazioni
+    utili alla tua organizzazione universitaria.
+</p>
 ```
 
 </section>
@@ -234,6 +268,17 @@
 <main class="container">
 
 ```
+<div class="intro">
+
+    <h2>Scegli il tuo corso</h2>
+
+    <p>
+        Accedi alla pagina dedicata al tuo percorso di studi.
+    </p>
+
+</div>
+
+
 <div class="courses">
 
 
@@ -242,7 +287,7 @@
         <h2>💻 Ingegneria Informatica</h2>
 
         <p>
-            Ingegneria Informatica e dell'Automazione
+            Ingegneria Informatica e dell'Automazione.
         </p>
 
         <a href="informatica.html">
@@ -257,8 +302,8 @@
         <h2>⚙️ Ingegneria Gestionale</h2>
 
         <p>
-            Organizzazione, innovazione, economia e gestione
-            dei sistemi industriali.
+            Organizzazione, innovazione, economia
+            e gestione dei sistemi industriali.
         </p>
 
         <a href="gestionale.html">
@@ -274,7 +319,7 @@
 
         <p>
             Tecnologie, ingegneria e applicazioni
-            al settore biomedicale.
+            nel settore biomedicale.
         </p>
 
         <a href="medicali.html">
@@ -289,8 +334,8 @@
         <h2>🌍 Management Engineering for Innovation</h2>
 
         <p>
-            Corso internazionale in lingua inglese con
-            mobilità obbligatoria e percorsi all'estero.
+            Corso internazionale in lingua inglese
+            con percorso di mobilità all'estero.
         </p>
 
         <a href="management.html">
@@ -305,8 +350,8 @@
         <h2>⚙️ Ingegneria Meccanica</h2>
 
         <p>
-            Progettazione, produzione, energia, materiali
-            e sistemi meccanici.
+            Progettazione, produzione, energia,
+            materiali e sistemi meccanici.
         </p>
 
         <a href="meccanica.html">
@@ -337,8 +382,8 @@
         <h2>🏠 Ingegneria Edile</h2>
 
         <p>
-            Progettazione edilizia, materiali, costruzioni,
-            recupero e sostenibilità.
+            Progettazione edilizia, materiali,
+            costruzioni, recupero e sostenibilità.
         </p>
 
         <a href="edile.html">
@@ -386,7 +431,7 @@
 </p>
 
 <p>
-    Informazione e rappresentanza per gli studenti.
+    Informazione, rappresentanza e servizi per gli studenti.
 </p>
 ```
 
@@ -394,4 +439,3 @@
 
 </body>
 </html>
-
