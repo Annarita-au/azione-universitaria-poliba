@@ -18,252 +18,207 @@
     body {
         font-family: Arial, sans-serif;
         background: #f4f7fb;
-        color: #1d1d1d;
-        line-height: 1.6;
+        color: #172033;
+    }
+
+    header {
+        background: #0057b8;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+
+    header p {
+        font-size: 15px;
     }
 
     nav {
-        background: #003b73;
-        padding: 16px 25px;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 22px;
+        background: white;
+        padding: 12px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
     nav a {
-        color: white;
         text-decoration: none;
+        color: #0057b8;
         font-weight: bold;
+        margin: 0 10px;
     }
 
-    nav a:hover {
-        text-decoration: underline;
-    }
-
-    .hero {
-        background: white;
+    main {
+        max-width: 1000px;
         margin: 35px auto;
-        max-width: 1000px;
-        padding: 40px 25px;
-        text-align: center;
-        border-left: 6px solid #0066b3;
-        border-radius: 12px;
-        box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    }
-
-    .hero h1 {
-        color: #003b73;
-        margin-bottom: 10px;
-        font-size: 34px;
-    }
-
-    .hero p {
-        color: #555;
-    }
-
-    .filters {
-        max-width: 1000px;
-        margin: 0 auto 25px;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
         padding: 0 20px;
     }
 
-    .filter-btn {
+    .intro {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .intro h2 {
+        color: #0057b8;
+        margin-bottom: 8px;
+    }
+
+    .filtri {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+
+    .filtri button {
         border: none;
-        background: #0066b3;
-        color: white;
-        padding: 10px 18px;
+        background: white;
+        color: #0057b8;
+        border: 1px solid #0057b8;
+        padding: 9px 15px;
         border-radius: 20px;
         cursor: pointer;
         font-weight: bold;
     }
 
-    .filter-btn:hover,
-    .filter-btn.active {
-        background: #003b73;
+    .filtri button:hover,
+    .filtri button.attivo {
+        background: #0057b8;
+        color: white;
     }
 
-    #avvisi-container {
-        max-width: 1000px;
-        margin: auto;
-        padding: 0 20px 40px;
+    #lista-avvisi {
+        display: grid;
+        gap: 16px;
     }
 
     .avviso {
         background: white;
-        margin-bottom: 18px;
-        padding: 22px;
         border-radius: 12px;
-        border-left: 5px solid #0066b3;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+        padding: 20px;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.08);
         cursor: pointer;
-        transition: transform 0.2s, box-shadow 0.2s;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
     .avviso:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
     }
 
-    .avviso.importante {
-        border-left-color: #d62828;
+    .avviso h3 {
+        color: #0057b8;
+        margin-bottom: 8px;
     }
 
-    .avviso h2 {
-        color: #003b73;
-        margin-bottom: 6px;
-    }
-
-    .avviso .meta {
-        color: #777;
-        font-size: 14px;
+    .meta {
+        font-size: 13px;
+        color: #687386;
         margin-bottom: 10px;
     }
 
-    .importante-label {
+    .anteprima {
+        color: #394457;
+        line-height: 1.5;
+    }
+
+    .importante {
         display: inline-block;
         color: #d62828;
         font-weight: bold;
-        font-size: 13px;
+        font-size: 12px;
         margin-bottom: 8px;
     }
 
-    .anteprima {
-        color: #555;
-    }
-
-    .clicca {
-        margin-top: 12px;
-        color: #0066b3;
-        font-weight: bold;
-        font-size: 14px;
-    }
-
-    .empty {
+    .nessun-avviso {
+        text-align: center;
         background: white;
         padding: 30px;
-        text-align: center;
         border-radius: 12px;
-        color: #666;
+        color: #687386;
     }
-
-    .report-box {
-        max-width: 1000px;
-        margin: 10px auto 40px;
-        padding: 25px;
-        background: #003b73;
-        color: white;
-        border-radius: 12px;
-        text-align: center;
-    }
-
-    .report-box h2 {
-        margin-bottom: 8px;
-    }
-
-    .report-box a {
-        display: inline-block;
-        margin-top: 15px;
-        background: white;
-        color: #003b73;
-        padding: 11px 20px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    footer {
-        background: #003b73;
-        color: white;
-        text-align: center;
-        padding: 25px;
-        margin-top: 20px;
-    }
-
-    /* FINESTRA DETTAGLIO */
 
     .modal {
         display: none;
         position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
+        inset: 0;
         background: rgba(0,0,0,0.55);
+        justify-content: center;
+        align-items: center;
         padding: 20px;
-        overflow-y: auto;
+        z-index: 1000;
     }
 
-    .modal-content {
+    .modal.aperta {
+        display: flex;
+    }
+
+    .modal-contenuto {
         background: white;
-        max-width: 750px;
-        margin: 60px auto;
-        padding: 30px;
-        border-radius: 15px;
+        max-width: 700px;
+        width: 100%;
+        max-height: 85vh;
+        overflow-y: auto;
+        border-radius: 14px;
+        padding: 28px;
         position: relative;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.25);
     }
 
-    .close {
+    .chiudi {
         position: absolute;
-        top: 12px;
         right: 18px;
-        font-size: 30px;
-        font-weight: bold;
-        color: #777;
+        top: 14px;
+        border: none;
+        background: none;
+        font-size: 28px;
         cursor: pointer;
+        color: #555;
     }
 
-    .close:hover {
-        color: #003b73;
-    }
-
-    .modal-content h2 {
-        color: #003b73;
-        margin-bottom: 15px;
+    .modal-contenuto h2 {
+        color: #0057b8;
+        margin-bottom: 10px;
         padding-right: 30px;
     }
 
     .modal-meta {
-        color: #777;
+        color: #687386;
         font-size: 14px;
-        margin-bottom: 20px;
+        margin-bottom: 18px;
     }
 
-    .modal-text {
+    .modal-testo {
+        line-height: 1.65;
         white-space: pre-wrap;
-        color: #333;
-        font-size: 16px;
+        color: #273247;
     }
 
-    .modal-important {
-        color: #d62828;
-        font-weight: bold;
-        margin-bottom: 10px;
+    footer {
+        margin-top: 50px;
+        background: #172033;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 14px;
     }
 
     @media (max-width: 600px) {
-        nav {
-            gap: 12px;
-            padding: 14px;
-        }
-
         nav a {
-            font-size: 14px;
+            display: inline-block;
+            margin: 5px 7px;
         }
 
-        .hero h1 {
-            font-size: 28px;
+        header h1 {
+            font-size: 24px;
         }
 
-        .modal-content {
-            margin: 30px auto;
-            padding: 24px 20px;
+        main {
+            margin-top: 25px;
         }
     }
 </style>
@@ -272,6 +227,11 @@
 </head>
 
 <body>
+
+<header>
+    <h1>📢 Avvisi</h1>
+    <p>Le comunicazioni utili per gli studenti del PoliBa</p>
+</header>
 
 <nav>
     <a href="index.html">Home</a>
@@ -282,185 +242,214 @@
     <a href="segnalazioni.html">Segnalazioni</a>
 </nav>
 
-<section class="hero">
-    <h1>📰 Bacheca Avvisi</h1>
-    <p>
-        Tutte le comunicazioni utili per gli studenti di Azione Universitaria PoliBa.
-    </p>
-</section>
+<main>
 
-<div class="filters">
-    <button class="filter-btn active" onclick="filtra('Tutti', this)">Tutti</button>
-    <button class="filter-btn" onclick="filtra('Didattica', this)">Didattica</button>
-    <button class="filter-btn" onclick="filtra('Esami', this)">Esami</button>
-    <button class="filter-btn" onclick="filtra('Erasmus', this)">Erasmus</button>
-    <button class="filter-btn" onclick="filtra('Vita universitaria', this)">Vita universitaria</button>
-    <button class="filter-btn" onclick="filtra('Scadenze', this)">Scadenze</button>
+```
+<div class="intro">
+    <h2>Bacheca degli avvisi</h2>
+    <p>Consulta le comunicazioni più recenti.</p>
 </div>
 
-<div id="avvisi-container">
-    <div class="empty">Caricamento avvisi...</div>
+<div class="filtri">
+    <button class="attivo" onclick="filtra('Tutti', this)">Tutti</button>
+    <button onclick="filtra('Didattica', this)">Didattica</button>
+    <button onclick="filtra('Esami', this)">Esami</button>
+    <button onclick="filtra('Erasmus', this)">Erasmus</button>
+    <button onclick="filtra('Vita universitaria', this)">Vita universitaria</button>
+    <button onclick="filtra('Scadenze', this)">Scadenze</button>
 </div>
 
-<section class="report-box">
-    <h2>Hai riscontrato un problema?</h2>
-    <p>Segnalacelo e aiutaci a intervenire.</p>
-    <a href="segnalazioni.html">Invia una segnalazione</a>
-</section>
+<div id="lista-avvisi">
+    <div class="nessun-avviso">Caricamento avvisi...</div>
+</div>
+```
 
-<footer>
-    <p>Azione Universitaria PoliBa</p>
-    <p>Informazione, rappresentanza e supporto agli studenti.</p>
-</footer>
+</main>
 
 <div id="modal" class="modal" onclick="chiudiSeFuori(event)">
-    <div class="modal-content">
-        <span class="close" onclick="chiudiModal()">&times;</span>
+    <div class="modal-contenuto">
 
 ```
-    <div id="modal-important" class="modal-important"></div>
-    <h2 id="modal-title"></h2>
-    <div id="modal-meta" class="modal-meta"></div>
-    <div id="modal-text" class="modal-text"></div>
+    <button class="chiudi" onclick="chiudiModal()">×</button>
+
+    <div id="modal-importante"></div>
+
+    <h2 id="modal-titolo"></h2>
+
+    <div class="modal-meta" id="modal-meta"></div>
+
+    <div class="modal-testo" id="modal-testo"></div>
+
 </div>
 ```
 
 </div>
+
+<footer>
+    Azione Universitaria PoliBa
+</footer>
 
 <script>
 
-const API_URL = "https://script.google.com/macros/s/AKfycbzX0r_ySf8e6VYFN_zZYSkLx8w6oHTAo1HuNFIacBkjtr3wTlMZM2BmKDF99luxJAfGkw/exec";
+const URL_AVVISI = "https://script.google.com/macros/s/AKfycbzX0r_ySf8e6VYFN_zZYSkLx8w6oHTAo1HuNFIacBkjtr3wTlMZM2BmKDF99luxJAfGkw/exec";
 
 let tuttiGliAvvisi = [];
+let categoriaAttuale = "Tutti";
 
-function caricaAvvisi() {
+function formattaData(data) {
 
-    const script = document.createElement("script");
+    if (!data) {
+        return "";
+    }
 
-    window.riceviAvvisi = function(data) {
+    const valore = String(data);
 
-        tuttiGliAvvisi = data || [];
+    const match = valore.match(/^(\d{4})-(\d{2})-(\d{2})/);
 
-        mostraAvvisi(tuttiGliAvvisi);
+    if (match) {
+        return match[3] + "/" + match[2] + "/" + match[1];
+    }
 
-        script.remove();
-    };
-
-    script.src = API_URL + "?callback=riceviAvvisi&_=" + Date.now();
-
-    document.body.appendChild(script);
+    return valore;
 }
 
-function mostraAvvisi(avvisi) {
+function dataPerOrdinamento(data) {
 
-    const container = document.getElementById("avvisi-container");
+    if (!data) {
+        return 0;
+    }
 
-    container.innerHTML = "";
+    const valore = String(data);
 
-    if (!avvisi.length) {
-        container.innerHTML = `
-            <div class="empty">
-                Nessun avviso disponibile.
-            </div>
-        `;
+    const match = valore.match(/^(\d{4})-(\d{2})-(\d{2})/);
+
+    if (match) {
+        return new Date(
+            Number(match[1]),
+            Number(match[2]) - 1,
+            Number(match[3])
+        ).getTime();
+    }
+
+    const parsed = Date.parse(valore);
+
+    return isNaN(parsed) ? 0 : parsed;
+}
+
+function mostraAvvisi() {
+
+    const contenitore = document.getElementById("lista-avvisi");
+
+    let avvisi = tuttiGliAvvisi.filter(function(avviso) {
+
+        if (categoriaAttuale === "Tutti") {
+            return true;
+        }
+
+        return avviso.categoria === categoriaAttuale;
+    });
+
+    avvisi.sort(function(a, b) {
+
+        return dataPerOrdinamento(b.data) - dataPerOrdinamento(a.data);
+
+    });
+
+    if (avvisi.length === 0) {
+
+        contenitore.innerHTML =
+            '<div class="nessun-avviso">Nessun avviso disponibile.</div>';
+
         return;
     }
+
+    contenitore.innerHTML = "";
 
     avvisi.forEach(function(avviso) {
 
-        const card = document.createElement("div");
+        const elemento = document.createElement("div");
 
-        card.className = "avviso" + (avviso.importante ? " importante" : "");
+        elemento.className = "avviso";
 
-        card.onclick = function() {
+        let importanteHTML = "";
+
+        if (avviso.importante) {
+            importanteHTML = '<div class="importante">⚠ IMPORTANTE</div>';
+        }
+
+        elemento.innerHTML =
+            importanteHTML +
+            "<h3>" + escapeHTML(avviso.titolo) + "</h3>" +
+            '<div class="meta">' +
+            escapeHTML(avviso.categoria || "") +
+            " • " +
+            escapeHTML(formattaData(avviso.data)) +
+            "</div>" +
+            '<div class="anteprima">' +
+            escapeHTML(avviso.testo || "") +
+            "</div>";
+
+        elemento.addEventListener("click", function() {
             apriModal(avviso);
-        };
+        });
 
-        card.innerHTML = `
-
-            ${avviso.importante
-                ? '<div class="importante-label">🚨 IMPORTANTE</div>'
-                : ''
-            }
-
-            <h2>${escapeHTML(avviso.titolo)}</h2>
-
-            <div class="meta">
-                ${escapeHTML(avviso.categoria || "")}
-                ${avviso.data ? " • " + escapeHTML(formattaData(avviso.data)) : ""}
-            </div>
-
-            <div class="anteprima">
-                ${escapeHTML(creaAnteprima(avviso.testo))}
-            </div>
-
-            <div class="clicca">
-                Leggi l'avviso completo →
-            </div>
-        `;
-
-        container.appendChild(card);
+        contenitore.appendChild(elemento);
     });
 }
 
-function creaAnteprima(testo) {
+function escapeHTML(testo) {
 
-    if (!testo) return "";
+    const div = document.createElement("div");
 
-    if (testo.length <= 120) {
-        return testo;
-    }
+    div.textContent = testo == null ? "" : String(testo);
 
-    return testo.substring(0, 120) + "...";
+    return div.innerHTML;
 }
 
-function filtra(categoria, bottone) {
+function filtra(categoria, pulsante) {
 
-    document.querySelectorAll(".filter-btn").forEach(function(btn) {
-        btn.classList.remove("active");
+    categoriaAttuale = categoria;
+
+    document.querySelectorAll(".filtri button").forEach(function(button) {
+        button.classList.remove("attivo");
     });
 
-    bottone.classList.add("active");
+    pulsante.classList.add("attivo");
 
-    if (categoria === "Tutti") {
-        mostraAvvisi(tuttiGliAvvisi);
-        return;
-    }
-
-    const filtrati = tuttiGliAvvisi.filter(function(avviso) {
-        return avviso.categoria === categoria;
-    });
-
-    mostraAvvisi(filtrati);
+    mostraAvvisi();
 }
 
 function apriModal(avviso) {
 
-    document.getElementById("modal-title").textContent =
+    const modal = document.getElementById("modal");
+
+    document.getElementById("modal-titolo").textContent =
         avviso.titolo || "";
 
     document.getElementById("modal-meta").textContent =
-        (avviso.categoria ? "Categoria: " + avviso.categoria : "") +
-        (avviso.data ? " • Data: " + formattaData(avviso.data) : "");
+        (avviso.categoria || "") +
+        " • " +
+        formattaData(avviso.data);
 
-    document.getElementById("modal-text").textContent =
+    document.getElementById("modal-testo").textContent =
         avviso.testo || "";
 
-    document.getElementById("modal-important").textContent =
-        avviso.importante
-        ? "🚨 IMPORTANTE"
-        : "";
+    if (avviso.importante) {
 
-    document.getElementById("modal").style.display = "block";
+        document.getElementById("modal-importante").innerHTML =
+            '<div class="importante">⚠ IMPORTANTE</div>';
 
-    document.body.style.overflow = "hidden";
+    } else {
+
+        document.getElementById("modal-importante").innerHTML = "";
+    }
+
+    modal.classList.add("aperta");
 }
 
 function chiudiModal() {
 
-    document.getElementById("modal").style.display = "none";
-
-    document.body.style.overflow = "";
+    document.getElementById("modal").classList.remove("aperta");
 }
 
 function chiudiSeFuori(event) {
@@ -478,33 +467,30 @@ document.addEventListener("keydown", function(event) {
 
 });
 
-function formattaData(data) {
+function caricaAvvisi() {
 
-    if (!data) return "";
+    const script = document.createElement("script");
 
-    const valore = String(data);
+    script.src = URL_AVVISI +
+        "?callback=riceviAvvisi&t=" +
+        new Date().getTime();
 
-    const match = valore.match(/^(\d{4})-(\d{2})-(\d{2})/);
-
-    if (match) {
-        return match[3] + "/" + match[2] + "/" + match[1];
-    }
-
-    return valore;
+    document.body.appendChild(script);
 }
 
-function escapeHTML(testo) {
+function riceviAvvisi(dati) {
 
-    if (testo === null || testo === undefined) {
-        return "";
+    if (!Array.isArray(dati)) {
+
+        document.getElementById("lista-avvisi").innerHTML =
+            '<div class="nessun-avviso">Nessun avviso disponibile.</div>';
+
+        return;
     }
 
-    return String(testo)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+    tuttiGliAvvisi = dati;
+
+    mostraAvvisi();
 }
 
 caricaAvvisi();
