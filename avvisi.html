@@ -17,148 +17,163 @@
     }
 
     body {
-        font-family: Arial, sans-serif;
-        background: #f5f5f5;
-        color: #222;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f7fb;
+        color: #1d2a3a;
+        line-height: 1.6;
     }
 
     header {
-        background: #8b0000;
-        color: white;
-        padding: 20px;
-        text-align: center;
+        background: #ffffff;
+        padding: 18px 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        position: sticky;
+        top: 0;
+        z-index: 100;
     }
 
-    header h1 {
-        margin-bottom: 15px;
+    .logo {
+        font-size: 21px;
+        font-weight: 800;
+        color: #1557b0;
+        text-decoration: none;
     }
 
     nav {
         display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
+        gap: 25px;
     }
 
     nav a {
-        color: white;
         text-decoration: none;
-        padding: 8px 12px;
-        border-radius: 6px;
+        color: #26384d;
+        font-weight: 600;
         transition: 0.2s;
     }
 
     nav a:hover {
-        background: rgba(255,255,255,0.2);
+        color: #1557b0;
     }
 
     .hero {
-        background: white;
+        background: linear-gradient(135deg, #1557b0, #2879d8);
+        color: white;
+        padding: 70px 7%;
         text-align: center;
-        padding: 45px 20px 30px;
     }
 
-    .hero h2 {
-        font-size: 34px;
-        color: #8b0000;
-        margin-bottom: 10px;
+    .hero h1 {
+        font-size: 42px;
+        margin-bottom: 12px;
     }
 
     .hero p {
-        color: #666;
-        font-size: 17px;
+        max-width: 750px;
+        margin: auto;
+        font-size: 18px;
+        opacity: 0.95;
+    }
+
+    .container {
+        width: 86%;
+        max-width: 1150px;
+        margin: 45px auto 70px;
     }
 
     .filtri {
-        max-width: 1000px;
-        margin: 25px auto;
-        padding: 0 20px;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         gap: 10px;
+        margin-bottom: 35px;
     }
 
     .filtro {
         border: none;
-        background: #ddd;
-        color: #333;
+        background: white;
+        color: #26384d;
         padding: 10px 18px;
         border-radius: 20px;
         cursor: pointer;
         font-size: 14px;
+        font-weight: 600;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.06);
         transition: 0.2s;
     }
 
     .filtro:hover {
-        background: #ccc;
+        transform: translateY(-2px);
+        color: #1557b0;
     }
 
     .filtro.attivo {
-        background: #8b0000;
+        background: #1557b0;
         color: white;
     }
 
     #lista-avvisi {
-        max-width: 1000px;
-        margin: 0 auto 50px;
-        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .avviso {
         background: white;
-        border-radius: 12px;
-        padding: 22px;
-        margin-bottom: 18px;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        border-radius: 18px;
+        padding: 28px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+        border-left: 5px solid #1557b0;
         cursor: pointer;
-        transition: 0.2s;
-        border-left: 5px solid #8b0000;
+        transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .avviso:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 28px rgba(0,0,0,0.10);
     }
 
     .avviso.importante {
-        border-left: 5px solid #d4a000;
+        border-left-color: #d4a000;
     }
 
     .badge-importante {
         display: inline-block;
         background: #fff1b8;
         color: #705500;
-        padding: 5px 9px;
-        border-radius: 5px;
+        padding: 5px 10px;
+        border-radius: 6px;
         font-size: 12px;
-        font-weight: bold;
+        font-weight: 700;
         margin-bottom: 10px;
     }
 
-    .avviso h3 {
-        color: #8b0000;
-        font-size: 21px;
-        margin-bottom: 8px;
+    .avviso h2 {
+        color: #183b68;
+        font-size: 23px;
+        margin-bottom: 7px;
     }
 
     .meta {
-        color: #777;
+        color: #65758a;
         font-size: 14px;
         margin-bottom: 12px;
     }
 
     .testo {
-        color: #444;
-        line-height: 1.5;
+        color: #26384d;
+        font-size: 16px;
     }
 
     .nessun-avviso {
         background: white;
-        padding: 30px;
-        border-radius: 12px;
+        padding: 35px;
+        border-radius: 18px;
         text-align: center;
-        color: #777;
+        color: #65758a;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.06);
     }
 
     /* MODALE */
@@ -167,11 +182,8 @@
         display: none;
         position: fixed;
         z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.6);
+        inset: 0;
+        background: rgba(16,42,73,0.65);
         padding: 20px;
         overflow-y: auto;
     }
@@ -180,9 +192,10 @@
         background: white;
         max-width: 700px;
         margin: 70px auto;
-        border-radius: 15px;
-        padding: 30px;
+        border-radius: 20px;
+        padding: 35px;
         position: relative;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.20);
         animation: apertura 0.2s ease;
     }
 
@@ -201,56 +214,89 @@
     .chiudi {
         position: absolute;
         right: 20px;
-        top: 15px;
-        font-size: 30px;
+        top: 12px;
+        font-size: 32px;
         cursor: pointer;
-        color: #777;
+        color: #65758a;
     }
 
     .chiudi:hover {
-        color: #8b0000;
+        color: #1557b0;
     }
 
     #modal-titolo {
-        color: #8b0000;
+        color: #183b68;
         margin-bottom: 10px;
-        padding-right: 30px;
+        padding-right: 35px;
     }
 
     #modal-meta {
-        color: #777;
+        color: #65758a;
         font-size: 14px;
-        margin-bottom: 20px;
+        margin-bottom: 22px;
     }
 
     #modal-testo {
-        color: #333;
+        color: #26384d;
         line-height: 1.7;
         white-space: pre-line;
     }
 
     footer {
-        background: #222;
+        background: #102a49;
         color: white;
         text-align: center;
-        padding: 25px 20px;
-        margin-top: 40px;
+        padding: 35px 7%;
+        margin-top: 70px;
+    }
+
+    footer p {
+        opacity: 0.85;
+        font-size: 14px;
+    }
+
+    @media (max-width: 950px) {
+
+        header {
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        nav {
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
     }
 
     @media (max-width: 600px) {
 
-        .hero h2 {
-            font-size: 28px;
+        .hero {
+            padding: 55px 6%;
+        }
+
+        .hero h1 {
+            font-size: 34px;
+        }
+
+        .hero p {
+            font-size: 16px;
+        }
+
+        .container {
+            width: 90%;
         }
 
         .avviso {
-            padding: 18px;
+            padding: 22px;
         }
 
         .modal-contenuto {
             margin: 30px auto;
-            padding: 22px;
+            padding: 25px;
         }
+
     }
 
 </style>
@@ -263,7 +309,9 @@
 <header>
 
 ```
-<h1>Azione Universitaria PoliBa</h1>
+<a href="index.html" class="logo">
+    Azione Universitaria PoliBa
+</a>
 
 <nav>
     <a href="index.html">Home</a>
@@ -280,7 +328,7 @@
 <section class="hero">
 
 ```
-<h2>📢 Avvisi</h2>
+<h1>📢 Avvisi</h1>
 
 <p>
     Tutte le comunicazioni e gli aggiornamenti per gli studenti di PoliBa.
@@ -289,47 +337,48 @@
 
 </section>
 
+<main class="container">
+
+```
 <div class="filtri">
 
-```
-<button class="filtro attivo" onclick="filtra('Tutti', this)">
-    Tutti
-</button>
+    <button class="filtro attivo" onclick="filtra('Tutti', this)">
+        Tutti
+    </button>
 
-<button class="filtro" onclick="filtra('Didattica', this)">
-    Didattica
-</button>
+    <button class="filtro" onclick="filtra('Didattica', this)">
+        Didattica
+    </button>
 
-<button class="filtro" onclick="filtra('Esami', this)">
-    Esami
-</button>
+    <button class="filtro" onclick="filtra('Esami', this)">
+        Esami
+    </button>
 
-<button class="filtro" onclick="filtra('Erasmus', this)">
-    Erasmus
-</button>
+    <button class="filtro" onclick="filtra('Erasmus', this)">
+        Erasmus
+    </button>
 
-<button class="filtro" onclick="filtra('Vita universitaria', this)">
-    Vita universitaria
-</button>
+    <button class="filtro" onclick="filtra('Vita universitaria', this)">
+        Vita universitaria
+    </button>
 
-<button class="filtro" onclick="filtra('Scadenze', this)">
-    Scadenze
-</button>
-```
+    <button class="filtro" onclick="filtra('Scadenze', this)">
+        Scadenze
+    </button>
 
 </div>
+
 
 <div id="lista-avvisi">
 
-```
-<div class="nessun-avviso">
-    Caricamento avvisi…
+    <div class="nessun-avviso">
+        Caricamento avvisi…
+    </div>
+
 </div>
 ```
 
-</div>
-
-<!-- MODALE -->
+</main>
 
 <div id="modal" class="modal" onclick="chiudiModal(event)">
 
@@ -357,7 +406,11 @@
 
 ```
 <p>
-    © Azione Universitaria PoliBa
+    © 2026 Azione Universitaria PoliBa
+</p>
+
+<p>
+    Informazione, rappresentanza e servizi per gli studenti.
 </p>
 ```
 
@@ -372,18 +425,25 @@
     let categoriaAttiva = "Tutti";
 
 
-    /* FORMATTA LA DATA */
-
     function formattaData(data) {
 
         if (!data) {
             return "";
         }
 
+        const testo = String(data).trim();
+
+        /* Se Apps Script ha già inviato GG/MM/AAAA,
+           la lasciamo esattamente così */
+
+        if (/^\d{2}\/\d{2}\/\d{4}$/.test(testo)) {
+            return testo;
+        }
+
         const d = new Date(data);
 
         if (isNaN(d.getTime())) {
-            return data;
+            return testo;
         }
 
         const giorno = String(d.getDate()).padStart(2, "0");
@@ -393,8 +453,6 @@
         return giorno + "/" + mese + "/" + anno;
     }
 
-
-    /* CARICAMENTO AVVISI */
 
     function caricaAvvisi() {
 
@@ -408,8 +466,6 @@
         document.body.appendChild(script);
     }
 
-
-    /* RICEZIONE DATI */
 
     function riceviAvvisi(dati) {
 
@@ -429,22 +485,21 @@
     }
 
 
-    /* MOSTRA AVVISI */
-
     function mostraAvvisi() {
 
         const contenitore =
             document.getElementById("lista-avvisi");
 
-        let avvisi = tuttiGliAvvisi.filter(function(avviso) {
+        const avvisi =
+            tuttiGliAvvisi.filter(function(avviso) {
 
-            if (categoriaAttiva === "Tutti") {
-                return true;
-            }
+                if (categoriaAttiva === "Tutti") {
+                    return true;
+                }
 
-            return avviso.categoria === categoriaAttiva;
+                return avviso.categoria === categoriaAttiva;
 
-        });
+            });
 
 
         if (avvisi.length === 0) {
@@ -461,11 +516,13 @@
         contenitore.innerHTML = "";
 
 
-        avvisi.forEach(function(avviso, indice) {
+        avvisi.forEach(function(avviso) {
 
-            const elemento = document.createElement("div");
+            const elemento =
+                document.createElement("div");
 
             elemento.className = "avviso";
+
 
             if (avviso.importante) {
                 elemento.classList.add("importante");
@@ -473,6 +530,7 @@
 
 
             let importanteHTML = "";
+
 
             if (avviso.importante) {
 
@@ -488,9 +546,9 @@
 
                 importanteHTML +
 
-                "<h3>" +
+                "<h2>" +
                 escapeHTML(avviso.titolo) +
-                "</h3>" +
+                "</h2>" +
 
                 '<div class="meta">' +
                 escapeHTML(avviso.categoria) +
@@ -517,8 +575,6 @@
     }
 
 
-    /* FILTRI */
-
     function filtra(categoria, pulsante) {
 
         categoriaAttiva = categoria;
@@ -538,8 +594,6 @@
 
     }
 
-
-    /* APRI MODALE */
 
     function apriModal(avviso) {
 
@@ -585,18 +639,13 @@
     }
 
 
-    /* CHIUDI MODALE */
-
     function chiudiModal(event) {
 
         const modal =
             document.getElementById("modal");
 
 
-        if (
-            !event ||
-            event.target === modal
-        ) {
+        if (!event || event.target === modal) {
 
             modal.style.display = "none";
 
@@ -607,20 +656,14 @@
     }
 
 
-    /* ESCAPE */
-
     document.addEventListener("keydown", function(event) {
 
         if (event.key === "Escape") {
-
             chiudiModal();
-
         }
 
     });
 
-
-    /* SICUREZZA TESTO */
 
     function escapeHTML(testo) {
 
@@ -637,8 +680,6 @@
 
     }
 
-
-    /* AVVIO */
 
     caricaAvvisi();
 
