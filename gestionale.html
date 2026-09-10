@@ -1,401 +1,451 @@
-```html
 <!DOCTYPE html>
+
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ingegneria Gestionale | Azione Universitaria PoliBa</title>
+```
+<title>Ingegneria Gestionale | Azione Universitaria PoliBa</title>
 
-    <style>
+<style>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f7fb;
-            color: #172033;
-        }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f7fb;
+        color: #1d2a3a;
+        line-height: 1.6;
+    }
 
-        header {
-            background: white;
-            padding: 18px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-        }
+    header {
+        background: #ffffff;
+        padding: 18px 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
 
-        .logo {
-            font-size: 21px;
-            font-weight: 800;
-            color: #123c69;
-        }
+    .logo {
+        font-size: 21px;
+        font-weight: 800;
+        color: #1557b0;
+        text-decoration: none;
+    }
 
-        nav {
-            display: flex;
-            gap: 25px;
-        }
+    nav {
+        display: flex;
+        gap: 22px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-        nav a {
-            text-decoration: none;
-            color: #26364d;
-            font-weight: 600;
-        }
+    nav a {
+        color: #26384d;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.2s;
+    }
 
-        nav a:hover {
-            color: #123c69;
-        }
+    nav a:hover {
+        color: #1557b0;
+    }
 
-        .hero {
-            background: linear-gradient(135deg, #123c69, #1f5d96);
-            color: white;
-            text-align: center;
-            padding: 70px 20px;
-        }
+    .hero {
+        background: linear-gradient(135deg, #1557b0, #2879d8);
+        color: white;
+        padding: 75px 7%;
+        text-align: center;
+    }
 
-        .hero .icon {
-            font-size: 52px;
-            margin-bottom: 15px;
-        }
+    .hero .icon {
+        font-size: 50px;
+        margin-bottom: 12px;
+    }
 
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
+    .hero h1 {
+        font-size: 42px;
+        margin-bottom: 12px;
+    }
 
-        .hero p {
-            font-size: 18px;
-            opacity: 0.95;
-        }
+    .hero p {
+        max-width: 750px;
+        margin: auto;
+        font-size: 18px;
+        opacity: 0.95;
+    }
 
-        .section {
-            max-width: 1150px;
-            margin: auto;
-            padding: 55px 7%;
-        }
+    .container {
+        width: 86%;
+        max-width: 1150px;
+        margin: 50px auto 70px;
+    }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 35px;
-        }
+    .section {
+        margin-bottom: 60px;
+    }
 
-        .section-title h2 {
-            color: #123c69;
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
+    .section-title {
+        text-align: center;
+        margin-bottom: 30px;
+    }
 
-        .section-title p {
-            color: #667085;
-            line-height: 1.6;
-        }
+    .section-title h2 {
+        color: #183b68;
+        font-size: 29px;
+        margin-bottom: 8px;
+    }
+
+    .section-title p {
+        color: #65758a;
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .info-card {
+        background: white;
+        padding: 25px;
+        border-radius: 18px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+        border-left: 5px solid #1557b0;
+    }
+
+    .info-card .icon {
+        font-size: 31px;
+        margin-bottom: 10px;
+    }
+
+    .info-card h3 {
+        color: #183b68;
+        margin-bottom: 7px;
+    }
+
+    .info-card p {
+        color: #65758a;
+    }
+
+    .notice {
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 35px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+        text-align: center;
+    }
+
+    .notice .big-icon {
+        font-size: 48px;
+        margin-bottom: 12px;
+    }
+
+    .notice h3 {
+        color: #183b68;
+        margin-bottom: 10px;
+        font-size: 22px;
+    }
+
+    .notice p {
+        color: #65758a;
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .schedule {
+        background: white;
+        border-radius: 18px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+        overflow: hidden;
+    }
+
+    .schedule-header {
+        background: #1557b0;
+        color: white;
+        padding: 23px 27px;
+    }
+
+    .schedule-header h3 {
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+
+    .schedule-header p {
+        opacity: 0.9;
+        font-size: 14px;
+    }
+
+    .days {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 15px;
+        padding: 22px;
+    }
+
+    .day {
+        border: 1px solid #e5eaf0;
+        border-radius: 13px;
+        overflow: hidden;
+        min-height: 150px;
+    }
+
+    .day h3 {
+        background: #edf4fc;
+        color: #183b68;
+        text-align: center;
+        padding: 13px;
+        font-size: 16px;
+    }
+
+    .day-content {
+        padding: 25px 12px;
+        text-align: center;
+        color: #8a98aa;
+        font-size: 14px;
+    }
+
+    .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .calendar-item {
+        background: white;
+        padding: 22px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        border-left: 5px solid #1557b0;
+    }
+
+    .calendar-item strong {
+        display: block;
+        color: #183b68;
+        margin-bottom: 6px;
+    }
+
+    .calendar-item span {
+        color: #65758a;
+    }
+
+    .subjects {
+        background: white;
+        border-radius: 18px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+        overflow: hidden;
+    }
+
+    .subject-row {
+        display: grid;
+        grid-template-columns: 1fr 100px;
+        padding: 17px 22px;
+        border-bottom: 1px solid #edf0f5;
+        gap: 20px;
+    }
+
+    .subject-row:last-child {
+        border-bottom: none;
+    }
+
+    .subject-name {
+        color: #26384d;
+        font-weight: 600;
+    }
+
+    .subject-cfu {
+        color: #1557b0;
+        font-weight: bold;
+        text-align: right;
+    }
+
+    .exam-box {
+        background: white;
+        border-radius: 18px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+        padding: 35px;
+        text-align: center;
+    }
+
+    .exam-box .big-icon {
+        font-size: 45px;
+        margin-bottom: 10px;
+    }
+
+    .exam-box h3 {
+        color: #183b68;
+        margin-bottom: 10px;
+    }
+
+    .exam-box p {
+        color: #65758a;
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .links a {
+        background: white;
+        color: #1557b0;
+        text-decoration: none;
+        padding: 20px;
+        border-radius: 14px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        font-weight: bold;
+        transition: 0.2s;
+    }
+
+    .links a:hover {
+        transform: translateY(-3px);
+    }
+
+    .back {
+        text-align: center;
+        margin-top: 45px;
+    }
+
+    .back a {
+        display: inline-block;
+        background: #1557b0;
+        color: white;
+        text-decoration: none;
+        padding: 13px 23px;
+        border-radius: 10px;
+        font-weight: bold;
+        transition: 0.2s;
+    }
+
+    .back a:hover {
+        background: #124a96;
+    }
+
+    footer {
+        background: #102a49;
+        color: white;
+        text-align: center;
+        padding: 35px 7%;
+    }
+
+    footer p {
+        opacity: 0.85;
+        font-size: 14px;
+        margin: 4px 0;
+    }
+
+    @media (max-width: 850px) {
 
         .info-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-bottom: 55px;
-        }
-
-        .info-card {
-            background: white;
-            padding: 25px;
-            border-radius: 14px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-            border: 1px solid #edf0f5;
-        }
-
-        .info-card .icon {
-            font-size: 32px;
-            margin-bottom: 12px;
-        }
-
-        .info-card h3 {
-            color: #123c69;
-            margin-bottom: 8px;
-        }
-
-        .info-card p {
-            color: #667085;
-            line-height: 1.5;
-        }
-
-        .schedule {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-            overflow: hidden;
-            margin-bottom: 55px;
-        }
-
-        .schedule-header {
-            background: #123c69;
-            color: white;
-            padding: 22px 25px;
-        }
-
-        .schedule-header h3 {
-            font-size: 22px;
-            margin-bottom: 5px;
-        }
-
-        .schedule-header p {
-            opacity: 0.9;
-            font-size: 14px;
-        }
-
-        .schedule-empty {
-            padding: 50px 25px;
-            text-align: center;
-        }
-
-        .schedule-empty .big-icon {
-            font-size: 50px;
-            margin-bottom: 15px;
-        }
-
-        .schedule-empty h3 {
-            color: #123c69;
-            margin-bottom: 10px;
-            font-size: 22px;
-        }
-
-        .schedule-empty p {
-            color: #667085;
-            max-width: 650px;
-            margin: auto;
-            line-height: 1.6;
+            grid-template-columns: 1fr;
         }
 
         .days {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 15px;
+            grid-template-columns: 1fr;
         }
 
-        .day {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            overflow: hidden;
-            border: 1px solid #edf0f5;
+        .calendar-grid,
+        .links {
+            grid-template-columns: 1fr;
         }
 
-        .day h3 {
-            background: #eaf2fb;
-            color: #123c69;
-            padding: 15px;
-            text-align: center;
-            font-size: 17px;
+    }
+
+    @media (max-width: 700px) {
+
+        header {
+            flex-direction: column;
         }
 
-        .day-content {
-            padding: 25px 15px;
-            text-align: center;
-            color: #98a2b3;
-            font-size: 14px;
-            line-height: 1.5;
+        nav {
+            gap: 13px;
         }
 
-        .academic-calendar {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-            margin-bottom: 55px;
+        .hero {
+            padding: 55px 6%;
         }
 
-        .calendar-item {
-            background: white;
-            padding: 22px;
-            border-radius: 13px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            border-left: 5px solid #123c69;
+        .hero h1 {
+            font-size: 32px;
         }
 
-        .calendar-item strong {
-            display: block;
-            color: #123c69;
-            margin-bottom: 6px;
+        .container {
+            width: 90%;
         }
 
-        .calendar-item span {
-            color: #667085;
-            line-height: 1.5;
+        .subject-row {
+            grid-template-columns: 1fr;
+            gap: 5px;
         }
 
-        .curricula {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-bottom: 55px;
+        .subject-cfu {
+            text-align: left;
         }
 
-        .curriculum {
-            background: white;
-            padding: 25px;
-            border-radius: 14px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-            text-align: center;
-        }
+    }
 
-        .curriculum h3 {
-            color: #123c69;
-            margin-bottom: 10px;
-        }
+</style>
+```
 
-        .curriculum p {
-            color: #667085;
-            line-height: 1.5;
-        }
-
-        .useful-links {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-        }
-
-        .useful-links a {
-            display: block;
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            text-decoration: none;
-            color: #123c69;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            transition: 0.2s;
-        }
-
-        .useful-links a:hover {
-            transform: translateY(-3px);
-        }
-
-        .back {
-            display: inline-block;
-            margin-top: 40px;
-            background: #123c69;
-            color: white;
-            padding: 13px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .back:hover {
-            background: #1f5d96;
-        }
-
-        footer {
-            background: #123c69;
-            color: white;
-            text-align: center;
-            padding: 35px;
-            margin-top: 20px;
-        }
-
-        @media (max-width: 850px) {
-
-            .info-grid,
-            .curricula {
-                grid-template-columns: 1fr;
-            }
-
-            .days {
-                grid-template-columns: 1fr;
-            }
-
-            .academic-calendar,
-            .useful-links {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 700px) {
-
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav {
-                gap: 12px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .section {
-                padding: 45px 6%;
-            }
-        }
-
-    </style>
 </head>
 
 <body>
 
-
 <header>
 
-    <div class="logo">
-        Azione Universitaria PoliBa
-    </div>
+```
+<a href="index.html" class="logo">
+    Azione Universitaria PoliBa
+</a>
 
-    <nav>
-
-        <a href="index.html">
-            Home
-        </a>
-
-        <a href="calendari.html">
-            Calendari
-        </a>
-
-        <a href="#">
-            Matricole
-        </a>
-
-        <a href="#">
-            Avvisi
-        </a>
-
-        <a href="#">
-            Chi siamo
-        </a>
-
-    </nav>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="calendari.html">Calendari</a>
+    <a href="matricole.html">Matricole</a>
+    <a href="avvisi.html">Avvisi</a>
+    <a href="rappresentanza.html">Rappresentanza</a>
+    <a href="segnalazioni.html">Segnalazioni</a>
+</nav>
+```
 
 </header>
 
-
 <section class="hero">
 
-    <div class="icon">
-        ⚙️
-    </div>
+```
+<div class="icon">
+    ⚙️
+</div>
 
-    <h1>
-        Ingegneria Gestionale
-    </h1>
+<h1>
+    Ingegneria Gestionale
+</h1>
 
-    <p>
-        Calendario delle lezioni e informazioni utili
-        per gli studenti di Ingegneria Gestionale.
-    </p>
+<p>
+    Tutte le informazioni utili per organizzare
+    lezioni, esami e vita universitaria.
+</p>
+```
 
 </section>
 
+<main class="container">
 
+```
 <section class="section">
-
 
     <div class="section-title">
 
@@ -412,7 +462,6 @@
 
     <div class="info-grid">
 
-
         <div class="info-card">
 
             <div class="icon">
@@ -420,11 +469,11 @@
             </div>
 
             <h3>
-                Classe
+                Percorso
             </h3>
 
             <p>
-                LT03-R — Ingegneria Gestionale
+                Laurea triennale in Ingegneria Gestionale.
             </p>
 
         </div>
@@ -441,7 +490,7 @@
             </h3>
 
             <p>
-                Politecnico di Bari — Bari
+                Politecnico di Bari — Bari.
             </p>
 
         </div>
@@ -458,14 +507,17 @@
             </h3>
 
             <p>
-                3 anni
+                3 anni.
             </p>
 
         </div>
 
-
     </div>
 
+</section>
+
+
+<section class="section">
 
     <div class="section-title">
 
@@ -482,7 +534,6 @@
 
     <div class="schedule">
 
-
         <div class="schedule-header">
 
             <h3>
@@ -490,7 +541,7 @@
             </h3>
 
             <p>
-                Gli orari ufficiali saranno inseriti appena disponibili.
+                Gli orari saranno aggiornati sulla base delle comunicazioni ufficiali.
             </p>
 
         </div>
@@ -498,76 +549,49 @@
 
         <div class="days">
 
-
             <div class="day">
-
-                <h3>
-                    Lunedì
-                </h3>
-
+                <h3>Lunedì</h3>
                 <div class="day-content">
                     Orario in aggiornamento
                 </div>
-
             </div>
 
-
             <div class="day">
-
-                <h3>
-                    Martedì
-                </h3>
-
+                <h3>Martedì</h3>
                 <div class="day-content">
                     Orario in aggiornamento
                 </div>
-
             </div>
 
-
             <div class="day">
-
-                <h3>
-                    Mercoledì
-                </h3>
-
+                <h3>Mercoledì</h3>
                 <div class="day-content">
                     Orario in aggiornamento
                 </div>
-
             </div>
 
-
             <div class="day">
-
-                <h3>
-                    Giovedì
-                </h3>
-
+                <h3>Giovedì</h3>
                 <div class="day-content">
                     Orario in aggiornamento
                 </div>
-
             </div>
 
-
             <div class="day">
-
-                <h3>
-                    Venerdì
-                </h3>
-
+                <h3>Venerdì</h3>
                 <div class="day-content">
                     Orario in aggiornamento
                 </div>
-
             </div>
-
 
         </div>
 
     </div>
 
+</section>
+
+
+<section class="section">
 
     <div class="section-title">
 
@@ -576,218 +600,169 @@
         </h2>
 
         <p>
-            Principali periodi dell'anno accademico 2026/2027.
+            Le date saranno inserite e aggiornate in base alle comunicazioni ufficiali.
         </p>
 
     </div>
 
 
-    <div class="academic-calendar">
-
-
-        <div class="calendar-item">
-
-            <strong>
-                Inizio lezioni
-            </strong>
-
-            <span>
-                21 settembre 2026
-            </span>
-
-        </div>
-
+    <div class="calendar-grid">
 
         <div class="calendar-item">
-
-            <strong>
-                Pausa esoneri
-            </strong>
-
-            <span>
-                2 – 6 novembre 2026
-            </span>
-
+            <strong>Inizio lezioni</strong>
+            <span>Data in aggiornamento</span>
         </div>
-
 
         <div class="calendar-item">
-
-            <strong>
-                Recupero lezioni
-            </strong>
-
-            <span>
-                21 – 23 dicembre 2026
-            </span>
-
+            <strong>Fine lezioni</strong>
+            <span>Data in aggiornamento</span>
         </div>
-
 
         <div class="calendar-item">
-
-            <strong>
-                Festività natalizie
-            </strong>
-
-            <span>
-                24 dicembre 2026 – 6 gennaio 2027
-            </span>
-
+            <strong>Sessione invernale</strong>
+            <span>Date in aggiornamento</span>
         </div>
-
 
         <div class="calendar-item">
-
-            <strong>
-                Recupero lezioni
-            </strong>
-
-            <span>
-                7 – 8 gennaio 2027
-            </span>
-
+            <strong>Sessione estiva</strong>
+            <span>Date in aggiornamento</span>
         </div>
-
 
         <div class="calendar-item">
-
-            <strong>
-                Fine lezioni
-            </strong>
-
-            <span>
-                8 gennaio 2027
-            </span>
-
+            <strong>Sessione autunnale</strong>
+            <span>Date in aggiornamento</span>
         </div>
-
 
         <div class="calendar-item">
-
-            <strong>
-                Periodo esami
-            </strong>
-
-            <span>
-                11 gennaio – 26 febbraio 2027
-            </span>
-
+            <strong>Festività e sospensioni</strong>
+            <span>Date in aggiornamento</span>
         </div>
-
-
-        <div class="calendar-item">
-
-            <strong>
-                Anno accademico
-            </strong>
-
-            <span>
-                2026/2027
-            </span>
-
-        </div>
-
 
     </div>
 
+</section>
+
+
+<section class="section">
 
     <div class="section-title">
 
         <h2>
-            🎯 Curricula
+            📖 Materie e CFU
         </h2>
 
         <p>
-            Il corso di Ingegneria Gestionale prevede tre curricula.
+            La struttura degli insegnamenti verrà inserita per anno di corso.
         </p>
 
     </div>
 
 
-    <div class="curricula">
+    <div class="subjects">
 
-
-        <div class="curriculum">
-
-            <h3>
-                🏭 Industriale
-            </h3>
-
-            <p>
-                Percorso orientato ai sistemi e ai processi
-                dell'area industriale.
-            </p>
-
-        </div>
-
-
-        <div class="curriculum">
-
-            <h3>
-                💻 Informazione
-            </h3>
-
-            <p>
-                Percorso orientato alle tecnologie
-                e ai sistemi dell'informazione.
-            </p>
-
-        </div>
-
-
-        <div class="curriculum">
-
-            <h3>
-                🏗️ Infrastrutture
-            </h3>
-
-            <p>
-                Percorso orientato alla gestione
-                delle infrastrutture e dei relativi sistemi.
-            </p>
-
-        </div>
-
-
-    </div>
-
-
-    <div class="section-title">
-
-        <h2>
-            📢 Avvisi
-        </h2>
-
-        <p>
-            Qui verranno raccolte le comunicazioni importanti
-            relative al corso.
-        </p>
-
-    </div>
-
-
-    <div class="schedule">
-
-        <div class="schedule-empty">
-
-            <div class="big-icon">
-                📢
+        <div class="subject-row">
+            <div class="subject-name">
+                Primo anno
             </div>
+            <div class="subject-cfu">
+                In aggiornamento
+            </div>
+        </div>
 
-            <h3>
-                Nessun avviso inserito
-            </h3>
+        <div class="subject-row">
+            <div class="subject-name">
+                Secondo anno
+            </div>
+            <div class="subject-cfu">
+                In aggiornamento
+            </div>
+        </div>
 
-            <p>
-                Gli aggiornamenti e le comunicazioni importanti
-                verranno pubblicati in questa sezione.
-            </p>
-
+        <div class="subject-row">
+            <div class="subject-name">
+                Terzo anno
+            </div>
+            <div class="subject-cfu">
+                In aggiornamento
+            </div>
         </div>
 
     </div>
 
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>
+            📝 Appelli d'esame
+        </h2>
+
+        <p>
+            Una sezione dedicata alle date degli appelli e alle relative informazioni.
+        </p>
+
+    </div>
+
+
+    <div class="exam-box">
+
+        <div class="big-icon">
+            📝
+        </div>
+
+        <h3>
+            Appelli in aggiornamento
+        </h3>
+
+        <p>
+            Le date degli esami verranno pubblicate qui
+            quando saranno disponibili le informazioni ufficiali.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>
+            📢 Avvisi del corso
+        </h2>
+
+        <p>
+            Comunicazioni e aggiornamenti dedicati agli studenti di Ingegneria Gestionale.
+        </p>
+
+    </div>
+
+
+    <div class="notice">
+
+        <div class="big-icon">
+            📢
+        </div>
+
+        <h3>
+            Nessun avviso specifico inserito
+        </h3>
+
+        <p>
+            Gli aggiornamenti importanti verranno pubblicati
+            nella bacheca Avvisi del sito.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section">
 
     <div class="section-title">
 
@@ -796,59 +771,59 @@
         </h2>
 
         <p>
-            Risorse ufficiali per gli studenti.
+            Accesso rapido alle principali risorse ufficiali.
         </p>
 
     </div>
 
 
-    <div class="useful-links">
+    <div class="links">
 
-
-        <a href="https://poliba.it/it/ingegneria-gestionale" target="_blank">
-            🎓 Pagina ufficiale del corso
-        </a>
-
-
-        <a href="https://www.poliba.it/" target="_blank">
+        <a href="https://poliba.it/" target="_blank">
             🌐 Sito ufficiale PoliBa
         </a>
-
-
-        <a href="https://www.dmmm.poliba.it/" target="_blank">
-            🏛️ Dipartimento DMMM
-        </a>
-
 
         <a href="https://www.poliba.it/it/didattica" target="_blank">
             📚 Area Didattica PoliBa
         </a>
 
+        <a href="https://www.dmmm.poliba.it/" target="_blank">
+            🏛️ Dipartimento DMMM
+        </a>
+
+        <a href="avvisi.html">
+            📢 Bacheca Avvisi
+        </a>
 
     </div>
-
-
-    <a class="back" href="calendari.html">
-        ← Torna ai calendari
-    </a>
-
 
 </section>
 
 
+<div class="back">
+
+    <a href="calendari.html">
+        ← Torna ai Calendari
+    </a>
+
+</div>
+```
+
+</main>
+
 <footer>
 
-    <p>
-        Azione Universitaria PoliBa
-    </p>
+```
+<p>
+    © 2026 Azione Universitaria PoliBa
+</p>
 
-    <p style="margin-top: 8px;">
-        Dalla parte dello studente.
-    </p>
+<p>
+    Informazione, rappresentanza e servizi per gli studenti.
+</p>
+```
 
 </footer>
 
-
 </body>
 </html>
-```
