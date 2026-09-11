@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<title>Matricole | Azione Universitaria PoliBa</title>
+<title>Azione Universitaria PoliBa</title>
 
 <style>
     * {
@@ -62,100 +62,67 @@
     .hero {
         background: linear-gradient(135deg, #1557b0, #2879d8);
         color: white;
-        padding: 75px 7%;
+        padding: 90px 7%;
         text-align: center;
     }
 
     .hero h1 {
-        font-size: 44px;
-        margin-bottom: 15px;
+        font-size: 46px;
+        margin-bottom: 18px;
     }
 
     .hero p {
-        max-width: 780px;
+        max-width: 750px;
         margin: auto;
-        font-size: 18px;
+        font-size: 19px;
         opacity: 0.95;
+    }
+
+    .buttons {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 14px 25px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: 0.2s;
+    }
+
+    .btn-primary {
+        background: white;
+        color: #1557b0;
+    }
+
+    .btn-secondary {
+        border: 2px solid white;
+        color: white;
+    }
+
+    .btn:hover {
+        transform: translateY(-3px);
     }
 
     .container {
         width: 86%;
-        max-width: 1100px;
-        margin: 50px auto;
-    }
-
-    .intro {
-        background: white;
-        padding: 35px;
-        border-radius: 20px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-        margin-bottom: 35px;
-    }
-
-    .intro h2 {
-        color: #183b68;
-        margin-bottom: 15px;
-    }
-
-    .intro p {
-        color: #65758a;
-    }
-
-    .steps {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 22px;
-    }
-
-    .step {
-        background: white;
-        border-radius: 18px;
-        padding: 28px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-        transition: 0.2s;
-    }
-
-    .step:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 9px 25px rgba(0,0,0,0.09);
-    }
-
-    .number {
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        background: #1557b0;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 800;
-        font-size: 19px;
-        margin-bottom: 15px;
-    }
-
-    .step h3 {
-        color: #183b68;
-        margin-bottom: 10px;
-    }
-
-    .step p {
-        color: #65758a;
-        font-size: 15px;
-    }
-
-    .section {
-        margin-top: 50px;
+        max-width: 1150px;
+        margin: 55px auto;
     }
 
     .section-title {
         text-align: center;
-        margin-bottom: 28px;
+        margin-bottom: 35px;
     }
 
     .section-title h2 {
-        color: #183b68;
         font-size: 30px;
+        color: #183b68;
         margin-bottom: 8px;
     }
 
@@ -165,96 +132,82 @@
 
     .cards {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        gap: 22px;
     }
 
     .card {
         background: white;
-        padding: 25px;
         border-radius: 18px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        padding: 28px 22px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 28px rgba(0,0,0,0.10);
+    }
+
+    .card .icon {
+        font-size: 42px;
+        margin-bottom: 15px;
     }
 
     .card h3 {
-        color: #1557b0;
+        color: #183b68;
         margin-bottom: 10px;
+        font-size: 20px;
     }
 
     .card p {
-        color: #65758a;
+        color: #69798c;
         font-size: 14px;
     }
 
-    .faq {
+    .highlight {
+        margin-top: 60px;
         background: white;
-        padding: 32px;
-        border-radius: 20px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-    }
-
-    .faq-item {
-        padding: 20px 0;
-        border-bottom: 1px solid #e3e8ef;
-    }
-
-    .faq-item:last-child {
-        border-bottom: none;
-    }
-
-    .faq-item h3 {
-        color: #183b68;
-        margin-bottom: 8px;
-    }
-
-    .faq-item p {
-        color: #65758a;
-    }
-
-    .notice {
-        margin-top: 45px;
-        background: #eaf3ff;
-        border-left: 5px solid #1557b0;
-        padding: 25px;
-        border-radius: 12px;
-    }
-
-    .notice h3 {
-        color: #1557b0;
-        margin-bottom: 8px;
-    }
-
-    .notice p {
-        color: #52667d;
-    }
-
-    .official {
-        margin-top: 45px;
-        background: white;
-        padding: 30px;
-        border-radius: 20px;
+        border-radius: 22px;
+        padding: 40px;
         box-shadow: 0 5px 20px rgba(0,0,0,0.06);
         text-align: center;
     }
 
-    .official h2 {
+    .highlight h2 {
         color: #183b68;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
     }
 
-    .official a {
-        display: inline-block;
-        margin: 8px;
-        padding: 11px 18px;
-        border-radius: 9px;
-        background: #1557b0;
-        color: white;
-        text-decoration: none;
-        font-weight: 700;
+    .highlight > p {
+        color: #65758a;
+        max-width: 750px;
+        margin: auto;
     }
 
-    .official a:hover {
-        background: #0e438a;
+    .highlight-boxes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .highlight-box {
+        background: #f4f7fb;
+        padding: 22px;
+        border-radius: 15px;
+    }
+
+    .highlight-box h3 {
+        color: #1557b0;
+        margin-bottom: 8px;
+    }
+
+    .highlight-box p {
+        font-size: 14px;
     }
 
     footer {
@@ -270,12 +223,12 @@
         font-size: 14px;
     }
 
-    @media (max-width: 850px) {
-        .steps {
-            grid-template-columns: 1fr;
+    @media (max-width: 950px) {
+        .cards {
+            grid-template-columns: repeat(2, 1fr);
         }
 
-        .cards {
+        .highlight-boxes {
             grid-template-columns: 1fr;
         }
     }
@@ -287,11 +240,13 @@
         }
 
         nav {
-            gap: 14px;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .hero {
-            padding: 60px 6%;
+            padding: 65px 6%;
         }
 
         .hero h1 {
@@ -302,13 +257,16 @@
             font-size: 16px;
         }
 
+        .cards {
+            grid-template-columns: 1fr;
+        }
+
         .container {
             width: 90%;
         }
 
-        .intro,
-        .faq {
-            padding: 25px 20px;
+        .highlight {
+            padding: 28px 20px;
         }
     }
 </style>
@@ -335,13 +293,30 @@
 </header>
 
 <section class="hero">
-    <h1>🎓 Guida alle Matricole</h1>
 
+
+<h1>🎓 Azione Universitaria PoliBa</h1>
 
 <p>
-    Tutto quello che serve per iniziare il percorso universitario al
-    Politecnico di Bari con più chiarezza, organizzazione e consapevolezza.
+    Uno spazio pensato dagli studenti per gli studenti del Politecnico di Bari:
+    informazioni, servizi, rappresentanza e strumenti utili per vivere al meglio l'università.
 </p>
+
+<div class="buttons">
+
+    <a href="calendari.html" class="btn btn-primary">
+        📅 Consulta i Calendari
+    </a>
+
+    <a href="matricole.html" class="btn btn-secondary">
+        🎓 Guida alle Matricole
+    </a>
+
+    <a href="segnalazioni.html" class="btn btn-secondary">
+        🆘 Segnala un problema
+    </a>
+
+</div>
 
 
 </section>
@@ -349,215 +324,126 @@
 <main class="container">
 
 
-<section class="intro">
-    <h2>Benvenuta/o al PoliBa!</h2>
-
-    <p>
-        Iniziare l'università può sembrare complicato: nuovi portali,
-        lezioni, esami, scadenze e procedure da conoscere.
-        Abbiamo raccolto in questa pagina alcune delle informazioni
-        più importanti per aiutarti a partire con il piede giusto.
-    </p>
-</section>
-
 <section>
-    <div class="section-title">
-        <h2>Da dove iniziare?</h2>
-        <p>Segui questi passaggi per orientarti nei primi mesi.</p>
-    </div>
-
-    <div class="steps">
-
-        <div class="step">
-            <div class="number">1</div>
-            <h3>Attiva e controlla il tuo account</h3>
-            <p>
-                Assicurati di avere accesso ai servizi online dell'università
-                e controlla regolarmente la tua casella istituzionale.
-            </p>
-        </div>
-
-        <div class="step">
-            <div class="number">2</div>
-            <h3>Controlla il calendario delle lezioni</h3>
-            <p>
-                Consulta il calendario del tuo corso e verifica aule,
-                orari e eventuali modifiche comunicate durante il semestre.
-            </p>
-        </div>
-
-        <div class="step">
-            <div class="number">3</div>
-            <h3>Conosci gli insegnamenti</h3>
-            <p>
-                Prendi visione degli insegnamenti previsti dal tuo corso,
-                dei CFU e dell'organizzazione generale del piano di studi.
-            </p>
-        </div>
-
-        <div class="step">
-            <div class="number">4</div>
-            <h3>Impara a usare i portali</h3>
-            <p>
-                Familiarizza con i principali servizi online utilizzati
-                per lezioni, prenotazioni, esami, documenti e comunicazioni.
-            </p>
-        </div>
-
-        <div class="step">
-            <div class="number">5</div>
-            <h3>Organizza lo studio</h3>
-            <p>
-                Non aspettare il periodo degli esami per iniziare.
-                Organizza appunti, materiali e studio fin dalle prime settimane.
-            </p>
-        </div>
-
-        <div class="step">
-            <div class="number">6</div>
-            <h3>Chiedi quando hai bisogno</h3>
-            <p>
-                Se qualcosa non è chiaro, chiedi ai tuoi colleghi,
-                ai rappresentanti o agli uffici competenti.
-                Non devi affrontare tutto da sola/o.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<section class="section">
 
     <div class="section-title">
-        <h2>Le cose più importanti da sapere</h2>
-        <p>Alcuni aspetti che incontrerai frequentemente durante l'anno.</p>
+
+        <h2>Tutto quello che ti serve</h2>
+
+        <p>
+            Accedi rapidamente alle sezioni principali del sito.
+        </p>
+
     </div>
 
     <div class="cards">
 
-        <div class="card">
-            <h3>📚 Esami</h3>
-            <p>
-                Tieni sotto controllo gli appelli, le modalità di iscrizione
-                e le eventuali scadenze previste.
-            </p>
-        </div>
+        <a href="calendari.html" class="card">
 
-        <div class="card">
-            <h3>📅 Lezioni</h3>
-            <p>
-                Controlla periodicamente il calendario perché aule e orari
-                possono subire variazioni.
-            </p>
-        </div>
+            <div class="icon">📅</div>
 
-        <div class="card">
-            <h3>🎓 Piano di studi</h3>
-            <p>
-                Conosci gli insegnamenti obbligatori e quelli eventualmente
-                a scelta previsti dal tuo percorso.
-            </p>
-        </div>
+            <h3>Calendari</h3>
 
-        <div class="card">
-            <h3>💻 Servizi online</h3>
             <p>
-                Impara a utilizzare i portali universitari e conserva
-                le credenziali in modo sicuro.
+                Consulta i calendari e accedi alle pagine dei principali corsi di laurea.
             </p>
-        </div>
 
-        <div class="card">
-            <h3>📢 Comunicazioni</h3>
-            <p>
-                Controlla frequentemente gli avvisi ufficiali e le
-                comunicazioni del tuo corso di laurea.
-            </p>
-        </div>
+        </a>
 
-        <div class="card">
-            <h3>🤝 Rappresentanza</h3>
+        <a href="matricole.html" class="card">
+
+            <div class="icon">🎓</div>
+
+            <h3>Matricole</h3>
+
             <p>
-                I rappresentanti degli studenti possono aiutarti a portare
-                problemi, proposte e segnalazioni nelle sedi competenti.
+                Una guida pratica per orientarti nei primi passi della vita universitaria.
             </p>
-        </div>
+
+        </a>
+
+        <a href="avvisi.html" class="card">
+
+            <div class="icon">📢</div>
+
+            <h3>Avvisi</h3>
+
+            <p>
+                Comunicazioni, scadenze e informazioni utili per gli studenti.
+            </p>
+
+        </a>
+
+        <a href="rappresentanza.html" class="card">
+
+            <div class="icon">🤝</div>
+
+            <h3>Rappresentanza</h3>
+
+            <p>
+                Scopri il nostro lavoro e le attività dedicate agli studenti.
+            </p>
+
+        </a>
+
+        <a href="segnalazioni.html" class="card">
+
+            <div class="icon">🆘</div>
+
+            <h3>Segnalazioni</h3>
+
+            <p>
+                Hai riscontrato un problema? Inviaci una segnalazione e aiutaci a portarlo all'attenzione dei rappresentanti.
+            </p>
+
+        </a>
 
     </div>
+
 </section>
 
-<section class="section">
+<section class="highlight">
 
-    <div class="section-title">
-        <h2>❓ Domande frequenti</h2>
-        <p>Alcuni dubbi che possono nascere durante il primo anno.</p>
-    </div>
-
-    <div class="faq">
-
-        <div class="faq-item">
-            <h3>Devo controllare spesso gli avvisi?</h3>
-            <p>
-                Sì. Le comunicazioni possono riguardare lezioni,
-                esami, scadenze e modifiche organizzative.
-            </p>
-        </div>
-
-        <div class="faq-item">
-            <h3>Cosa faccio se non riesco a trovare un'informazione?</h3>
-            <p>
-                Parti sempre dai canali ufficiali dell'università.
-                Se non trovi una risposta, puoi chiedere ai rappresentanti
-                o agli uffici competenti.
-            </p>
-        </div>
-
-        <div class="faq-item">
-            <h3>È normale sentirsi spaesati all'inizio?</h3>
-            <p>
-                Assolutamente sì. Nei primi mesi è normale dover imparare
-                nuove procedure e capire come funziona l'università.
-            </p>
-        </div>
-
-        <div class="faq-item">
-            <h3>Posso segnalare un problema?</h3>
-            <p>
-                Certo. Attraverso la sezione Segnalazioni del sito puoi
-                inviare una comunicazione che potrà essere presa in carico
-                dalla rappresentanza studentesca.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<section class="notice">
-    <h3>📌 Un consiglio importante</h3>
+    <h2>📌 In evidenza</h2>
 
     <p>
-        Non aspettare di avere un problema per informarti.
-        Imparare fin da subito dove trovare informazioni, calendari,
-        scadenze e servizi ti permetterà di affrontare l'università
-        con molta più tranquillità.
+        Il sito è in continua costruzione e verrà aggiornato con nuovi strumenti,
+        informazioni e servizi utili per la comunità studentesca del PoliBa.
     </p>
-</section>
 
-<section class="official">
+    <div class="highlight-boxes">
 
-    <h2>🔗 Link utili</h2>
+        <div class="highlight-box">
 
-    <a href="https://www.poliba.it/" target="_blank">
-        Sito ufficiale PoliBa
-    </a>
+            <h3>📚 Didattica</h3>
 
-    <a href="https://www.poliba.it/didattica" target="_blank">
-        Didattica
-    </a>
+            <p>
+                Informazioni e strumenti per aiutarti a organizzare meglio il tuo percorso universitario.
+            </p>
 
-    <a href="https://www.poliba.it/studenti" target="_blank">
-        Studenti
-    </a>
+        </div>
+
+        <div class="highlight-box">
+
+            <h3>🗣️ Rappresentanza</h3>
+
+            <p>
+                Uno spazio per conoscere le attività e le proposte portate avanti dagli studenti.
+            </p>
+
+        </div>
+
+        <div class="highlight-box">
+
+            <h3>🚀 Opportunità</h3>
+
+            <p>
+                In futuro troverai qui iniziative, opportunità e progetti dedicati agli studenti.
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -565,8 +451,15 @@
 </main>
 
 <footer>
-    <p>© 2026 Azione Universitaria PoliBa</p>
-    <p>Informazione, rappresentanza e servizi per gli studenti.</p>
+
+
+<p>© 2026 Azione Universitaria PoliBa</p>
+
+<p>
+    Informazione, rappresentanza e servizi per gli studenti.
+</p>
+
+
 </footer>
 
 </body>
