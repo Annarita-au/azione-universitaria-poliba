@@ -5,319 +5,349 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
+```
 <title>Ingegneria dei Sistemi Medicali | Azione Universitaria PoliBa</title>
 
 <style>
 
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: #f4f7fb;
-        color: #1d2a3a;
-        line-height: 1.6;
-    }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1d2a3a;
+    line-height: 1.6;
+}
+
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #e4eaf1;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    color: #1557b0;
+    font-size: 22px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #26384d;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #1557b0;
+}
+
+.hero {
+    background: linear-gradient(135deg, #1557b0, #2879d8);
+    color: white;
+    padding: 70px 7%;
+    text-align: center;
+}
+
+.hero .icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 780px;
+    margin: auto;
+    opacity: 0.95;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 20px;
+    background: white;
+    color: #1557b0;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.back-button:hover {
+    background: #eef5ff;
+}
+
+.container {
+    width: 86%;
+    max-width: 1150px;
+    margin: 45px auto;
+}
+
+.section {
+    margin-bottom: 45px;
+}
+
+.section h2 {
+    color: #183b68;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.section-intro {
+    color: #65758a;
+    margin-bottom: 20px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.info-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
+    border-left: 5px solid #1557b0;
+}
+
+.info-card .icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.info-card h3 {
+    color: #183b68;
+    margin-bottom: 8px;
+}
+
+.info-card p {
+    color: #65758a;
+}
+
+.schedule {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th {
+    background: #1557b0;
+    color: white;
+    padding: 14px;
+    text-align: left;
+}
+
+td {
+    padding: 14px;
+    border-bottom: 1px solid #e6ebf1;
+    color: #526276;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+.calendar-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    border-left: 4px solid #1557b0;
+    box-shadow: 0 6px 20px rgba(21, 87, 176, 0.07);
+}
+
+.calendar-card strong {
+    display: block;
+    color: #183b68;
+    margin-bottom: 6px;
+}
+
+.calendar-card span {
+    color: #65758a;
+}
+
+.curricula {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
+}
+
+.curriculum {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
+    text-align: center;
+    border-top: 4px solid #1557b0;
+}
+
+.curriculum .icon {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.curriculum h3 {
+    color: #183b68;
+    margin-bottom: 10px;
+}
+
+.curriculum p {
+    color: #65758a;
+    font-size: 14px;
+}
+
+.year-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
+}
+
+.year-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
+}
+
+.year-card h3 {
+    color: #1557b0;
+    margin-bottom: 12px;
+}
+
+.year-card p {
+    color: #65758a;
+    margin-bottom: 8px;
+}
+
+.important-box {
+    background: #eaf2ff;
+    border-left: 5px solid #1557b0;
+    border-radius: 12px;
+    padding: 20px;
+    color: #29496d;
+}
+
+.important-box a,
+.placeholder a {
+    color: #1557b0;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.important-box a:hover,
+.placeholder a:hover {
+    text-decoration: underline;
+}
+
+.placeholder {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px;
+    color: #65758a;
+    box-shadow: 0 6px 20px rgba(21, 87, 176, 0.07);
+}
+
+.links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.link-card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    text-decoration: none;
+    color: #183b68;
+    font-weight: 700;
+    box-shadow: 0 6px 20px rgba(21, 87, 176, 0.07);
+    transition: 0.2s;
+}
+
+.link-card:hover {
+    transform: translateY(-3px);
+    color: #1557b0;
+}
+
+footer {
+    background: #102a49;
+    color: white;
+    text-align: center;
+    padding: 28px 7%;
+    margin-top: 60px;
+}
+
+footer p {
+    opacity: 0.85;
+    font-size: 14px;
+}
+
+@media (max-width: 700px) {
 
     header {
-        background: #ffffff;
-        border-bottom: 1px solid #e4eaf1;
-        padding: 18px 7%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-
-    .logo {
-        color: #1557b0;
-        font-size: 22px;
-        font-weight: 800;
-        text-decoration: none;
-    }
-
-    nav {
-        display: flex;
-        gap: 18px;
-        flex-wrap: wrap;
         justify-content: center;
     }
 
-    nav a {
-        text-decoration: none;
-        color: #26384d;
-        font-weight: 600;
-        font-size: 14px;
-    }
-
-    nav a:hover {
-        color: #1557b0;
-    }
-
     .hero {
-        background: linear-gradient(135deg, #1557b0, #2879d8);
-        color: white;
-        padding: 70px 7%;
-        text-align: center;
-    }
-
-    .hero .icon {
-        font-size: 48px;
-        margin-bottom: 10px;
+        padding: 55px 6%;
     }
 
     .hero h1 {
-        font-size: 42px;
-        margin-bottom: 12px;
+        font-size: 32px;
     }
 
     .hero p {
-        font-size: 18px;
-        max-width: 780px;
-        margin: auto;
-        opacity: 0.95;
-    }
-
-    .back-button {
-        display: inline-block;
-        margin-top: 25px;
-        padding: 12px 20px;
-        background: white;
-        color: #1557b0;
-        border-radius: 10px;
-        text-decoration: none;
-        font-weight: 700;
-    }
-
-    .back-button:hover {
-        background: #eef5ff;
+        font-size: 16px;
     }
 
     .container {
-        width: 86%;
-        max-width: 1150px;
-        margin: 45px auto;
+        width: 90%;
     }
 
-    .section {
-        margin-bottom: 45px;
+    nav {
+        gap: 10px;
     }
 
-    .section h2 {
-        color: #183b68;
-        font-size: 28px;
-        margin-bottom: 20px;
+    nav a {
+        font-size: 13px;
     }
-
-    .section-intro {
-        color: #65758a;
-        margin-bottom: 20px;
-    }
-
-    .info-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 18px;
-    }
-
-    .info-card {
-        background: #ffffff;
-        border-radius: 18px;
-        padding: 25px;
-        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
-        border-left: 5px solid #1557b0;
-    }
-
-    .info-card .icon {
-        font-size: 30px;
-        margin-bottom: 10px;
-    }
-
-    .info-card h3 {
-        color: #183b68;
-        margin-bottom: 8px;
-    }
-
-    .info-card p {
-        color: #65758a;
-    }
-
-    .schedule {
-        background: #ffffff;
-        border-radius: 18px;
-        padding: 25px;
-        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
-        overflow-x: auto;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        min-width: 650px;
-    }
-
-    th {
-        background: #1557b0;
-        color: white;
-        padding: 14px;
-        text-align: left;
-    }
-
-    td {
-        padding: 14px;
-        border-bottom: 1px solid #e6ebf1;
-        color: #526276;
-    }
-
-    tr:last-child td {
-        border-bottom: none;
-    }
-
-    .calendar-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 16px;
-    }
-
-    .calendar-card {
-        background: #ffffff;
-        border-radius: 16px;
-        padding: 20px;
-        border-left: 4px solid #1557b0;
-        box-shadow: 0 6px 20px rgba(21, 87, 176, 0.07);
-    }
-
-    .calendar-card strong {
-        display: block;
-        color: #183b68;
-        margin-bottom: 6px;
-    }
-
-    .calendar-card span {
-        color: #65758a;
-    }
-
-    .year-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 18px;
-    }
-
-    .year-card {
-        background: #ffffff;
-        border-radius: 18px;
-        padding: 25px;
-        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
-    }
-
-    .year-card h3 {
-        color: #1557b0;
-        margin-bottom: 12px;
-    }
-
-    .year-card p {
-        color: #65758a;
-        margin-bottom: 8px;
-    }
-
-    .important-box {
-        background: #eaf2ff;
-        border-left: 5px solid #1557b0;
-        border-radius: 12px;
-        padding: 20px;
-        color: #29496d;
-    }
-
-    .important-box a,
-    .placeholder a {
-        color: #1557b0;
-        font-weight: 700;
-        text-decoration: none;
-    }
-
-    .important-box a:hover,
-    .placeholder a:hover {
-        text-decoration: underline;
-    }
-
-    .placeholder {
-        background: #ffffff;
-        border-radius: 16px;
-        padding: 25px;
-        color: #65758a;
-        box-shadow: 0 6px 20px rgba(21, 87, 176, 0.07);
-    }
-
-    .links {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 15px;
-    }
-
-    .link-card {
-        background: #ffffff;
-        border-radius: 15px;
-        padding: 20px;
-        text-decoration: none;
-        color: #183b68;
-        font-weight: 700;
-        box-shadow: 0 6px 20px rgba(21, 87, 176, 0.07);
-        transition: 0.2s;
-    }
-
-    .link-card:hover {
-        transform: translateY(-3px);
-        color: #1557b0;
-    }
-
-    footer {
-        background: #102a49;
-        color: white;
-        text-align: center;
-        padding: 28px 7%;
-        margin-top: 60px;
-    }
-
-    footer p {
-        opacity: 0.85;
-        font-size: 14px;
-    }
-
-    @media (max-width: 700px) {
-
-        header {
-            justify-content: center;
-        }
-
-        .hero {
-            padding: 55px 6%;
-        }
-
-        .hero h1 {
-            font-size: 32px;
-        }
-
-        .hero p {
-            font-size: 16px;
-        }
-
-        .container {
-            width: 90%;
-        }
-
-        nav {
-            gap: 10px;
-        }
-
-        nav a {
-            font-size: 13px;
-        }
-    }
+}
 
 </style>
 
@@ -370,403 +400,410 @@
 
 <main class="container">
 
-
 <section class="section">
 
-    <h2>📚 Informazioni sul corso</h2>
 
-    <p class="section-intro">
-        Ingegneria dei Sistemi Medicali — percorso di laurea
-        dedicato all'integrazione tra ingegneria, tecnologia e ambito sanitario.
-    </p>
+<h2>📚 Informazioni sul corso</h2>
 
-    <div class="info-grid">
+<p class="section-intro">
+    Ingegneria dei Sistemi Medicali — Laurea triennale.
+</p>
 
-        <div class="info-card">
+<div class="info-grid">
 
-            <div class="icon">
-                🎓
-            </div>
+    <div class="info-card">
 
-            <h3>Corso di laurea</h3>
-
-            <p>
-                Ingegneria dei Sistemi Medicali
-            </p>
-
+        <div class="icon">
+            🎓
         </div>
 
-        <div class="info-card">
-
-            <div class="icon">
-                📍
-            </div>
-
-            <h3>Sede</h3>
-
-            <p>
-                Politecnico di Bari — Bari
-            </p>
-
-        </div>
-
-        <div class="info-card">
-
-            <div class="icon">
-                ⏱️
-            </div>
-
-            <h3>Durata</h3>
-
-            <p>
-                3 anni
-            </p>
-
-        </div>
-
-        <div class="info-card">
-
-            <div class="icon">
-                📅
-            </div>
-
-            <h3>Anno accademico</h3>
-
-            <p>
-                2026/2027
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="section">
-
-    <h2>🗓️ Orario delle lezioni</h2>
-
-    <p class="section-intro">
-        Orario settimanale per l'anno accademico 2026/2027.
-    </p>
-
-    <div class="schedule">
-
-        <table>
-
-            <thead>
-
-                <tr>
-                    <th>Giorno</th>
-                    <th>Mattina</th>
-                    <th>Pomeriggio</th>
-                </tr>
-
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td>Lunedì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Martedì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Mercoledì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Giovedì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Venerdì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-</section>
-
-
-<section class="section">
-
-    <h2>🗓️ Calendario accademico</h2>
-
-    <p class="section-intro">
-        Principali periodi dell'anno accademico 2026/2027.
-    </p>
-
-    <div class="calendar-grid">
-
-        <div class="calendar-card">
-            <strong>Inizio lezioni</strong>
-            <span>21 settembre 2026</span>
-        </div>
-
-        <div class="calendar-card">
-            <strong>Pausa esoneri</strong>
-            <span>2 – 6 novembre 2026</span>
-        </div>
-
-        <div class="calendar-card">
-            <strong>Recupero lezioni</strong>
-            <span>21 – 23 dicembre 2026</span>
-        </div>
-
-        <div class="calendar-card">
-            <strong>Festività natalizie</strong>
-            <span>24 dicembre 2026 – 6 gennaio 2027</span>
-        </div>
-
-        <div class="calendar-card">
-            <strong>Recupero lezioni</strong>
-            <span>7 – 8 gennaio 2027</span>
-        </div>
-
-        <div class="calendar-card">
-            <strong>Fine lezioni</strong>
-            <span>8 gennaio 2027</span>
-        </div>
-
-        <div class="calendar-card">
-            <strong>Periodo esami</strong>
-            <span>11 gennaio – 26 febbraio 2027</span>
-        </div>
-
-        <div class="calendar-card">
-            <strong>Anno accademico</strong>
-            <span>2026/2027</span>
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="section">
-
-    <h2>🎯 Ambiti del corso</h2>
-
-    <p class="section-intro">
-        Il percorso unisce competenze ingegneristiche e tecnologiche
-        applicate ai sistemi e alle tecnologie per il settore medicale.
-    </p>
-
-    <div class="year-grid">
-
-        <div class="year-card">
-
-            <h3>
-                🧮 Ingegneria
-            </h3>
-
-            <p>
-                Fondamenti di matematica, fisica e discipline
-                ingegneristiche necessari per affrontare il percorso.
-            </p>
-
-        </div>
-
-        <div class="year-card">
-
-            <h3>
-                🩻 Tecnologie medicali
-            </h3>
-
-            <p>
-                Studio delle tecnologie e dei sistemi utilizzati
-                nell'ambito sanitario e biomedicale.
-            </p>
-
-        </div>
-
-        <div class="year-card">
-
-            <h3>
-                💻 Sistemi e innovazione
-            </h3>
-
-            <p>
-                Integrazione tra strumenti digitali, sistemi tecnologici
-                e applicazioni innovative per il settore medicale.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="section">
-
-    <h2>📖 Piano di studi</h2>
-
-    <p class="section-intro">
-        Il dettaglio degli insegnamenti e dei relativi CFU
-        sarà aggiornato con i dati ufficiali dell'anno accademico 2026/2027.
-    </p>
-
-    <div class="year-grid">
-
-        <div class="year-card">
-
-            <h3>
-                1° anno
-            </h3>
-
-            <p>
-                Insegnamenti fondamentali del percorso
-                di Ingegneria dei Sistemi Medicali.
-            </p>
-
-            <p>
-                <strong>Piano dettagliato:</strong>
-                in aggiornamento.
-            </p>
-
-        </div>
-
-        <div class="year-card">
-
-            <h3>
-                2° anno
-            </h3>
-
-            <p>
-                Proseguimento della formazione ingegneristica
-                e approfondimento delle competenze legate ai sistemi medicali.
-            </p>
-
-            <p>
-                <strong>Piano dettagliato:</strong>
-                in aggiornamento.
-            </p>
-
-        </div>
-
-        <div class="year-card">
-
-            <h3>
-                3° anno
-            </h3>
-
-            <p>
-                Approfondimenti finali, attività formative,
-                eventuali attività a scelta e prova finale.
-            </p>
-
-            <p>
-                <strong>Piano dettagliato:</strong>
-                in aggiornamento.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="section">
-
-    <h2>📢 Avvisi per Sistemi Medicali</h2>
-
-    <div class="placeholder">
+        <h3>Classe</h3>
 
         <p>
-            Gli avvisi specifici per gli studenti di Ingegneria
-            dei Sistemi Medicali saranno raccolti nella bacheca del sito.
+            Informazioni ufficiali in aggiornamento
         </p>
-
-        <br>
-
-        <a href="avvisi.html">
-            Vai alla bacheca generale degli avvisi →
-        </a>
 
     </div>
 
-</section>
 
+    <div class="info-card">
 
-<section class="section">
+        <div class="icon">
+            📍
+        </div>
 
-    <h2>🆘 Segnala un problema</h2>
-
-    <div class="important-box">
+        <h3>Sede</h3>
 
         <p>
-            Hai trovato un problema con l'orario, un esame,
-            una comunicazione o un'attività didattica?
+            Politecnico di Bari — Bari
         </p>
-
-        <br>
-
-        <a href="segnalazioni.html">
-            Invia una segnalazione →
-        </a>
 
     </div>
 
-</section>
 
+    <div class="info-card">
+
+        <div class="icon">
+            ⏱️
+        </div>
+
+        <h3>Durata</h3>
+
+        <p>
+            3 anni
+        </p>
+
+    </div>
+
+
+    <div class="info-card">
+
+        <div class="icon">
+            📅
+        </div>
+
+        <h3>Anno accademico</h3>
+
+        <p>
+            2026/2027
+        </p>
+
+    </div>
+
+</div>
+
+
+</section>
 
 <section class="section">
 
-    <h2>🔗 Link utili</h2>
 
-    <div class="links">
+<h2>🗓️ Orario delle lezioni</h2>
 
-        <a
-            href="https://poliba.it/"
-            target="_blank"
-            class="link-card">
-            Politecnico di Bari →
-        </a>
+<p class="section-intro">
+    Orario settimanale per l'anno accademico 2026/2027.
+</p>
 
-        <a
-            href="https://www.poliba.it/it/didattica"
-            target="_blank"
-            class="link-card">
-            Didattica PoliBa →
-        </a>
+<div class="schedule">
 
-        <a
-            href="https://www.poliba.it/"
-            target="_blank"
-            class="link-card">
-            Informazioni ufficiali →
-        </a>
+    <table>
 
-        <a
-            href="avvisi.html"
-            class="link-card">
-            Bacheca Avvisi →
-        </a>
+        <thead>
 
-    </div>
+            <tr>
+                <th>Giorno</th>
+                <th>Mattina</th>
+                <th>Pomeriggio</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>Lunedì</td>
+                <td>Orario in aggiornamento</td>
+                <td>Orario in aggiornamento</td>
+            </tr>
+
+            <tr>
+                <td>Martedì</td>
+                <td>Orario in aggiornamento</td>
+                <td>Orario in aggiornamento</td>
+            </tr>
+
+            <tr>
+                <td>Mercoledì</td>
+                <td>Orario in aggiornamento</td>
+                <td>Orario in aggiornamento</td>
+            </tr>
+
+            <tr>
+                <td>Giovedì</td>
+                <td>Orario in aggiornamento</td>
+                <td>Orario in aggiornamento</td>
+            </tr>
+
+            <tr>
+                <td>Venerdì</td>
+                <td>Orario in aggiornamento</td>
+                <td>Orario in aggiornamento</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
 
 </section>
 
+<section class="section">
+
+
+<h2>🗓️ Calendario accademico</h2>
+
+<p class="section-intro">
+    Principali periodi dell'anno accademico 2026/2027.
+</p>
+
+<div class="calendar-grid">
+
+    <div class="calendar-card">
+        <strong>Inizio lezioni</strong>
+        <span>21 settembre 2026</span>
+    </div>
+
+    <div class="calendar-card">
+        <strong>Pausa esoneri</strong>
+        <span>2 – 6 novembre 2026</span>
+    </div>
+
+    <div class="calendar-card">
+        <strong>Recupero lezioni</strong>
+        <span>21 – 23 dicembre 2026</span>
+    </div>
+
+    <div class="calendar-card">
+        <strong>Festività natalizie</strong>
+        <span>24 dicembre 2026 – 6 gennaio 2027</span>
+    </div>
+
+    <div class="calendar-card">
+        <strong>Recupero lezioni</strong>
+        <span>7 – 8 gennaio 2027</span>
+    </div>
+
+    <div class="calendar-card">
+        <strong>Fine lezioni</strong>
+        <span>8 gennaio 2027</span>
+    </div>
+
+    <div class="calendar-card">
+        <strong>Periodo esami</strong>
+        <span>11 gennaio – 26 febbraio 2027</span>
+    </div>
+
+    <div class="calendar-card">
+        <strong>Anno accademico</strong>
+        <span>2026/2027</span>
+    </div>
+
+</div>
+
+
+</section>
+
+<section class="section">
+
+
+<h2>🎯 Percorsi</h2>
+
+<p class="section-intro">
+    Il corso integra competenze ingegneristiche, tecnologiche
+    e applicazioni dedicate al settore medicale.
+</p>
+
+<div class="curricula">
+
+    <div class="curriculum">
+
+        <div class="icon">
+            🩺
+        </div>
+
+        <h3>
+            Sistemi Medicali
+        </h3>
+
+        <p>
+            Percorso dedicato allo studio dei sistemi,
+            delle tecnologie e delle applicazioni in ambito medicale.
+        </p>
+
+    </div>
+
+
+    <div class="curriculum">
+
+        <div class="icon">
+            ⚙️
+        </div>
+
+        <h3>
+            Tecnologie
+        </h3>
+
+        <p>
+            Approfondimento delle tecnologie ingegneristiche
+            applicate ai sistemi e ai dispositivi medicali.
+        </p>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<section class="section">
+
+
+<h2>📖 Piano di studi</h2>
+
+<p class="section-intro">
+    Il dettaglio degli insegnamenti e dei relativi CFU
+    sarà aggiornato con i dati ufficiali dell'anno accademico 2026/2027.
+</p>
+
+<div class="year-grid">
+
+    <div class="year-card">
+
+        <h3>
+            1° anno
+        </h3>
+
+        <p>
+            Insegnamenti fondamentali del percorso
+            di Ingegneria dei Sistemi Medicali.
+        </p>
+
+        <p>
+            <strong>Piano dettagliato:</strong>
+            in aggiornamento.
+        </p>
+
+    </div>
+
+
+    <div class="year-card">
+
+        <h3>
+            2° anno
+        </h3>
+
+        <p>
+            Proseguimento della formazione ingegneristica
+            e approfondimento delle competenze legate ai sistemi medicali.
+        </p>
+
+        <p>
+            <strong>Piano dettagliato:</strong>
+            in aggiornamento.
+        </p>
+
+    </div>
+
+
+    <div class="year-card">
+
+        <h3>
+            3° anno
+        </h3>
+
+        <p>
+            Approfondimenti finali, attività formative,
+            eventuali attività a scelta e prova finale.
+        </p>
+
+        <p>
+            <strong>Piano dettagliato:</strong>
+            in aggiornamento.
+        </p>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<section class="section">
+
+
+<h2>📢 Avvisi per Sistemi Medicali</h2>
+
+<div class="placeholder">
+
+    <p>
+        Gli avvisi specifici per gli studenti di Ingegneria
+        dei Sistemi Medicali saranno raccolti nella bacheca del sito.
+    </p>
+
+    <br>
+
+    <a href="avvisi.html">
+        Vai alla bacheca generale degli avvisi →
+    </a>
+
+</div>
+
+
+</section>
+
+<section class="section">
+
+
+<h2>🆘 Segnala un problema</h2>
+
+<div class="important-box">
+
+    <p>
+        Hai trovato un problema con l'orario, un esame,
+        una comunicazione o un'attività didattica?
+    </p>
+
+    <br>
+
+    <a href="segnalazioni.html">
+        Invia una segnalazione →
+    </a>
+
+</div>
+
+
+</section>
+
+<section class="section">
+
+
+<h2>🔗 Link utili</h2>
+
+<div class="links">
+
+    <a
+        href="https://poliba.it/"
+        target="_blank"
+        class="link-card">
+        Politecnico di Bari →
+    </a>
+
+    <a
+        href="https://www.poliba.it/it/didattica"
+        target="_blank"
+        class="link-card">
+        Didattica PoliBa →
+    </a>
+
+    <a
+        href="https://www.dmmm.poliba.it/"
+        target="_blank"
+        class="link-card">
+        DMMM →
+    </a>
+
+    <a
+        href="avvisi.html"
+        class="link-card">
+        Bacheca Avvisi →
+    </a>
+
+</div>
+
+
+</section>
 
 </main>
 
