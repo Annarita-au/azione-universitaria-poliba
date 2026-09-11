@@ -188,4 +188,505 @@
 
     .calendar-card strong {
         display: block;
+        color: #183b68;
+        margin-bottom: 6px;
+    }
+
+    .calendar-card span {
+        color: #65758a;
+    }
+
+    .topic,
+    .year-card,
+    .placeholder {
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 25px;
+        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
+    }
+
+    .topic h3,
+    .year-card h3 {
+        color: #1557b0;
+        margin-bottom: 12px;
+    }
+
+    .topic p,
+    .year-card p,
+    .placeholder {
+        color: #65758a;
+    }
+
+    .important-box {
+        background: #eaf2ff;
+        border-left: 5px solid #1557b0;
+        border-radius: 12px;
+        padding: 20px;
+        color: #29496d;
+    }
+
+    a {
+        color: #1557b0;
+    }
+
+    .links a {
+        background: #ffffff;
+        border-radius: 15px;
+        padding: 20px;
+        text-decoration: none;
+        color: #183b68;
+        font-weight: 700;
+        box-shadow: 0 6px 20px rgba(21, 87, 176, 0.07);
+    }
+
+    footer {
+        background: #102a49;
+        color: white;
+        text-align: center;
+        padding: 28px 7%;
+        margin-top: 60px;
+    }
+
+    footer p {
+        opacity: 0.85;
+        font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+        header {
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+        }
+
+        .container {
+            width: 90%;
+        }
+    }
+</style>
 ```
+
+</head>
+
+<body>
+
+<header>
+    <a href="index.html" class="logo">Azione Universitaria PoliBa</a>
+
+```
+<nav>
+    <a href="index.html">Home</a>
+    <a href="calendari.html">Calendari</a>
+    <a href="matricole.html">Matricole</a>
+    <a href="avvisi.html">Avvisi</a>
+    <a href="rappresentanza.html">Rappresentanza</a>
+    <a href="segnalazioni.html">Segnalazioni</a>
+</nav>
+```
+
+</header>
+
+<section class="hero">
+
+```
+<div class="icon">⚙️</div>
+
+<h1>Ingegneria Meccanica</h1>
+
+<p>
+    Informazioni, calendario accademico, organizzazione del corso
+    e risorse utili per gli studenti di Ingegneria Meccanica.
+</p>
+
+<a href="calendari.html" class="back-button">
+    ← Torna ai Calendari
+</a>
+```
+
+</section>
+
+<main class="container">
+
+```
+<section class="section">
+
+    <h2>📚 Informazioni sul corso</h2>
+
+    <p class="section-intro">
+        Ingegneria Meccanica — Laurea triennale.
+    </p>
+
+    <div class="info-grid">
+
+        <div class="info-card">
+            <div class="icon">🎓</div>
+            <h3>Classe</h3>
+            <p>Informazioni ufficiali in aggiornamento</p>
+        </div>
+
+        <div class="info-card">
+            <div class="icon">📍</div>
+            <h3>Sede</h3>
+            <p>Politecnico di Bari — Bari</p>
+        </div>
+
+        <div class="info-card">
+            <div class="icon">⏱️</div>
+            <h3>Durata</h3>
+            <p>3 anni</p>
+        </div>
+
+        <div class="info-card">
+            <div class="icon">📅</div>
+            <h3>Anno accademico</h3>
+            <p>2026/2027</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2>🗓️ Orario delle lezioni</h2>
+
+    <p class="section-intro">
+        Orario settimanale per l'anno accademico 2026/2027.
+    </p>
+
+    <div class="schedule">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Giorno</th>
+                    <th>Mattina</th>
+                    <th>Pomeriggio</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Lunedì</td>
+                    <td>Orario in aggiornamento</td>
+                    <td>Orario in aggiornamento</td>
+                </tr>
+
+                <tr>
+                    <td>Martedì</td>
+                    <td>Orario in aggiornamento</td>
+                    <td>Orario in aggiornamento</td>
+                </tr>
+
+                <tr>
+                    <td>Mercoledì</td>
+                    <td>Orario in aggiornamento</td>
+                    <td>Orario in aggiornamento</td>
+                </tr>
+
+                <tr>
+                    <td>Giovedì</td>
+                    <td>Orario in aggiornamento</td>
+                    <td>Orario in aggiornamento</td>
+                </tr>
+
+                <tr>
+                    <td>Venerdì</td>
+                    <td>Orario in aggiornamento</td>
+                    <td>Orario in aggiornamento</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2>🗓️ Calendario accademico</h2>
+
+    <p class="section-intro">
+        Principali periodi dell'anno accademico 2026/2027.
+    </p>
+
+    <div class="calendar-grid">
+
+        <div class="calendar-card">
+            <strong>Inizio lezioni</strong>
+            <span>21 settembre 2026</span>
+        </div>
+
+        <div class="calendar-card">
+            <strong>Pausa esoneri</strong>
+            <span>2 – 6 novembre 2026</span>
+        </div>
+
+        <div class="calendar-card">
+            <strong>Recupero lezioni</strong>
+            <span>21 – 23 dicembre 2026</span>
+        </div>
+
+        <div class="calendar-card">
+            <strong>Festività natalizie</strong>
+            <span>24 dicembre 2026 – 6 gennaio 2027</span>
+        </div>
+
+        <div class="calendar-card">
+            <strong>Recupero lezioni</strong>
+            <span>7 – 8 gennaio 2027</span>
+        </div>
+
+        <div class="calendar-card">
+            <strong>Fine lezioni</strong>
+            <span>8 gennaio 2027</span>
+        </div>
+
+        <div class="calendar-card">
+            <strong>Periodo esami</strong>
+            <span>11 gennaio – 26 febbraio 2027</span>
+        </div>
+
+        <div class="calendar-card">
+            <strong>Anno accademico</strong>
+            <span>2026/2027</span>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2>⚙️ Cosa si studia</h2>
+
+    <p class="section-intro">
+        Il corso sviluppa competenze nell'ambito della progettazione,
+        produzione e gestione dei sistemi meccanici e industriali.
+    </p>
+
+    <div class="topics">
+
+        <div class="topic">
+
+            <h3>⚙️ Macchine e sistemi meccanici</h3>
+
+            <p>
+                Studio delle macchine, dei sistemi meccanici
+                e dei principali componenti utilizzati
+                nell'industria.
+            </p>
+
+        </div>
+
+        <div class="topic">
+
+            <h3>🔥 Sistemi energetici</h3>
+
+            <p>
+                Analisi dei sistemi energetici, delle trasformazioni
+                dell'energia e delle relative applicazioni ingegneristiche.
+            </p>
+
+        </div>
+
+        <div class="topic">
+
+            <h3>🧱 Materiali e tecnologie</h3>
+
+            <p>
+                Conoscenza dei materiali e delle tecnologie
+                utilizzate nei processi produttivi e nella
+                realizzazione dei componenti.
+            </p>
+
+        </div>
+
+        <div class="topic">
+
+            <h3>📐 Progettazione meccanica</h3>
+
+            <p>
+                Sviluppo delle competenze necessarie alla
+                progettazione tecnica e alla soluzione
+                di problemi dell'ingegneria meccanica.
+            </p>
+
+        </div>
+
+        <div class="topic">
+
+            <h3>🏭 Processi e impianti produttivi</h3>
+
+            <p>
+                Studio dei processi produttivi e degli impianti
+                industriali, con attenzione all'organizzazione
+                e all'efficienza.
+            </p>
+
+        </div>
+
+        <div class="topic">
+
+            <h3>📚 Scienze di base</h3>
+
+            <p>
+                Analisi, geometria, algebra, fisica, chimica
+                e informatica costituiscono la base della
+                preparazione ingegneristica.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2>📖 Piano di studi</h2>
+
+    <p class="section-intro">
+        Il dettaglio degli insegnamenti e dei relativi CFU
+        sarà aggiornato con i dati ufficiali dell'anno accademico 2026/2027.
+    </p>
+
+    <div class="year-grid">
+
+        <div class="year-card">
+
+            <h3>1° anno</h3>
+
+            <p>
+                Insegnamenti fondamentali e formazione
+                scientifica di base.
+            </p>
+
+            <p>
+                <strong>Piano dettagliato:</strong>
+                in aggiornamento.
+            </p>
+
+        </div>
+
+        <div class="year-card">
+
+            <h3>2° anno</h3>
+
+            <p>
+                Proseguimento della formazione ingegneristica
+                e approfondimento delle competenze meccaniche.
+            </p>
+
+            <p>
+                <strong>Piano dettagliato:</strong>
+                in aggiornamento.
+            </p>
+
+        </div>
+
+        <div class="year-card">
+
+            <h3>3° anno</h3>
+
+            <p>
+                Approfondimenti specialistici, attività formative
+                e prova finale.
+            </p>
+
+            <p>
+                <strong>Piano dettagliato:</strong>
+                in aggiornamento.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2>📢 Avvisi per Ingegneria Meccanica</h2>
+
+    <div class="placeholder">
+
+        Gli avvisi specifici per gli studenti di Ingegneria
+        Meccanica saranno raccolti nella bacheca del sito.
+
+        <br><br>
+
+        <a href="avvisi.html">
+            Vai alla bacheca generale degli avvisi →
+        </a>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2>🆘 Segnala un problema</h2>
+
+    <div class="important-box">
+
+        Hai trovato un problema con l'orario, un esame,
+        una comunicazione o un'attività didattica?
+
+        <br><br>
+
+        <a href="segnalazioni.html">
+            Invia una segnalazione →
+        </a>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2>🔗 Link utili</h2>
+
+    <div class="links">
+
+        <a href="https://www.poliba.it/" target="_blank">
+            Politecnico di Bari →
+        </a>
+
+        <a href="https://www.poliba.it/it/didattica" target="_blank">
+            Didattica PoliBa →
+        </a>
+
+        <a href="https://www.dmmm.poliba.it/" target="_blank">
+            DMMM →
+        </a>
+
+        <a href="avvisi.html">
+            Bacheca Avvisi →
+        </a>
+
+    </div>
+
+</section>
+```
+
+</main>
+
+<footer>
+
+```
+<p>
+    Azione Universitaria PoliBa — Ingegneria Meccanica
+</p>
+```
+
+</footer>
+
+</body>
+</html>
