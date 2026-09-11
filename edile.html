@@ -10,290 +10,344 @@
 
 <style>
 
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: #f4f7fb;
-        color: #172033;
-        line-height: 1.6;
-    }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1d2a3a;
+    line-height: 1.6;
+}
+
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #e4eaf1;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    color: #1557b0;
+    font-size: 22px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #26384d;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #1557b0;
+}
+
+.hero {
+    background: linear-gradient(135deg, #1557b0, #2879d8);
+    color: white;
+    padding: 70px 7%;
+    text-align: center;
+}
+
+.hero .icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 780px;
+    margin: auto;
+    opacity: 0.95;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 20px;
+    background: white;
+    color: #1557b0;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.back-button:hover {
+    background: #eef5ff;
+}
+
+.container {
+    width: 86%;
+    max-width: 1150px;
+    margin: 45px auto;
+}
+
+.section {
+    margin-bottom: 45px;
+}
+
+.section h2 {
+    color: #183b68;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.section-intro {
+    color: #65758a;
+    margin-bottom: 20px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.info-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
+    border-left: 5px solid #1557b0;
+}
+
+.info-card .icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.info-card h3 {
+    color: #183b68;
+    margin-bottom: 8px;
+}
+
+.info-card p {
+    color: #65758a;
+}
+
+.schedule {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th {
+    background: #1557b0;
+    color: white;
+    padding: 14px;
+    text-align: left;
+}
+
+td {
+    padding: 14px;
+    border-bottom: 1px solid #e6ebf1;
+    color: #526276;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+.calendar-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    border-left: 4px solid #1557b0;
+    box-shadow: 0 6px 20px rgba(21, 87, 176, 0.07);
+}
+
+.calendar-card strong {
+    display: block;
+    color: #183b68;
+    margin-bottom: 6px;
+}
+
+.calendar-card span {
+    color: #65758a;
+}
+
+.curricula {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
+}
+
+.curriculum {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
+    text-align: center;
+    border-top: 4px solid #1557b0;
+}
+
+.curriculum .icon {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.curriculum h3 {
+    color: #183b68;
+    margin-bottom: 10px;
+}
+
+.curriculum p {
+    color: #65758a;
+    font-size: 14px;
+}
+
+.year-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
+}
+
+.year-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
+}
+
+.year-card h3 {
+    color: #1557b0;
+    margin-bottom: 12px;
+}
+
+.year-card p {
+    color: #65758a;
+    margin-bottom: 8px;
+}
+
+.important-box {
+    background: #eaf2ff;
+    border-left: 5px solid #1557b0;
+    border-radius: 12px;
+    padding: 20px;
+    color: #29496d;
+}
+
+.important-box a,
+.placeholder a {
+    color: #1557b0;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.important-box a:hover,
+.placeholder a:hover {
+    text-decoration: underline;
+}
+
+.placeholder {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px;
+    color: #65758a;
+    box-shadow: 0 6px 20px rgba(21, 87, 176, 0.07);
+}
+
+.links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.link-card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    text-decoration: none;
+    color: #183b68;
+    font-weight: 700;
+    box-shadow: 0 6px 20px rgba(21, 87, 176, 0.07);
+    transition: 0.2s;
+}
+
+.link-card:hover {
+    transform: translateY(-3px);
+    color: #1557b0;
+}
+
+footer {
+    background: #102a49;
+    color: white;
+    text-align: center;
+    padding: 28px 7%;
+    margin-top: 60px;
+}
+
+footer p {
+    opacity: 0.85;
+    font-size: 14px;
+}
+
+@media (max-width: 700px) {
 
     header {
-        background: linear-gradient(135deg, #061a40, #0b4ea2);
-        color: white;
-        padding: 18px 7%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    .logo {
-        font-size: 21px;
-        font-weight: bold;
-    }
-
-    nav a {
-        color: white;
-        text-decoration: none;
-        margin-left: 22px;
-        font-weight: bold;
-        font-size: 14px;
-    }
-
-    nav a:hover {
-        text-decoration: underline;
+        justify-content: center;
     }
 
     .hero {
-        background: linear-gradient(135deg, #0b4ea2, #1877d3);
-        color: white;
-        padding: 70px 7%;
+        padding: 55px 6%;
     }
 
     .hero h1 {
-        font-size: 42px;
-        margin-bottom: 15px;
+        font-size: 32px;
     }
 
     .hero p {
-        max-width: 850px;
-        font-size: 18px;
-        opacity: 0.95;
+        font-size: 16px;
     }
 
     .container {
-        width: 86%;
-        max-width: 1200px;
-        margin: 40px auto;
+        width: 90%;
     }
 
-    .info-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 18px;
-        margin-bottom: 45px;
+    nav {
+        gap: 10px;
     }
 
-    .info-card {
-        background: white;
-        padding: 25px;
-        border-radius: 14px;
-        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
-        text-align: center;
+    nav a {
+        font-size: 13px;
     }
-
-    .info-card strong {
-        display: block;
-        font-size: 15px;
-        color: #0b4ea2;
-        margin-bottom: 7px;
-    }
-
-    .info-card span {
-        font-size: 16px;
-        font-weight: bold;
-    }
-
-    section {
-        margin-bottom: 50px;
-    }
-
-    section h2 {
-        color: #0b4ea2;
-        font-size: 28px;
-        margin-bottom: 22px;
-    }
-
-    .schedule {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 15px;
-    }
-
-    .day {
-        background: white;
-        padding: 22px;
-        border-radius: 14px;
-        box-shadow: 0 5px 18px rgba(0,0,0,0.06);
-    }
-
-    .day h3 {
-        color: #0b4ea2;
-        margin-bottom: 12px;
-    }
-
-    .day p {
-        color: #667085;
-        font-size: 14px;
-    }
-
-    .calendar-box {
-        background: white;
-        border-radius: 16px;
-        padding: 28px;
-        box-shadow: 0 5px 18px rgba(0,0,0,0.06);
-    }
-
-    .calendar-item {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        padding: 13px 0;
-        border-bottom: 1px solid #e6eaf0;
-    }
-
-    .calendar-item:last-child {
-        border-bottom: none;
-    }
-
-    .calendar-item strong {
-        color: #0b4ea2;
-    }
-
-    .topics {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    .topic {
-        background: white;
-        padding: 28px;
-        border-radius: 16px;
-        box-shadow: 0 5px 18px rgba(0,0,0,0.06);
-    }
-
-    .topic h3 {
-        color: #0b4ea2;
-        font-size: 21px;
-        margin-bottom: 12px;
-    }
-
-    .topic p {
-        color: #4b5563;
-    }
-
-    .notice {
-        background: white;
-        padding: 28px;
-        border-radius: 16px;
-        box-shadow: 0 5px 18px rgba(0,0,0,0.06);
-    }
-
-    .notice p {
-        color: #667085;
-    }
-
-    .links {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-
-    .link-card {
-        background: white;
-        padding: 20px;
-        border-radius: 14px;
-        box-shadow: 0 5px 18px rgba(0,0,0,0.06);
-    }
-
-    .link-card a {
-        color: #0b4ea2;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    .link-card a:hover {
-        text-decoration: underline;
-    }
-
-    .back {
-        text-align: center;
-        margin: 50px 0;
-    }
-
-    .back a {
-        display: inline-block;
-        background: #0b4ea2;
-        color: white;
-        text-decoration: none;
-        padding: 13px 24px;
-        border-radius: 9px;
-        font-weight: bold;
-    }
-
-    .back a:hover {
-        background: #083d82;
-    }
-
-    footer {
-        background: #061a40;
-        color: white;
-        text-align: center;
-        padding: 28px 7%;
-        margin-top: 60px;
-    }
-
-    footer p {
-        font-size: 14px;
-        opacity: 0.85;
-    }
-
-    @media (max-width: 900px) {
-
-        .info-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .schedule {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .topics,
-        .links {
-            grid-template-columns: 1fr;
-        }
-
-    }
-
-    @media (max-width: 600px) {
-
-        header {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        nav a {
-            margin-left: 0;
-            margin-right: 15px;
-        }
-
-        .hero h1 {
-            font-size: 32px;
-        }
-
-        .info-grid,
-        .schedule {
-            grid-template-columns: 1fr;
-        }
-
-        .calendar-item {
-            flex-direction: column;
-            gap: 3px;
-        }
-
-        .container {
-            width: 90%;
-        }
-
-    }
+}
 
 </style>
 ```
@@ -305,302 +359,413 @@
 <header>
 
 ```
-<div class="logo">
-    AZIONE UNIVERSITARIA POLIBA
-</div>
+<a href="index.html" class="logo">
+    Azione Universitaria PoliBa
+</a>
 
 <nav>
     <a href="index.html">Home</a>
     <a href="calendari.html">Calendari</a>
-    <a href="#">Matricole</a>
-    <a href="#">Avvisi</a>
+    <a href="matricole.html">Matricole</a>
+    <a href="avvisi.html">Avvisi</a>
+    <a href="rappresentanza.html">Rappresentanza</a>
+    <a href="segnalazioni.html">Segnalazioni</a>
 </nav>
 ```
 
 </header>
 
-<div class="hero">
+<section class="hero">
 
 ```
-<h1>🏠 Ingegneria Edile</h1>
-
-<p>
-    Corso di Laurea Triennale dedicato alla progettazione,
-    modellazione, gestione e produzione dell'ambiente costruito,
-    con particolare attenzione a innovazione e sostenibilità.
-</p>
-```
-
+<div class="icon">
+    🏗️
 </div>
 
-<div class="container">
+<h1>
+    Ingegneria Edile
+</h1>
+
+<p>
+    Informazioni, calendario accademico, organizzazione del corso
+    e risorse utili per gli studenti di Ingegneria Edile.
+</p>
+
+<a href="calendari.html" class="back-button">
+    ← Torna ai Calendari
+</a>
+```
+
+</section>
+
+<main class="container">
+
+<section class="section">
 
 ```
+<h2>📚 Informazioni sul corso</h2>
+
+<p class="section-intro">
+    Ingegneria Edile — Laurea triennale.
+</p>
+
 <div class="info-grid">
 
     <div class="info-card">
-        <strong>Classe</strong>
-        <span>LT02-R</span>
+        <div class="icon">🎓</div>
+        <h3>Classe</h3>
+        <p>Informazioni ufficiali in aggiornamento</p>
     </div>
 
     <div class="info-card">
-        <strong>Sede</strong>
-        <span>Bari</span>
+        <div class="icon">📍</div>
+        <h3>Sede</h3>
+        <p>Politecnico di Bari — Bari</p>
     </div>
 
     <div class="info-card">
-        <strong>Durata</strong>
-        <span>3 anni</span>
+        <div class="icon">⏱️</div>
+        <h3>Durata</h3>
+        <p>3 anni</p>
     </div>
 
     <div class="info-card">
-        <strong>Lingua</strong>
-        <span>Italiano</span>
+        <div class="icon">📅</div>
+        <h3>Anno accademico</h3>
+        <p>2026/2027</p>
     </div>
 
 </div>
-
-
-<section>
-
-    <h2>📅 Orario settimanale</h2>
-
-    <div class="schedule">
-
-        <div class="day">
-            <h3>Lunedì</h3>
-            <p>Orario in aggiornamento</p>
-        </div>
-
-        <div class="day">
-            <h3>Martedì</h3>
-            <p>Orario in aggiornamento</p>
-        </div>
-
-        <div class="day">
-            <h3>Mercoledì</h3>
-            <p>Orario in aggiornamento</p>
-        </div>
-
-        <div class="day">
-            <h3>Giovedì</h3>
-            <p>Orario in aggiornamento</p>
-        </div>
-
-        <div class="day">
-            <h3>Venerdì</h3>
-            <p>Orario in aggiornamento</p>
-        </div>
-
-    </div>
+```
 
 </section>
 
+<section class="section">
 
-<section>
+```
+<h2>🗓️ Orario delle lezioni</h2>
 
-    <h2>🗓️ Calendario accademico 2026/2027</h2>
+<p class="section-intro">
+    Orario settimanale per l'anno accademico 2026/2027.
+</p>
 
-    <div class="calendar-box">
+<div class="schedule">
 
-        <div class="calendar-item">
-            <strong>Inizio lezioni</strong>
-            <span>21 settembre 2026</span>
-        </div>
+    <table>
 
-        <div class="calendar-item">
-            <strong>Pausa esoneri</strong>
-            <span>2 – 6 novembre 2026</span>
-        </div>
+        <thead>
+            <tr>
+                <th>Giorno</th>
+                <th>Mattina</th>
+                <th>Pomeriggio</th>
+            </tr>
+        </thead>
 
-        <div class="calendar-item">
-            <strong>Recupero lezioni</strong>
-            <span>21 – 23 dicembre 2026</span>
-        </div>
+        <tbody>
 
-        <div class="calendar-item">
-            <strong>Festività natalizie</strong>
-            <span>24 dicembre 2026 – 6 gennaio 2027</span>
-        </div>
+            <tr>
+                <td>Lunedì</td>
+                <td>Orario in aggiornamento</td>
+                <td>Orario in aggiornamento</td>
+            </tr>
 
-        <div class="calendar-item">
-            <strong>Recupero lezioni</strong>
-            <span>7 – 8 gennaio 2027</span>
-        </div>
+            <tr>
+                <td>Martedì</td>
+                <td>Orario in aggiornamento</td>
+                <td>Orario in aggiornamento</td>
+            </tr>
 
-        <div class="calendar-item">
-            <strong>Fine lezioni</strong>
-            <span>8 gennaio 2027</span>
-        </div>
+            <tr>
+                <td>Mercoledì</td>
+                <td>Orario in aggiornamento</td>
+                <td>Orario in aggiornamento</td>
+            </tr>
 
-        <div class="calendar-item">
-            <strong>Periodo esami</strong>
-            <span>11 gennaio – 26 febbraio 2027</span>
-        </div>
+            <tr>
+                <td>Giovedì</td>
+                <td>Orario in aggiornamento</td>
+                <td>Orario in aggiornamento</td>
+            </tr>
 
-        <div class="calendar-item">
-            <strong>Anno accademico</strong>
-            <span>2026/2027</span>
-        </div>
+            <tr>
+                <td>Venerdì</td>
+                <td>Orario in aggiornamento</td>
+                <td>Orario in aggiornamento</td>
+            </tr>
 
-    </div>
+        </tbody>
 
-</section>
+    </table>
 
-
-<section>
-
-    <h2>📚 Cosa si studia</h2>
-
-    <div class="topics">
-
-        <div class="topic">
-
-            <h3>📐 Modellazione e rilievo</h3>
-
-            <p>
-                Rilievo degli edifici e modellazione architettonica
-                digitale per la rappresentazione e gestione
-                dell'ambiente costruito.
-            </p>
-
-        </div>
-
-
-        <div class="topic">
-
-            <h3>🏠 Progettazione edilizia</h3>
-
-            <p>
-                Progettazione tecnologica e tipologica degli edifici,
-                con attenzione alle esigenze funzionali e
-                prestazionali dell'abitare.
-            </p>
-
-        </div>
-
-
-        <div class="topic">
-
-            <h3>🧱 Materiali e tecnologie</h3>
-
-            <p>
-                Studio della tecnologia dei materiali da costruzione
-                e del loro comportamento durante l'esercizio.
-            </p>
-
-        </div>
-
-
-        <div class="topic">
-
-            <h3>🏗️ Scienza e tecnica delle costruzioni</h3>
-
-            <p>
-                Principi fondamentali per comprendere il comportamento
-                strutturale degli edifici e delle opere edilizie.
-            </p>
-
-        </div>
-
-
-        <div class="topic">
-
-            <h3>🔧 Manutenzione e recupero</h3>
-
-            <p>
-                Tecniche per la manutenzione, il recupero del patrimonio
-                edilizio e la rigenerazione urbana.
-            </p>
-
-        </div>
-
-
-        <div class="topic">
-
-            <h3>🌱 Sostenibilità</h3>
-
-            <p>
-                Progettazione e gestione dell'ambiente costruito
-                considerando compatibilità ambientale e sostenibilità.
-            </p>
-
-        </div>
-
-    </div>
+</div>
+```
 
 </section>
 
+<section class="section">
 
-<section>
+```
+<h2>🗓️ Calendario accademico</h2>
 
-    <h2>📢 Avvisi</h2>
+<p class="section-intro">
+    Principali periodi dell'anno accademico 2026/2027.
+</p>
 
-    <div class="notice">
+<div class="calendar-grid">
+
+    <div class="calendar-card">
+        <strong>Inizio lezioni</strong>
+        <span>21 settembre 2026</span>
+    </div>
+
+    <div class="calendar-card">
+        <strong>Pausa esoneri</strong>
+        <span>2 – 6 novembre 2026</span>
+    </div>
+
+    <div class="calendar-card">
+        <strong>Recupero lezioni</strong>
+        <span>21 – 23 dicembre 2026</span>
+    </div>
+
+    <div class="calendar-card">
+        <strong>Festività natalizie</strong>
+        <span>24 dicembre 2026 – 6 gennaio 2027</span>
+    </div>
+
+    <div class="calendar-card">
+        <strong>Recupero lezioni</strong>
+        <span>7 – 8 gennaio 2027</span>
+    </div>
+
+    <div class="calendar-card">
+        <strong>Fine lezioni</strong>
+        <span>8 gennaio 2027</span>
+    </div>
+
+    <div class="calendar-card">
+        <strong>Periodo esami</strong>
+        <span>11 gennaio – 26 febbraio 2027</span>
+    </div>
+
+    <div class="calendar-card">
+        <strong>Anno accademico</strong>
+        <span>2026/2027</span>
+    </div>
+
+</div>
+```
+
+</section>
+
+<section class="section">
+
+```
+<h2>🎯 Percorsi</h2>
+
+<p class="section-intro">
+    Il corso integra competenze ingegneristiche,
+    progettuali e tecniche legate all'edilizia.
+</p>
+
+<div class="curricula">
+
+    <div class="curriculum">
+
+        <div class="icon">
+            🏗️
+        </div>
+
+        <h3>
+            Progettazione Edile
+        </h3>
 
         <p>
-            Nessun avviso disponibile al momento.
-            Gli aggiornamenti relativi a lezioni, esami,
-            attività didattiche e comunicazioni del corso
-            saranno pubblicati qui.
+            Approfondimento delle competenze tecniche
+            e progettuali legate all'edilizia.
         </p>
 
     </div>
 
-</section>
+    <div class="curriculum">
 
-
-<section>
-
-    <h2>🔗 Link utili</h2>
-
-    <div class="links">
-
-        <div class="link-card">
-            <a href="https://www.poliba.it/it/ingegneria-edile" target="_blank">
-                Pagina ufficiale del corso PoliBa
-            </a>
+        <div class="icon">
+            📐
         </div>
 
-        <div class="link-card">
-            <a href="https://www.poliba.it/" target="_blank">
-                Sito ufficiale Politecnico di Bari
-            </a>
-        </div>
+        <h3>
+            Tecnologie Edilizie
+        </h3>
 
-        <div class="link-card">
-            <a href="https://www.poliba.it/it/didattica" target="_blank">
-                Area Didattica PoliBa
-            </a>
-        </div>
-
-        <div class="link-card">
-            <a href="https://www.poliba.it/it/corsi-di-laurea-triennale" target="_blank">
-                Corsi di Laurea Triennale PoliBa
-            </a>
-        </div>
+        <p>
+            Studio delle tecnologie, dei materiali
+            e dei sistemi costruttivi.
+        </p>
 
     </div>
 
+</div>
+```
+
 </section>
 
+<section class="section">
 
-<div class="back">
+```
+<h2>📖 Piano di studi</h2>
 
-    <a href="calendari.html">
-        ← Torna ai Calendari
+<p class="section-intro">
+    Il dettaglio degli insegnamenti e dei relativi CFU
+    sarà aggiornato con i dati ufficiali dell'anno accademico 2026/2027.
+</p>
+
+<div class="year-grid">
+
+    <div class="year-card">
+
+        <h3>1° anno</h3>
+
+        <p>
+            Insegnamenti fondamentali e discipline scientifiche
+            alla base della formazione ingegneristica.
+        </p>
+
+        <p>
+            <strong>Piano dettagliato:</strong>
+            in aggiornamento.
+        </p>
+
+    </div>
+
+    <div class="year-card">
+
+        <h3>2° anno</h3>
+
+        <p>
+            Approfondimento delle competenze ingegneristiche,
+            progettuali e tecnologiche.
+        </p>
+
+        <p>
+            <strong>Piano dettagliato:</strong>
+            in aggiornamento.
+        </p>
+
+    </div>
+
+    <div class="year-card">
+
+        <h3>3° anno</h3>
+
+        <p>
+            Approfondimenti finali, attività formative,
+            eventuali attività a scelta e prova finale.
+        </p>
+
+        <p>
+            <strong>Piano dettagliato:</strong>
+            in aggiornamento.
+        </p>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<section class="section">
+
+```
+<h2>📢 Avvisi per Edile</h2>
+
+<div class="placeholder">
+
+    <p>
+        Gli avvisi specifici per gli studenti di Ingegneria Edile
+        saranno raccolti nella bacheca del sito.
+    </p>
+
+    <br>
+
+    <a href="avvisi.html">
+        Vai alla bacheca generale degli avvisi →
     </a>
 
 </div>
 ```
 
+</section>
+
+<section class="section">
+
+```
+<h2>🆘 Segnala un problema</h2>
+
+<div class="important-box">
+
+    <p>
+        Hai trovato un problema con l'orario, un esame,
+        una comunicazione o un'attività didattica?
+    </p>
+
+    <br>
+
+    <a href="segnalazioni.html">
+        Invia una segnalazione →
+    </a>
+
 </div>
+```
+
+</section>
+
+<section class="section">
+
+```
+<h2>🔗 Link utili</h2>
+
+<div class="links">
+
+    <a
+        href="https://www.poliba.it/"
+        target="_blank"
+        class="link-card">
+        Politecnico di Bari →
+    </a>
+
+    <a
+        href="https://www.poliba.it/it/didattica"
+        target="_blank"
+        class="link-card">
+        Didattica PoliBa →
+    </a>
+
+    <a
+        href="https://www.dicar.poliba.it/"
+        target="_blank"
+        class="link-card">
+        DICAR →
+    </a>
+
+    <a
+        href="avvisi.html"
+        class="link-card">
+        Bacheca Avvisi →
+    </a>
+
+</div>
+```
+
+</section>
+
+</main>
 
 <footer>
 
 ```
 <p>
-    © 2026 Azione Universitaria PoliBa — Studenti, rappresentanza, futuro.
+    Azione Universitaria PoliBa — Ingegneria Edile
 </p>
 ```
 
