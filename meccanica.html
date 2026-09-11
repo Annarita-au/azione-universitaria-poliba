@@ -17,57 +17,50 @@
 
     body {
         font-family: Arial, Helvetica, sans-serif;
-        background: #f4f7fb;
-        color: #1d2a3a;
+        background: #f5f7fb;
+        color: #1f2937;
         line-height: 1.6;
     }
 
     header {
         background: #ffffff;
-        border-bottom: 1px solid #e4eaf1;
         padding: 18px 7%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 20px;
-        flex-wrap: wrap;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        position: sticky;
+        top: 0;
+        z-index: 100;
     }
 
     .logo {
-        color: #1557b0;
         font-size: 22px;
-        font-weight: 800;
-        text-decoration: none;
-    }
-
-    nav {
-        display: flex;
-        gap: 18px;
-        flex-wrap: wrap;
-        justify-content: center;
+        font-weight: bold;
+        color: #0b3d91;
     }
 
     nav a {
         text-decoration: none;
-        color: #26384d;
+        color: #333;
+        margin-left: 22px;
         font-weight: 600;
-        font-size: 14px;
     }
 
     nav a:hover {
-        color: #1557b0;
+        color: #0b5ed7;
     }
 
     .hero {
-        background: linear-gradient(135deg, #1557b0, #2879d8);
+        background: linear-gradient(135deg, #0b3d91, #1976d2);
         color: white;
         padding: 70px 7%;
         text-align: center;
     }
 
-    .hero .icon {
-        font-size: 48px;
-        margin-bottom: 10px;
+    .hero-icon {
+        font-size: 55px;
+        margin-bottom: 15px;
     }
 
     .hero h1 {
@@ -82,187 +75,167 @@
         opacity: 0.95;
     }
 
-    .back-button {
+    .back {
         display: inline-block;
         margin-top: 25px;
-        padding: 12px 20px;
+        padding: 11px 20px;
         background: white;
-        color: #1557b0;
-        border-radius: 10px;
+        color: #0b3d91;
+        border-radius: 8px;
         text-decoration: none;
-        font-weight: 700;
+        font-weight: bold;
     }
 
     .container {
         width: 86%;
-        max-width: 1150px;
+        max-width: 1200px;
         margin: 45px auto;
     }
 
     .section {
-        margin-bottom: 45px;
+        margin-bottom: 50px;
     }
 
     .section h2 {
-        color: #183b68;
+        color: #0b3d91;
         font-size: 28px;
-        margin-bottom: 20px;
+        margin-bottom: 22px;
     }
 
-    .section-intro {
-        color: #65758a;
-        margin-bottom: 20px;
-    }
-
-    .info-grid {
+    .cards {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 18px;
+        gap: 20px;
     }
 
-    .info-card {
-        background: #ffffff;
-        border-radius: 18px;
-        padding: 25px;
-        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
-        border-left: 5px solid #1557b0;
+    .card {
+        background: white;
+        padding: 24px;
+        border-radius: 14px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.07);
     }
 
-    .info-card .icon {
-        font-size: 30px;
+    .card h3 {
+        color: #0b3d91;
         margin-bottom: 10px;
     }
 
-    .info-card h3 {
-        color: #183b68;
-        margin-bottom: 8px;
-    }
-
-    .info-card p {
-        color: #65758a;
-    }
-
     .schedule {
-        background: #ffffff;
-        border-radius: 18px;
-        padding: 25px;
-        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
-        overflow-x: auto;
-    }
-
-    table {
         width: 100%;
         border-collapse: collapse;
-        min-width: 650px;
+        background: white;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.07);
     }
 
-    th {
-        background: #1557b0;
-        color: white;
-        padding: 14px;
+    .schedule th,
+    .schedule td {
+        padding: 15px;
+        border-bottom: 1px solid #e5e7eb;
         text-align: left;
     }
 
-    td {
-        padding: 14px;
-        border-bottom: 1px solid #e6ebf1;
-        color: #526276;
+    .schedule th {
+        background: #0b3d91;
+        color: white;
     }
 
-    .calendar-grid,
-    .topics,
-    .year-grid,
-    .links {
+    .schedule tr:last-child td {
+        border-bottom: none;
+    }
+
+    .calendar-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 18px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
     }
 
     .calendar-card {
-        background: #ffffff;
-        border-radius: 16px;
-        padding: 20px;
-        border-left: 4px solid #1557b0;
-        box-shadow: 0 6px 20px rgba(21, 87, 176, 0.07);
+        background: white;
+        padding: 24px;
+        border-radius: 14px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.07);
     }
 
     .calendar-card strong {
         display: block;
-        color: #183b68;
-        margin-bottom: 6px;
+        color: #0b3d91;
+        font-size: 18px;
+        margin-bottom: 7px;
     }
 
-    .calendar-card span {
-        color: #65758a;
-    }
-
-    .topic,
-    .year-card,
-    .placeholder {
-        background: #ffffff;
-        border-radius: 18px;
+    .study-card {
+        background: white;
         padding: 25px;
-        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
+        border-radius: 14px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.07);
     }
 
-    .topic h3,
-    .year-card h3 {
-        color: #1557b0;
-        margin-bottom: 12px;
+    .study-card ul {
+        padding-left: 20px;
+        margin-top: 10px;
     }
 
-    .topic p,
-    .year-card p,
-    .placeholder {
-        color: #65758a;
+    .notice {
+        background: white;
+        padding: 28px;
+        border-radius: 14px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.07);
     }
 
-    .important-box {
-        background: #eaf2ff;
-        border-left: 5px solid #1557b0;
-        border-radius: 12px;
-        padding: 20px;
-        color: #29496d;
+    .notice p {
+        margin-bottom: 15px;
     }
 
-    a {
-        color: #1557b0;
-    }
-
-    .links a {
-        background: #ffffff;
-        border-radius: 15px;
-        padding: 20px;
+    .button {
+        display: inline-block;
+        padding: 12px 20px;
+        background: #0b3d91;
+        color: white;
         text-decoration: none;
-        color: #183b68;
-        font-weight: 700;
-        box-shadow: 0 6px 20px rgba(21, 87, 176, 0.07);
+        border-radius: 8px;
+        font-weight: bold;
+    }
+
+    .button:hover {
+        background: #082f70;
     }
 
     footer {
-        background: #102a49;
+        background: #0b3d91;
         color: white;
         text-align: center;
-        padding: 28px 7%;
+        padding: 30px 20px;
         margin-top: 60px;
-    }
-
-    footer p {
-        opacity: 0.85;
-        font-size: 14px;
     }
 
     @media (max-width: 700px) {
         header {
-            justify-content: center;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        nav a {
+            margin: 0 7px;
+            font-size: 14px;
         }
 
         .hero h1 {
-            font-size: 32px;
+            font-size: 30px;
+        }
+
+        .hero {
+            padding: 50px 6%;
         }
 
         .container {
             width: 90%;
+        }
+
+        .schedule {
+            display: block;
+            overflow-x: auto;
         }
     }
 </style>
@@ -273,7 +246,7 @@
 <body>
 
 <header>
-    <a href="index.html" class="logo">Azione Universitaria PoliBa</a>
+    <div class="logo">Azione Universitaria PoliBa</div>
 
 ```
 <nav>
@@ -282,27 +255,23 @@
     <a href="matricole.html">Matricole</a>
     <a href="avvisi.html">Avvisi</a>
     <a href="rappresentanza.html">Rappresentanza</a>
-    <a href="segnalazioni.html">Segnalazioni</a>
 </nav>
 ```
 
 </header>
 
 <section class="hero">
+    <div class="hero-icon">⚙️</div>
 
 ```
-<div class="icon">⚙️</div>
-
 <h1>Ingegneria Meccanica</h1>
 
 <p>
-    Informazioni, calendario accademico, organizzazione del corso
-    e risorse utili per gli studenti di Ingegneria Meccanica.
+    Informazioni, calendario delle lezioni, piano di studi,
+    scadenze e avvisi utili per gli studenti di Ingegneria Meccanica.
 </p>
 
-<a href="calendari.html" class="back-button">
-    ← Torna ai Calendari
-</a>
+<a href="calendari.html" class="back">← Torna ai calendari</a>
 ```
 
 </section>
@@ -311,381 +280,277 @@
 
 ```
 <section class="section">
+    <h2>📌 Informazioni sul corso</h2>
 
-    <h2>📚 Informazioni sul corso</h2>
+    <div class="cards">
 
-    <p class="section-intro">
-        Ingegneria Meccanica — Laurea triennale.
-    </p>
-
-    <div class="info-grid">
-
-        <div class="info-card">
-            <div class="icon">🎓</div>
+        <div class="card">
             <h3>Classe</h3>
             <p>Informazioni ufficiali in aggiornamento</p>
         </div>
 
-        <div class="info-card">
-            <div class="icon">📍</div>
-            <h3>Sede</h3>
+        <div class="card">
+            <h3>📍 Sede</h3>
             <p>Politecnico di Bari — Bari</p>
         </div>
 
-        <div class="info-card">
-            <div class="icon">⏱️</div>
-            <h3>Durata</h3>
+        <div class="card">
+            <h3>⏳ Durata</h3>
             <p>3 anni</p>
         </div>
 
-        <div class="info-card">
-            <div class="icon">📅</div>
-            <h3>Anno accademico</h3>
+        <div class="card">
+            <h3>🎓 Anno accademico</h3>
             <p>2026/2027</p>
         </div>
 
     </div>
-
 </section>
 
 <section class="section">
+    <h2>📅 Calendario delle lezioni</h2>
 
-    <h2>🗓️ Orario delle lezioni</h2>
+    <table class="schedule">
+        <thead>
+            <tr>
+                <th>Giorno</th>
+                <th>Orario</th>
+                <th>Attività</th>
+                <th>Aula</th>
+            </tr>
+        </thead>
 
-    <p class="section-intro">
-        Orario settimanale per l'anno accademico 2026/2027.
-    </p>
+        <tbody>
+            <tr>
+                <td>Lunedì</td>
+                <td>Da definire</td>
+                <td>Lezioni</td>
+                <td>Da definire</td>
+            </tr>
 
-    <div class="schedule">
+            <tr>
+                <td>Martedì</td>
+                <td>Da definire</td>
+                <td>Lezioni</td>
+                <td>Da definire</td>
+            </tr>
 
-        <table>
+            <tr>
+                <td>Mercoledì</td>
+                <td>Da definire</td>
+                <td>Lezioni</td>
+                <td>Da definire</td>
+            </tr>
 
-            <thead>
-                <tr>
-                    <th>Giorno</th>
-                    <th>Mattina</th>
-                    <th>Pomeriggio</th>
-                </tr>
-            </thead>
+            <tr>
+                <td>Giovedì</td>
+                <td>Da definire</td>
+                <td>Lezioni</td>
+                <td>Da definire</td>
+            </tr>
 
-            <tbody>
-
-                <tr>
-                    <td>Lunedì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Martedì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Mercoledì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Giovedì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Venerdì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
+            <tr>
+                <td>Venerdì</td>
+                <td>Da definire</td>
+                <td>Lezioni</td>
+                <td>Da definire</td>
+            </tr>
+        </tbody>
+    </table>
 </section>
 
 <section class="section">
-
     <h2>🗓️ Calendario accademico</h2>
-
-    <p class="section-intro">
-        Principali periodi dell'anno accademico 2026/2027.
-    </p>
 
     <div class="calendar-grid">
 
         <div class="calendar-card">
             <strong>Inizio lezioni</strong>
-            <span>21 settembre 2026</span>
+            <p>21 settembre 2026</p>
         </div>
 
         <div class="calendar-card">
-            <strong>Pausa esoneri</strong>
-            <span>2 – 6 novembre 2026</span>
-        </div>
-
-        <div class="calendar-card">
-            <strong>Recupero lezioni</strong>
-            <span>21 – 23 dicembre 2026</span>
+            <strong>Sospensione lezioni</strong>
+            <p>2–6 novembre 2026</p>
         </div>
 
         <div class="calendar-card">
             <strong>Festività natalizie</strong>
-            <span>24 dicembre 2026 – 6 gennaio 2027</span>
+            <p>21–23 dicembre 2026</p>
         </div>
 
         <div class="calendar-card">
-            <strong>Recupero lezioni</strong>
-            <span>7 – 8 gennaio 2027</span>
+            <strong>Vacanze di Natale</strong>
+            <p>24 dicembre 2026 – 6 gennaio 2027</p>
+        </div>
+
+        <div class="calendar-card">
+            <strong>Ripresa lezioni</strong>
+            <p>7–8 gennaio 2027</p>
         </div>
 
         <div class="calendar-card">
             <strong>Fine lezioni</strong>
-            <span>8 gennaio 2027</span>
+            <p>8 gennaio 2027</p>
         </div>
 
         <div class="calendar-card">
-            <strong>Periodo esami</strong>
-            <span>11 gennaio – 26 febbraio 2027</span>
+            <strong>Sessione esami</strong>
+            <p>11 gennaio – 26 febbraio 2027</p>
         </div>
 
         <div class="calendar-card">
             <strong>Anno accademico</strong>
-            <span>2026/2027</span>
+            <p>2026/2027</p>
         </div>
 
     </div>
-
 </section>
 
 <section class="section">
-
     <h2>⚙️ Cosa si studia</h2>
 
-    <p class="section-intro">
-        Il corso sviluppa competenze nell'ambito della progettazione,
-        produzione e gestione dei sistemi meccanici e industriali.
-    </p>
+    <div class="cards">
 
-    <div class="topics">
-
-        <div class="topic">
-
-            <h3>⚙️ Macchine e sistemi meccanici</h3>
-
-            <p>
-                Studio delle macchine, dei sistemi meccanici
-                e dei principali componenti utilizzati
-                nell'industria.
-            </p>
-
+        <div class="card">
+            <h3>Meccanica</h3>
+            <p>Fondamenti di meccanica, statica, dinamica e progettazione.</p>
         </div>
 
-        <div class="topic">
-
-            <h3>🔥 Sistemi energetici</h3>
-
-            <p>
-                Analisi dei sistemi energetici, delle trasformazioni
-                dell'energia e delle relative applicazioni ingegneristiche.
-            </p>
-
+        <div class="card">
+            <h3>Matematica</h3>
+            <p>Strumenti matematici fondamentali per l'ingegneria.</p>
         </div>
 
-        <div class="topic">
-
-            <h3>🧱 Materiali e tecnologie</h3>
-
-            <p>
-                Conoscenza dei materiali e delle tecnologie
-                utilizzate nei processi produttivi e nella
-                realizzazione dei componenti.
-            </p>
-
+        <div class="card">
+            <h3>Fisica</h3>
+            <p>Principi fisici applicati ai sistemi e ai processi ingegneristici.</p>
         </div>
 
-        <div class="topic">
-
-            <h3>📐 Progettazione meccanica</h3>
-
-            <p>
-                Sviluppo delle competenze necessarie alla
-                progettazione tecnica e alla soluzione
-                di problemi dell'ingegneria meccanica.
-            </p>
-
+        <div class="card">
+            <h3>Materiali</h3>
+            <p>Proprietà, caratteristiche e comportamento dei materiali.</p>
         </div>
 
-        <div class="topic">
-
-            <h3>🏭 Processi e impianti produttivi</h3>
-
-            <p>
-                Studio dei processi produttivi e degli impianti
-                industriali, con attenzione all'organizzazione
-                e all'efficienza.
-            </p>
-
+        <div class="card">
+            <h3>Impianti</h3>
+            <p>Studio dei sistemi produttivi e degli impianti industriali.</p>
         </div>
 
-        <div class="topic">
-
-            <h3>📚 Scienze di base</h3>
-
-            <p>
-                Analisi, geometria, algebra, fisica, chimica
-                e informatica costituiscono la base della
-                preparazione ingegneristica.
-            </p>
-
+        <div class="card">
+            <h3>Progettazione</h3>
+            <p>Metodi e strumenti per la progettazione meccanica.</p>
         </div>
 
     </div>
-
 </section>
 
 <section class="section">
-
     <h2>📖 Piano di studi</h2>
 
-    <p class="section-intro">
-        Il dettaglio degli insegnamenti e dei relativi CFU
-        sarà aggiornato con i dati ufficiali dell'anno accademico 2026/2027.
-    </p>
+    <div class="cards">
 
-    <div class="year-grid">
-
-        <div class="year-card">
-
+        <div class="study-card">
             <h3>1° anno</h3>
-
-            <p>
-                Insegnamenti fondamentali e formazione
-                scientifica di base.
-            </p>
-
-            <p>
-                <strong>Piano dettagliato:</strong>
-                in aggiornamento.
-            </p>
-
+            <ul>
+                <li>Insegnamenti di base</li>
+                <li>Matematica</li>
+                <li>Fisica</li>
+                <li>Fondamenti di ingegneria</li>
+            </ul>
         </div>
 
-        <div class="year-card">
-
+        <div class="study-card">
             <h3>2° anno</h3>
-
-            <p>
-                Proseguimento della formazione ingegneristica
-                e approfondimento delle competenze meccaniche.
-            </p>
-
-            <p>
-                <strong>Piano dettagliato:</strong>
-                in aggiornamento.
-            </p>
-
+            <ul>
+                <li>Materie caratterizzanti</li>
+                <li>Meccanica</li>
+                <li>Materiali</li>
+                <li>Impianti</li>
+            </ul>
         </div>
 
-        <div class="year-card">
-
+        <div class="study-card">
             <h3>3° anno</h3>
-
-            <p>
-                Approfondimenti specialistici, attività formative
-                e prova finale.
-            </p>
-
-            <p>
-                <strong>Piano dettagliato:</strong>
-                in aggiornamento.
-            </p>
-
+            <ul>
+                <li>Materie specialistiche</li>
+                <li>Progettazione</li>
+                <li>Attività a scelta</li>
+                <li>Prova finale</li>
+            </ul>
         </div>
 
     </div>
-
 </section>
 
 <section class="section">
-
     <h2>📢 Avvisi per Ingegneria Meccanica</h2>
 
-    <div class="placeholder">
+    <div class="notice">
+        <p>
+            In questa sezione verranno pubblicati gli avvisi e le comunicazioni
+            utili per gli studenti del corso.
+        </p>
 
-        Gli avvisi specifici per gli studenti di Ingegneria
-        Meccanica saranno raccolti nella bacheca del sito.
-
-        <br><br>
-
-        <a href="avvisi.html">
-            Vai alla bacheca generale degli avvisi →
-        </a>
-
+        <a href="avvisi.html" class="button">Vai agli avvisi</a>
     </div>
-
 </section>
 
 <section class="section">
-
     <h2>🆘 Segnala un problema</h2>
 
-    <div class="important-box">
+    <div class="notice">
+        <p>
+            Hai trovato un errore nel calendario, nel piano di studi
+            o nelle informazioni del corso?
+        </p>
 
-        Hai trovato un problema con l'orario, un esame,
-        una comunicazione o un'attività didattica?
-
-        <br><br>
-
-        <a href="segnalazioni.html">
-            Invia una segnalazione →
-        </a>
-
+        <a href="segnalazioni.html" class="button">Invia una segnalazione</a>
     </div>
-
 </section>
 
 <section class="section">
-
     <h2>🔗 Link utili</h2>
 
-    <div class="links">
+    <div class="cards">
 
-        <a href="https://www.poliba.it/" target="_blank">
-            Politecnico di Bari →
-        </a>
+        <div class="card">
+            <h3>Politecnico di Bari</h3>
+            <a href="https://www.poliba.it/" target="_blank" class="button">
+                Apri
+            </a>
+        </div>
 
-        <a href="https://www.poliba.it/it/didattica" target="_blank">
-            Didattica PoliBa →
-        </a>
+        <div class="card">
+            <h3>Didattica PoliBa</h3>
+            <a href="https://www.poliba.it/didattica" target="_blank" class="button">
+                Apri
+            </a>
+        </div>
 
-        <a href="https://www.dmmm.poliba.it/" target="_blank">
-            DMMM →
-        </a>
+        <div class="card">
+            <h3>DMMM</h3>
+            <a href="https://www.dmmm.poliba.it/" target="_blank" class="button">
+                Apri
+            </a>
+        </div>
 
-        <a href="avvisi.html">
-            Bacheca Avvisi →
-        </a>
+        <div class="card">
+            <h3>Avvisi PoliBa</h3>
+            <a href="https://www.poliba.it/avvisi" target="_blank" class="button">
+                Apri
+            </a>
+        </div>
 
     </div>
-
 </section>
 ```
 
 </main>
 
 <footer>
-
-```
-<p>
-    Azione Universitaria PoliBa — Ingegneria Meccanica
-</p>
-```
-
+    <p>Azione Universitaria PoliBa</p>
+    <p>Informazione, rappresentanza e supporto agli studenti.</p>
 </footer>
 
 </body>
