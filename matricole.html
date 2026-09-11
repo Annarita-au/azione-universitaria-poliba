@@ -19,14 +19,14 @@
     body {
         font-family: Arial, Helvetica, sans-serif;
         background: #f4f7fb;
-        color: #1d2939;
+        color: #1d2a3a;
         line-height: 1.6;
     }
 
     header {
-        background: linear-gradient(135deg, #003b7a, #0066cc);
-        color: white;
+        background: #ffffff;
         padding: 22px 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.06);
     }
 
     .header-content {
@@ -41,21 +41,22 @@
     .logo {
         font-size: 22px;
         font-weight: bold;
+        color: #1557b0;
     }
 
     nav a {
-        color: white;
+        color: #26384d;
         text-decoration: none;
         margin-left: 20px;
         font-weight: bold;
     }
 
     nav a:hover {
-        text-decoration: underline;
+        color: #1557b0;
     }
 
     .hero {
-        background: linear-gradient(135deg, #0052a3, #0084ff);
+        background: linear-gradient(135deg, #1557b0, #2879d8);
         color: white;
         padding: 65px 20px;
     }
@@ -84,13 +85,13 @@
     .intro {
         background: white;
         padding: 30px;
-        border-radius: 16px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        border-radius: 18px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.06);
         margin-bottom: 30px;
     }
 
     .intro h2 {
-        color: #003b7a;
+        color: #183b68;
         margin-bottom: 12px;
     }
 
@@ -103,15 +104,15 @@
     .step {
         background: white;
         padding: 28px;
-        border-radius: 16px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        border-radius: 18px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.06);
         position: relative;
     }
 
     .number {
         width: 42px;
         height: 42px;
-        background: #0052a3;
+        background: #1557b0;
         color: white;
         border-radius: 50%;
         display: flex;
@@ -122,25 +123,25 @@
     }
 
     .step h3 {
-        color: #003b7a;
+        color: #183b68;
         margin-bottom: 10px;
         font-size: 20px;
     }
 
     .step p {
-        color: #475467;
+        color: #65758a;
     }
 
     .section {
         background: white;
         padding: 30px;
-        border-radius: 16px;
+        border-radius: 18px;
         margin-top: 30px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.06);
     }
 
     .section h2 {
-        color: #003b7a;
+        color: #183b68;
         margin-bottom: 20px;
         font-size: 27px;
     }
@@ -152,19 +153,19 @@
     }
 
     .card {
-        background: #f5f9ff;
-        border-left: 5px solid #0066cc;
+        background: #f4f7fb;
+        border-left: 5px solid #1557b0;
         padding: 22px;
-        border-radius: 10px;
+        border-radius: 12px;
     }
 
     .card h3 {
-        color: #003b7a;
+        color: #183b68;
         margin-bottom: 8px;
     }
 
     .card p {
-        color: #475467;
+        color: #65758a;
     }
 
     .faq {
@@ -177,15 +178,24 @@
     }
 
     .faq h3 {
-        color: #0052a3;
+        color: #1557b0;
         margin-bottom: 7px;
+    }
+
+    .faq p {
+        color: #65758a;
     }
 
     .notice {
         background: #fff8e6;
         border-left: 5px solid #f2b705;
         padding: 20px;
-        border-radius: 10px;
+        border-radius: 12px;
+    }
+
+    .notice p {
+        color: #65758a;
+        margin-top: 5px;
     }
 
     .links {
@@ -196,16 +206,19 @@
 
     .links a {
         display: block;
-        background: #eef5fc;
-        color: #0052a3;
+        background: #f4f7fb;
+        color: #1557b0;
         text-decoration: none;
         padding: 17px;
-        border-radius: 10px;
+        border-radius: 12px;
         font-weight: bold;
+        border-left: 4px solid #1557b0;
+        transition: 0.2s;
     }
 
     .links a:hover {
-        background: #dcecff;
+        background: #e8f1fc;
+        transform: translateY(-2px);
     }
 
     .back {
@@ -215,7 +228,7 @@
 
     .back a {
         display: inline-block;
-        background: #0052a3;
+        background: #1557b0;
         color: white;
         text-decoration: none;
         padding: 14px 24px;
@@ -224,11 +237,11 @@
     }
 
     .back a:hover {
-        background: #003b7a;
+        background: #183b68;
     }
 
     footer {
-        background: #003b7a;
+        background: #102a49;
         color: white;
         text-align: center;
         padding: 25px 20px;
@@ -300,6 +313,9 @@
         <a href="index.html">Home</a>
         <a href="calendari.html">Calendari</a>
         <a href="matricole.html">Matricole</a>
+        <a href="avvisi.html">Avvisi</a>
+        <a href="rappresentanza.html">Rappresentanza</a>
+        <a href="segnalazioni.html">Segnalazioni</a>
     </nav>
 
 </div>
@@ -340,9 +356,7 @@
 
 </section>
 
-
 <div class="steps">
-
 
     <div class="step">
 
@@ -358,7 +372,6 @@
 
     </div>
 
-
     <div class="step">
 
         <div class="number">2</div>
@@ -373,7 +386,6 @@
 
     </div>
 
-
     <div class="step">
 
         <div class="number">3</div>
@@ -385,8 +397,8 @@
             raggiungere rapidamente la pagina dedicata al tuo
             corso di laurea.
         </p>
-    </div>
 
+    </div>
 
     <div class="step">
 
@@ -402,7 +414,6 @@
 
     </div>
 
-
     <div class="step">
 
         <div class="number">5</div>
@@ -416,7 +427,6 @@
         </p>
 
     </div>
-
 
     <div class="step">
 
@@ -432,16 +442,13 @@
 
     </div>
 
-
 </div>
-
 
 <section class="section">
 
     <h2>🧭 Le cose che ti serviranno più spesso</h2>
 
     <div class="cards">
-
 
         <div class="card">
 
@@ -454,7 +461,6 @@
 
         </div>
 
-
         <div class="card">
 
             <h3>📖 Materiale didattico</h3>
@@ -465,7 +471,6 @@
             </p>
 
         </div>
-
 
         <div class="card">
 
@@ -478,7 +483,6 @@
 
         </div>
 
-
         <div class="card">
 
             <h3>🏫 Aule</h3>
@@ -490,7 +494,6 @@
 
         </div>
 
-
         <div class="card">
 
             <h3>📢 Avvisi</h3>
@@ -501,7 +504,6 @@
             </p>
 
         </div>
-
 
         <div class="card">
 
@@ -515,16 +517,13 @@
 
         </div>
 
-
     </div>
 
 </section>
 
-
 <section class="section">
 
     <h2>❓ FAQ matricole</h2>
-
 
     <div class="faq">
 
@@ -538,7 +537,6 @@
 
     </div>
 
-
     <div class="faq">
 
         <h3>Dove posso trovare gli orari?</h3>
@@ -551,7 +549,6 @@
 
     </div>
 
-
     <div class="faq">
 
         <h3>Come faccio a sapere quali esami devo sostenere?</h3>
@@ -562,7 +559,6 @@
         </p>
 
     </div>
-
 
     <div class="faq">
 
@@ -576,7 +572,6 @@
 
     </div>
 
-
     <div class="faq">
 
         <h3>Non so dove trovare un'informazione. Cosa faccio?</h3>
@@ -589,9 +584,7 @@
 
     </div>
 
-
 </section>
-
 
 <section class="section">
 
@@ -610,7 +603,6 @@
     </div>
 
 </section>
-
 
 <section class="section">
 
@@ -637,7 +629,6 @@
     </div>
 
 </section>
-
 
 <div class="back">
 
