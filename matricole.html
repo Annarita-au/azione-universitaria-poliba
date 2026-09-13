@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matricole | Azione Universitaria PoliBa</title>
 
-
-<title>Matricole | Azione Universitaria PoliBa</title>
-
+```
 <style>
     * {
         box-sizing: border-box;
@@ -29,20 +28,17 @@
         justify-content: space-between;
         align-items: center;
         box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        position: sticky;
-        top: 0;
-        z-index: 100;
     }
 
     .logo {
-        font-size: 22px;
+        font-size: 21px;
         font-weight: bold;
         color: #0b3d91;
     }
 
     nav {
         display: flex;
-        gap: 20px;
+        gap: 18px;
         flex-wrap: wrap;
     }
 
@@ -60,13 +56,13 @@
     .hero {
         background: linear-gradient(135deg, #0b3d91, #1769c2);
         color: white;
-        padding: 70px 7%;
         text-align: center;
+        padding: 65px 7%;
     }
 
     .hero .icon {
-        font-size: 52px;
-        margin-bottom: 15px;
+        font-size: 48px;
+        margin-bottom: 10px;
     }
 
     .hero h1 {
@@ -75,10 +71,9 @@
     }
 
     .hero p {
-        max-width: 780px;
+        max-width: 750px;
         margin: auto;
         font-size: 18px;
-        opacity: 0.95;
     }
 
     .container {
@@ -94,17 +89,17 @@
 
     .intro h2 {
         color: #0b3d91;
-        font-size: 28px;
+        font-size: 30px;
         margin-bottom: 10px;
     }
 
     .intro p {
-        color: #5b6472;
         max-width: 800px;
         margin: auto;
+        color: #5b6472;
     }
 
-    .griglia {
+    .cards {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 22px;
@@ -112,14 +107,14 @@
 
     .card {
         background: white;
-        border-radius: 16px;
         padding: 27px;
+        border-radius: 16px;
         box-shadow: 0 5px 18px rgba(0,0,0,0.07);
     }
 
-    .card .icona {
+    .card-icon {
         font-size: 34px;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
     }
 
     .card h3 {
@@ -130,7 +125,7 @@
 
     .card p {
         color: #4b5563;
-        margin-bottom: 16px;
+        margin-bottom: 12px;
     }
 
     .card ul {
@@ -144,12 +139,12 @@
 
     .card a {
         display: inline-block;
-        margin-top: 10px;
-        text-decoration: none;
-        background: #0b3d91;
-        color: white;
+        margin-top: 12px;
         padding: 9px 15px;
         border-radius: 8px;
+        background: #0b3d91;
+        color: white;
+        text-decoration: none;
         font-weight: bold;
         font-size: 14px;
     }
@@ -158,26 +153,26 @@
         background: #082f70;
     }
 
-    .sezione {
-        margin-top: 50px;
+    .section {
+        margin-top: 55px;
     }
 
-    .sezione-titolo {
+    .section-title {
         text-align: center;
         margin-bottom: 25px;
     }
 
-    .sezione-titolo h2 {
+    .section-title h2 {
         color: #0b3d91;
         font-size: 28px;
         margin-bottom: 8px;
     }
 
-    .sezione-titolo p {
+    .section-title p {
         color: #5b6472;
     }
 
-    .timeline {
+    .steps {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 18px;
@@ -185,16 +180,16 @@
 
     .step {
         background: white;
-        border-radius: 15px;
         padding: 25px;
+        border-radius: 15px;
         box-shadow: 0 5px 18px rgba(0,0,0,0.07);
         text-align: center;
     }
 
-    .numero {
+    .number {
         width: 42px;
         height: 42px;
-        margin: 0 auto 13px;
+        margin: 0 auto 12px;
         border-radius: 50%;
         background: #0b3d91;
         color: white;
@@ -202,11 +197,9 @@
         align-items: center;
         justify-content: center;
         font-weight: bold;
-        font-size: 18px;
     }
 
     .step h3 {
-        color: #172033;
         margin-bottom: 8px;
     }
 
@@ -215,42 +208,41 @@
         font-size: 14px;
     }
 
-    .calendario {
+    .calendar {
         background: white;
-        border-radius: 16px;
         padding: 30px;
+        border-radius: 16px;
         box-shadow: 0 5px 18px rgba(0,0,0,0.07);
     }
 
-    .periodi {
+    .calendar-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 18px;
-        margin-top: 20px;
     }
 
-    .periodo {
+    .calendar-item {
         background: #f5f7fb;
-        border-radius: 12px;
         padding: 20px;
+        border-radius: 12px;
     }
 
-    .periodo h3 {
+    .calendar-item h3 {
         color: #0b3d91;
         margin-bottom: 8px;
     }
 
-    .periodo p {
+    .calendar-item p {
         color: #4b5563;
         font-size: 14px;
     }
 
     .cta {
-        margin-top: 50px;
+        margin-top: 55px;
         background: linear-gradient(135deg, #0b3d91, #1769c2);
         color: white;
-        border-radius: 18px;
         padding: 38px;
+        border-radius: 18px;
         text-align: center;
     }
 
@@ -260,30 +252,29 @@
 
     .cta p {
         max-width: 700px;
-        margin: 0 auto 22px;
-        opacity: 0.95;
+        margin: 0 auto 20px;
     }
 
-    .bottone-bianco {
+    .cta a {
         display: inline-block;
         background: white;
         color: #0b3d91;
-        text-decoration: none;
         padding: 11px 20px;
         border-radius: 8px;
+        text-decoration: none;
         font-weight: bold;
     }
 
-    .link-ufficiali {
+    .links {
         margin-top: 50px;
         background: white;
-        border-radius: 16px;
         padding: 30px;
+        border-radius: 16px;
         box-shadow: 0 5px 18px rgba(0,0,0,0.07);
         text-align: center;
     }
 
-    .link-ufficiali h2 {
+    .links h2 {
         color: #0b3d91;
         margin-bottom: 18px;
     }
@@ -296,21 +287,21 @@
     }
 
     .link-list a {
-        text-decoration: none;
-        color: #0b3d91;
         background: #e8f0ff;
+        color: #0b3d91;
         padding: 10px 15px;
         border-radius: 8px;
+        text-decoration: none;
         font-weight: bold;
         font-size: 14px;
     }
 
     footer {
+        margin-top: 60px;
         background: #0b3d91;
         color: white;
         text-align: center;
         padding: 28px 7%;
-        margin-top: 60px;
     }
 
     footer p {
@@ -318,9 +309,9 @@
     }
 
     @media (max-width: 800px) {
-        .griglia,
-        .timeline,
-        .periodi {
+        .cards,
+        .steps,
+        .calendar-grid {
             grid-template-columns: 1fr;
         }
     }
@@ -334,27 +325,14 @@
 
         nav {
             justify-content: center;
-            gap: 12px;
-        }
-
-        .hero {
-            padding: 55px 6%;
         }
 
         .hero h1 {
-            font-size: 32px;
-        }
-
-        .hero p {
-            font-size: 16px;
+            font-size: 34px;
         }
 
         .container {
             width: 90%;
-        }
-
-        .card {
-            padding: 22px;
         }
     }
 </style>
@@ -376,27 +354,22 @@
     <a href="rappresentanza.html">Rappresentanza</a>
     <a href="segnalazioni.html">Segnalazioni</a>
 </nav>
-
+```
 
 </header>
 
 <section class="hero">
     <div class="icon">🎓</div>
-
-
-<h1>Matricole</h1>
-
-<p>
-    Tutto quello che serve per iniziare al meglio il tuo percorso
-    universitario al Politecnico di Bari.
-</p>
-
-
+    <h1>Matricole</h1>
+    <p>
+        Tutto quello che serve per iniziare al meglio il tuo percorso
+        universitario al Politecnico di Bari.
+    </p>
 </section>
 
 <main class="container">
 
-
+```
 <section class="intro">
     <h2>Benvenuti al PoliBa! 💙</h2>
 
@@ -407,11 +380,10 @@
     </p>
 </section>
 
-<section class="griglia">
+<section class="cards">
 
     <article class="card">
-        <div class="icona">🚀</div>
-
+        <div class="card-icon">🚀</div>
         <h3>Da dove cominciare?</h3>
 
         <p>
@@ -420,26 +392,26 @@
         </p>
 
         <ul>
-            <li>Attiva e controlla la tua area personale Esse3.</li>
-            <li>Controlla le comunicazioni ufficiali.</li>
+            <li>Controlla la tua area personale Esse3.</li>
+            <li>Controlla la posta e le comunicazioni ufficiali.</li>
             <li>Verifica gli orari delle lezioni.</li>
-            <li>Conosci il tuo corso di laurea e il relativo piano di studi.</li>
+            <li>Consulta il piano di studi del tuo corso.</li>
         </ul>
     </article>
 
     <article class="card">
-        <div class="icona">📝</div>
-
+        <div class="card-icon">📝</div>
         <h3>TOLC e immatricolazione</h3>
 
         <p>
-            Per i corsi di laurea triennale in Ingegneria, le procedure
-            di ammissione dipendono dal bando dell'anno accademico.
+            Per i corsi di laurea triennale in Ingegneria,
+            le procedure di ammissione dipendono dal bando
+            dell'anno accademico.
         </p>
 
         <p>
-            Per l'A.A. 2026/2027 il riferimento ufficiale è il
-            <strong>D.R. 91/2026</strong>.
+            Per l'A.A. 2026/2027 il riferimento ufficiale è
+            il <strong>D.R. 91/2026</strong>.
         </p>
 
         <a href="https://www.poliba.it/it/node/1561" target="_blank">
@@ -448,8 +420,7 @@
     </article>
 
     <article class="card">
-        <div class="icona">💰</div>
-
+        <div class="card-icon">💰</div>
         <h3>ADISU e diritto allo studio</h3>
 
         <p>
@@ -468,19 +439,18 @@
     </article>
 
     <article class="card">
-        <div class="icona">📚</div>
-
+        <div class="card-icon">📚</div>
         <h3>Lezioni ed esami</h3>
 
         <p>
-            Il calendario didattico ti permette di sapere quando iniziano
-            e finiscono le lezioni e quando sono previste le sessioni
-            d'esame.
+            Il calendario didattico ti permette di sapere quando
+            iniziano e finiscono le lezioni e quando sono previste
+            le sessioni d'esame.
         </p>
 
         <ul>
             <li>Inizio lezioni: 21 settembre 2026</li>
-            <li>Fine primo periodo di lezioni: 8 gennaio 2027</li>
+            <li>Fine lezioni: 8 gennaio 2027</li>
             <li>Esami: 11 gennaio – 26 febbraio 2027</li>
             <li>Inizio secondo semestre: 1 marzo 2027</li>
         </ul>
@@ -492,47 +462,39 @@
 
 </section>
 
-<section class="sezione">
+<section class="section">
 
-    <div class="sezione-titolo">
+    <div class="section-title">
         <h2>🧭 I primi passi</h2>
-
-        <p>
-            Una piccola guida per orientarti nei primi giorni.
-        </p>
+        <p>Una piccola guida per orientarti nei primi giorni.</p>
     </div>
 
-    <div class="timeline">
+    <div class="steps">
 
         <div class="step">
-            <div class="numero">1</div>
-
+            <div class="number">1</div>
             <h3>Accedi</h3>
-
             <p>
-                Controlla Esse3, la posta istituzionale e le comunicazioni
-                del tuo corso.
+                Controlla Esse3, la posta istituzionale e le
+                comunicazioni del tuo corso.
             </p>
         </div>
 
         <div class="step">
-            <div class="numero">2</div>
-
+            <div class="number">2</div>
             <h3>Organizzati</h3>
-
             <p>
-                Consulta calendario, orario delle lezioni e piano di studi.
+                Consulta calendario, orario delle lezioni
+                e piano di studi.
             </p>
         </div>
 
         <div class="step">
-            <div class="numero">3</div>
-
+            <div class="number">3</div>
             <h3>Informati</h3>
-
             <p>
-                Segui gli avvisi ufficiali e resta aggiornato sulle
-                opportunità per gli studenti.
+                Segui gli avvisi ufficiali e resta aggiornato
+                sulle opportunità per gli studenti.
             </p>
         </div>
 
@@ -540,39 +502,33 @@
 
 </section>
 
-<section class="sezione">
+<section class="section">
 
-    <div class="sezione-titolo">
+    <div class="section-title">
         <h2>📅 Calendario didattico 2026/2027</h2>
-
-        <p>
-            Le principali date del calendario di Ingegneria.
-        </p>
+        <p>Le principali date del calendario di Ingegneria.</p>
     </div>
 
-    <div class="calendario">
+    <div class="calendar">
 
-        <div class="periodi">
+        <div class="calendar-grid">
 
-            <div class="periodo">
+            <div class="calendar-item">
                 <h3>1° semestre</h3>
-
                 <p>
                     Lezioni: 21 settembre 2026 – 8 gennaio 2027
                 </p>
             </div>
 
-            <div class="periodo">
+            <div class="calendar-item">
                 <h3>Sessione invernale</h3>
-
                 <p>
                     Esami: 11 gennaio – 26 febbraio 2027
                 </p>
             </div>
 
-            <div class="periodo">
+            <div class="calendar-item">
                 <h3>2° semestre</h3>
-
                 <p>
                     Lezioni: 1 marzo – 11 giugno 2027
                 </p>
@@ -594,13 +550,13 @@
         direttamente attraverso il sito.
     </p>
 
-    <a class="bottone-bianco" href="segnalazioni.html">
+    <a href="segnalazioni.html">
         Invia una segnalazione
     </a>
 
 </section>
 
-<section class="link-ufficiali">
+<section class="links">
 
     <h2>🔗 Link utili</h2>
 
@@ -618,14 +574,14 @@
             ADISU Puglia
         </a>
 
-        <a href="https://www.poliba.it/it/node/1560" target="_blank">
-            Calendario didattico
+        <a href="calendari.html">
+            Calendari
         </a>
 
     </div>
 
 </section>
-
+```
 
 </main>
 
