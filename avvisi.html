@@ -9,7 +9,6 @@
 <title>Avvisi | Azione Universitaria PoliBa</title>
 
 <style>
-
     * {
         box-sizing: border-box;
         margin: 0;
@@ -18,51 +17,56 @@
 
     body {
         font-family: Arial, Helvetica, sans-serif;
-        background: #f4f7fb;
-        color: #1d2a3a;
+        background: #f5f7fb;
+        color: #1f2937;
         line-height: 1.6;
     }
 
     header {
-        background: #ffffff;
+        background: white;
         padding: 18px 7%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
         position: sticky;
         top: 0;
         z-index: 100;
     }
 
     .logo {
-        font-size: 21px;
-        font-weight: 800;
-        color: #1557b0;
-        text-decoration: none;
+        font-size: 22px;
+        font-weight: bold;
+        color: #0b3d91;
     }
 
     nav {
         display: flex;
-        gap: 25px;
+        gap: 20px;
+        flex-wrap: wrap;
     }
 
     nav a {
         text-decoration: none;
-        color: #26384d;
+        color: #333;
         font-weight: 600;
-        transition: 0.2s;
+        font-size: 14px;
     }
 
     nav a:hover {
-        color: #1557b0;
+        color: #0b3d91;
     }
 
     .hero {
-        background: linear-gradient(135deg, #1557b0, #2879d8);
+        background: linear-gradient(135deg, #0b3d91, #1769c2);
         color: white;
         padding: 70px 7%;
         text-align: center;
+    }
+
+    .hero .icon {
+        font-size: 48px;
+        margin-bottom: 15px;
     }
 
     .hero h1 {
@@ -79,205 +83,152 @@
 
     .container {
         width: 86%;
-        max-width: 1150px;
-        margin: 45px auto 70px;
+        max-width: 1100px;
+        margin: 45px auto;
     }
 
-    .filtri {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
+    .intro {
+        text-align: center;
         margin-bottom: 35px;
     }
 
-    .filtro {
-        border: none;
-        background: white;
-        color: #26384d;
-        padding: 10px 18px;
-        border-radius: 20px;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: 600;
-        box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-        transition: 0.2s;
+    .intro h2 {
+        color: #0b3d91;
+        margin-bottom: 10px;
+        font-size: 28px;
     }
 
-    .filtro:hover {
-        transform: translateY(-2px);
-        color: #1557b0;
+    .intro p {
+        color: #5b6472;
     }
 
-    .filtro.attivo {
-        background: #1557b0;
-        color: white;
-    }
-
-    #lista-avvisi {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+    .avvisi {
+        display: grid;
+        gap: 22px;
     }
 
     .avviso {
         background: white;
-        border-radius: 18px;
-        padding: 28px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-        border-left: 5px solid #1557b0;
-        cursor: pointer;
-        transition: transform 0.2s, box-shadow 0.2s;
+        border-radius: 16px;
+        padding: 26px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+        border-left: 5px solid #0b3d91;
     }
 
-    .avviso:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 28px rgba(0,0,0,0.10);
-    }
-
-    .avviso.importante {
-        border-left-color: #d4a000;
-    }
-
-    .badge-importante {
+    .avviso .categoria {
         display: inline-block;
-        background: #fff1b8;
-        color: #705500;
-        padding: 5px 10px;
-        border-radius: 6px;
+        background: #e8f0ff;
+        color: #0b3d91;
         font-size: 12px;
-        font-weight: 700;
-        margin-bottom: 10px;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 20px;
+        margin-bottom: 12px;
+        text-transform: uppercase;
     }
 
-    .avviso h2 {
-        color: #183b68;
-        font-size: 23px;
-        margin-bottom: 7px;
+    .avviso h3 {
+        color: #172033;
+        font-size: 21px;
+        margin-bottom: 8px;
     }
 
-    .meta {
-        color: #65758a;
-        font-size: 14px;
+    .avviso .data {
+        color: #6b7280;
+        font-size: 13px;
         margin-bottom: 12px;
     }
 
-    .testo {
-        color: #26384d;
-        font-size: 16px;
+    .avviso p {
+        color: #4b5563;
+        margin-bottom: 16px;
     }
 
-    .nessun-avviso {
-        background: white;
-        padding: 35px;
-        border-radius: 18px;
-        text-align: center;
-        color: #65758a;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-    }
-
-    /* MODALE */
-
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        inset: 0;
-        background: rgba(16,42,73,0.65);
-        padding: 20px;
-        overflow-y: auto;
-    }
-
-    .modal-contenuto {
-        background: white;
-        max-width: 700px;
-        margin: 70px auto;
-        border-radius: 20px;
-        padding: 35px;
-        position: relative;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.20);
-        animation: apertura 0.2s ease;
-    }
-
-    @keyframes apertura {
-        from {
-            transform: translateY(-15px);
-            opacity: 0;
-        }
-
-        to {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-
-    .chiudi {
-        position: absolute;
-        right: 20px;
-        top: 12px;
-        font-size: 32px;
-        cursor: pointer;
-        color: #65758a;
-    }
-
-    .chiudi:hover {
-        color: #1557b0;
-    }
-
-    #modal-titolo {
-        color: #183b68;
-        margin-bottom: 10px;
-        padding-right: 35px;
-    }
-
-    #modal-meta {
-        color: #65758a;
+    .avviso a {
+        display: inline-block;
+        text-decoration: none;
+        background: #0b3d91;
+        color: white;
+        padding: 9px 16px;
+        border-radius: 8px;
+        font-weight: bold;
         font-size: 14px;
-        margin-bottom: 22px;
     }
 
-    #modal-testo {
-        color: #26384d;
-        line-height: 1.7;
-        white-space: pre-line;
+    .avviso a:hover {
+        background: #082f70;
+    }
+
+    .sezione-info {
+        margin-top: 50px;
+        background: white;
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+        text-align: center;
+    }
+
+    .sezione-info h2 {
+        color: #0b3d91;
+        margin-bottom: 12px;
+    }
+
+    .sezione-info p {
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    .bottoni {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .bottone {
+        text-decoration: none;
+        background: #0b3d91;
+        color: white;
+        padding: 11px 18px;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+
+    .bottone.secondario {
+        background: #e8f0ff;
+        color: #0b3d91;
     }
 
     footer {
-        background: #102a49;
+        background: #0b3d91;
         color: white;
         text-align: center;
-        padding: 35px 7%;
-        margin-top: 70px;
+        padding: 28px 7%;
+        margin-top: 60px;
     }
 
     footer p {
-        opacity: 0.85;
-        font-size: 14px;
+        margin: 5px 0;
     }
 
-    @media (max-width: 950px) {
-
+    @media (max-width: 700px) {
         header {
             flex-direction: column;
             gap: 12px;
+            text-align: center;
         }
 
         nav {
-            gap: 15px;
-            flex-wrap: wrap;
             justify-content: center;
+            gap: 12px;
         }
-
-    }
-
-    @media (max-width: 600px) {
 
         .hero {
             padding: 55px 6%;
         }
 
         .hero h1 {
-            font-size: 34px;
+            font-size: 32px;
         }
 
         .hero p {
@@ -291,14 +242,7 @@
         .avviso {
             padding: 22px;
         }
-
-        .modal-contenuto {
-            margin: 30px auto;
-            padding: 25px;
-        }
-
     }
-
 </style>
 ```
 
@@ -307,12 +251,9 @@
 <body>
 
 <header>
+    <div class="logo">Azione Universitaria PoliBa</div>
 
 ```
-<a href="index.html" class="logo">
-    Azione Universitaria PoliBa
-</a>
-
 <nav>
     <a href="index.html">Home</a>
     <a href="calendari.html">Calendari</a>
@@ -326,12 +267,14 @@
 </header>
 
 <section class="hero">
+    <div class="icon">📢</div>
 
 ```
-<h1>📢 Avvisi</h1>
+<h1>Avvisi</h1>
 
 <p>
-    Tutte le comunicazioni e gli aggiornamenti per gli studenti di PoliBa.
+    Tutte le comunicazioni e le informazioni utili per gli studenti
+    del Politecnico di Bari.
 </p>
 ```
 
@@ -340,350 +283,132 @@
 <main class="container">
 
 ```
-<div class="filtri">
+<section class="intro">
+    <h2>Le informazioni che contano</h2>
 
-    <button class="filtro attivo" onclick="filtra('Tutti', this)">
-        Tutti
-    </button>
+    <p>
+        Una sezione pensata per raccogliere avvisi, scadenze,
+        comunicazioni e informazioni importanti per la vita universitaria.
+    </p>
+</section>
 
-    <button class="filtro" onclick="filtra('Didattica', this)">
-        Didattica
-    </button>
+<section class="avvisi">
 
-    <button class="filtro" onclick="filtra('Esami', this)">
-        Esami
-    </button>
+    <article class="avviso">
+        <span class="categoria">Ateneo</span>
 
-    <button class="filtro" onclick="filtra('Erasmus', this)">
-        Erasmus
-    </button>
+        <h3>Controlla sempre le comunicazioni ufficiali PoliBa</h3>
 
-    <button class="filtro" onclick="filtra('Vita universitaria', this)">
-        Vita universitaria
-    </button>
+        <div class="data">
+            Fonte ufficiale: Politecnico di Bari
+        </div>
 
-    <button class="filtro" onclick="filtra('Scadenze', this)">
-        Scadenze
-    </button>
+        <p>
+            Per scadenze, procedure amministrative, bandi e comunicazioni
+            ufficiali è importante fare riferimento ai canali istituzionali
+            del Politecnico di Bari.
+        </p>
 
-</div>
+        <a href="https://www.poliba.it/" target="_blank">
+            Vai al sito PoliBa
+        </a>
+    </article>
 
+    <article class="avviso">
+        <span class="categoria">Segreteria</span>
 
-<div id="lista-avvisi">
+        <h3>Hai un problema con la tua carriera?</h3>
 
-    <div class="nessun-avviso">
-        Caricamento avvisi…
+        <div class="data">
+            Servizio Ticket Studenti
+        </div>
+
+        <p>
+            Per richieste relative alla carriera universitaria, certificati,
+            procedure e problematiche con la Segreteria Studenti puoi
+            utilizzare il servizio di ticketing ufficiale.
+        </p>
+
+        <a href="https://helpdesk.poliba.it/" target="_blank">
+            Apri Ticket Studenti
+        </a>
+    </article>
+
+    <article class="avviso">
+        <span class="categoria">Opportunità</span>
+
+        <h3>Borse di studio, tutorato e opportunità</h3>
+
+        <div class="data">
+            Informazioni e bandi per studenti
+        </div>
+
+        <p>
+            Consulta periodicamente gli avvisi relativi a borse di studio,
+            tutorato, collaborazioni e altre opportunità rivolte agli
+            studenti.
+        </p>
+
+        <a href="https://www.poliba.it/borse-di-studio" target="_blank">
+            Scopri le opportunità
+        </a>
+    </article>
+
+    <article class="avviso">
+        <span class="categoria">Studenti</span>
+
+        <h3>Hai un problema o vuoi segnalarci qualcosa?</h3>
+
+        <div class="data">
+            Azione Universitaria PoliBa
+        </div>
+
+        <p>
+            Se hai una segnalazione, una difficoltà o una proposta
+            riguardante la vita universitaria, puoi inviarcela direttamente.
+        </p>
+
+        <a href="segnalazioni.html">
+            Invia una segnalazione
+        </a>
+    </article>
+
+</section>
+
+<section class="sezione-info">
+
+    <h2>🔎 Cerchi un'informazione specifica?</h2>
+
+    <p>
+        Puoi consultare direttamente i principali canali ufficiali
+        del Politecnico di Bari.
+    </p>
+
+    <div class="bottoni">
+
+        <a class="bottone"
+           href="https://www.poliba.it/"
+           target="_blank">
+            Sito PoliBa
+        </a>
+
+        <a class="bottone secondario"
+           href="https://web.poliba.it/it/albo-online"
+           target="_blank">
+            Albo Online
+        </a>
+
     </div>
 
-</div>
+</section>
 ```
 
 </main>
 
-<div id="modal" class="modal" onclick="chiudiModal(event)">
-
-```
-<div class="modal-contenuto">
-
-    <span class="chiudi" onclick="chiudiModal()">
-        &times;
-    </span>
-
-    <div id="modal-importante"></div>
-
-    <h2 id="modal-titolo"></h2>
-
-    <div id="modal-meta"></div>
-
-    <div id="modal-testo"></div>
-
-</div>
-```
-
-</div>
-
 <footer>
-
-```
-<p>
-    © 2026 Azione Universitaria PoliBa
-</p>
-
-<p>
-    Informazione, rappresentanza e servizi per gli studenti.
-</p>
-```
-
+    <p><strong>Azione Universitaria PoliBa</strong></p>
+    <p>#azioneuniversitaria · #SEMPREdallaPartedelloStudente</p>
 </footer>
-
-<script>
-
-    const URL_AVVISI =
-        "https://script.google.com/macros/s/AKfycbzX0r_ySf8e6VYFN_zZYSkLx8w6oHTAo1HuNFIacBkjtr3wTlMZM2BmKDF99luxJAfGkw/exec";
-
-    let tuttiGliAvvisi = [];
-    let categoriaAttiva = "Tutti";
-
-
-    function formattaData(data) {
-
-        if (!data) {
-            return "";
-        }
-
-        const testo = String(data).trim();
-
-        /* Se Apps Script ha già inviato GG/MM/AAAA,
-           la lasciamo esattamente così */
-
-        if (/^\d{2}\/\d{2}\/\d{4}$/.test(testo)) {
-            return testo;
-        }
-
-        const d = new Date(data);
-
-        if (isNaN(d.getTime())) {
-            return testo;
-        }
-
-        const giorno = String(d.getDate()).padStart(2, "0");
-        const mese = String(d.getMonth() + 1).padStart(2, "0");
-        const anno = d.getFullYear();
-
-        return giorno + "/" + mese + "/" + anno;
-    }
-
-
-    function caricaAvvisi() {
-
-        const script = document.createElement("script");
-
-        script.src =
-            URL_AVVISI +
-            "?callback=riceviAvvisi&t=" +
-            new Date().getTime();
-
-        document.body.appendChild(script);
-    }
-
-
-    function riceviAvvisi(dati) {
-
-        if (!Array.isArray(dati)) {
-
-            document.getElementById("lista-avvisi").innerHTML =
-                '<div class="nessun-avviso">' +
-                'Nessun avviso disponibile.' +
-                '</div>';
-
-            return;
-        }
-
-        tuttiGliAvvisi = dati;
-
-        mostraAvvisi();
-    }
-
-
-    function mostraAvvisi() {
-
-        const contenitore =
-            document.getElementById("lista-avvisi");
-
-        const avvisi =
-            tuttiGliAvvisi.filter(function(avviso) {
-
-                if (categoriaAttiva === "Tutti") {
-                    return true;
-                }
-
-                return avviso.categoria === categoriaAttiva;
-
-            });
-
-
-        if (avvisi.length === 0) {
-
-            contenitore.innerHTML =
-                '<div class="nessun-avviso">' +
-                'Nessun avviso disponibile in questa categoria.' +
-                '</div>';
-
-            return;
-        }
-
-
-        contenitore.innerHTML = "";
-
-
-        avvisi.forEach(function(avviso) {
-
-            const elemento =
-                document.createElement("div");
-
-            elemento.className = "avviso";
-
-
-            if (avviso.importante) {
-                elemento.classList.add("importante");
-            }
-
-
-            let importanteHTML = "";
-
-
-            if (avviso.importante) {
-
-                importanteHTML =
-                    '<div class="badge-importante">' +
-                    '⚠ IMPORTANTE' +
-                    '</div>';
-
-            }
-
-
-            elemento.innerHTML =
-
-                importanteHTML +
-
-                "<h2>" +
-                escapeHTML(avviso.titolo) +
-                "</h2>" +
-
-                '<div class="meta">' +
-                escapeHTML(avviso.categoria) +
-                " • " +
-                formattaData(avviso.data) +
-                "</div>" +
-
-                '<div class="testo">' +
-                escapeHTML(avviso.testo) +
-                "</div>";
-
-
-            elemento.addEventListener("click", function() {
-
-                apriModal(avviso);
-
-            });
-
-
-            contenitore.appendChild(elemento);
-
-        });
-
-    }
-
-
-    function filtra(categoria, pulsante) {
-
-        categoriaAttiva = categoria;
-
-
-        document.querySelectorAll(".filtro").forEach(function(button) {
-
-            button.classList.remove("attivo");
-
-        });
-
-
-        pulsante.classList.add("attivo");
-
-
-        mostraAvvisi();
-
-    }
-
-
-    function apriModal(avviso) {
-
-        const modal =
-            document.getElementById("modal");
-
-        const importante =
-            document.getElementById("modal-importante");
-
-
-        if (avviso.importante) {
-
-            importante.innerHTML =
-                '<div class="badge-importante">' +
-                '⚠ IMPORTANTE' +
-                '</div>';
-
-        } else {
-
-            importante.innerHTML = "";
-
-        }
-
-
-        document.getElementById("modal-titolo").textContent =
-            avviso.titolo;
-
-
-        document.getElementById("modal-meta").textContent =
-            avviso.categoria +
-            " • " +
-            formattaData(avviso.data);
-
-
-        document.getElementById("modal-testo").textContent =
-            avviso.testo;
-
-
-        modal.style.display = "block";
-
-        document.body.style.overflow = "hidden";
-
-    }
-
-
-    function chiudiModal(event) {
-
-        const modal =
-            document.getElementById("modal");
-
-
-        if (!event || event.target === modal) {
-
-            modal.style.display = "none";
-
-            document.body.style.overflow = "";
-
-        }
-
-    }
-
-
-    document.addEventListener("keydown", function(event) {
-
-        if (event.key === "Escape") {
-            chiudiModal();
-        }
-
-    });
-
-
-    function escapeHTML(testo) {
-
-        if (testo === null || testo === undefined) {
-            return "";
-        }
-
-        return String(testo)
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
-
-    }
-
-
-    caricaAvvisi();
-
-</script>
 
 </body>
 </html>
