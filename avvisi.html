@@ -94,12 +94,14 @@
 
     .intro h2 {
         color: #0b3d91;
-        margin-bottom: 10px;
         font-size: 28px;
+        margin-bottom: 10px;
     }
 
     .intro p {
         color: #5b6472;
+        max-width: 750px;
+        margin: auto;
     }
 
     .avvisi {
@@ -110,12 +112,29 @@
     .avviso {
         background: white;
         border-radius: 16px;
-        padding: 26px;
+        padding: 28px;
         box-shadow: 0 5px 18px rgba(0,0,0,0.07);
         border-left: 5px solid #0b3d91;
     }
 
-    .avviso .categoria {
+    .avviso.evidenza {
+        border-left-color: #1769c2;
+        box-shadow: 0 7px 22px rgba(11,61,145,0.12);
+    }
+
+    .badge {
+        display: inline-block;
+        background: #0b3d91;
+        color: white;
+        font-size: 11px;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 20px;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+    }
+
+    .categoria {
         display: inline-block;
         background: #e8f0ff;
         color: #0b3d91;
@@ -124,24 +143,25 @@
         padding: 5px 10px;
         border-radius: 20px;
         margin-bottom: 12px;
+        margin-left: 6px;
         text-transform: uppercase;
     }
 
     .avviso h3 {
         color: #172033;
-        font-size: 21px;
+        font-size: 22px;
         margin-bottom: 8px;
     }
 
-    .avviso .data {
+    .data {
         color: #6b7280;
         font-size: 13px;
-        margin-bottom: 12px;
+        margin-bottom: 15px;
     }
 
     .avviso p {
         color: #4b5563;
-        margin-bottom: 16px;
+        margin-bottom: 18px;
     }
 
     .avviso a {
@@ -149,7 +169,7 @@
         text-decoration: none;
         background: #0b3d91;
         color: white;
-        padding: 9px 16px;
+        padding: 10px 17px;
         border-radius: 8px;
         font-weight: bold;
         font-size: 14px;
@@ -159,44 +179,57 @@
         background: #082f70;
     }
 
-    .sezione-info {
-        margin-top: 50px;
+    .nessun-avviso {
         background: white;
         border-radius: 16px;
-        padding: 30px;
-        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+        padding: 40px 30px;
         text-align: center;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
     }
 
-    .sezione-info h2 {
-        color: #0b3d91;
+    .nessun-avviso .icona {
+        font-size: 42px;
         margin-bottom: 12px;
     }
 
-    .sezione-info p {
-        color: #555;
-        margin-bottom: 20px;
+    .nessun-avviso h3 {
+        color: #0b3d91;
+        margin-bottom: 10px;
     }
 
-    .bottoni {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        flex-wrap: wrap;
+    .nessun-avviso p {
+        color: #5b6472;
+        max-width: 650px;
+        margin: auto;
     }
 
-    .bottone {
-        text-decoration: none;
-        background: #0b3d91;
+    .segnalazione-box {
+        margin-top: 45px;
+        background: linear-gradient(135deg, #0b3d91, #1769c2);
         color: white;
-        padding: 11px 18px;
+        border-radius: 18px;
+        padding: 35px;
+        text-align: center;
+    }
+
+    .segnalazione-box h2 {
+        margin-bottom: 10px;
+    }
+
+    .segnalazione-box p {
+        max-width: 700px;
+        margin: 0 auto 22px;
+        opacity: 0.95;
+    }
+
+    .bottone-bianco {
+        display: inline-block;
+        background: white;
+        color: #0b3d91;
+        text-decoration: none;
+        padding: 11px 20px;
         border-radius: 8px;
         font-weight: bold;
-    }
-
-    .bottone.secondario {
-        background: #e8f0ff;
-        color: #0b3d91;
     }
 
     footer {
@@ -273,8 +306,8 @@
 <h1>Avvisi</h1>
 
 <p>
-    Tutte le comunicazioni e le informazioni utili per gli studenti
-    del Politecnico di Bari.
+    Le comunicazioni di Azione Universitaria PoliBa:
+    informazioni, aggiornamenti, iniziative e novità per gli studenti.
 </p>
 ```
 
@@ -284,121 +317,54 @@
 
 ```
 <section class="intro">
-    <h2>Le informazioni che contano</h2>
+    <h2>📣 Gli avvisi di Azione Universitaria</h2>
 
     <p>
-        Una sezione pensata per raccogliere avvisi, scadenze,
-        comunicazioni e informazioni importanti per la vita universitaria.
+        Qui pubblichiamo gli aggiornamenti che riteniamo utili per gli studenti
+        del Politecnico di Bari. Quando necessario, ogni comunicazione sarà
+        accompagnata dal riferimento alla fonte ufficiale.
     </p>
 </section>
 
 <section class="avvisi">
 
-    <article class="avviso">
-        <span class="categoria">Ateneo</span>
+    <article class="avviso evidenza">
+        <span class="badge">In evidenza</span>
+        <span class="categoria">Azione Universitaria</span>
 
-        <h3>Controlla sempre le comunicazioni ufficiali PoliBa</h3>
+        <h3>Benvenuti nella sezione Avvisi</h3>
 
         <div class="data">
-            Fonte ufficiale: Politecnico di Bari
+            13 settembre 2026
         </div>
 
         <p>
-            Per scadenze, procedure amministrative, bandi e comunicazioni
-            ufficiali è importante fare riferimento ai canali istituzionali
-            del Politecnico di Bari.
-        </p>
-
-        <a href="https://www.poliba.it/" target="_blank">
-            Vai al sito PoliBa
-        </a>
-    </article>
-
-    <article class="avviso">
-        <span class="categoria">Segreteria</span>
-
-        <h3>Hai un problema con la tua carriera?</h3>
-
-        <div class="data">
-            Servizio Ticket Studenti
-        </div>
-
-        <p>
-            Per richieste relative alla carriera universitaria, certificati,
-            procedure e problematiche con la Segreteria Studenti puoi
-            utilizzare il servizio di ticketing ufficiale.
-        </p>
-
-        <a href="https://helpdesk.poliba.it/" target="_blank">
-            Apri Ticket Studenti
-        </a>
-    </article>
-
-    <article class="avviso">
-        <span class="categoria">Opportunità</span>
-
-        <h3>Borse di studio, tutorato e opportunità</h3>
-
-        <div class="data">
-            Informazioni e bandi per studenti
-        </div>
-
-        <p>
-            Consulta periodicamente gli avvisi relativi a borse di studio,
-            tutorato, collaborazioni e altre opportunità rivolte agli
+            Questa sarà la sezione dedicata alle comunicazioni di Azione
+            Universitaria PoliBa. Qui troverai aggiornamenti su didattica,
+            esami, opportunità, iniziative e problematiche segnalate dagli
             studenti.
         </p>
 
-        <a href="https://www.poliba.it/borse-di-studio" target="_blank">
-            Scopri le opportunità
-        </a>
-    </article>
-
-    <article class="avviso">
-        <span class="categoria">Studenti</span>
-
-        <h3>Hai un problema o vuoi segnalarci qualcosa?</h3>
-
-        <div class="data">
-            Azione Universitaria PoliBa
-        </div>
-
         <p>
-            Se hai una segnalazione, una difficoltà o una proposta
-            riguardante la vita universitaria, puoi inviarcela direttamente.
+            La sezione verrà aggiornata ogni volta che ci sarà
+            un'informazione importante da condividere.
         </p>
-
-        <a href="segnalazioni.html">
-            Invia una segnalazione
-        </a>
     </article>
 
 </section>
 
-<section class="sezione-info">
+<section class="segnalazione-box">
 
-    <h2>🔎 Cerchi un'informazione specifica?</h2>
+    <h2>Hai qualcosa da segnalarci?</h2>
 
     <p>
-        Puoi consultare direttamente i principali canali ufficiali
-        del Politecnico di Bari.
+        Se hai un problema, una proposta o una situazione che riguarda
+        la vita universitaria, faccelo sapere.
     </p>
 
-    <div class="bottoni">
-
-        <a class="bottone"
-           href="https://www.poliba.it/"
-           target="_blank">
-            Sito PoliBa
-        </a>
-
-        <a class="bottone secondario"
-           href="https://web.poliba.it/it/albo-online"
-           target="_blank">
-            Albo Online
-        </a>
-
-    </div>
+    <a class="bottone-bianco" href="segnalazioni.html">
+        Invia una segnalazione
+    </a>
 
 </section>
 ```
