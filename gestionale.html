@@ -147,6 +147,93 @@
         color: #65758a;
     }
 
+    .year-selector {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .year-selector-card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 30px 25px;
+        text-align: center;
+        text-decoration: none;
+        color: #183b68;
+        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.09);
+        border-top: 5px solid #1557b0;
+        transition: 0.2s;
+    }
+
+    .year-selector-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(21, 87, 176, 0.14);
+    }
+
+    .year-selector-card .icon {
+        font-size: 38px;
+        margin-bottom: 10px;
+    }
+
+    .year-selector-card h3 {
+        color: #1557b0;
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .year-selector-card p {
+        color: #65758a;
+        font-size: 14px;
+    }
+
+    .year-section {
+        scroll-margin-top: 30px;
+    }
+
+    .year-title {
+        background: linear-gradient(135deg, #1557b0, #2879d8);
+        color: white;
+        border-radius: 18px;
+        padding: 25px;
+        margin-bottom: 20px;
+    }
+
+    .year-title h2 {
+        color: white;
+        margin-bottom: 5px;
+    }
+
+    .year-title p {
+        opacity: 0.92;
+    }
+
+    .year-content-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 18px;
+    }
+
+    .year-content-card {
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 25px;
+        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
+    }
+
+    .year-content-card .icon {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .year-content-card h3 {
+        color: #183b68;
+        margin-bottom: 8px;
+    }
+
+    .year-content-card p {
+        color: #65758a;
+    }
+
     .schedule {
         background: #ffffff;
         border-radius: 18px;
@@ -232,29 +319,6 @@
         font-size: 14px;
     }
 
-    .year-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 18px;
-    }
-
-    .year-card {
-        background: #ffffff;
-        border-radius: 18px;
-        padding: 25px;
-        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
-    }
-
-    .year-card h3 {
-        color: #1557b0;
-        margin-bottom: 12px;
-    }
-
-    .year-card p {
-        color: #65758a;
-        margin-bottom: 8px;
-    }
-
     .important-box {
         background: #eaf2ff;
         border-left: 5px solid #1557b0;
@@ -303,6 +367,18 @@
     .link-card:hover {
         transform: translateY(-3px);
         color: #1557b0;
+    }
+
+    .top-link {
+        display: inline-block;
+        margin-top: 20px;
+        color: #1557b0;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .top-link:hover {
+        text-decoration: underline;
     }
 
     footer {
@@ -387,8 +463,8 @@
 </h1>
 
 <p>
-    Informazioni, calendario accademico, organizzazione del corso
-    e risorse utili per gli studenti di Ingegneria Gestionale.
+    Informazioni, organizzazione del corso e risorse utili
+    per gli studenti di Ingegneria Gestionale.
 </p>
 
 <a href="calendari.html" class="back-button">
@@ -471,63 +547,312 @@
 
 </section>
 
-<section class="section">
+<section class="section" id="anni">
 
-    <h2>🗓️ Orario delle lezioni</h2>
+    <h2>🎓 Scegli il tuo anno di corso</h2>
 
     <p class="section-intro">
-        Orario settimanale per l'anno accademico 2026/2027.
+        Seleziona il tuo anno per trovare le informazioni
+        più utili per il tuo percorso.
     </p>
 
-    <div class="schedule">
+    <div class="year-selector">
 
-        <table>
+        <a href="#primo-anno" class="year-selector-card">
 
-            <thead>
-                <tr>
-                    <th>Giorno</th>
-                    <th>Mattina</th>
-                    <th>Pomeriggio</th>
-                </tr>
-            </thead>
+            <div class="icon">
+                1️⃣
+            </div>
 
-            <tbody>
+            <h3>1° anno</h3>
 
-                <tr>
-                    <td>Lunedì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
+            <p>
+                Lezioni, materie, CFU e informazioni
+                per iniziare il percorso.
+            </p>
 
-                <tr>
-                    <td>Martedì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
+        </a>
 
-                <tr>
-                    <td>Mercoledì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
+        <a href="#secondo-anno" class="year-selector-card">
 
-                <tr>
-                    <td>Giovedì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
+            <div class="icon">
+                2️⃣
+            </div>
 
-                <tr>
-                    <td>Venerdì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
+            <h3>2° anno</h3>
 
-            </tbody>
+            <p>
+                Informazioni didattiche e risorse
+                per il proseguimento del percorso.
+            </p>
 
-        </table>
+        </a>
+
+        <a href="#terzo-anno" class="year-selector-card">
+
+            <div class="icon">
+                3️⃣
+            </div>
+
+            <h3>3° anno</h3>
+
+            <p>
+                Informazioni, attività formative,
+                scelta del percorso e prova finale.
+            </p>
+
+        </a>
 
     </div>
+
+</section>
+
+<section class="section year-section" id="primo-anno">
+
+    <div class="year-title">
+
+        <h2>1️⃣ 1° anno</h2>
+
+        <p>
+            Tutte le informazioni utili per gli studenti
+            del primo anno di Ingegneria Gestionale.
+        </p>
+
+    </div>
+
+    <div class="year-content-grid">
+
+        <div class="year-content-card">
+
+            <div class="icon">
+                🗓️
+            </div>
+
+            <h3>Calendario delle lezioni</h3>
+
+            <p>
+                Qui saranno inseriti gli orari delle lezioni
+                del primo anno, aggiornati con le informazioni ufficiali.
+            </p>
+
+        </div>
+
+        <div class="year-content-card">
+
+            <div class="icon">
+                📚
+            </div>
+
+            <h3>Materie e CFU</h3>
+
+            <p>
+                Il dettaglio degli insegnamenti e dei relativi CFU
+                sarà inserito con i dati ufficiali del corso.
+            </p>
+
+        </div>
+
+        <div class="year-content-card">
+
+            <div class="icon">
+                🎓
+            </div>
+
+            <h3>Esami</h3>
+
+            <p>
+                Informazioni generali sulle sessioni d'esame
+                e indicazioni per consultare gli appelli ufficiali.
+            </p>
+
+        </div>
+
+        <div class="year-content-card">
+
+            <div class="icon">
+                📌
+            </div>
+
+            <h3>Informazioni utili</h3>
+
+            <p>
+                Avvisi, scadenze e informazioni specifiche
+                per gli studenti del primo anno.
+            </p>
+
+        </div>
+
+    </div>
+
+    <a href="#anni" class="top-link">
+        ↑ Torna alla scelta dell'anno
+    </a>
+
+</section>
+
+<section class="section year-section" id="secondo-anno">
+
+    <div class="year-title">
+
+        <h2>2️⃣ 2° anno</h2>
+
+        <p>
+            Tutte le informazioni utili per gli studenti
+            del secondo anno di Ingegneria Gestionale.
+        </p>
+
+    </div>
+
+    <div class="year-content-grid">
+
+        <div class="year-content-card">
+
+            <div class="icon">
+                🗓️
+            </div>
+
+            <h3>Calendario delle lezioni</h3>
+
+            <p>
+                Orari delle lezioni del secondo anno
+                in aggiornamento con i dati ufficiali.
+            </p>
+
+        </div>
+
+        <div class="year-content-card">
+
+            <div class="icon">
+                📚
+            </div>
+
+            <h3>Materie e CFU</h3>
+
+            <p>
+                Elenco degli insegnamenti e relativi CFU
+                in aggiornamento.
+            </p>
+
+        </div>
+
+        <div class="year-content-card">
+
+            <div class="icon">
+                🎓
+            </div>
+
+            <h3>Esami</h3>
+
+            <p>
+                Informazioni generali sulle sessioni d'esame
+                e indicazioni per consultare gli appelli ufficiali.
+            </p>
+
+        </div>
+
+        <div class="year-content-card">
+
+            <div class="icon">
+                📌
+            </div>
+
+            <h3>Informazioni utili</h3>
+
+            <p>
+                Avvisi, scadenze e opportunità specifiche
+                per gli studenti del secondo anno.
+            </p>
+
+        </div>
+
+    </div>
+
+    <a href="#anni" class="top-link">
+        ↑ Torna alla scelta dell'anno
+    </a>
+
+</section>
+
+<section class="section year-section" id="terzo-anno">
+
+    <div class="year-title">
+
+        <h2>3️⃣ 3° anno</h2>
+
+        <p>
+            Tutte le informazioni utili per gli studenti
+            del terzo anno di Ingegneria Gestionale.
+        </p>
+
+    </div>
+
+    <div class="year-content-grid">
+
+        <div class="year-content-card">
+
+            <div class="icon">
+                🗓️
+            </div>
+
+            <h3>Calendario delle lezioni</h3>
+
+            <p>
+                Orari delle lezioni del terzo anno
+                in aggiornamento con i dati ufficiali.
+            </p>
+
+        </div>
+
+        <div class="year-content-card">
+
+            <div class="icon">
+                📚
+            </div>
+
+            <h3>Materie e CFU</h3>
+
+            <p>
+                Elenco degli insegnamenti, CFU e attività
+                formative in aggiornamento.
+            </p>
+
+        </div>
+
+        <div class="year-content-card">
+
+            <div class="icon">
+                🎓
+            </div>
+
+            <h3>Esami e prova finale</h3>
+
+            <p>
+                Informazioni generali sugli esami,
+                sulle attività finali e sulla prova finale.
+            </p>
+
+        </div>
+
+        <div class="year-content-card">
+
+            <div class="icon">
+                📌
+            </div>
+
+            <h3>Informazioni utili</h3>
+
+            <p>
+                Avvisi, scadenze, opportunità e informazioni
+                specifiche per gli studenti del terzo anno.
+            </p>
+
+        </div>
+
+    </div>
+
+    <a href="#anni" class="top-link">
+        ↑ Torna alla scelta dell'anno
+    </a>
 
 </section>
 
@@ -537,6 +862,7 @@
 
     <p class="section-intro">
         Principali periodi dell'anno accademico 2026/2027.
+        Le date valgono per il corso e vengono mantenute in questa sezione generale.
     </p>
 
     <div class="calendar-grid">
@@ -590,7 +916,7 @@
     <h2>🎯 Percorsi</h2>
 
     <p class="section-intro">
-        Il corso prevede tre possibili percorsi di approfondimento.
+        Il corso prevede possibili percorsi di approfondimento.
     </p>
 
     <div class="curricula">
@@ -642,75 +968,6 @@
             <p>
                 Percorso orientato alla gestione delle infrastrutture
                 e dei sistemi complessi.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section class="section">
-
-    <h2>📖 Piano di studi</h2>
-
-    <p class="section-intro">
-        Il dettaglio degli insegnamenti e dei relativi CFU
-        sarà aggiornato con i dati ufficiali dell'anno accademico 2026/2027.
-    </p>
-
-    <div class="year-grid">
-
-        <div class="year-card">
-
-            <h3>
-                1° anno
-            </h3>
-
-            <p>
-                Insegnamenti fondamentali del percorso
-                di Ingegneria Gestionale.
-            </p>
-
-            <p>
-                <strong>Piano dettagliato:</strong>
-                in aggiornamento.
-            </p>
-
-        </div>
-
-        <div class="year-card">
-
-            <h3>
-                2° anno
-            </h3>
-
-            <p>
-                Proseguimento della formazione ingegneristica
-                e approfondimento del percorso scelto.
-            </p>
-
-            <p>
-                <strong>Piano dettagliato:</strong>
-                in aggiornamento.
-            </p>
-
-        </div>
-
-        <div class="year-card">
-
-            <h3>
-                3° anno
-            </h3>
-
-            <p>
-                Approfondimenti finali, attività formative,
-                eventuali attività a scelta e prova finale.
-            </p>
-
-            <p>
-                <strong>Piano dettagliato:</strong>
-                in aggiornamento.
             </p>
 
         </div>
