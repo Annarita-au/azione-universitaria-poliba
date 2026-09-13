@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<title>Ingegneria Gestionale | Azione Universitaria PoliBa</title>
+<title>Ingegneria Gestionale | Calendari | Azione Universitaria PoliBa</title>
 
 <style>
-
     * {
         box-sizing: border-box;
         margin: 0;
@@ -61,7 +60,7 @@
 
     .hero {
         background: linear-gradient(135deg, #1557b0, #2879d8);
-        color: white;
+        color: #ffffff;
         padding: 70px 7%;
         text-align: center;
     }
@@ -87,7 +86,7 @@
         display: inline-block;
         margin-top: 25px;
         padding: 12px 20px;
-        background: white;
+        background: #ffffff;
         color: #1557b0;
         border-radius: 10px;
         text-decoration: none;
@@ -119,120 +118,51 @@
         margin-bottom: 20px;
     }
 
-    .info-grid {
+    .calendar-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 18px;
     }
 
-    .info-card {
+    .calendar-card {
         background: #ffffff;
-        border-radius: 18px;
-        padding: 25px;
-        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
+        border-radius: 16px;
+        padding: 22px;
         border-left: 5px solid #1557b0;
+        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
     }
 
-    .info-card .icon {
-        font-size: 30px;
-        margin-bottom: 10px;
-    }
-
-    .info-card h3 {
+    .calendar-card strong {
+        display: block;
         color: #183b68;
-        margin-bottom: 8px;
+        margin-bottom: 7px;
+        font-size: 17px;
     }
 
-    .info-card p {
+    .calendar-card span {
         color: #65758a;
-    }
-
-    .year-selector {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 20px;
-    }
-
-    .year-selector-card {
-        background: #ffffff;
-        border-radius: 20px;
-        padding: 30px 25px;
-        text-align: center;
-        text-decoration: none;
-        color: #183b68;
-        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.09);
-        border-top: 5px solid #1557b0;
-        transition: 0.2s;
-    }
-
-    .year-selector-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 30px rgba(21, 87, 176, 0.14);
-    }
-
-    .year-selector-card .icon {
-        font-size: 38px;
-        margin-bottom: 10px;
-    }
-
-    .year-selector-card h3 {
-        color: #1557b0;
-        font-size: 24px;
-        margin-bottom: 8px;
-    }
-
-    .year-selector-card p {
-        color: #65758a;
-        font-size: 14px;
     }
 
     .year-section {
+        margin-top: 45px;
         scroll-margin-top: 30px;
     }
 
     .year-title {
         background: linear-gradient(135deg, #1557b0, #2879d8);
-        color: white;
+        color: #ffffff;
         border-radius: 18px;
         padding: 25px;
         margin-bottom: 20px;
     }
 
     .year-title h2 {
-        color: white;
+        color: #ffffff;
         margin-bottom: 5px;
     }
 
     .year-title p {
         opacity: 0.92;
-    }
-
-    .year-content-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 18px;
-        margin-bottom: 25px;
-    }
-
-    .year-content-card {
-        background: #ffffff;
-        border-radius: 18px;
-        padding: 25px;
-        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
-    }
-
-    .year-content-card .icon {
-        font-size: 30px;
-        margin-bottom: 10px;
-    }
-
-    .year-content-card h3 {
-        color: #183b68;
-        margin-bottom: 8px;
-    }
-
-    .year-content-card p {
-        color: #65758a;
     }
 
     .schedule {
@@ -241,12 +171,12 @@
         padding: 25px;
         box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
         overflow-x: auto;
-        margin-top: 20px;
     }
 
     .schedule h3 {
         color: #183b68;
         margin-bottom: 8px;
+        font-size: 22px;
     }
 
     .schedule p {
@@ -257,12 +187,12 @@
     table {
         width: 100%;
         border-collapse: collapse;
-        min-width: 650px;
+        min-width: 700px;
     }
 
     th {
         background: #1557b0;
-        color: white;
+        color: #ffffff;
         padding: 14px;
         text-align: left;
     }
@@ -277,113 +207,9 @@
         border-bottom: none;
     }
 
-    .calendar-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 16px;
-    }
-
-    .calendar-card {
-        background: #ffffff;
-        border-radius: 16px;
-        padding: 20px;
-        border-left: 4px solid #1557b0;
-        box-shadow: 0 6px 20px rgba(21, 87, 176, 0.07);
-    }
-
-    .calendar-card strong {
-        display: block;
-        color: #183b68;
-        margin-bottom: 6px;
-    }
-
-    .calendar-card span {
-        color: #65758a;
-    }
-
-    .curricula {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 18px;
-    }
-
-    .curriculum {
-        background: #ffffff;
-        border-radius: 18px;
-        padding: 25px;
-        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
-        text-align: center;
-        border-top: 4px solid #1557b0;
-    }
-
-    .curriculum .icon {
-        font-size: 34px;
-        margin-bottom: 10px;
-    }
-
-    .curriculum h3 {
-        color: #183b68;
-        margin-bottom: 10px;
-    }
-
-    .curriculum p {
-        color: #65758a;
-        font-size: 14px;
-    }
-
-    .important-box {
-        background: #eaf2ff;
-        border-left: 5px solid #1557b0;
-        border-radius: 12px;
-        padding: 20px;
-        color: #29496d;
-    }
-
-    .important-box a,
-    .placeholder a {
-        color: #1557b0;
-        font-weight: 700;
-        text-decoration: none;
-    }
-
-    .important-box a:hover,
-    .placeholder a:hover {
-        text-decoration: underline;
-    }
-
-    .placeholder {
-        background: #ffffff;
-        border-radius: 16px;
-        padding: 25px;
-        color: #65758a;
-        box-shadow: 0 6px 20px rgba(21, 87, 176, 0.07);
-    }
-
-    .links {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 15px;
-    }
-
-    .link-card {
-        background: #ffffff;
-        border-radius: 15px;
-        padding: 20px;
-        text-decoration: none;
-        color: #183b68;
-        font-weight: 700;
-        box-shadow: 0 6px 20px rgba(21, 87, 176, 0.07);
-        transition: 0.2s;
-    }
-
-    .link-card:hover {
-        transform: translateY(-3px);
-        color: #1557b0;
-    }
-
     .top-link {
         display: inline-block;
-        margin-top: 20px;
+        margin-top: 18px;
         color: #1557b0;
         font-weight: 700;
         text-decoration: none;
@@ -393,9 +219,39 @@
         text-decoration: underline;
     }
 
+    .year-menu {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-bottom: 45px;
+    }
+
+    .year-menu a {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 22px;
+        text-align: center;
+        text-decoration: none;
+        color: #1557b0;
+        font-weight: 700;
+        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
+        border-top: 4px solid #1557b0;
+        transition: 0.2s;
+    }
+
+    .year-menu a:hover {
+        transform: translateY(-4px);
+    }
+
+    .year-menu .number {
+        display: block;
+        font-size: 30px;
+        margin-bottom: 5px;
+    }
+
     footer {
         background: #102a49;
-        color: white;
+        color: #ffffff;
         text-align: center;
         padding: 28px 7%;
         margin-top: 60px;
@@ -407,9 +263,16 @@
     }
 
     @media (max-width: 700px) {
-
         header {
             justify-content: center;
+        }
+
+        nav {
+            gap: 10px;
+        }
+
+        nav a {
+            font-size: 13px;
         }
 
         .hero {
@@ -428,15 +291,10 @@
             width: 90%;
         }
 
-        nav {
-            gap: 10px;
-        }
-
-        nav a {
-            font-size: 13px;
+        .year-menu {
+            grid-template-columns: 1fr;
         }
     }
-
 </style>
 
 
@@ -445,11 +303,8 @@
 <body>
 
 <header>
+    <a href="index.html" class="logo">Azione Universitaria PoliBa</a>
 
-
-<a href="index.html" class="logo">
-    Azione Universitaria PoliBa
-</a>
 
 <nav>
     <a href="index.html">Home</a>
@@ -464,19 +319,14 @@
 </header>
 
 <section class="hero">
+    <div class="icon">⚙️</div>
 
 
-<div class="icon">
-    ⚙️
-</div>
-
-<h1>
-    Ingegneria Gestionale
-</h1>
+<h1>Ingegneria Gestionale</h1>
 
 <p>
-    Informazioni, organizzazione del corso e risorse utili
-    per gli studenti di Ingegneria Gestionale.
+    Calendario accademico e orari delle lezioni per gli studenti
+    di Ingegneria Gestionale.
 </p>
 
 <a href="calendari.html" class="back-button">
@@ -490,523 +340,11 @@
 
 
 <section class="section">
-
-    <h2>📚 Informazioni sul corso</h2>
-
-    <p class="section-intro">
-        Ingegneria Gestionale — Laurea triennale.
-    </p>
-
-    <div class="info-grid">
-
-        <div class="info-card">
-
-            <div class="icon">
-                🎓
-            </div>
-
-            <h3>Corso</h3>
-
-            <p>
-                Laurea Triennale in Ingegneria Gestionale
-            </p>
-
-        </div>
-
-        <div class="info-card">
-
-            <div class="icon">
-                📍
-            </div>
-
-            <h3>Sede</h3>
-
-            <p>
-                Politecnico di Bari — Bari
-            </p>
-
-        </div>
-
-        <div class="info-card">
-
-            <div class="icon">
-                ⏱️
-            </div>
-
-            <h3>Durata</h3>
-
-            <p>
-                3 anni — 180 CFU
-            </p>
-
-        </div>
-
-        <div class="info-card">
-
-            <div class="icon">
-                📅
-            </div>
-
-            <h3>Anno accademico</h3>
-
-            <p>
-                2026/2027
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section class="section" id="anni">
-
-    <h2>🎓 Scegli il tuo anno di corso</h2>
+    <h2>📅 Calendario accademico 2026/2027</h2>
 
     <p class="section-intro">
-        Seleziona il tuo anno per trovare tutte le informazioni
-        utili per il tuo percorso.
-    </p>
-
-    <div class="year-selector">
-
-        <a href="#primo-anno" class="year-selector-card">
-
-            <div class="icon">
-                1️⃣
-            </div>
-
-            <h3>1° anno</h3>
-
-            <p>
-                Lezioni, materie, CFU, esami e informazioni
-                utili per iniziare il percorso.
-            </p>
-
-        </a>
-
-        <a href="#secondo-anno" class="year-selector-card">
-
-            <div class="icon">
-                2️⃣
-            </div>
-
-            <h3>2° anno</h3>
-
-            <p>
-                Lezioni, materie, CFU, esami e informazioni
-                per proseguire il percorso.
-            </p>
-
-        </a>
-
-        <a href="#terzo-anno" class="year-selector-card">
-
-            <div class="icon">
-                3️⃣
-            </div>
-
-            <h3>3° anno</h3>
-
-            <p>
-                Lezioni, materie, CFU, esami, percorsi
-                e informazioni sulla prova finale.
-            </p>
-
-        </a>
-
-    </div>
-
-</section>
-
-<section class="section year-section" id="primo-anno">
-
-    <div class="year-title">
-
-        <h2>1️⃣ 1° anno</h2>
-
-        <p>
-            Tutte le informazioni utili per gli studenti
-            del primo anno di Ingegneria Gestionale.
-        </p>
-
-    </div>
-
-    <div class="year-content-grid">
-
-        <div class="year-content-card">
-
-            <div class="icon">
-                📚
-            </div>
-
-            <h3>Materie e CFU</h3>
-
-            <p>
-                Il dettaglio degli insegnamenti e dei relativi CFU
-                sarà inserito con i dati ufficiali del corso.
-            </p>
-
-        </div>
-
-        <div class="year-content-card">
-
-            <div class="icon">
-                🎓
-            </div>
-
-            <h3>Esami</h3>
-
-            <p>
-                Informazioni generali sulle sessioni d'esame
-                e indicazioni per consultare gli appelli ufficiali.
-            </p>
-
-        </div>
-
-        <div class="year-content-card">
-
-            <div class="icon">
-                📌
-            </div>
-
-            <h3>Informazioni utili</h3>
-
-            <p>
-                Avvisi, scadenze e informazioni specifiche
-                per gli studenti del primo anno.
-            </p>
-
-        </div>
-
-    </div>
-
-    <div class="schedule">
-
-        <h3>🗓️ Orario delle lezioni — 1° anno</h3>
-
-        <p>
-            Orario settimanale per l'anno accademico 2026/2027.
-            Gli orari saranno aggiornati con i dati ufficiali.
-        </p>
-
-        <table>
-
-            <thead>
-
-                <tr>
-                    <th>Giorno</th>
-                    <th>Mattina</th>
-                    <th>Pomeriggio</th>
-                </tr>
-
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td>Lunedì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Martedì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Mercoledì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Giovedì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Venerdì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-    <a href="#anni" class="top-link">
-        ↑ Torna alla scelta dell'anno
-    </a>
-
-</section>
-
-<section class="section year-section" id="secondo-anno">
-
-    <div class="year-title">
-
-        <h2>2️⃣ 2° anno</h2>
-
-        <p>
-            Tutte le informazioni utili per gli studenti
-            del secondo anno di Ingegneria Gestionale.
-        </p>
-
-    </div>
-
-    <div class="year-content-grid">
-
-        <div class="year-content-card">
-
-            <div class="icon">
-                📚
-            </div>
-
-            <h3>Materie e CFU</h3>
-
-            <p>
-                Elenco degli insegnamenti e relativi CFU
-                in aggiornamento.
-            </p>
-
-        </div>
-
-        <div class="year-content-card">
-
-            <div class="icon">
-                🎓
-            </div>
-
-            <h3>Esami</h3>
-
-            <p>
-                Informazioni generali sulle sessioni d'esame
-                e indicazioni per consultare gli appelli ufficiali.
-            </p>
-
-        </div>
-
-        <div class="year-content-card">
-
-            <div class="icon">
-                📌
-            </div>
-
-            <h3>Informazioni utili</h3>
-
-            <p>
-                Avvisi, scadenze e opportunità specifiche
-                per gli studenti del secondo anno.
-            </p>
-
-        </div>
-
-    </div>
-
-    <div class="schedule">
-
-        <h3>🗓️ Orario delle lezioni — 2° anno</h3>
-
-        <p>
-            Orario settimanale per l'anno accademico 2026/2027.
-            Gli orari saranno aggiornati con i dati ufficiali.
-        </p>
-
-        <table>
-
-            <thead>
-
-                <tr>
-                    <th>Giorno</th>
-                    <th>Mattina</th>
-                    <th>Pomeriggio</th>
-                </tr>
-
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td>Lunedì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Martedì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Mercoledì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Giovedì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Venerdì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-    <a href="#anni" class="top-link">
-        ↑ Torna alla scelta dell'anno
-    </a>
-
-</section>
-
-<section class="section year-section" id="terzo-anno">
-
-    <div class="year-title">
-
-        <h2>3️⃣ 3° anno</h2>
-
-        <p>
-            Tutte le informazioni utili per gli studenti
-            del terzo anno di Ingegneria Gestionale.
-        </p>
-
-    </div>
-
-    <div class="year-content-grid">
-
-        <div class="year-content-card">
-
-            <div class="icon">
-                📚
-            </div>
-
-            <h3>Materie e CFU</h3>
-
-            <p>
-                Elenco degli insegnamenti, CFU e attività
-                formative in aggiornamento.
-            </p>
-
-        </div>
-
-        <div class="year-content-card">
-
-            <div class="icon">
-                🎓
-            </div>
-
-            <h3>Esami e prova finale</h3>
-
-            <p>
-                Informazioni generali sugli esami,
-                sulle attività finali e sulla prova finale.
-            </p>
-
-        </div>
-
-        <div class="year-content-card">
-
-            <div class="icon">
-                📌
-            </div>
-
-            <h3>Informazioni utili</h3>
-
-            <p>
-                Avvisi, scadenze, opportunità e informazioni
-                specifiche per gli studenti del terzo anno.
-            </p>
-
-        </div>
-
-    </div>
-
-    <div class="schedule">
-
-        <h3>🗓️ Orario delle lezioni — 3° anno</h3>
-
-        <p>
-            Orario settimanale per l'anno accademico 2026/2027.
-            Gli orari saranno aggiornati con i dati ufficiali.
-        </p>
-
-        <table>
-
-            <thead>
-
-                <tr>
-                    <th>Giorno</th>
-                    <th>Mattina</th>
-                    <th>Pomeriggio</th>
-                </tr>
-
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td>Lunedì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Martedì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Mercoledì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Giovedì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-                <tr>
-                    <td>Venerdì</td>
-                    <td>Orario in aggiornamento</td>
-                    <td>Orario in aggiornamento</td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-    <a href="#anni" class="top-link">
-        ↑ Torna alla scelta dell'anno
-    </a>
-
-</section>
-
-<section class="section">
-
-    <h2>🗓️ Calendario accademico</h2>
-
-    <p class="section-intro">
-        Principali periodi dell'anno accademico 2026/2027.
-        Le date valgono per il corso e vengono mantenute in questa sezione generale.
+        Le principali date dell'anno accademico per gli studenti
+        di Ingegneria Gestionale.
     </p>
 
     <div class="calendar-grid">
@@ -1046,156 +384,246 @@
             <span>11 gennaio – 26 febbraio 2027</span>
         </div>
 
-        <div class="calendar-card">
-            <strong>Anno accademico</strong>
-            <span>2026/2027</span>
-        </div>
-
     </div>
-
 </section>
 
 <section class="section">
 
-    <h2>🎯 Percorsi</h2>
+    <h2>🕐 Orario delle lezioni</h2>
 
     <p class="section-intro">
-        Il corso prevede possibili percorsi di approfondimento.
+        Seleziona il tuo anno per raggiungere direttamente
+        l'orario delle lezioni.
     </p>
 
-    <div class="curricula">
+    <div class="year-menu">
 
-        <div class="curriculum">
+        <a href="#primo-anno">
+            <span class="number">1️⃣</span>
+            1° anno
+        </a>
 
-            <div class="icon">
-                🏭
-            </div>
+        <a href="#secondo-anno">
+            <span class="number">2️⃣</span>
+            2° anno
+        </a>
 
-            <h3>
-                Industriale
-            </h3>
-
-            <p>
-                Percorso orientato ai processi, alla produzione
-                e alla gestione industriale.
-            </p>
-
-        </div>
-
-        <div class="curriculum">
-
-            <div class="icon">
-                💻
-            </div>
-
-            <h3>
-                Informazione
-            </h3>
-
-            <p>
-                Percorso orientato ai sistemi informativi,
-                alla tecnologia e alla gestione dell'informazione.
-            </p>
-
-        </div>
-
-        <div class="curriculum">
-
-            <div class="icon">
-                🏗️
-            </div>
-
-            <h3>
-                Infrastrutture
-            </h3>
-
-            <p>
-                Percorso orientato alla gestione delle infrastrutture
-                e dei sistemi complessi.
-            </p>
-
-        </div>
+        <a href="#terzo-anno">
+            <span class="number">3️⃣</span>
+            3° anno
+        </a>
 
     </div>
 
 </section>
 
-<section class="section">
+<section class="year-section" id="primo-anno">
 
-    <h2>📢 Avvisi per Gestionale</h2>
-
-    <div class="placeholder">
+    <div class="year-title">
+        <h2>1️⃣ Orario 1° anno</h2>
 
         <p>
-            Gli avvisi specifici per gli studenti di Ingegneria
-            Gestionale saranno raccolti nella bacheca del sito.
+            Orario delle lezioni del primo anno di Ingegneria Gestionale.
         </p>
-
-        <br>
-
-        <a href="avvisi.html">
-            Vai alla bacheca generale degli avvisi →
-        </a>
-
     </div>
 
-</section>
+    <div class="schedule">
 
-<section class="section">
-
-    <h2>🆘 Segnala un problema</h2>
-
-    <div class="important-box">
+        <h3>🗓️ Settimana delle lezioni</h3>
 
         <p>
-            Hai trovato un problema con l'orario, un esame,
-            una comunicazione o un'attività didattica?
+            Orario in aggiornamento sulla base delle comunicazioni ufficiali del corso.
         </p>
 
-        <br>
+        <table>
 
-        <a href="segnalazioni.html">
-            Invia una segnalazione →
-        </a>
+            <thead>
+                <tr>
+                    <th>Giorno</th>
+                    <th>Mattina</th>
+                    <th>Pomeriggio</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Lunedì</td>
+                    <td>Orario in aggiornamento</td>
+                    <td>Orario in aggiornamento</td>
+                </tr>
+
+                <tr>
+                    <td>Martedì</td>
+                    <td>Orario in aggiornamento</td>
+                    <td>Orario in aggiornamento</td>
+                </tr>
+
+                <tr>
+                    <td>Mercoledì</td>
+                    <td>Orario in aggiornamento</td>
+                    <td>Orario in aggiornamento</td>
+                </tr>
+
+                <tr>
+                    <td>Giovedì</td>
+                    <td>Orario in aggiornamento</td>
+                    <td>Orario in aggiornamento</td>
+                </tr>
+
+                <tr>
+                    <td>Venerdì</td>
+                    <td>Orario in aggiornamento</td>
+                    <td>Orario in aggiornamento</td>
+                </tr>
+
+            </tbody>
+
+        </table>
 
     </div>
+
+    <a href="#top" class="top-link">↑ Torna in alto</a>
 
 </section>
 
-<section class="section">
+<section class="year-section" id="secondo-anno">
 
-    <h2>🔗 Link utili</h2>
+    <div class="year-title">
+        <h2>2️⃣ Orario 2° anno</h2>
 
-    <div class="links">
+        <p>
+            Orario delle lezioni del secondo anno di Ingegneria Gestionale.
+        </p>
+    </div>
 
-        <a
-            href="https://poliba.it/"
-            target="_blank"
-            class="link-card">
-            Politecnico di Bari →
-        </a>
+    <div class="schedule">
 
-        <a
-            href="https://www.poliba.it/it/didattica"
-            target="_blank"
-            class="link-card">
-            Didattica PoliBa →
-        </a>
+        <h3>🗓️ Settimana delle lezioni</h3>
 
-        <a
-            href="https://www.dmmm.poliba.it/"
-            target="_blank"
-            class="link-card">
-            DMMM →
-        </a>
+        <p>
+            Orario in aggiornamento sulla base delle comunicazioni ufficiali del corso.
+        </p>
 
-        <a
-            href="avvisi.html"
-            class="link-card">
-            Bacheca Avvisi →
-        </a>
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Giorno</th>
+                    <th>Mattina</th>
+                    <th>Pomeriggio</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Lunedì</td>
+                    <td>Orario in aggiornamento</td>
+                    <td>Orario in aggiornamento</td>
+                </tr>
+
+                <tr>
+                    <td>Martedì</td>
+                    <td>Orario in aggiornamento</td>
+                    <td>Orario in aggiornamento</td>
+                </tr>
+
+                <tr>
+                    <td>Mercoledì</td>
+                    <td>Orario in aggiornamento</td>
+                    <td>Orario in aggiornamento</td>
+                </tr>
+
+                <tr>
+                    <td>Giovedì</td>
+                    <td>Orario in aggiornamento</td>
+                    <td>Orario in aggiornamento</td>
+                </tr>
+
+                <tr>
+                    <td>Venerdì</td>
+                    <td>Orario in aggiornamento</td>
+                    <td>Orario in aggiornamento</td>
+                </tr>
+
+            </tbody>
+
+        </table>
 
     </div>
+
+    <a href="#top" class="top-link">↑ Torna in alto</a>
+
+</section>
+
+<section class="year-section" id="terzo-anno">
+
+    <div class="year-title">
+        <h2>3️⃣ Orario 3° anno</h2>
+
+        <p>
+            Orario delle lezioni del terzo anno di Ingegneria Gestionale.
+        </p>
+    </div>
+
+    <div class="schedule">
+
+        <h3>🗓️ Settimana delle lezioni</h3>
+
+        <p>
+            Orario in aggiornamento sulla base delle comunicazioni ufficiali del corso.
+        </p>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Giorno</th>
+                    <th>Mattina</th>
+                    <th>Pomeriggio</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Lunedì</td>
+                    <td>Orario in aggiornamento</td>
+                    <td>Orario in aggiornamento</td>
+                </tr>
+
+                <tr>
+                    <td>Martedì</td>
+                    <td>Orario in aggiornamento</td>
+                    <td>Orario in aggiornamento</td>
+                </tr>
+
+                <tr>
+                    <td>Mercoledì</td>
+                    <td>Orario in aggiornamento</td>
+                    <td>Orario in aggiornamento</td>
+                </tr>
+
+                <tr>
+                    <td>Giovedì</td>
+                    <td>Orario in aggiornamento</td>
+                    <td>Orario in aggiornamento</td>
+                </tr>
+
+                <tr>
+                    <td>Venerdì</td>
+                    <td>Orario in aggiornamento</td>
+                    <td>Orario in aggiornamento</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <a href="#top" class="top-link">↑ Torna in alto</a>
 
 </section>
 
@@ -1203,13 +631,9 @@
 </main>
 
 <footer>
-
-
-<p>
-    Azione Universitaria PoliBa — Ingegneria Gestionale
-</p>
-
-
+    <p>
+        Azione Universitaria PoliBa — Ingegneria Gestionale
+    </p>
 </footer>
 
 </body>
