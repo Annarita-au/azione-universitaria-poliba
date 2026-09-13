@@ -165,6 +165,61 @@
         margin-bottom: 7px;
     }
 
+    .mobility {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+    }
+
+    .mobility-card {
+        background: white;
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+        border-top: 5px solid #0b3d91;
+    }
+
+    .mobility-card h3 {
+        color: #0b3d91;
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .mobility-card ul {
+        padding-left: 20px;
+        margin-top: 15px;
+    }
+
+    .mobility-card li {
+        margin-bottom: 8px;
+    }
+
+    .timeline {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 12px;
+        margin-top: 25px;
+    }
+
+    .semester {
+        background: white;
+        padding: 20px 12px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+    }
+
+    .semester strong {
+        display: block;
+        color: #0b3d91;
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .semester span {
+        font-size: 14px;
+    }
+
     .study-card {
         background: white;
         padding: 25px;
@@ -210,6 +265,12 @@
         margin-top: 60px;
     }
 
+    @media (max-width: 900px) {
+        .timeline {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
     @media (max-width: 700px) {
         header {
             flex-direction: column;
@@ -236,6 +297,10 @@
         .schedule {
             display: block;
             overflow-x: auto;
+        }
+
+        .timeline {
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 </style>
@@ -267,8 +332,9 @@
 <h1>Management Engineering for Innovation</h1>
 
 <p>
-    Informazioni, calendario delle lezioni, piano di studi,
-    scadenze e avvisi utili per gli studenti del corso.
+    Corso di laurea internazionale in lingua inglese con mobilità
+    strutturata e obbligatoria presso una delle università partner:
+    THWS in Germania o PUT in Polonia.
 </p>
 
 <a href="calendari.html" class="back">← Torna ai calendari</a>
@@ -286,12 +352,12 @@
 
         <div class="card">
             <h3>Classe</h3>
-            <p>Informazioni ufficiali in aggiornamento</p>
+            <p>L-9 — Ingegneria Industriale</p>
         </div>
 
         <div class="card">
             <h3>📍 Sede</h3>
-            <p>Politecnico di Bari — Bari</p>
+            <p>Bari + università partner</p>
         </div>
 
         <div class="card">
@@ -300,8 +366,18 @@
         </div>
 
         <div class="card">
+            <h3>🌐 Lingua</h3>
+            <p>Inglese</p>
+        </div>
+
+        <div class="card">
             <h3>🎓 Anno accademico</h3>
             <p>2026/2027</p>
+        </div>
+
+        <div class="card">
+            <h3>✈️ Mobilità</h3>
+            <p>Obbligatoria per 2 semestri</p>
         </div>
 
     </div>
@@ -360,6 +436,89 @@
 </section>
 
 <section class="section">
+    <h2>🌍 I due percorsi internazionali</h2>
+
+    <div class="mobility">
+
+        <div class="mobility-card">
+            <h3>🇩🇪 Percorso THWS</h3>
+
+            <p>
+                Percorso internazionale in collaborazione con la
+                Technical University of Applied Sciences
+                Würzburg-Schweinfurt, in Germania.
+            </p>
+
+            <ul>
+                <li><strong>1° semestre:</strong> PoliBa</li>
+                <li><strong>2° semestre:</strong> PoliBa</li>
+                <li><strong>3° semestre:</strong> THWS 🇩🇪</li>
+                <li><strong>4° semestre:</strong> PoliBa</li>
+                <li><strong>5° semestre:</strong> PoliBa</li>
+                <li><strong>6° semestre:</strong> THWS 🇩🇪</li>
+            </ul>
+        </div>
+
+        <div class="mobility-card">
+            <h3>🇵🇱 Percorso PUT</h3>
+
+            <p>
+                Percorso internazionale in collaborazione con la
+                Poznań University of Technology, in Polonia.
+            </p>
+
+            <ul>
+                <li><strong>1° semestre:</strong> PoliBa</li>
+                <li><strong>2° semestre:</strong> PoliBa</li>
+                <li><strong>3° semestre:</strong> PUT 🇵🇱</li>
+                <li><strong>4° semestre:</strong> PoliBa</li>
+                <li><strong>5° semestre:</strong> PoliBa</li>
+                <li><strong>6° semestre:</strong> PUT 🇵🇱</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <h2>🗺️ Il percorso nei 3 anni</h2>
+
+    <div class="timeline">
+
+        <div class="semester">
+            <strong>1°</strong>
+            <span>PoliBa 🇮🇹</span>
+        </div>
+
+        <div class="semester">
+            <strong>2°</strong>
+            <span>PoliBa 🇮🇹</span>
+        </div>
+
+        <div class="semester">
+            <strong>3°</strong>
+            <span>THWS 🇩🇪<br>oppure PUT 🇵🇱</span>
+        </div>
+
+        <div class="semester">
+            <strong>4°</strong>
+            <span>PoliBa 🇮🇹</span>
+        </div>
+
+        <div class="semester">
+            <strong>5°</strong>
+            <span>PoliBa 🇮🇹</span>
+        </div>
+
+        <div class="semester">
+            <strong>6°</strong>
+            <span>THWS 🇩🇪<br>oppure PUT 🇵🇱</span>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
     <h2>🗓️ Calendario accademico</h2>
 
     <div class="calendar-grid">
@@ -375,7 +534,7 @@
         </div>
 
         <div class="calendar-card">
-            <strong>Festività natalizie</strong>
+            <strong>Recupero</strong>
             <p>21–23 dicembre 2026</p>
         </div>
 
@@ -385,7 +544,7 @@
         </div>
 
         <div class="calendar-card">
-            <strong>Ripresa lezioni</strong>
+            <strong>Recupero</strong>
             <p>7–8 gennaio 2027</p>
         </div>
 
@@ -408,38 +567,56 @@
 </section>
 
 <section class="section">
-    <h2>🌍 Cosa si studia</h2>
+    <h2>💡 Cosa si studia</h2>
 
     <div class="cards">
 
         <div class="card">
             <h3>Management</h3>
-            <p>Strumenti per la gestione delle imprese e dei processi aziendali.</p>
+            <p>
+                Gestione delle imprese, organizzazione e processi
+                decisionali.
+            </p>
         </div>
 
         <div class="card">
             <h3>Innovation</h3>
-            <p>Strategie e strumenti per l'innovazione e lo sviluppo di nuovi prodotti.</p>
-        </div>
-
-        <div class="card">
-            <h3>Economia</h3>
-            <p>Fondamenti economici e finanziari applicati alle decisioni aziendali.</p>
-        </div>
-
-        <div class="card">
-            <h3>Data & Analytics</h3>
-            <p>Analisi dei dati e strumenti quantitativi per supportare le decisioni.</p>
-        </div>
-
-        <div class="card">
-            <h3>Operations</h3>
-            <p>Gestione dei processi produttivi, logistici e organizzativi.</p>
+            <p>
+                Gestione dell'innovazione e sviluppo di nuovi
+                prodotti, servizi e processi.
+            </p>
         </div>
 
         <div class="card">
             <h3>Digital Transformation</h3>
-            <p>Tecnologie digitali e trasformazione dei modelli di business.</p>
+            <p>
+                Tecnologie digitali, trasformazione dei processi
+                e nuovi modelli organizzativi.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Data & Artificial Intelligence</h3>
+            <p>
+                Analisi dei dati e strumenti basati sull'intelligenza
+                artificiale per supportare le decisioni.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Operations & Logistics</h3>
+            <p>
+                Gestione dei sistemi produttivi, logistici e
+                organizzativi.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Project Management</h3>
+            <p>
+                Pianificazione e gestione di progetti di innovazione
+                e trasformazione.
+            </p>
         </div>
 
     </div>
@@ -452,8 +629,9 @@
 
         <div class="study-card">
             <h3>1° anno</h3>
+
             <ul>
-                <li>Materie di base</li>
+                <li>Insegnamenti di base</li>
                 <li>Matematica</li>
                 <li>Economia</li>
                 <li>Fondamenti di ingegneria</li>
@@ -462,19 +640,21 @@
 
         <div class="study-card">
             <h3>2° anno</h3>
+
             <ul>
                 <li>Management</li>
                 <li>Operations</li>
                 <li>Analisi dei dati</li>
-                <li>Innovazione</li>
+                <li>Innovation Management</li>
             </ul>
         </div>
 
         <div class="study-card">
             <h3>3° anno</h3>
+
             <ul>
-                <li>Strategia</li>
-                <li>Digital transformation</li>
+                <li>Strategia e innovazione</li>
+                <li>Digital Transformation</li>
                 <li>Attività a scelta</li>
                 <li>Prova finale</li>
             </ul>
@@ -488,8 +668,8 @@
 
     <div class="notice">
         <p>
-            In questa sezione verranno pubblicati gli avvisi e le comunicazioni
-            utili per gli studenti del corso.
+            In questa sezione verranno pubblicati gli avvisi e le
+            comunicazioni utili per gli studenti del corso.
         </p>
 
         <a href="avvisi.html" class="button">Vai agli avvisi</a>
@@ -505,7 +685,9 @@
             o nelle informazioni del corso?
         </p>
 
-        <a href="segnalazioni.html" class="button">Invia una segnalazione</a>
+        <a href="segnalazioni.html" class="button">
+            Invia una segnalazione
+        </a>
     </div>
 </section>
 
@@ -516,6 +698,7 @@
 
         <div class="card">
             <h3>Politecnico di Bari</h3>
+
             <a href="https://www.poliba.it/" target="_blank" class="button">
                 Apri
             </a>
@@ -523,6 +706,7 @@
 
         <div class="card">
             <h3>Didattica PoliBa</h3>
+
             <a href="https://www.poliba.it/didattica" target="_blank" class="button">
                 Apri
             </a>
@@ -530,6 +714,7 @@
 
         <div class="card">
             <h3>Avvisi PoliBa</h3>
+
             <a href="https://www.poliba.it/avvisi" target="_blank" class="button">
                 Apri
             </a>
