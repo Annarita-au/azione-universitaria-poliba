@@ -9,7 +9,6 @@
 <title>Rappresentanza | Azione Universitaria PoliBa</title>
 
 <style>
-
     * {
         box-sizing: border-box;
         margin: 0;
@@ -19,295 +18,244 @@
     body {
         font-family: Arial, Helvetica, sans-serif;
         background: #f4f7fb;
-        color: #1d2a3a;
+        color: #1d2733;
         line-height: 1.6;
     }
 
     header {
         background: #ffffff;
-        padding: 18px 7%;
+        padding: 18px 6%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
         position: sticky;
         top: 0;
-        z-index: 100;
+        z-index: 1000;
     }
 
     .logo {
         font-size: 21px;
-        font-weight: 800;
-        color: #1557b0;
-        text-decoration: none;
+        font-weight: 700;
+        color: #0756a8;
     }
 
     nav {
         display: flex;
-        gap: 25px;
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
     }
 
     nav a {
         text-decoration: none;
-        color: #26384d;
+        color: #263238;
         font-weight: 600;
+        font-size: 14px;
         transition: 0.2s;
     }
 
     nav a:hover {
-        color: #1557b0;
+        color: #0756a8;
     }
 
     .hero {
-        background: linear-gradient(135deg, #1557b0, #2879d8);
+        background: linear-gradient(135deg, #0756a8, #0a7bdc);
         color: white;
-        padding: 80px 7%;
+        padding: 75px 6%;
         text-align: center;
     }
 
+    .hero .icon {
+        font-size: 48px;
+        margin-bottom: 12px;
+    }
+
     .hero h1 {
-        font-size: 43px;
-        margin-bottom: 16px;
+        font-size: 42px;
+        margin-bottom: 14px;
     }
 
     .hero p {
         max-width: 760px;
-        margin: auto;
+        margin: 0 auto;
         font-size: 18px;
-        opacity: 0.95;
+        opacity: 0.96;
     }
 
     .container {
-        width: 86%;
-        max-width: 1100px;
-        margin: 55px auto;
-    }
-
-    .section {
-        margin-bottom: 60px;
-    }
-
-    .section-title {
-        text-align: center;
-        margin-bottom: 35px;
-    }
-
-    .section-title h2 {
-        font-size: 30px;
-        color: #183b68;
-        margin-bottom: 10px;
-    }
-
-    .section-title p {
-        color: #65758a;
-        max-width: 700px;
-        margin: auto;
+        width: 88%;
+        max-width: 1150px;
+        margin: 45px auto;
     }
 
     .intro {
         background: white;
-        border-radius: 22px;
-        padding: 40px;
+        border-radius: 18px;
+        padding: 30px;
+        margin-bottom: 30px;
         box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    }
+
+    .intro h2 {
+        color: #0756a8;
+        margin-bottom: 12px;
+    }
+
+    .section-title {
         text-align: center;
+        color: #0756a8;
+        font-size: 30px;
+        margin: 45px 0 25px;
     }
 
-    .intro p {
-        max-width: 800px;
-        margin: auto;
-        color: #596b7f;
-        font-size: 17px;
-    }
-
-    .cards {
+    .grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         gap: 22px;
     }
 
     .card {
         background: white;
         border-radius: 18px;
-        padding: 30px 24px;
+        padding: 27px;
         box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-        transition: transform 0.2s, box-shadow 0.2s;
+        border-top: 4px solid #0756a8;
     }
 
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 28px rgba(0,0,0,0.10);
-    }
-
-    .card .icon {
-        font-size: 40px;
-        margin-bottom: 15px;
+    .card .card-icon {
+        font-size: 34px;
+        margin-bottom: 12px;
     }
 
     .card h3 {
-        color: #183b68;
+        color: #0756a8;
         margin-bottom: 10px;
         font-size: 20px;
     }
 
     .card p {
-        color: #68798c;
-        font-size: 15px;
+        color: #4c5966;
     }
 
-    .steps {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    .step {
+    .organi {
         background: white;
         border-radius: 18px;
-        padding: 25px;
+        padding: 30px;
         box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-        display: flex;
-        gap: 18px;
-        align-items: flex-start;
+        margin-top: 25px;
     }
 
-    .number {
-        min-width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        background: #1557b0;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 800;
+    .organi h3 {
+        color: #0756a8;
+        margin-bottom: 18px;
+        font-size: 23px;
     }
 
-    .step h3 {
-        color: #183b68;
-        margin-bottom: 6px;
+    .organi ul {
+        padding-left: 22px;
     }
 
-    .step p {
-        color: #68798c;
-        font-size: 14px;
-    }
-
-    .proposals {
-        background: linear-gradient(135deg, #eef5ff, #ffffff);
-        border-radius: 22px;
-        padding: 40px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    }
-
-    .proposal {
-        background: white;
-        border-radius: 15px;
-        padding: 22px;
-        margin-bottom: 15px;
-        border-left: 5px solid #1557b0;
-    }
-
-    .proposal:last-child {
-        margin-bottom: 0;
-    }
-
-    .proposal h3 {
-        color: #183b68;
-        margin-bottom: 7px;
-    }
-
-    .proposal p {
-        color: #68798c;
-        font-size: 14px;
-    }
-
-    .contact {
-        background: #102a49;
-        color: white;
-        border-radius: 22px;
-        padding: 45px 30px;
-        text-align: center;
-    }
-
-    .contact h2 {
+    .organi li {
         margin-bottom: 12px;
     }
 
-    .contact p {
-        max-width: 700px;
-        margin: auto;
-        opacity: 0.9;
+    .highlight {
+        background: linear-gradient(135deg, #eaf4ff, #f7fbff);
+        border-left: 5px solid #0756a8;
+        border-radius: 12px;
+        padding: 24px;
+        margin-top: 25px;
     }
 
-    .back {
-        text-align: center;
+    .highlight strong {
+        color: #0756a8;
+    }
+
+    .cta {
         margin-top: 45px;
+        background: linear-gradient(135deg, #0756a8, #0a7bdc);
+        color: white;
+        border-radius: 20px;
+        padding: 40px 30px;
+        text-align: center;
     }
 
-    .back a {
+    .cta h2 {
+        margin-bottom: 12px;
+        font-size: 30px;
+    }
+
+    .cta p {
+        max-width: 700px;
+        margin: 0 auto 22px;
+    }
+
+    .button {
         display: inline-block;
-        background: #1557b0;
-        color: white;
-        padding: 13px 25px;
-        border-radius: 10px;
+        background: white;
+        color: #0756a8;
         text-decoration: none;
+        padding: 13px 24px;
+        border-radius: 10px;
         font-weight: 700;
         transition: 0.2s;
     }
 
-    .back a:hover {
-        background: #10458d;
+    .button:hover {
         transform: translateY(-2px);
     }
 
+    .links {
+        margin-top: 35px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .link-button {
+        display: inline-block;
+        padding: 12px 20px;
+        background: white;
+        border: 2px solid #0756a8;
+        color: #0756a8;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: 700;
+        transition: 0.2s;
+    }
+
+    .link-button:hover {
+        background: #0756a8;
+        color: white;
+    }
+
     footer {
-        background: #102a49;
+        margin-top: 60px;
+        background: #0c1b2a;
         color: white;
         text-align: center;
-        padding: 30px 7%;
-        margin-top: 60px;
+        padding: 28px 15px;
     }
 
     footer p {
-        opacity: 0.85;
-        font-size: 14px;
+        margin: 5px 0;
+        opacity: 0.9;
     }
 
-    @media (max-width: 850px) {
-
-        .cards {
-            grid-template-columns: 1fr;
-        }
-
-        .steps {
-            grid-template-columns: 1fr;
-        }
-
-        .hero h1 {
-            font-size: 34px;
-        }
-
-    }
-
-    @media (max-width: 600px) {
-
+    @media (max-width: 700px) {
         header {
             flex-direction: column;
             gap: 12px;
         }
 
         nav {
-            gap: 15px;
-            flex-wrap: wrap;
             justify-content: center;
         }
 
-        .hero {
-            padding: 60px 6%;
-        }
-
         .hero h1 {
-            font-size: 30px;
+            font-size: 32px;
         }
 
         .hero p {
@@ -315,16 +263,9 @@
         }
 
         .container {
-            width: 90%;
+            width: 92%;
         }
-
-        .intro,
-        .proposals {
-            padding: 28px 20px;
-        }
-
     }
-
 </style>
 ```
 
@@ -332,326 +273,217 @@
 
 <body>
 
-```
 <header>
+    <div class="logo">Azione Universitaria PoliBa</div>
 
-    <a href="index.html" class="logo">
-        Azione Universitaria PoliBa
-    </a>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="calendari.html">Calendari</a>
-        <a href="matricole.html">Matricole</a>
-        <a href="avvisi.html">Avvisi</a>
-        <a href="rappresentanza.html">Rappresentanza</a>
-    </nav>
+```
+<nav>
+    <a href="index.html">Home</a>
+    <a href="calendari.html">Calendari</a>
+    <a href="matricole.html">Matricole</a>
+    <a href="avvisi.html">Avvisi</a>
+    <a href="rappresentanza.html">Rappresentanza</a>
+    <a href="segnalazioni.html">Segnalazioni</a>
+</nav>
+```
 
 </header>
 
-
 <section class="hero">
+    <div class="icon">🗣️</div>
+    <h1>Rappresentanza Studentesca</h1>
+    <p>
+        La voce degli studenti dentro il Politecnico.
+        Ascoltare, portare le istanze nelle sedi opportune e lavorare
+        per migliorare concretamente la vita universitaria.
+    </p>
+</section>
 
-    <h1>🤝 Rappresentanza</h1>
+<main class="container">
+
+```
+<section class="intro">
+    <h2>La rappresentanza conta.</h2>
 
     <p>
-        Studenti che si impegnano per portare esigenze,
-        idee e proposte all'interno dell'Università.
+        Essere rappresentanti degli studenti significa portare all'interno
+        degli organi universitari le esigenze, le difficoltà e le proposte
+        della comunità studentesca.
     </p>
+
+    <p>
+        Azione Universitaria vuole una rappresentanza presente,
+        concreta e facilmente raggiungibile: non soltanto durante le elezioni,
+        ma durante tutto l'anno accademico.
+    </p>
+
+    <div class="highlight">
+        <strong>Il nostro obiettivo:</strong>
+        trasformare le segnalazioni degli studenti in proposte,
+        confrontarle nelle sedi competenti e lavorare per ottenere
+        risposte e risultati concreti.
+    </div>
+</section>
+
+<h2 class="section-title">Dove si fa rappresentanza?</h2>
+
+<section class="grid">
+
+    <div class="card">
+        <div class="card-icon">🏛️</div>
+        <h3>Consigli di Dipartimento</h3>
+        <p>
+            È uno degli spazi principali in cui vengono affrontate
+            questioni legate alla didattica, ai corsi di studio e
+            alla vita dei Dipartimenti.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">🎓</div>
+        <h3>Consiglio degli Studenti</h3>
+        <p>
+            Un organo dedicato alla rappresentanza studentesca
+            e al confronto sulle principali tematiche che riguardano
+            gli studenti dell'Ateneo.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">🏛️</div>
+        <h3>Senato Accademico</h3>
+        <p>
+            La rappresentanza studentesca partecipa anche agli organi
+            centrali dell'Ateneo, contribuendo al confronto sulle
+            principali scelte universitarie.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">📊</div>
+        <h3>Consiglio di Amministrazione</h3>
+        <p>
+            Gli studenti sono rappresentati anche nell'organo che
+            partecipa alle decisioni strategiche e amministrative
+            dell'Ateneo.
+        </p>
+    </div>
+
+</section>
+
+<h2 class="section-title">Cosa facciamo per gli studenti?</h2>
+
+<section class="grid">
+
+    <div class="card">
+        <div class="card-icon">👂</div>
+        <h3>Ascoltiamo</h3>
+        <p>
+            Raccogliamo problemi, dubbi e proposte direttamente
+            dagli studenti.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">📢</div>
+        <h3>Portiamo le istanze</h3>
+        <p>
+            Le problematiche vengono portate nelle sedi e negli
+            organi competenti, dove possono essere affrontate.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">🤝</div>
+        <h3>Confrontiamo le soluzioni</h3>
+        <p>
+            Ci confrontiamo con studenti, docenti e strutture
+            dell'Ateneo per individuare soluzioni concrete.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">✅</div>
+        <h3>Seguiamo le questioni</h3>
+        <p>
+            Una segnalazione non deve fermarsi al momento in cui
+            viene raccolta: vogliamo seguirne l'evoluzione.
+        </p>
+    </div>
+
+</section>
+
+<h2 class="section-title">La rappresentanza è degli studenti</h2>
+
+<section class="organi">
+
+    <h3>Hai un problema?</h3>
+
+    <p>
+        Un esame, una sovrapposizione di lezioni, un problema
+        organizzativo, una difficoltà con un servizio universitario
+        o una proposta per migliorare il tuo corso?
+    </p>
+
+    <p style="margin-top: 12px;">
+        Raccontacelo. Più informazioni abbiamo, più possiamo
+        portare la questione nelle sedi giuste.
+    </p>
+
+    <div class="links">
+        <a class="link-button" href="segnalazioni.html">
+            📝 Invia una segnalazione
+        </a>
+    </div>
+
+</section>
+
+<section class="cta">
+
+    <h2>Vuoi essere parte della rappresentanza?</h2>
+
+    <p>
+        La vita universitaria non si cambia restando a guardare.
+        Idee, proposte e partecipazione sono il punto di partenza
+        per costruire un PoliBa sempre più vicino agli studenti.
+    </p>
+
+    <a class="button" href="segnalazioni.html">
+        Contattaci
+    </a>
+
+</section>
+
+<section class="organi">
+
+    <h3>Informazioni ufficiali</h3>
+
+    <p>
+        Per conoscere gli organi di rappresentanza, le elezioni,
+        i regolamenti e le informazioni ufficiali del Politecnico
+        di Bari, consulta le pagine istituzionali dell'Ateneo.
+    </p>
+
+    <div class="links">
+        <a class="link-button" href="https://www.poliba.it/it/elezioni" target="_blank">
+            🗳️ Elezioni PoliBa
+        </a>
+
+        <a class="link-button" href="https://www.poliba.it/associazioni-e-partecipazione" target="_blank">
+            🎓 Associazioni e partecipazione
+        </a>
+    </div>
 
 </section>
 
 
-<main class="container">
-
-
-    <section class="section">
-
-        <div class="intro">
-
-            <p>
-                La rappresentanza studentesca significa dare voce
-                agli studenti nei luoghi in cui vengono prese le
-                decisioni che riguardano la vita universitaria.
-                Significa ascoltare le esigenze della comunità,
-                trasformarle in proposte concrete e seguirne
-                l'evoluzione nel tempo.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <section class="section">
-
-        <div class="section-title">
-
-            <h2>🎯 Cosa significa rappresentare</h2>
-
-            <p>
-                Un lavoro che parte dagli studenti e torna agli studenti.
-            </p>
-
-        </div>
-
-
-        <div class="cards">
-
-
-            <div class="card">
-
-                <div class="icon">👂</div>
-
-                <h3>Ascoltare</h3>
-
-                <p>
-                    Raccogliere problemi, esigenze e proposte
-                    direttamente dalla comunità studentesca.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="icon">🗣️</div>
-
-                <h3>Portare la voce degli studenti</h3>
-
-                <p>
-                    Portare le questioni degli studenti negli
-                    organi e negli spazi di confronto universitari.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="icon">💡</div>
-
-                <h3>Proporre soluzioni</h3>
-
-                <p>
-                    Trasformare le criticità emerse in idee,
-                    proposte e iniziative concrete.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-    <section class="section">
-
-        <div class="section-title">
-
-            <h2>📌 Il nostro metodo</h2>
-
-            <p>
-                Dall'ascolto alla proposta, senza perdere di vista
-                chi vive ogni giorno l'Università.
-            </p>
-
-        </div>
-
-
-        <div class="steps">
-
-
-            <div class="step">
-
-                <div class="number">1</div>
-
-                <div>
-
-                    <h3>Ascoltiamo</h3>
-
-                    <p>
-                        Partiamo dalle esperienze e dalle necessità
-                        degli studenti.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="step">
-
-                <div class="number">2</div>
-
-                <div>
-
-                    <h3>Analizziamo</h3>
-
-                    <p>
-                        Cerchiamo di capire il problema e le
-                        possibilità concrete di intervento.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="step">
-
-                <div class="number">3</div>
-
-                <div>
-
-                    <h3>Proponiamo</h3>
-
-                    <p>
-                        Costruiamo proposte che possano essere
-                        discusse negli organi competenti.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="step">
-
-                <div class="number">4</div>
-
-                <div>
-
-                    <h3>Seguiamo</h3>
-
-                    <p>
-                        Seguiamo l'evoluzione delle questioni e
-                        informiamo gli studenti sugli sviluppi.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-    <section class="section">
-
-        <div class="section-title">
-
-            <h2>🚀 Le nostre proposte</h2>
-
-            <p>
-                Uno spazio che crescerà insieme al lavoro di rappresentanza.
-            </p>
-
-        </div>
-
-
-        <div class="proposals">
-
-
-            <div class="proposal">
-
-                <h3>🏠 Diritto allo studio e servizi</h3>
-
-                <p>
-                    Proposte e iniziative dedicate a rendere più
-                    accessibili i servizi e il percorso universitario.
-                </p>
-
-            </div>
-
-
-            <div class="proposal">
-
-                <h3>✈️ Mobilità internazionale</h3>
-
-                <p>
-                    Attenzione alle esigenze degli studenti che
-                    partecipano a programmi di mobilità e percorsi
-                    internazionali.
-                </p>
-
-            </div>
-
-
-            <div class="proposal">
-
-                <h3>📚 Didattica e organizzazione</h3>
-
-                <p>
-                    Segnalazioni e proposte riguardanti lezioni,
-                    esami, organizzazione della didattica e servizi
-                    agli studenti.
-                </p>
-
-            </div>
-
-
-            <div class="proposal">
-
-                <h3>💬 Ascolto degli studenti</h3>
-
-                <p>
-                    Uno spazio aperto per raccogliere problematiche,
-                    idee e suggerimenti dalla comunità studentesca.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-    <section class="section">
-
-        <div class="contact">
-
-            <h2>🗣️ Hai un problema o una proposta?</h2>
-
-            <p>
-                La rappresentanza parte dall'ascolto. Segnalare una
-                criticità o condividere un'idea può essere il primo
-                passo per trasformarla in una proposta.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <div class="back">
-
-        <a href="index.html">
-            ← Torna alla Home
-        </a>
-
-    </div>
-
-
 </main>
 
-
 <footer>
-
-    <p>
-        © 2026 Azione Universitaria PoliBa
-    </p>
-
-    <p>
-        Informazione, rappresentanza e servizi per gli studenti.
-    </p>
-
+    <p><strong>Azione Universitaria PoliBa</strong></p>
+    <p>#azioneuniversitaria</p>
+    <p>#SEMPREdallaPartedelloStudente</p>
 </footer>
-```
 
 </body>
 </html>
