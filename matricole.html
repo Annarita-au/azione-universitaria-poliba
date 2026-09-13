@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
+```
 <title>Matricole | Azione Universitaria PoliBa</title>
 
 <style>
@@ -17,58 +17,61 @@
 
     body {
         font-family: Arial, Helvetica, sans-serif;
-        background: #f4f7fb;
-        color: #1d2a3a;
+        background: #f5f7fb;
+        color: #1f2937;
         line-height: 1.6;
     }
 
     header {
-        background: #ffffff;
+        background: white;
         padding: 18px 7%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
         position: sticky;
         top: 0;
         z-index: 100;
     }
 
     .logo {
-        font-size: 21px;
-        font-weight: 800;
-        color: #1557b0;
-        text-decoration: none;
+        font-size: 22px;
+        font-weight: bold;
+        color: #0b3d91;
     }
 
     nav {
         display: flex;
-        gap: 25px;
+        gap: 20px;
         flex-wrap: wrap;
-        justify-content: center;
     }
 
     nav a {
         text-decoration: none;
-        color: #26384d;
+        color: #333;
         font-weight: 600;
-        transition: 0.2s;
+        font-size: 14px;
     }
 
     nav a:hover {
-        color: #1557b0;
+        color: #0b3d91;
     }
 
     .hero {
-        background: linear-gradient(135deg, #1557b0, #2879d8);
+        background: linear-gradient(135deg, #0b3d91, #1769c2);
         color: white;
-        padding: 75px 7%;
+        padding: 70px 7%;
         text-align: center;
     }
 
-    .hero h1 {
-        font-size: 44px;
+    .hero .icon {
+        font-size: 52px;
         margin-bottom: 15px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        margin-bottom: 12px;
     }
 
     .hero p {
@@ -81,221 +84,265 @@
     .container {
         width: 86%;
         max-width: 1100px;
-        margin: 50px auto;
+        margin: 45px auto;
     }
 
     .intro {
-        background: white;
-        padding: 35px;
-        border-radius: 20px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        text-align: center;
         margin-bottom: 35px;
     }
 
     .intro h2 {
-        color: #183b68;
-        margin-bottom: 15px;
+        color: #0b3d91;
+        font-size: 28px;
+        margin-bottom: 10px;
     }
 
     .intro p {
-        color: #65758a;
+        color: #5b6472;
+        max-width: 800px;
+        margin: auto;
     }
 
-    .steps {
+    .griglia {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 22px;
     }
 
-    .step {
-        background: white;
-        border-radius: 18px;
-        padding: 28px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-        transition: 0.2s;
-    }
-
-    .step:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 9px 25px rgba(0,0,0,0.09);
-    }
-
-    .number {
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        background: #1557b0;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 800;
-        font-size: 19px;
-        margin-bottom: 15px;
-    }
-
-    .step h3 {
-        color: #183b68;
-        margin-bottom: 10px;
-    }
-
-    .step p {
-        color: #65758a;
-        font-size: 15px;
-    }
-
-    .section {
-        margin-top: 50px;
-    }
-
-    .section-title {
-        text-align: center;
-        margin-bottom: 28px;
-    }
-
-    .section-title h2 {
-        color: #183b68;
-        font-size: 30px;
-        margin-bottom: 8px;
-    }
-
-    .section-title p {
-        color: #65758a;
-    }
-
-    .cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-    }
-
     .card {
         background: white;
-        padding: 25px;
-        border-radius: 18px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        border-radius: 16px;
+        padding: 27px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+    }
+
+    .card .icona {
+        font-size: 34px;
+        margin-bottom: 12px;
     }
 
     .card h3 {
-        color: #1557b0;
+        color: #0b3d91;
+        font-size: 21px;
         margin-bottom: 10px;
     }
 
     .card p {
-        color: #65758a;
+        color: #4b5563;
+        margin-bottom: 16px;
+    }
+
+    .card ul {
+        margin-left: 20px;
+        color: #4b5563;
+    }
+
+    .card li {
+        margin-bottom: 7px;
+    }
+
+    .card a {
+        display: inline-block;
+        margin-top: 10px;
+        text-decoration: none;
+        background: #0b3d91;
+        color: white;
+        padding: 9px 15px;
+        border-radius: 8px;
+        font-weight: bold;
         font-size: 14px;
     }
 
-    .faq {
-        background: white;
-        padding: 32px;
-        border-radius: 20px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    .card a:hover {
+        background: #082f70;
     }
 
-    .faq-item {
-        padding: 20px 0;
-        border-bottom: 1px solid #e3e8ef;
+    .sezione {
+        margin-top: 50px;
     }
 
-    .faq-item:last-child {
-        border-bottom: none;
+    .sezione-titolo {
+        text-align: center;
+        margin-bottom: 25px;
     }
 
-    .faq-item h3 {
-        color: #183b68;
+    .sezione-titolo h2 {
+        color: #0b3d91;
+        font-size: 28px;
         margin-bottom: 8px;
     }
 
-    .faq-item p {
-        color: #65758a;
+    .sezione-titolo p {
+        color: #5b6472;
     }
 
-    .notice {
-        margin-top: 45px;
-        background: #eaf3ff;
-        border-left: 5px solid #1557b0;
+    .timeline {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+
+    .step {
+        background: white;
+        border-radius: 15px;
         padding: 25px;
-        border-radius: 12px;
-    }
-
-    .notice h3 {
-        color: #1557b0;
-        margin-bottom: 8px;
-    }
-
-    .notice p {
-        color: #52667d;
-    }
-
-    .official {
-        margin-top: 45px;
-        background: white;
-        padding: 30px;
-        border-radius: 20px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
         text-align: center;
     }
 
-    .official h2 {
-        color: #183b68;
-        margin-bottom: 15px;
-    }
-
-    .official a {
-        display: inline-block;
-        margin: 8px;
-        padding: 11px 18px;
-        border-radius: 9px;
-        background: #1557b0;
+    .numero {
+        width: 42px;
+        height: 42px;
+        margin: 0 auto 13px;
+        border-radius: 50%;
+        background: #0b3d91;
         color: white;
-        text-decoration: none;
-        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 18px;
     }
 
-    .official a:hover {
-        background: #0e438a;
+    .step h3 {
+        color: #172033;
+        margin-bottom: 8px;
+    }
+
+    .step p {
+        color: #5b6472;
+        font-size: 14px;
+    }
+
+    .calendario {
+        background: white;
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+    }
+
+    .periodi {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 20px;
+    }
+
+    .periodo {
+        background: #f5f7fb;
+        border-radius: 12px;
+        padding: 20px;
+    }
+
+    .periodo h3 {
+        color: #0b3d91;
+        margin-bottom: 8px;
+    }
+
+    .periodo p {
+        color: #4b5563;
+        font-size: 14px;
+    }
+
+    .cta {
+        margin-top: 50px;
+        background: linear-gradient(135deg, #0b3d91, #1769c2);
+        color: white;
+        border-radius: 18px;
+        padding: 38px;
+        text-align: center;
+    }
+
+    .cta h2 {
+        margin-bottom: 10px;
+    }
+
+    .cta p {
+        max-width: 700px;
+        margin: 0 auto 22px;
+        opacity: 0.95;
+    }
+
+    .bottone-bianco {
+        display: inline-block;
+        background: white;
+        color: #0b3d91;
+        text-decoration: none;
+        padding: 11px 20px;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+
+    .link-ufficiali {
+        margin-top: 50px;
+        background: white;
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+        text-align: center;
+    }
+
+    .link-ufficiali h2 {
+        color: #0b3d91;
+        margin-bottom: 18px;
+    }
+
+    .link-list {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .link-list a {
+        text-decoration: none;
+        color: #0b3d91;
+        background: #e8f0ff;
+        padding: 10px 15px;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 14px;
     }
 
     footer {
-        background: #102a49;
+        background: #0b3d91;
         color: white;
         text-align: center;
-        padding: 35px 7%;
-        margin-top: 70px;
+        padding: 28px 7%;
+        margin-top: 60px;
     }
 
     footer p {
-        opacity: 0.85;
-        font-size: 14px;
+        margin: 5px 0;
     }
 
-    @media (max-width: 850px) {
-        .steps {
-            grid-template-columns: 1fr;
-        }
-
-        .cards {
+    @media (max-width: 800px) {
+        .griglia,
+        .timeline,
+        .periodi {
             grid-template-columns: 1fr;
         }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
         header {
             flex-direction: column;
             gap: 12px;
+            text-align: center;
         }
 
         nav {
-            gap: 14px;
+            justify-content: center;
+            gap: 12px;
         }
 
         .hero {
-            padding: 60px 6%;
+            padding: 55px 6%;
         }
 
         .hero h1 {
-            font-size: 34px;
+            font-size: 32px;
         }
 
         .hero p {
@@ -306,22 +353,21 @@
             width: 90%;
         }
 
-        .intro,
-        .faq {
-            padding: 25px 20px;
+        .card {
+            padding: 22px;
         }
     }
 </style>
-
+```
 
 </head>
 
 <body>
 
 <header>
-    <a href="index.html" class="logo">Azione Universitaria PoliBa</a>
+    <div class="logo">Azione Universitaria PoliBa</div>
 
-
+```
 <nav>
     <a href="index.html">Home</a>
     <a href="calendari.html">Calendari</a>
@@ -330,277 +376,207 @@
     <a href="rappresentanza.html">Rappresentanza</a>
     <a href="segnalazioni.html">Segnalazioni</a>
 </nav>
-
+```
 
 </header>
 
 <section class="hero">
+    <div class="icon">🎓</div>
 
-
-<h1>🎓 Guida alle Matricole</h1>
+```
+<h1>Matricole</h1>
 
 <p>
-    Tutto quello che serve per iniziare il percorso universitario al
-    Politecnico di Bari con più chiarezza, organizzazione e consapevolezza.
+    Tutto quello che serve per iniziare al meglio il tuo percorso
+    universitario al Politecnico di Bari.
 </p>
-
+```
 
 </section>
 
 <main class="container">
 
-
+```
 <section class="intro">
-
-    <h2>Benvenuta/o al PoliBa!</h2>
+    <h2>Benvenuta, benvenuto al PoliBa! 💙</h2>
 
     <p>
-        Iniziare l'università può sembrare complicato: nuovi portali,
-        lezioni, esami, scadenze e procedure da conoscere.
-        Abbiamo raccolto in questa pagina alcune delle informazioni
-        più importanti per aiutarti a partire con il piede giusto.
+        Iniziare l'università può sembrare complicato. Abbiamo raccolto
+        qui le informazioni più utili per aiutarti nei primi passi,
+        dalle procedure amministrative alla vita quotidiana in Ateneo.
     </p>
-
 </section>
 
-<section>
+<section class="griglia">
 
-    <div class="section-title">
+    <article class="card">
+        <div class="icona">🚀</div>
 
-        <h2>Da dove iniziare?</h2>
+        <h3>Da dove cominciare?</h3>
 
         <p>
-            Segui questi passaggi per orientarti nei primi mesi.
+            Dopo l'immatricolazione, assicurati di avere accesso ai
+            principali strumenti utilizzati dal Politecnico.
         </p>
 
-    </div>
+        <ul>
+            <li>Attiva e controlla la tua area personale Esse3.</li>
+            <li>Controlla le comunicazioni ufficiali.</li>
+            <li>Verifica gli orari delle lezioni.</li>
+            <li>Conosci il tuo corso di laurea e il relativo piano di studi.</li>
+        </ul>
+    </article>
 
-    <div class="steps">
+    <article class="card">
+        <div class="icona">📝</div>
 
-        <div class="step">
-
-            <div class="number">1</div>
-
-            <h3>Attiva e controlla il tuo account</h3>
-
-            <p>
-                Assicurati di avere accesso ai servizi online dell'università
-                e controlla regolarmente la tua casella istituzionale.
-            </p>
-
-        </div>
-
-        <div class="step">
-
-            <div class="number">2</div>
-
-            <h3>Controlla il calendario delle lezioni</h3>
-
-            <p>
-                Consulta il calendario del tuo corso e verifica aule,
-                orari e eventuali modifiche comunicate durante il semestre.
-            </p>
-
-        </div>
-
-        <div class="step">
-
-            <div class="number">3</div>
-
-            <h3>Conosci gli insegnamenti</h3>
-
-            <p>
-                Prendi visione degli insegnamenti previsti dal tuo corso,
-                dei CFU e dell'organizzazione generale del piano di studi.
-            </p>
-
-        </div>
-
-        <div class="step">
-
-            <div class="number">4</div>
-
-            <h3>Impara a usare i portali</h3>
-
-            <p>
-                Familiarizza con i principali servizi online utilizzati
-                per lezioni, prenotazioni, esami, documenti e comunicazioni.
-            </p>
-
-        </div>
-
-        <div class="step">
-
-            <div class="number">5</div>
-
-            <h3>Organizza lo studio</h3>
-
-            <p>
-                Non aspettare il periodo degli esami per iniziare.
-                Organizza appunti, materiali e studio fin dalle prime settimane.
-            </p>
-
-        </div>
-
-        <div class="step">
-
-            <div class="number">6</div>
-
-            <h3>Chiedi quando hai bisogno</h3>
-
-            <p>
-                Se qualcosa non è chiaro, chiedi ai tuoi colleghi,
-                ai rappresentanti o agli uffici competenti.
-                Non devi affrontare tutto da sola/o.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section class="section">
-
-    <div class="section-title">
-
-        <h2>Le cose più importanti da sapere</h2>
+        <h3>TOLC e immatricolazione</h3>
 
         <p>
-            Alcuni aspetti che incontrerai frequentemente durante l'anno.
+            Per i corsi di laurea triennale in Ingegneria, le procedure
+            di ammissione dipendono dal bando dell'anno accademico.
         </p>
-
-    </div>
-
-    <div class="cards">
-
-        <div class="card">
-
-            <h3>📚 Esami</h3>
-
-            <p>
-                Tieni sotto controllo gli appelli, le modalità di iscrizione
-                e le eventuali scadenze previste.
-            </p>
-
-        </div>
-
-        <div class="card">
-
-            <h3>📅 Lezioni</h3>
-
-            <p>
-                Controlla periodicamente il calendario perché aule e orari
-                possono subire variazioni.
-            </p>
-
-        </div>
-
-        <div class="card">
-
-            <h3>🎓 Piano di studi</h3>
-
-            <p>
-                Conosci gli insegnamenti obbligatori e quelli eventualmente
-                a scelta previsti dal tuo percorso.
-            </p>
-
-        </div>
-
-        <div class="card">
-
-            <h3>💻 Servizi online</h3>
-
-            <p>
-                Impara a utilizzare i portali universitari e conserva
-                le credenziali in modo sicuro.
-            </p>
-
-        </div>
-
-        <div class="card">
-
-            <h3>📢 Comunicazioni</h3>
-
-            <p>
-                Controlla frequentemente gli avvisi ufficiali e le
-                comunicazioni del tuo corso di laurea.
-            </p>
-
-        </div>
-
-        <div class="card">
-
-            <h3>🤝 Rappresentanza</h3>
-
-            <p>
-                I rappresentanti degli studenti possono aiutarti a portare
-                problemi, proposte e segnalazioni nelle sedi competenti.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section class="section">
-
-    <div class="section-title">
-
-        <h2>❓ Domande frequenti</h2>
 
         <p>
-            Alcuni dubbi che possono nascere durante il primo anno.
+            Per l'A.A. 2026/2027 il riferimento ufficiale è il
+            <strong>D.R. 91/2026</strong>.
         </p>
+
+        <a href="https://www.poliba.it/it/node/1561" target="_blank">
+            Info ammissione PoliBa
+        </a>
+    </article>
+
+    <article class="card">
+        <div class="icona">💰</div>
+
+        <h3>ADISU e diritto allo studio</h3>
+
+        <p>
+            ADISU Puglia gestisce borse di studio e altri benefici
+            e servizi destinati agli studenti.
+        </p>
+
+        <p>
+            Per l'A.A. 2026/2027 le domande per i corsi di laurea
+            sono state presentate tramite il Portale Studenti ADISU.
+        </p>
+
+        <a href="https://adisupuglia.it/pagina106703_borse-di-studio.html" target="_blank">
+            Borse di studio ADISU
+        </a>
+    </article>
+
+    <article class="card">
+        <div class="icona">📚</div>
+
+        <h3>Lezioni ed esami</h3>
+
+        <p>
+            Il calendario didattico ti permette di sapere quando iniziano
+            e finiscono le lezioni e quando sono previste le sessioni
+            d'esame.
+        </p>
+
+        <ul>
+            <li>Inizio lezioni: 21 settembre 2026</li>
+            <li>Fine primo periodo di lezioni: 8 gennaio 2027</li>
+            <li>Esami: 11 gennaio – 26 febbraio 2027</li>
+            <li>Inizio secondo semestre: 1 marzo 2027</li>
+        </ul>
+
+        <a href="calendari.html">
+            Vai ai calendari
+        </a>
+    </article>
+
+</section>
+
+<section class="sezione">
+
+    <div class="sezione-titolo">
+        <h2>🧭 I primi passi</h2>
+
+        <p>
+            Una piccola guida per orientarti nei primi giorni.
+        </p>
+    </div>
+
+    <div class="timeline">
+
+        <div class="step">
+            <div class="numero">1</div>
+
+            <h3>Accedi</h3>
+
+            <p>
+                Controlla Esse3, la posta istituzionale e le comunicazioni
+                del tuo corso.
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="numero">2</div>
+
+            <h3>Organizzati</h3>
+
+            <p>
+                Consulta calendario, orario delle lezioni e piano di studi.
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="numero">3</div>
+
+            <h3>Informati</h3>
+
+            <p>
+                Segui gli avvisi ufficiali e resta aggiornato sulle
+                opportunità per gli studenti.
+            </p>
+        </div>
 
     </div>
 
-    <div class="faq">
+</section>
 
-        <div class="faq-item">
+<section class="sezione">
 
-            <h3>Devo controllare spesso gli avvisi?</h3>
+    <div class="sezione-titolo">
+        <h2>📅 Calendario didattico 2026/2027</h2>
 
-            <p>
-                Sì. Le comunicazioni possono riguardare lezioni,
-                esami, scadenze e modifiche organizzative.
-            </p>
+        <p>
+            Le principali date del calendario di Ingegneria.
+        </p>
+    </div>
 
-        </div>
+    <div class="calendario">
 
-        <div class="faq-item">
+        <div class="periodi">
 
-            <h3>Cosa faccio se non riesco a trovare un'informazione?</h3>
+            <div class="periodo">
+                <h3>1° semestre</h3>
 
-            <p>
-                Parti sempre dai canali ufficiali dell'università.
-                Se non trovi una risposta, puoi chiedere ai rappresentanti
-                o agli uffici competenti.
-            </p>
+                <p>
+                    Lezioni: 21 settembre 2026 – 8 gennaio 2027
+                </p>
+            </div>
 
-        </div>
+            <div class="periodo">
+                <h3>Sessione invernale</h3>
 
-        <div class="faq-item">
+                <p>
+                    Esami: 11 gennaio – 26 febbraio 2027
+                </p>
+            </div>
 
-            <h3>È normale sentirsi spaesati all'inizio?</h3>
+            <div class="periodo">
+                <h3>2° semestre</h3>
 
-            <p>
-                Assolutamente sì. Nei primi mesi è normale dover imparare
-                nuove procedure e capire come funziona l'università.
-            </p>
-
-        </div>
-
-        <div class="faq-item">
-
-            <h3>Posso segnalare un problema?</h3>
-
-            <p>
-                Certo. Attraverso la sezione Segnalazioni del sito puoi
-                inviare una comunicazione che potrà essere presa in carico
-                dalla rappresentanza studentesca.
-            </p>
+                <p>
+                    Lezioni: 1 marzo – 11 giugno 2027
+                </p>
+            </div>
 
         </div>
 
@@ -608,50 +584,54 @@
 
 </section>
 
-<section class="notice">
+<section class="cta">
 
-    <h3>📌 Un consiglio importante</h3>
+    <h2>🆘 Hai un problema?</h2>
 
     <p>
-        Non aspettare di avere un problema per informarti.
-        Imparare fin da subito dove trovare informazioni, calendari,
-        scadenze e servizi ti permetterà di affrontare l'università
-        con molta più tranquillità.
+        Se qualcosa non funziona, hai un dubbio o vuoi segnalarci
+        una situazione che riguarda gli studenti, puoi contattarci
+        direttamente attraverso il sito.
     </p>
+
+    <a class="bottone-bianco" href="segnalazioni.html">
+        Invia una segnalazione
+    </a>
 
 </section>
 
-<section class="official">
+<section class="link-ufficiali">
 
     <h2>🔗 Link utili</h2>
 
-    <a href="https://www.poliba.it/" target="_blank">
-        Sito ufficiale PoliBa
-    </a>
+    <div class="link-list">
 
-    <a href="https://www.poliba.it/didattica" target="_blank">
-        Didattica
-    </a>
+        <a href="https://www.poliba.it/" target="_blank">
+            Politecnico di Bari
+        </a>
 
-    <a href="https://www.poliba.it/studenti" target="_blank">
-        Studenti
-    </a>
+        <a href="https://www.poliba.it/it/node/1561" target="_blank">
+            Ammissione Ingegneria
+        </a>
+
+        <a href="https://adisupuglia.it/pagina106703_borse-di-studio.html" target="_blank">
+            ADISU Puglia
+        </a>
+
+        <a href="https://www.poliba.it/it/node/1560" target="_blank">
+            Calendario didattico
+        </a>
+
+    </div>
 
 </section>
-
+```
 
 </main>
 
 <footer>
-
-
-<p>© 2026 Azione Universitaria PoliBa</p>
-
-<p>
-    Informazione, rappresentanza e servizi per gli studenti.
-</p>
-
-
+    <p><strong>Azione Universitaria PoliBa</strong></p>
+    <p>#azioneuniversitaria · #SEMPREdallaPartedelloStudente</p>
 </footer>
 
 </body>
