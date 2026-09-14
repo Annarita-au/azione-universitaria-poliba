@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
 <title>Avvisi | Azione Universitaria PoliBa</title>
 
 <style>
+
     * {
         box-sizing: border-box;
         margin: 0;
@@ -16,315 +9,425 @@
     }
 
     body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: #f5f7fb;
-        color: #172033;
+        font-family: Arial, sans-serif;
+        background: #f4f7fb;
+        color: #1d2a3a;
         line-height: 1.6;
     }
 
     header {
         background: white;
-        padding: 18px 6%;
+        padding: 20px 7%;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid #e5e9f2;
-        position: sticky;
-        top: 0;
-        z-index: 100;
+        justify-content: space-between;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.06);
     }
 
     .logo {
-        font-size: 20px;
-        font-weight: 800;
-        color: #1256c4;
+        color: #1557b0;
+        font-size: 22px;
+        font-weight: bold;
     }
 
-    nav {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-
-    nav a {
+    .back {
         text-decoration: none;
-        color: #172033;
-        font-weight: 600;
-        font-size: 14px;
+        color: #1557b0;
+        font-weight: bold;
+        border: 2px solid #1557b0;
+        padding: 9px 16px;
+        border-radius: 10px;
+        transition: 0.3s;
     }
 
-    nav a:hover {
-        color: #1256c4;
+    .back:hover {
+        background: #1557b0;
+        color: white;
     }
 
     .hero {
-        background: linear-gradient(135deg, #0d47a1, #1976d2);
+        background: linear-gradient(135deg, #1557b0, #2879d8);
         color: white;
-        padding: 70px 6%;
+        padding: 55px 7%;
         text-align: center;
     }
 
     .hero-icon {
         font-size: 48px;
-        margin-bottom: 15px;
-    }
-
-    .hero h1 {
-        font-size: 42px;
         margin-bottom: 12px;
     }
 
+    .hero h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
     .hero p {
-        max-width: 750px;
-        margin: auto;
         font-size: 18px;
         opacity: 0.95;
     }
 
     .container {
-        width: 88%;
-        max-width: 1050px;
-        margin: 50px auto;
+        width: 86%;
+        max-width: 1150px;
+        margin: 45px auto;
     }
 
-    .intro {
-        text-align: center;
-        margin-bottom: 35px;
-    }
-
-    .intro h2 {
+    .section-title {
         font-size: 28px;
+        color: #1557b0;
+        margin-bottom: 20px;
+    }
+
+    .featured {
+        background: white;
+        border-left: 7px solid #1557b0;
+        border-radius: 18px;
+        padding: 28px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        margin-bottom: 45px;
+    }
+
+    .featured-label {
+        display: inline-block;
+        background: #1557b0;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: bold;
+        margin-bottom: 14px;
+    }
+
+    .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .date,
+    .category {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 15px;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .date {
+        background: #eaf2ff;
+        color: #1557b0;
+    }
+
+    .category {
+        background: #eef1f5;
+        color: #475569;
+    }
+
+    .featured h3 {
+        font-size: 25px;
+        color: #102a49;
         margin-bottom: 10px;
     }
 
-    .intro p {
-        color: #5e687c;
-        max-width: 750px;
-        margin: auto;
+    .featured p {
+        color: #4b5563;
+        margin-bottom: 20px;
+    }
+
+    .button {
+        display: inline-block;
+        text-decoration: none;
+        background: #1557b0;
+        color: white;
+        padding: 11px 18px;
+        border-radius: 10px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .button:hover {
+        background: #0f4388;
+    }
+
+    .notice-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
     }
 
     .notice {
         background: white;
         border-radius: 18px;
-        padding: 28px;
-        margin-bottom: 22px;
-        border: 1px solid #e4e8f0;
-        box-shadow: 0 8px 25px rgba(18, 50, 90, 0.06);
-    }
-
-    .notice-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 15px;
-        margin-bottom: 15px;
-        flex-wrap: wrap;
-    }
-
-    .badge {
-        display: inline-block;
-        background: #e8f0ff;
-        color: #1256c4;
-        padding: 6px 12px;
-        border-radius: 999px;
-        font-size: 12px;
-        font-weight: 800;
-        text-transform: uppercase;
-    }
-
-    .date {
-        color: #7b8495;
-        font-size: 13px;
-        font-weight: 600;
+        padding: 24px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+        border-top: 4px solid #1557b0;
     }
 
     .notice h3 {
-        font-size: 23px;
-        margin-bottom: 10px;
+        font-size: 21px;
+        color: #102a49;
+        margin: 12px 0 10px;
     }
 
     .notice p {
-        color: #5e687c;
+        color: #5b6470;
+        margin-bottom: 18px;
     }
 
-    .empty-box {
-        background: #eef4ff;
-        border: 1px solid #d7e5ff;
+    .notice .button {
+        font-size: 14px;
+        padding: 9px 14px;
+    }
+
+    .empty {
+        background: white;
         border-radius: 18px;
-        padding: 30px;
+        padding: 28px;
         text-align: center;
-        margin-top: 30px;
+        color: #5b6470;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+        margin-top: 22px;
     }
 
-    .empty-box h3 {
-        color: #1256c4;
+    .info-box {
+        background: #eaf2ff;
+        border-radius: 18px;
+        padding: 25px;
+        margin-top: 45px;
+        border-left: 5px solid #1557b0;
+    }
+
+    .info-box h3 {
+        color: #1557b0;
         margin-bottom: 8px;
     }
 
-    .empty-box p {
-        color: #5e687c;
-    }
-
-    .cta {
-        background: white;
-        border-radius: 20px;
-        padding: 35px;
-        text-align: center;
-        margin-top: 45px;
-        border: 1px solid #e4e8f0;
-    }
-
-    .cta h2 {
-        margin-bottom: 10px;
-    }
-
-    .cta p {
-        color: #5e687c;
-        margin-bottom: 20px;
-    }
-
-    .cta a {
-        display: inline-block;
-        background: #1256c4;
-        color: white;
-        text-decoration: none;
-        padding: 13px 22px;
-        border-radius: 10px;
-        font-weight: 700;
-    }
-
-    .cta a:hover {
-        background: #0d47a1;
+    .info-box p {
+        color: #435266;
     }
 
     footer {
-        background: #101828;
+        background: #102a49;
         color: white;
         text-align: center;
-        padding: 30px 20px;
+        padding: 28px 20px;
         margin-top: 60px;
     }
 
     footer p {
-        margin: 5px 0;
-        opacity: 0.85;
+        margin-bottom: 5px;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 750px) {
+
         header {
-            flex-direction: column;
-            gap: 12px;
+            padding: 16px 5%;
         }
 
-        nav {
-            justify-content: center;
-            gap: 12px;
+        .logo {
+            font-size: 18px;
+        }
+
+        .back {
+            padding: 8px 12px;
+            font-size: 14px;
         }
 
         .hero {
-            padding: 55px 5%;
+            padding: 45px 6%;
         }
 
         .hero h1 {
             font-size: 32px;
         }
 
-        .container {
-            width: 92%;
+        .hero p {
+            font-size: 16px;
         }
 
-        .notice {
+        .container {
+            width: 90%;
+            margin: 35px auto;
+        }
+
+        .section-title {
+            font-size: 24px;
+        }
+
+        .notice-list {
+            grid-template-columns: 1fr;
+        }
+
+        .featured {
             padding: 22px;
         }
+
+        .featured h3 {
+            font-size: 22px;
+        }
     }
+
 </style>
+<div class="logo">
+    Azione Universitaria PoliBa
+</div>
 
+<a href="index.html" class="back">
+    ← Torna alla Home
+</a>
+<div class="hero-icon">
+    📢
+</div>
 
-</head>
+<h1>Avvisi</h1>
 
-<body>
+<p>
+    Comunicazioni e aggiornamenti utili per gli studenti del PoliBa
+</p>
+<h2 class="section-title">
+    📌 Avviso in evidenza
+</h2>
 
-<header>
-    <div class="logo">Azione Universitaria PoliBa</div>
+<div class="featured">
 
+    <span class="featured-label">
+        IN EVIDENZA
+    </span>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="calendari.html">Calendari</a>
-    <a href="matricole.html">Matricole</a>
-    <a href="avvisi.html">Avvisi</a>
-    <a href="rappresentanza.html">Rappresentanza</a>
-    <a href="segnalazioni.html">Segnalazioni</a>
-</nav>
+    <div class="meta">
 
+        <span class="date">
+            📅 14 settembre 2026
+        </span>
 
-</header>
+        <span class="category">
+            📢 Azione Universitaria
+        </span>
 
-<section class="hero">
-    <div class="hero-icon">📢</div>
-    <h1>Avvisi</h1>
-    <p>
-        Comunicazioni, aggiornamenti e informazioni utili
-        per gli studenti del Politecnico di Bari.
-    </p>
-</section>
-
-<main class="container">
-
-
-<section class="intro">
-    <h2>Le comunicazioni di Azione Universitaria</h2>
-    <p>
-        In questa sezione raccogliamo gli aggiornamenti più importanti
-        per gli studenti: informazioni sulla didattica, scadenze,
-        opportunità e iniziative.
-    </p>
-</section>
-
-<article class="notice">
-    <div class="notice-top">
-        <span class="badge">Benvenuti</span>
-        <span class="date">13 settembre 2026</span>
     </div>
 
-    <h3>Benvenuti nella sezione Avvisi 💙</h3>
+    <h3>
+        Benvenuti nella sezione Avvisi
+    </h3>
 
     <p>
-        Questa pagina sarà il punto di riferimento per le comunicazioni
-        e gli aggiornamenti di Azione Universitaria PoliBa.
-        Torna qui per non perderti le informazioni più importanti.
+        In questa sezione pubblicheremo comunicazioni, scadenze,
+        aggiornamenti sulla didattica e informazioni utili per gli
+        studenti del Politecnico di Bari.
     </p>
-</article>
 
-<section class="empty-box">
-    <h3>📌 Nuovi avvisi in arrivo</h3>
+</div>
+
+
+<h2 class="section-title">
+    📰 Avvisi recenti
+</h2>
+
+
+<div class="notice-list">
+
+    <article class="notice">
+
+        <div class="meta">
+
+            <span class="date">
+                📅 14 settembre 2026
+            </span>
+
+            <span class="category">
+                🎓 Matricole
+            </span>
+
+        </div>
+
+        <h3>
+            Informazioni utili per le matricole
+        </h3>
+
+        <p>
+            Nella sezione Matricole trovi informazioni e indicazioni
+            utili per iniziare il nuovo anno accademico al PoliBa.
+        </p>
+
+        <a href="matricole.html" class="button">
+            Vai alla sezione
+        </a>
+
+    </article>
+
+
+    <article class="notice">
+
+        <div class="meta">
+
+            <span class="date">
+                📅 14 settembre 2026
+            </span>
+
+            <span class="category">
+                📅 Didattica
+            </span>
+
+        </div>
+
+        <h3>
+            Calendari e orari dei corsi
+        </h3>
+
+        <p>
+            Consulta la pagina Calendari per trovare le pagine dedicate
+            ai diversi corsi di studio.
+        </p>
+
+        <a href="calendari.html" class="button">
+            Consulta i calendari
+        </a>
+
+    </article>
+
+
+</div>
+
+
+<div class="empty">
+
+    <h3>
+        📭 Nessun altro avviso pubblicato
+    </h3>
+
     <p>
-        Quando ci saranno nuove comunicazioni, questa sezione verrà
-        aggiornata con data, categoria e tutte le informazioni utili.
+        Gli aggiornamenti verranno aggiunti qui man mano che saranno
+        disponibili.
     </p>
-</section>
 
-<section class="cta">
-    <h2>Hai un problema o qualcosa da segnalarci?</h2>
+</div>
+
+
+<div class="info-box">
+
+    <h3>
+        💬 Hai bisogno di segnalare qualcosa?
+    </h3>
 
     <p>
-        Raccontaci cosa sta succedendo. La tua segnalazione può aiutarci
-        a portare le esigenze degli studenti negli organi di rappresentanza.
+        Se hai un problema, una difficoltà o una questione che vuoi
+        sottoporre all'attenzione della rappresentanza studentesca,
+        puoi inviare una segnalazione direttamente ad Azione Universitaria.
     </p>
 
-    <a href="segnalazioni.html">
-        Segnala un problema
+    <br>
+
+    <a href="segnalazioni.html" class="button">
+        Invia una segnalazione
     </a>
-</section>
 
+</div>
+<p>
+    <strong>Azione Universitaria PoliBa</strong>
+</p>
 
-</main>
-
-<footer>
-    <p><strong>Azione Universitaria PoliBa</strong></p>
-    <p>La tua voce. La nostra rappresentanza.</p>
-    <p>#azioneuniversitaria · #SEMPREdallaPartedelloStudente</p>
-</footer>
-
-</body>
-</html>
+<p>
+    La tua voce. La nostra rappresentanza.
+</p>
