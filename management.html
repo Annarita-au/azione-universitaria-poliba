@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<title>Management Engineering for Innovation | Azione Universitaria PoliBa</title>
+<title>Management Engineering for Innovation | Calendari | Azione Universitaria PoliBa</title>
+
 
 <style>
-
     * {
         box-sizing: border-box;
         margin: 0;
@@ -18,449 +18,550 @@
 
     body {
         font-family: Arial, Helvetica, sans-serif;
-        background: #f5f7fa;
-        color: #1f2937;
+        background: #f4f7fb;
+        color: #1d2a3a;
         line-height: 1.6;
     }
 
     header {
-        background: #111827;
-        padding: 18px 25px;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    }
-
-    nav {
-        max-width: 1100px;
-        margin: auto;
+        background: #ffffff;
+        border-bottom: 1px solid #e4eaf1;
+        padding: 18px 7%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 20px;
+        flex-wrap: wrap;
     }
 
     .logo {
-        color: white;
-        font-size: 20px;
-        font-weight: bold;
+        color: #1557b0;
+        font-size: 22px;
+        font-weight: 800;
         text-decoration: none;
     }
 
-    .nav-links {
+    nav {
         display: flex;
         gap: 18px;
         flex-wrap: wrap;
-        justify-content: flex-end;
+        justify-content: center;
     }
 
-    .nav-links a {
-        color: white;
+    nav a {
         text-decoration: none;
+        color: #26384d;
+        font-weight: 600;
         font-size: 14px;
     }
 
-    .nav-links a:hover {
-        text-decoration: underline;
+    nav a:hover {
+        color: #1557b0;
     }
 
     .hero {
-        background: linear-gradient(135deg, #111827, #374151);
-        color: white;
+        background: linear-gradient(135deg, #1557b0, #2879d8);
+        color: #ffffff;
+        padding: 70px 7%;
         text-align: center;
-        padding: 70px 20px;
     }
 
-    .hero-icon {
-        font-size: 55px;
-        margin-bottom: 15px;
+    .hero .icon {
+        font-size: 48px;
+        margin-bottom: 10px;
     }
 
     .hero h1 {
-        font-size: 38px;
-        margin-bottom: 15px;
+        font-size: 42px;
+        margin-bottom: 12px;
     }
 
     .hero p {
-        max-width: 750px;
+        font-size: 18px;
+        max-width: 780px;
         margin: auto;
-        font-size: 17px;
-        color: #e5e7eb;
+        opacity: 0.95;
     }
 
     .back-button {
         display: inline-block;
         margin-top: 25px;
-        padding: 12px 22px;
-        background: white;
-        color: #111827;
+        padding: 12px 20px;
+        background: #ffffff;
+        color: #1557b0;
+        border-radius: 10px;
         text-decoration: none;
-        border-radius: 8px;
-        font-weight: bold;
+        font-weight: 700;
     }
 
     .back-button:hover {
-        background: #e5e7eb;
+        background: #eef5ff;
     }
 
-    main {
-        max-width: 1100px;
-        margin: 50px auto;
-        padding: 0 20px;
+    .container {
+        width: 86%;
+        max-width: 1150px;
+        margin: 45px auto;
     }
 
-    section {
-        background: white;
-        padding: 30px;
-        border-radius: 14px;
-        margin-bottom: 35px;
-        box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+    .section {
+        margin-bottom: 45px;
     }
 
-    section h2 {
+    .section h2 {
+        color: #183b68;
         font-size: 28px;
-        margin-bottom: 25px;
-        color: #111827;
+        margin-bottom: 20px;
+    }
+
+    .section-intro {
+        color: #65758a;
+        margin-bottom: 20px;
     }
 
     .calendar-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 18px;
     }
 
     .calendar-card {
-        background: #f3f4f6;
-        padding: 20px;
-        border-radius: 10px;
-        border-left: 5px solid #111827;
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 22px;
+        border-left: 5px solid #1557b0;
+        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
     }
 
-    .calendar-card h3 {
-        font-size: 16px;
-        margin-bottom: 8px;
-        color: #111827;
+    .calendar-card strong {
+        display: block;
+        color: #183b68;
+        margin-bottom: 7px;
+        font-size: 17px;
     }
 
-    .calendar-card p {
-        font-size: 15px;
-        color: #4b5563;
-    }
-
-    .year-menu {
-        display: flex;
-        gap: 15px;
-        flex-wrap: wrap;
-        margin-bottom: 30px;
-    }
-
-    .year-menu a {
-        padding: 12px 20px;
-        background: #111827;
-        color: white;
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: bold;
-    }
-
-    .year-menu a:hover {
-        background: #374151;
+    .calendar-card span {
+        color: #65758a;
     }
 
     .year-section {
-        margin-bottom: 40px;
-        scroll-margin-top: 100px;
+        margin-top: 45px;
+        scroll-margin-top: 30px;
     }
 
-    .year-section h3 {
-        font-size: 24px;
-        margin-bottom: 18px;
-        color: #111827;
+    .year-title {
+        background: linear-gradient(135deg, #1557b0, #2879d8);
+        color: #ffffff;
+        border-radius: 18px;
+        padding: 25px;
+        margin-bottom: 20px;
     }
 
-    .table-container {
+    .year-title h2 {
+        color: #ffffff;
+        margin-bottom: 5px;
+    }
+
+    .year-title p {
+        opacity: 0.92;
+    }
+
+    .schedule {
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 25px;
+        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
         overflow-x: auto;
+    }
+
+    .schedule h3 {
+        color: #183b68;
+        margin-bottom: 8px;
+        font-size: 22px;
+    }
+
+    .schedule p {
+        color: #65758a;
+        margin-bottom: 18px;
     }
 
     table {
         width: 100%;
         border-collapse: collapse;
-        min-width: 650px;
-    }
-
-    th,
-    td {
-        border: 1px solid #d1d5db;
-        padding: 14px;
-        text-align: center;
+        min-width: 700px;
     }
 
     th {
-        background: #111827;
-        color: white;
+        background: #1557b0;
+        color: #ffffff;
+        padding: 14px;
+        text-align: left;
     }
 
     td {
-        background: #f9fafb;
+        padding: 14px;
+        border-bottom: 1px solid #e6ebf1;
+        color: #526276;
     }
 
-    .updating {
-        color: #6b7280;
-        font-style: italic;
+    tr:last-child td {
+        border-bottom: none;
+    }
+
+    .top-link {
+        display: inline-block;
+        margin-top: 18px;
+        color: #1557b0;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .top-link:hover {
+        text-decoration: underline;
+    }
+
+    .year-menu {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        margin-bottom: 45px;
+    }
+
+    .year-menu a {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 22px;
+        text-align: center;
+        text-decoration: none;
+        color: #1557b0;
+        font-weight: 700;
+        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
+        border-top: 4px solid #1557b0;
+        transition: 0.2s;
+    }
+
+    .year-menu a:hover {
+        transform: translateY(-4px);
+    }
+
+    .year-menu .number {
+        display: block;
+        font-size: 30px;
+        margin-bottom: 5px;
     }
 
     footer {
-        background: #111827;
-        color: #d1d5db;
+        background: #102a49;
+        color: #ffffff;
         text-align: center;
-        padding: 25px 20px;
-        margin-top: 50px;
+        padding: 28px 7%;
+        margin-top: 60px;
+    }
+
+    footer p {
+        opacity: 0.85;
+        font-size: 14px;
     }
 
     @media (max-width: 700px) {
+        header {
+            justify-content: center;
+        }
+
+        nav {
+            gap: 10px;
+        }
+
+        nav a {
+            font-size: 13px;
+        }
+
+        .hero {
+            padding: 55px 6%;
+        }
 
         .hero h1 {
-            font-size: 30px;
+            font-size: 32px;
         }
 
         .hero p {
-            font-size: 15px;
+            font-size: 16px;
         }
 
-        section {
-            padding: 22px;
+        .container {
+            width: 90%;
         }
 
-        section h2 {
-            font-size: 24px;
+        .year-menu {
+            grid-template-columns: 1fr;
         }
-
-        .nav-links {
-            display: none;
-        }
-
     }
-
 </style>
-
 
 </head>
 
 <body>
 
 <header>
-    <nav>
-        <a href="index.html" class="logo">Azione Universitaria PoliBa</a>
+    <a href="index.html" class="logo">Azione Universitaria PoliBa</a>
 
-
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="calendari.html">Calendari</a>
-        <a href="matricole.html">Matricole</a>
-        <a href="avvisi.html">Avvisi</a>
-        <a href="rappresentanza.html">Rappresentanza</a>
-        <a href="segnalazioni.html">Segnalazioni</a>
-    </div>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="calendari.html">Calendari</a>
+    <a href="matricole.html">Matricole</a>
+    <a href="avvisi.html">Avvisi</a>
+    <a href="rappresentanza.html">Rappresentanza</a>
+    <a href="segnalazioni.html">Segnalazioni</a>
 </nav>
-
 
 </header>
 
 <section class="hero">
-
-
-<div class="hero-icon">🌍</div>
+    <div class="icon">🌍</div>
 
 <h1>Management Engineering for Innovation</h1>
 
 <p>
-    Calendario accademico e orari delle lezioni del corso di
-    Management Engineering for Innovation.
+    Calendario accademico e orari delle lezioni per gli studenti
+    di Management Engineering for Innovation.
 </p>
 
 <a href="calendari.html" class="back-button">
-    ← Torna ai calendari
+    ← Torna ai Calendari
 </a>
 
+</section>
+
+<main class="container">
+
+<section class="section">
+    <h2>📅 Calendario accademico 2026/2027</h2>
+
+
+<p class="section-intro">
+    Le principali date dell'anno accademico per gli studenti
+    di Management Engineering for Innovation.
+</p>
+
+<div class="calendar-grid">
+
+    <div class="calendar-card">
+        <strong>Inizio lezioni</strong>
+        <span>21 settembre 2026</span>
+    </div>
+
+    <div class="calendar-card">
+        <strong>Pausa esoneri</strong>
+        <span>2 – 6 novembre 2026</span>
+    </div>
+
+    <div class="calendar-card">
+        <strong>Recupero lezioni</strong>
+        <span>21 – 23 dicembre 2026</span>
+    </div>
+
+    <div class="calendar-card">
+        <strong>Festività natalizie</strong>
+        <span>24 dicembre 2026 – 6 gennaio 2027</span>
+    </div>
+
+    <div class="calendar-card">
+        <strong>Recupero lezioni</strong>
+        <span>7 – 8 gennaio 2027</span>
+    </div>
+
+    <div class="calendar-card">
+        <strong>Fine lezioni</strong>
+        <span>8 gennaio 2027</span>
+    </div>
+
+    <div class="calendar-card">
+        <strong>Periodo esami</strong>
+        <span>11 gennaio – 26 febbraio 2027</span>
+    </div>
+
+</div>
+
 
 </section>
 
-<main>
+<section class="section">
 
 
-<section>
+<h2>🕐 Orario delle lezioni</h2>
 
-    <h2>📅 Calendario accademico</h2>
+<p class="section-intro">
+    Seleziona il tuo anno per raggiungere direttamente
+    l'orario delle lezioni.
+</p>
 
-    <div class="calendar-grid">
+<div class="year-menu">
 
-        <div class="calendar-card">
-            <h3>Inizio lezioni</h3>
-            <p>21 settembre 2026</p>
-        </div>
+    <a href="#primo-anno">
+        <span class="number">1️⃣</span>
+        1° anno
+    </a>
 
-        <div class="calendar-card">
-            <h3>Pausa esoneri</h3>
-            <p>2–6 novembre 2026</p>
-        </div>
+    <a href="#secondo-anno">
+        <span class="number">2️⃣</span>
+        2° anno
+    </a>
 
-        <div class="calendar-card">
-            <h3>Recupero lezioni</h3>
-            <p>21–23 dicembre 2026</p>
-        </div>
+</div>
 
-        <div class="calendar-card">
-            <h3>Festività natalizie</h3>
-            <p>24 dicembre 2026–6 gennaio 2027</p>
-        </div>
-
-        <div class="calendar-card">
-            <h3>Recupero lezioni</h3>
-            <p>7–8 gennaio 2027</p>
-        </div>
-
-        <div class="calendar-card">
-            <h3>Fine lezioni</h3>
-            <p>8 gennaio 2027</p>
-        </div>
-
-        <div class="calendar-card">
-            <h3>Periodo esami</h3>
-            <p>11 gennaio–26 febbraio 2027</p>
-        </div>
-
-    </div>
 
 </section>
 
-<section>
+<section class="year-section" id="primo-anno">
 
-    <h2>🕐 Orari delle lezioni</h2>
 
-    <div class="year-menu">
-        <a href="#anno1">1° anno</a>
-        <a href="#anno2">2° anno</a>
-    </div>
+<div class="year-title">
+    <h2>1️⃣ Orario 1° anno</h2>
 
-    <div class="year-section" id="anno1">
+    <p>
+        Orario delle lezioni del primo anno di Management Engineering for Innovation.
+    </p>
+</div>
 
-        <h3>1° anno</h3>
+<div class="schedule">
 
-        <div class="table-container">
+    <h3>🗓️ Settimana delle lezioni</h3>
 
-            <table>
+    <p>
+        Orario in aggiornamento sulla base delle comunicazioni ufficiali del corso.
+    </p>
 
-                <thead>
-                    <tr>
-                        <th>Giorno</th>
-                        <th>Mattina</th>
-                        <th>Pomeriggio</th>
-                    </tr>
-                </thead>
+    <table>
 
-                <tbody>
+        <thead>
+            <tr>
+                <th>Giorno</th>
+                <th>Mattina</th>
+                <th>Pomeriggio</th>
+            </tr>
+        </thead>
 
-                    <tr>
-                        <td>Lunedì</td>
-                        <td class="updating">Orario in aggiornamento</td>
-                        <td class="updating">Orario in aggiornamento</td>
-                    </tr>
+        <tbody>
 
-                    <tr>
-                        <td>Martedì</td>
-                        <td class="updating">Orario in aggiornamento</td>
-                        <td class="updating">Orario in aggiornamento</td>
-                    </tr>
+            <tr>
+                <td>Lunedì</td>
+                <td>Orario in aggiornamento</td>
+                <td>Orario in aggiornamento</td>
+            </tr>
 
-                    <tr>
-                        <td>Mercoledì</td>
-                        <td class="updating">Orario in aggiornamento</td>
-                        <td class="updating">Orario in aggiornamento</td>
-                    </tr>
+            <tr>
+                <td>Martedì</td>
+                <td>Orario in aggiornamento</td>
+                <td>Orario in aggiornamento</td>
+            </tr>
 
-                    <tr>
-                        <td>Giovedì</td>
-                        <td class="updating">Orario in aggiornamento</td>
-                        <td class="updating">Orario in aggiornamento</td>
-                    </tr>
+            <tr>
+                <td>Mercoledì</td>
+                <td>Orario in aggiornamento</td>
+                <td>Orario in aggiornamento</td>
+            </tr>
 
-                    <tr>
-                        <td>Venerdì</td>
-                        <td class="updating">Orario in aggiornamento</td>
-                        <td class="updating">Orario in aggiornamento</td>
-                    </tr>
+            <tr>
+                <td>Giovedì</td>
+                <td>Orario in aggiornamento</td>
+                <td>Orario in aggiornamento</td>
+            </tr>
 
-                </tbody>
+            <tr>
+                <td>Venerdì</td>
+                <td>Orario in aggiornamento</td>
+                <td>Orario in aggiornamento</td>
+            </tr>
 
-            </table>
+        </tbody>
 
-        </div>
+    </table>
 
-    </div>
+</div>
 
-    <div class="year-section" id="anno2">
+<a href="#top" class="top-link">↑ Torna in alto</a>
 
-        <h3>2° anno</h3>
-
-        <div class="table-container">
-
-            <table>
-
-                <thead>
-                    <tr>
-                        <th>Giorno</th>
-                        <th>Mattina</th>
-                        <th>Pomeriggio</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                    <tr>
-                        <td>Lunedì</td>
-                        <td class="updating">Orario in aggiornamento</td>
-                        <td class="updating">Orario in aggiornamento</td>
-                    </tr>
-
-                    <tr>
-                        <td>Martedì</td>
-                        <td class="updating">Orario in aggiornamento</td>
-                        <td class="updating">Orario in aggiornamento</td>
-                    </tr>
-
-                    <tr>
-                        <td>Mercoledì</td>
-                        <td class="updating">Orario in aggiornamento</td>
-                        <td class="updating">Orario in aggiornamento</td>
-                    </tr>
-
-                    <tr>
-                        <td>Giovedì</td>
-                        <td class="updating">Orario in aggiornamento</td>
-                        <td class="updating">Orario in aggiornamento</td>
-                    </tr>
-
-                    <tr>
-                        <td>Venerdì</td>
-                        <td class="updating">Orario in aggiornamento</td>
-                        <td class="updating">Orario in aggiornamento</td>
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
 
 </section>
 
+<section class="year-section" id="secondo-anno">
+
+
+<div class="year-title">
+    <h2>2️⃣ Orario 2° anno</h2>
+
+    <p>
+        Orario delle lezioni del secondo anno di Management Engineering for Innovation.
+    </p>
+</div>
+
+<div class="schedule">
+
+    <h3>🗓️ Settimana delle lezioni</h3>
+
+    <p>
+        Orario in aggiornamento sulla base delle comunicazioni ufficiali del corso.
+    </p>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>Giorno</th>
+                <th>Mattina</th>
+                <th>Pomeriggio</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>Lunedì</td>
+                <td>Orario in aggiornamento</td>
+                <td>Orario in aggiornamento</td>
+            </tr>
+
+            <tr>
+                <td>Martedì</td>
+                <td>Orario in aggiornamento</td>
+                <td>Orario in aggiornamento</td>
+            </tr>
+
+            <tr>
+                <td>Mercoledì</td>
+                <td>Orario in aggiornamento</td>
+                <td>Orario in aggiornamento</td>
+            </tr>
+
+            <tr>
+                <td>Giovedì</td>
+                <td>Orario in aggiornamento</td>
+                <td>Orario in aggiornamento</td>
+            </tr>
+
+            <tr>
+                <td>Venerdì</td>
+                <td>Orario in aggiornamento</td>
+                <td>Orario in aggiornamento</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<a href="#top" class="top-link">↑ Torna in alto</a>
+
+
+</section>
 
 </main>
 
 <footer>
-    Azione Universitaria PoliBa — Management Engineering for Innovation
+    <p>
+        Azione Universitaria PoliBa — Management Engineering for Innovation
+    </p>
 </footer>
 
 </body>
