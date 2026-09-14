@@ -85,15 +85,15 @@
         background: white;
         border-left: 7px solid #1557b0;
         border-radius: 18px;
-        padding: 28px;
+        padding: 26px;
         box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-        margin-bottom: 45px;
+        margin-bottom: 40px;
     }
 
     .intro h2 {
         color: #1557b0;
-        margin-bottom: 10px;
-        font-size: 26px;
+        margin-bottom: 8px;
+        font-size: 25px;
     }
 
     .intro p {
@@ -101,7 +101,7 @@
     }
 
     .section-title {
-        font-size: 28px;
+        font-size: 27px;
         color: #1557b0;
         margin-bottom: 20px;
     }
@@ -110,40 +110,31 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 22px;
-        margin-bottom: 45px;
+        margin-bottom: 40px;
     }
 
     .card {
         background: white;
         border-radius: 18px;
         padding: 25px;
-        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+        box-shadow: 5px 18px rgba(0,0,0,0.07);
         border-top: 4px solid #1557b0;
     }
 
     .card-icon {
         font-size: 34px;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
 
     .card h3 {
         color: #102a49;
         font-size: 21px;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
 
     .card p {
         color: #5b6470;
-        margin-bottom: 18px;
-    }
-
-    .card ul {
-        padding-left: 20px;
-        color: #4b5563;
-    }
-
-    .card li {
-        margin-bottom: 7px;
+        margin-bottom: 15px;
     }
 
     .button {
@@ -155,60 +146,48 @@
         border-radius: 10px;
         font-weight: bold;
         transition: 0.3s;
-        margin-top: 8px;
     }
 
     .button:hover {
         background: #0f4388;
     }
 
-    .checklist {
+    .quick {
         background: white;
         border-radius: 18px;
-        padding: 28px;
+        padding: 26px;
         box-shadow: 0 5px 18px rgba(0,0,0,0.07);
-        margin-bottom: 45px;
+        margin-bottom: 40px;
     }
 
-    .checklist-item {
-        display: flex;
+    .quick-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 14px;
-        align-items: flex-start;
-        padding: 14px 0;
-        border-bottom: 1px solid #e6ebf2;
     }
 
-    .checklist-item:last-child {
-        border-bottom: none;
+    .quick-item {
+        background: #f4f7fb;
+        border-radius: 12px;
+        padding: 15px;
+        color: #1d2a3a;
     }
 
-    .check {
-        background: #eaf2ff;
+    .quick-item strong {
         color: #1557b0;
-        min-width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-    }
-
-    .checklist-item strong {
-        color: #102a49;
     }
 
     .official {
         background: #eaf2ff;
         border-left: 5px solid #1557b0;
         border-radius: 18px;
-        padding: 26px;
-        margin-bottom: 45px;
+        padding: 25px;
+        margin-bottom: 40px;
     }
 
     .official h2 {
         color: #1557b0;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
 
     .official p {
@@ -222,21 +201,20 @@
         gap: 12px;
     }
 
-    .info-box {
+    .contact {
         background: white;
         border-radius: 18px;
         padding: 28px;
-        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
         text-align: center;
-        margin-bottom: 45px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
     }
 
-    .info-box h2 {
+    .contact h2 {
         color: #1557b0;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
 
-    .info-box p {
+    .contact p {
         color: #5b6470;
         margin-bottom: 15px;
     }
@@ -285,7 +263,8 @@
             margin: 35px auto;
         }
 
-        .cards {
+        .cards,
+        .quick-list {
             grid-template-columns: 1fr;
         }
 
@@ -295,9 +274,9 @@
 
         .intro,
         .card,
-        .checklist,
+        .quick,
         .official,
-        .info-box {
+        .contact {
             padding: 22px;
         }
 
@@ -341,7 +320,7 @@
 <h1>Matricole</h1>
 
 <p>
-    Tutto quello che serve per iniziare bene il tuo percorso al PoliBa
+    Le informazioni più utili per iniziare il percorso al PoliBa
 </p>
 
 
@@ -353,21 +332,19 @@
 <section class="intro">
 
     <h2>
-        👋 Benvenuta, benvenuto al PoliBa!
+        🎓 Tutto quello che ti serve, in un unico posto
     </h2>
 
     <p>
-        Iniziare l'università può sembrare complicato: nuovi portali,
-        lezioni, esami, scadenze e tante informazioni da trovare.
-        Abbiamo raccolto in questa pagina le cose più utili da sapere
-        per orientarti fin dai primi giorni.
+        Una selezione rapida delle principali informazioni e dei servizi
+        che possono essere utili durante il primo anno.
     </p>
 
 </section>
 
 
 <h2 class="section-title">
-    🚀 Da dove iniziare
+    📚 Le informazioni principali
 </h2>
 
 
@@ -381,38 +358,16 @@
         </div>
 
         <h3>
-            Lezioni e calendario
+            Calendari
         </h3>
 
         <p>
-            Controlla quando iniziano le lezioni e consulta il calendario
-            del tuo corso di studio.
+            Consulta il calendario accademico e accedi alla pagina
+            del tuo corso per trovare le informazioni disponibili.
         </p>
 
         <a href="calendari.html" class="button">
             Vai ai calendari
-        </a>
-
-    </article>
-
-
-    <article class="card">
-
-        <div class="card-icon">
-            💻
-        </div>
-
-        <h3>
-            Esse3
-        </h3>
-
-        <p>
-            Esse3 è uno dei principali strumenti digitali utilizzati
-            dall'Ateneo per la gestione della carriera universitaria.
-        </p>
-
-        <a href="https://poliba.esse3.cineca.it/" class="button" target="_blank">
-            Apri Esse3
         </a>
 
     </article>
@@ -429,10 +384,13 @@
         </h3>
 
         <p>
-            Durante l'anno troverai appelli, esami ed eventuali esoneri.
-            Tieni sempre sotto controllo gli avvisi del tuo corso e le
-            comunicazioni ufficiali.
+            Tieni sotto controllo appelli, esoneri e comunicazioni
+            pubblicate dal tuo corso di studio.
         </p>
+
+        <a href="avvisi.html" class="button">
+            Vai agli avvisi
+        </a>
 
     </article>
 
@@ -444,16 +402,38 @@
         </div>
 
         <h3>
-            Borse e agevolazioni
+            ADISU e borse di studio
         </h3>
 
         <p>
-            Informati per tempo su borse di studio, contributi,
-            agevolazioni e servizi legati al diritto allo studio.
+            Informati su borse di studio, agevolazioni e servizi
+            per il diritto allo studio.
         </p>
 
-        <a href="https://www.poliba.it/borse-di-studio" class="button" target="_blank">
-            Borse di studio PoliBa
+        <a href="https://www.adisupuglia.it/" class="button" target="_blank">
+            ADISU Puglia
+        </a>
+
+    </article>
+
+
+    <article class="card">
+
+        <div class="card-icon">
+            💻
+        </div>
+
+        <h3>
+            Esse3
+        </h3>
+
+        <p>
+            Accedi alla piattaforma utilizzata per la gestione
+            della tua carriera universitaria.
+        </p>
+
+        <a href="https://poliba.esse3.cineca.it/" class="button" target="_blank">
+            Apri Esse3
         </a>
 
     </article>
@@ -463,92 +443,54 @@
 
 
 <h2 class="section-title">
-    ✅ Checklist della matricola
+    ⚡ Accesso rapido
 </h2>
 
 
-<section class="checklist">
+<section class="quick">
 
+    <div class="quick-list">
 
-    <div class="checklist-item">
-
-        <div class="check">
-            1
+        <div class="quick-item">
+            📢 <strong>Avvisi</strong><br>
+            Comunicazioni e aggiornamenti AU
+            <br>
+            <a href="avvisi.html" class="button">
+                Consulta
+            </a>
         </div>
 
-        <div>
-            <strong>Controlla il tuo accesso a Esse3</strong>
+
+        <div class="quick-item">
+            📝 <strong>Segnalazioni</strong><br>
+            Segnala un problema o una difficoltà
             <br>
-            Verifica di riuscire ad accedere alla tua area personale
-            e controlla che i tuoi dati siano corretti.
+            <a href="segnalazioni.html" class="button">
+                Segnala
+            </a>
+        </div>
+
+
+        <div class="quick-item">
+            🎓 <strong>Rappresentanza</strong><br>
+            Scopri chi siamo e cosa facciamo
+            <br>
+            <a href="rappresentanza.html" class="button">
+                Scopri
+            </a>
+        </div>
+
+
+        <div class="quick-item">
+            📚 <strong>Il tuo corso</strong><br>
+            Consulta calendario e orari
+            <br>
+            <a href="calendari.html" class="button">
+                Cerca
+            </a>
         </div>
 
     </div>
-
-
-    <div class="checklist-item">
-
-        <div class="check">
-            2
-        </div>
-
-        <div>
-            <strong>Controlla il calendario del tuo corso</strong>
-            <br>
-            Individua lezioni, eventuali pause didattiche e periodi
-            dedicati agli esami.
-        </div>
-
-    </div>
-
-
-    <div class="checklist-item">
-
-        <div class="check">
-            3
-        </div>
-
-        <div>
-            <strong>Salva i canali ufficiali</strong>
-            <br>
-            Segui le comunicazioni del PoliBa, del tuo Dipartimento
-            e del tuo corso di studio.
-        </div>
-
-    </div>
-
-
-    <div class="checklist-item">
-
-        <div class="check">
-            4
-        </div>
-
-        <div>
-            <strong>Informati sulle agevolazioni</strong>
-            <br>
-            Controlla per tempo borse di studio, ISEE e altri benefici
-            per il diritto allo studio.
-        </div>
-
-    </div>
-
-
-    <div class="checklist-item">
-
-        <div class="check">
-            5
-        </div>
-
-        <div>
-            <strong>Non aspettare di avere un problema</strong>
-            <br>
-            Se qualcosa non è chiaro, chiedi informazioni e rivolgiti
-            ai rappresentanti degli studenti.
-        </div>
-
-    </div>
-
 
 </section>
 
@@ -556,27 +498,26 @@
 <section class="official">
 
     <h2>
-        🔗 Fonti e servizi ufficiali
+        🔗 Link ufficiali
     </h2>
 
     <p>
         Per procedure, scadenze e informazioni amministrative fai sempre
-        riferimento alle comunicazioni ufficiali dell'Ateneo e degli
-        enti competenti.
+        riferimento alle fonti ufficiali.
     </p>
 
     <div class="links">
 
         <a href="https://www.poliba.it/" class="button" target="_blank">
-            Sito PoliBa
+            PoliBa
         </a>
 
         <a href="https://poliba.esse3.cineca.it/" class="button" target="_blank">
             Esse3
         </a>
 
-        <a href="https://www.poliba.it/borse-di-studio" class="button" target="_blank">
-            Borse di studio
+        <a href="https://www.adisupuglia.it/" class="button" target="_blank">
+            ADISU Puglia
         </a>
 
     </div>
@@ -584,16 +525,16 @@
 </section>
 
 
-<section class="info-box">
+<section class="contact">
 
     <h2>
-        💬 Hai bisogno di aiuto?
+        💬 Hai bisogno di segnalare qualcosa?
     </h2>
 
     <p>
-        Hai una domanda, hai riscontrato un problema o c'è qualcosa
-        che secondo te dovrebbe essere segnalato?
-        Puoi inviare una segnalazione alla rappresentanza studentesca.
+        Se hai un problema, una difficoltà o una questione da sottoporre
+        all'attenzione della rappresentanza studentesca, puoi inviare
+        una segnalazione.
     </p>
 
     <a href="segnalazioni.html" class="button">
