@@ -1,438 +1,415 @@
 <!DOCTYPE html>
+
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Segnalazioni Studenti | Azione Universitaria PoliBa</title>
 
-    <style>
+<title>Segnalazioni | Azione Universitaria PoliBa</title>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f8fc;
-            color: #172033;
-            line-height: 1.6;
-        }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f7fb;
+        color: #1d2a3a;
+        line-height: 1.6;
+    }
+
+    header {
+        background: white;
+        padding: 20px 7%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    .logo {
+        color: #1557b0;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .back {
+        text-decoration: none;
+        color: #1557b0;
+        font-weight: bold;
+        border: 2px solid #1557b0;
+        padding: 9px 16px;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    .back:hover {
+        background: #1557b0;
+        color: white;
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #1557b0, #2879d8);
+        color: white;
+        padding: 55px 7%;
+        text-align: center;
+    }
+
+    .hero-icon {
+        font-size: 48px;
+        margin-bottom: 12px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 18px;
+        opacity: 0.95;
+    }
+
+    .container {
+        width: 86%;
+        max-width: 950px;
+        margin: 45px auto;
+    }
+
+    .main-card {
+        background: white;
+        border-left: 7px solid #1557b0;
+        border-radius: 18px;
+        padding: 30px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        margin-bottom: 30px;
+    }
+
+    .main-card h2 {
+        color: #1557b0;
+        font-size: 27px;
+        margin-bottom: 10px;
+    }
+
+    .main-card p {
+        color: #4b5563;
+        margin-bottom: 20px;
+    }
+
+    .main-button {
+        display: inline-block;
+        text-decoration: none;
+        background: #1557b0;
+        color: white;
+        padding: 14px 22px;
+        border-radius: 11px;
+        font-weight: bold;
+        font-size: 17px;
+        transition: 0.3s;
+    }
+
+    .main-button:hover {
+        background: #0f4388;
+    }
+
+    .section-title {
+        font-size: 27px;
+        color: #1557b0;
+        margin: 35px 0 20px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 18px;
+        padding: 25px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+        border-top: 4px solid #1557b0;
+    }
+
+    .card-icon {
+        font-size: 32px;
+        margin-bottom: 8px;
+    }
+
+    .card h3 {
+        color: #102a49;
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .card p {
+        color: #5b6470;
+    }
+
+    .info-box {
+        background: #eaf2ff;
+        border-left: 5px solid #1557b0;
+        border-radius: 18px;
+        padding: 25px;
+        margin-top: 30px;
+    }
+
+    .info-box h3 {
+        color: #1557b0;
+        margin-bottom: 8px;
+    }
+
+    .info-box p {
+        color: #435266;
+    }
+
+    footer {
+        background: #102a49;
+        color: white;
+        text-align: center;
+        padding: 28px 20px;
+        margin-top: 60px;
+    }
+
+    footer p {
+        margin-bottom: 5px;
+    }
+
+    @media (max-width: 750px) {
 
         header {
-            background: #ffffff;
-            padding: 18px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            padding: 16px 5%;
         }
 
         .logo {
-            font-size: 20px;
-            font-weight: bold;
-            color: #0b4ea2;
-        }
-
-        nav {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #172033;
-            font-weight: 600;
-            font-size: 14px;
-            transition: 0.2s;
-        }
-
-        nav a:hover {
-            color: #0b4ea2;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #0b4ea2, #1769d1);
-            color: white;
-            padding: 75px 7%;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            max-width: 750px;
-            margin: auto;
             font-size: 18px;
-            opacity: 0.95;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 50px auto;
-            padding: 0 25px;
-        }
-
-        .intro {
-            background: white;
-            padding: 30px;
-            border-radius: 18px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-            margin-bottom: 30px;
-        }
-
-        .intro h2 {
-            color: #0b4ea2;
-            margin-bottom: 12px;
-        }
-
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-            margin: 25px 0;
-        }
-
-        .category {
-            background: #eef5ff;
-            border-radius: 14px;
-            padding: 20px;
-            text-align: center;
-            font-weight: bold;
-            color: #0b4ea2;
-        }
-
-        .category span {
-            display: block;
-            font-size: 28px;
-            margin-bottom: 8px;
-        }
-
-        .form-box {
-            background: white;
-            padding: 35px;
-            border-radius: 18px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-            text-align: center;
-        }
-
-        .form-box h2 {
-            color: #0b4ea2;
-            margin-bottom: 15px;
-        }
-
-        .form-box p {
-            max-width: 700px;
-            margin: 0 auto 25px;
-            color: #4d5968;
-        }
-
-        .form-preview {
-            background: #f2f6fb;
-            border-radius: 14px;
-            padding: 22px;
-            margin: 25px 0;
-            text-align: left;
-        }
-
-        .form-preview div {
-            padding: 10px 0;
-            border-bottom: 1px solid #dbe3ec;
-        }
-
-        .form-preview div:last-child {
-            border-bottom: none;
-        }
-
-        .form-preview strong {
-            color: #0b4ea2;
-        }
-
-        .button {
-            display: inline-block;
-            background: #0b4ea2;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 10px;
-            border: none;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            transition: 0.2s;
-        }
-
-        .button:hover {
-            background: #083b7c;
-            transform: translateY(-1px);
-        }
-
-        .privacy {
-            background: #f2f6fb;
-            padding: 18px;
-            border-radius: 12px;
-            margin: 25px 0;
-            font-size: 14px;
-            color: #4d5968;
-            text-align: left;
         }
 
         .back {
-            text-align: center;
-            margin: 40px 0;
-        }
-
-        .back a {
-            text-decoration: none;
-            color: #0b4ea2;
-            font-weight: bold;
-        }
-
-        footer {
-            background: #101827;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
-        }
-
-        footer p {
-            opacity: 0.8;
+            padding: 8px 12px;
             font-size: 14px;
-            margin: 4px 0;
         }
 
-        @media (max-width: 700px) {
-
-            header {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-
-            nav {
-                justify-content: center;
-                gap: 12px;
-            }
-
-            .hero {
-                padding: 55px 20px;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .container {
-                margin: 30px auto;
-                padding: 0 15px;
-            }
-
-            .form-box,
-            .intro {
-                padding: 25px 20px;
-            }
-
-            .button {
-                width: 100%;
-            }
+        .hero {
+            padding: 45px 6%;
         }
 
-    </style>
+        .hero h1 {
+            font-size: 32px;
+        }
+
+        .hero p {
+            font-size: 16px;
+        }
+
+        .container {
+            width: 90%;
+            margin: 30px auto;
+        }
+
+        .main-card {
+            padding: 23px;
+        }
+
+        .main-card h2 {
+            font-size: 23px;
+        }
+
+        .main-button {
+            display: block;
+            text-align: center;
+            width: 100%;
+        }
+
+        .cards {
+            grid-template-columns: 1fr;
+        }
+
+        .section-title {
+            font-size: 24px;
+        }
+
+    }
+
+</style>
+
+
 </head>
 
 <body>
 
 <header>
 
-    <div class="logo">
-        Azione Universitaria PoliBa
-    </div>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="calendari.html">Calendari</a>
-        <a href="matricole.html">Matricole</a>
-        <a href="avvisi.html">Avvisi</a>
-        <a href="rappresentanza.html">Rappresentanza</a>
-    </nav>
+<div class="logo">
+    Azione Universitaria PoliBa
+</div>
+
+<a href="index.html" class="back">
+    ← Torna alla Home
+</a>
+
 
 </header>
 
-
 <section class="hero">
 
-    <h1>🆘 Segnala un problema</h1>
+
+<div class="hero-icon">
+    📝
+</div>
+
+<h1>Segnalazioni</h1>
+
+<p>
+    La tua segnalazione può aiutare a migliorare la vita universitaria
+</p>
+
+
+</section>
+
+<main class="container">
+
+
+<section class="main-card">
+
+    <h2>
+        📝 Hai qualcosa da segnalare?
+    </h2>
 
     <p>
-        Hai riscontrato un problema all'università?
-        Raccontacelo: possiamo portarlo all'attenzione
-        dei rappresentanti e lavorare per trovare una soluzione.
+        Hai riscontrato un problema, una difficoltà o una situazione
+        che riguarda la vita universitaria? Raccontaci cosa è successo
+        e sottoporremo la segnalazione all'attenzione della rappresentanza
+        studentesca.
+    </p>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSettthzuny83NXBZ1jIjM0goTW7YtCxa5A-CcOvxIKtwjKLRg/viewform?usp=header" class="main-button" target="_blank">
+        ✍️ Invia una segnalazione
+    </a>
+
+</section>
+
+
+<h2 class="section-title">
+    💬 Cosa puoi segnalare
+</h2>
+
+
+<div class="cards">
+
+
+    <article class="card">
+
+        <div class="card-icon">
+            📚
+        </div>
+
+        <h3>
+            Didattica
+        </h3>
+
+        <p>
+            Problemi relativi a lezioni, esami, appelli, orari o
+            organizzazione della didattica.
+        </p>
+
+    </article>
+
+
+    <article class="card">
+
+        <div class="card-icon">
+            🏫
+        </div>
+
+        <h3>
+            Servizi universitari
+        </h3>
+
+        <p>
+            Segnalazioni riguardanti spazi, aule, servizi e altre
+            problematiche che incidono sulla vita degli studenti.
+        </p>
+
+    </article>
+
+
+    <article class="card">
+
+        <div class="card-icon">
+            📅
+        </div>
+
+        <h3>
+            Orari e calendari
+        </h3>
+
+        <p>
+            Errori, sovrapposizioni o difficoltà relative a lezioni,
+            calendari e organizzazione delle attività.
+        </p>
+
+    </article>
+
+
+    <article class="card">
+
+        <div class="card-icon">
+            💡
+        </div>
+
+        <h3>
+            Proposte
+        </h3>
+
+        <p>
+            Hai un'idea per migliorare l'esperienza degli studenti?
+            Puoi sottoporla direttamente alla rappresentanza.
+        </p>
+
+    </article>
+
+
+</div>
+
+
+<section class="info-box">
+
+    <h3>
+        🔎 Dopo la segnalazione
+    </h3>
+
+    <p>
+        Le segnalazioni vengono raccolte e utilizzate per individuare
+        le problematiche più frequenti e portarle all'attenzione degli
+        organi e degli uffici competenti.
     </p>
 
 </section>
 
 
-<main class="container">
-
-    <section class="intro">
-
-        <h2>La tua segnalazione conta</h2>
-
-        <p>
-            Le difficoltà degli studenti non devono rimanere inosservate.
-            Attraverso questa sezione puoi segnalarci problemi,
-            disservizi o situazioni che ritieni importante far conoscere
-            ai rappresentanti degli studenti.
-        </p>
-
-        <div class="categories">
-
-            <div class="category">
-                <span>📚</span>
-                Didattica
-            </div>
-
-            <div class="category">
-                <span>📝</span>
-                Esami
-            </div>
-
-            <div class="category">
-                <span>🏫</span>
-                Aule e strutture
-            </div>
-
-            <div class="category">
-                <span>💻</span>
-                Servizi online
-            </div>
-
-            <div class="category">
-                <span>🎓</span>
-                Erasmus
-            </div>
-
-            <div class="category">
-                <span>💰</span>
-                Tasse e borse
-            </div>
-
-            <div class="category">
-                <span>🚌</span>
-                Servizi agli studenti
-            </div>
-
-            <div class="category">
-                <span>🔎</span>
-                Altro
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section class="form-box">
-
-        <h2>📝 Invia la tua segnalazione</h2>
-
-        <p>
-            Cliccando sul pulsante qui sotto accederai al modulo ufficiale
-            di Azione Universitaria PoliBa, dove potrai inserire tutti
-            i dettagli della tua segnalazione.
-        </p>
-
-
-        <div class="form-preview">
-
-            <div>
-                <strong>📌 Categoria</strong><br>
-                Scegli l'ambito del problema.
-            </div>
-
-            <div>
-                <strong>🎓 Corso di studio</strong><br>
-                Indica il tuo corso, se vuoi.
-            </div>
-
-            <div>
-                <strong>📝 Oggetto</strong><br>
-                Riassumi brevemente il problema.
-            </div>
-
-            <div>
-                <strong>💬 Descrizione</strong><br>
-                Raccontaci cosa è successo.
-            </div>
-
-            <div>
-                <strong>📧 Contatto</strong><br>
-                Lascia un recapito solo se vuoi essere ricontattato.
-            </div>
-
-        </div>
-
-
-        <div class="privacy">
-
-            🔒 <strong>La tua privacy</strong><br><br>
-
-            Nel modulo puoi scegliere se lasciare un contatto per essere
-            ricontattato. Se preferisci non essere contattato, puoi
-            semplicemente non inserirlo.
-
-        </div>
-
-
-        <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSettthzuny83NXBZ1jIjM0goTW7YtCxa5A-CcOvxIKtwjKLRg/viewform?usp=header"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="button"
-        >
-            Invia segnalazione →
-        </a>
-
-    </section>
-
-
-    <div class="back">
-
-        <a href="index.html">
-            ← Torna alla Home
-        </a>
-
-    </div>
-
 </main>
-
 
 <footer>
 
-    <p>
-        © 2026 Azione Universitaria PoliBa
-    </p>
 
-    <p>
-        Per gli studenti, con gli studenti.
-    </p>
+<p>
+    <strong>Azione Universitaria PoliBa</strong>
+</p>
+
+<p>
+    La tua voce. La nostra rappresentanza.
+</p>
+
 
 </footer>
 
 </body>
 </html>
-
