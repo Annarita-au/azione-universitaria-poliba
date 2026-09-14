@@ -6,96 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<title>Ingegneria Meccanica | Calendari | Azione Universitaria PoliBa</title>
-
+<title>Ingegneria Meccanica | Azione Universitaria PoliBa</title>
 
 <style>
+
     * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: Arial, sans-serif;
         background: #f4f7fb;
         color: #1d2a3a;
         line-height: 1.6;
     }
 
     header {
-        background: #ffffff;
-        border-bottom: 1px solid #e4eaf1;
+        background: white;
         padding: 18px 7%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 20px;
-        flex-wrap: wrap;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
 
     .logo {
         color: #1557b0;
         font-size: 22px;
-        font-weight: 800;
+        font-weight: bold;
+    }
+
+    .back {
         text-decoration: none;
+        background: #1557b0;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 10px;
+        font-weight: bold;
+        transition: 0.2s;
     }
 
-    nav {
-        display: flex;
-        gap: 18px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    nav a {
-        text-decoration: none;
-        color: #26384d;
-        font-weight: 600;
-        font-size: 14px;
-    }
-
-    nav a:hover {
-        color: #1557b0;
+    .back:hover {
+        background: #0f4691;
     }
 
     .hero {
         background: linear-gradient(135deg, #1557b0, #2879d8);
-        color: #ffffff;
-        padding: 70px 7%;
+        color: white;
         text-align: center;
+        padding: 65px 20px;
     }
 
-    .hero .icon {
+    .hero-icon {
         font-size: 48px;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
     }
 
     .hero h1 {
-        font-size: 42px;
-        margin-bottom: 12px;
+        font-size: 38px;
+        margin-bottom: 10px;
     }
 
     .hero p {
         font-size: 18px;
-        max-width: 780px;
-        margin: auto;
         opacity: 0.95;
-    }
-
-    .back-button {
-        display: inline-block;
-        margin-top: 25px;
-        padding: 12px 20px;
-        background: #ffffff;
-        color: #1557b0;
-        border-radius: 10px;
-        text-decoration: none;
-        font-weight: 700;
-    }
-
-    .back-button:hover {
-        background: #eef5ff;
     }
 
     .container {
@@ -104,104 +84,87 @@
         margin: 45px auto;
     }
 
-    .section {
-        margin-bottom: 45px;
-    }
-
-    .section h2 {
-        color: #183b68;
+    .section-title {
+        color: #1557b0;
         font-size: 28px;
-        margin-bottom: 20px;
+        margin-bottom: 22px;
     }
 
-    .section-intro {
-        color: #65758a;
-        margin-bottom: 20px;
-    }
-
-    .calendar-grid {
+    .year-menu {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 18px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+        margin-bottom: 50px;
     }
 
-    .calendar-card {
-        background: #ffffff;
-        border-radius: 16px;
-        padding: 22px;
-        border-left: 5px solid #1557b0;
-        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
-    }
-
-    .calendar-card strong {
-        display: block;
-        color: #183b68;
-        margin-bottom: 7px;
-        font-size: 17px;
-    }
-
-    .calendar-card span {
-        color: #65758a;
-    }
-
-    .year-section {
-        margin-top: 45px;
-        scroll-margin-top: 30px;
-    }
-
-    .year-title {
-        background: linear-gradient(135deg, #1557b0, #2879d8);
-        color: #ffffff;
+    .year-card {
+        background: white;
+        border-top: 5px solid #1557b0;
         border-radius: 18px;
-        padding: 25px;
-        margin-bottom: 20px;
+        padding: 28px 20px;
+        text-align: center;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        transition: 0.2s;
     }
 
-    .year-title h2 {
-        color: #ffffff;
-        margin-bottom: 5px;
+    .year-card:hover {
+        transform: translateY(-4px);
     }
 
-    .year-title p {
-        opacity: 0.92;
+    .year-card h3 {
+        color: #1557b0;
+        font-size: 21px;
+        margin-bottom: 10px;
+    }
+
+    .year-card p {
+        color: #64748b;
+        margin-bottom: 18px;
+    }
+
+    .year-card a {
+        display: inline-block;
+        text-decoration: none;
+        background: #1557b0;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 10px;
+        font-weight: bold;
     }
 
     .schedule {
-        background: #ffffff;
+        background: white;
+        border-left: 6px solid #1557b0;
         border-radius: 18px;
-        padding: 25px;
-        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
-        overflow-x: auto;
+        padding: 28px;
+        margin-bottom: 35px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        scroll-margin-top: 25px;
     }
 
     .schedule h3 {
-        color: #183b68;
-        margin-bottom: 8px;
-        font-size: 22px;
-    }
-
-    .schedule p {
-        color: #65758a;
-        margin-bottom: 18px;
+        color: #1557b0;
+        font-size: 23px;
+        margin-bottom: 20px;
     }
 
     table {
         width: 100%;
         border-collapse: collapse;
-        min-width: 700px;
+        overflow: hidden;
+        border-radius: 10px;
     }
 
     th {
         background: #1557b0;
-        color: #ffffff;
-        padding: 14px;
+        color: white;
+        padding: 13px;
         text-align: left;
     }
 
     td {
-        padding: 14px;
-        border-bottom: 1px solid #e6ebf1;
-        color: #526276;
+        padding: 13px;
+        border-bottom: 1px solid #e5e7eb;
     }
 
     tr:last-child td {
@@ -210,435 +173,440 @@
 
     .top-link {
         display: inline-block;
-        margin-top: 18px;
-        color: #1557b0;
-        font-weight: 700;
-        text-decoration: none;
-    }
-
-    .top-link:hover {
-        text-decoration: underline;
-    }
-
-    .year-menu {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-        margin-bottom: 45px;
-    }
-
-    .year-menu a {
-        background: #ffffff;
-        border-radius: 16px;
-        padding: 22px;
-        text-align: center;
+        margin-top: 5px;
         text-decoration: none;
         color: #1557b0;
-        font-weight: 700;
-        box-shadow: 0 8px 25px rgba(21, 87, 176, 0.08);
-        border-top: 4px solid #1557b0;
-        transition: 0.2s;
+        font-weight: bold;
     }
 
-    .year-menu a:hover {
-        transform: translateY(-4px);
+    .academic-calendar {
+        background: white;
+        border-radius: 18px;
+        padding: 30px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        margin-top: 45px;
     }
 
-    .year-menu .number {
-        display: block;
-        font-size: 30px;
-        margin-bottom: 5px;
+    .academic-calendar h2 {
+        color: #1557b0;
+        margin-bottom: 22px;
+    }
+
+    .calendar-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 13px 0;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .calendar-row:last-child {
+        border-bottom: none;
+    }
+
+    .calendar-date {
+        font-weight: bold;
+        color: #1557b0;
+        min-width: 250px;
     }
 
     footer {
         background: #102a49;
-        color: #ffffff;
+        color: white;
         text-align: center;
-        padding: 28px 7%;
+        padding: 30px 20px;
         margin-top: 60px;
     }
 
     footer p {
-        opacity: 0.85;
-        font-size: 14px;
+        margin: 5px 0;
     }
 
-    @media (max-width: 700px) {
-        header {
-            justify-content: center;
-        }
-
-        nav {
-            gap: 10px;
-        }
-
-        nav a {
-            font-size: 13px;
-        }
-
-        .hero {
-            padding: 55px 6%;
-        }
-
-        .hero h1 {
-            font-size: 32px;
-        }
-
-        .hero p {
-            font-size: 16px;
-        }
-
-        .container {
-            width: 90%;
-        }
+    @media (max-width: 800px) {
 
         .year-menu {
             grid-template-columns: 1fr;
         }
+
+        .hero h1 {
+            font-size: 30px;
+        }
+
+        .calendar-row {
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .calendar-date {
+            min-width: auto;
+        }
+
+        header {
+            flex-direction: column;
+            gap: 15px;
+        }
     }
+
 </style>
+
 
 </head>
 
-<body>
+<body id="top">
 
 <header>
-    <a href="index.html" class="logo">Azione Universitaria PoliBa</a>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="calendari.html">Calendari</a>
-    <a href="matricole.html">Matricole</a>
-    <a href="avvisi.html">Avvisi</a>
-    <a href="rappresentanza.html">Rappresentanza</a>
-    <a href="segnalazioni.html">Segnalazioni</a>
-</nav>
+
+<div class="logo">
+    Azione Universitaria PoliBa
+</div>
+
+<a href="calendari.html" class="back">
+    ← Torna ai Calendari
+</a>
+
 
 </header>
 
 <section class="hero">
-    <div class="icon">⚙️</div>
+
+
+<div class="hero-icon">
+    ⚙️
+</div>
 
 <h1>Ingegneria Meccanica</h1>
 
 <p>
-    Calendario accademico e orari delle lezioni per gli studenti
-    di Ingegneria Meccanica.
+    Consulta l'orario delle lezioni e il calendario accademico
 </p>
 
-<a href="calendari.html" class="back-button">
-    ← Torna ai Calendari
-</a>
 
 </section>
 
 <main class="container">
 
-<section class="section">
-    <h2>📅 Calendario accademico 2026/2027</h2>
 
-
-<p class="section-intro">
-    Le principali date dell'anno accademico per gli studenti
-    di Ingegneria Meccanica.
-</p>
-
-<div class="calendar-grid">
-
-    <div class="calendar-card">
-        <strong>Inizio lezioni</strong>
-        <span>21 settembre 2026</span>
-    </div>
-
-    <div class="calendar-card">
-        <strong>Pausa esoneri</strong>
-        <span>2 – 6 novembre 2026</span>
-    </div>
-
-    <div class="calendar-card">
-        <strong>Recupero lezioni</strong>
-        <span>21 – 23 dicembre 2026</span>
-    </div>
-
-    <div class="calendar-card">
-        <strong>Festività natalizie</strong>
-        <span>24 dicembre 2026 – 6 gennaio 2027</span>
-    </div>
-
-    <div class="calendar-card">
-        <strong>Recupero lezioni</strong>
-        <span>7 – 8 gennaio 2027</span>
-    </div>
-
-    <div class="calendar-card">
-        <strong>Fine lezioni</strong>
-        <span>8 gennaio 2027</span>
-    </div>
-
-    <div class="calendar-card">
-        <strong>Periodo esami</strong>
-        <span>11 gennaio – 26 febbraio 2027</span>
-    </div>
-
-</div>
-
-
-</section>
-
-<section class="section">
-
-
-<h2>🕐 Orario delle lezioni</h2>
-
-<p class="section-intro">
-    Seleziona il tuo anno per raggiungere direttamente
-    l'orario delle lezioni.
-</p>
+<h2 class="section-title">
+    📚 Seleziona il tuo anno
+</h2>
 
 <div class="year-menu">
 
-    <a href="#primo-anno">
-        <span class="number">1️⃣</span>
-        1° anno
-    </a>
+    <div class="year-card">
 
-    <a href="#secondo-anno">
-        <span class="number">2️⃣</span>
-        2° anno
-    </a>
+        <h3>1° Anno</h3>
 
-    <a href="#terzo-anno">
-        <span class="number">3️⃣</span>
-        3° anno
-    </a>
+        <p>
+            Orario delle lezioni del primo anno
+        </p>
+
+        <a href="#primo-anno">
+            Vai all'orario
+        </a>
+
+    </div>
+
+    <div class="year-card">
+
+        <h3>2° Anno</h3>
+
+        <p>
+            Orario delle lezioni del secondo anno
+        </p>
+
+        <a href="#secondo-anno">
+            Vai all'orario
+        </a>
+
+    </div>
+
+    <div class="year-card">
+
+        <h3>3° Anno</h3>
+
+        <p>
+            Orario delle lezioni del terzo anno
+        </p>
+
+        <a href="#terzo-anno">
+            Vai all'orario
+        </a>
+
+    </div>
 
 </div>
 
 
-</section>
+<h2 class="section-title">
+    🕐 Orario delle lezioni
+</h2>
 
-<section class="year-section" id="primo-anno">
 
+<section class="schedule" id="primo-anno">
 
-<div class="year-title">
-    <h2>1️⃣ Orario 1° anno</h2>
-
-    <p>
-        Orario delle lezioni del primo anno di Ingegneria Meccanica.
-    </p>
-</div>
-
-<div class="schedule">
-
-    <h3>🗓️ Settimana delle lezioni</h3>
-
-    <p>
-        Orario in aggiornamento sulla base delle comunicazioni ufficiali del corso.
-    </p>
+    <h3>1° Anno</h3>
 
     <table>
 
-        <thead>
-            <tr>
-                <th>Giorno</th>
-                <th>Mattina</th>
-                <th>Pomeriggio</th>
-            </tr>
-        </thead>
+        <tr>
+            <th>Giorno</th>
+            <th>Orario</th>
+            <th>Informazioni</th>
+        </tr>
 
-        <tbody>
+        <tr>
+            <td>Lunedì</td>
+            <td>Da definire</td>
+            <td>Orario in aggiornamento</td>
+        </tr>
 
-            <tr>
-                <td>Lunedì</td>
-                <td>Orario in aggiornamento</td>
-                <td>Orario in aggiornamento</td>
-            </tr>
+        <tr>
+            <td>Martedì</td>
+            <td>Da definire</td>
+            <td>Orario in aggiornamento</td>
+        </tr>
 
-            <tr>
-                <td>Martedì</td>
-                <td>Orario in aggiornamento</td>
-                <td>Orario in aggiornamento</td>
-            </tr>
+        <tr>
+            <td>Mercoledì</td>
+            <td>Da definire</td>
+            <td>Orario in aggiornamento</td>
+        </tr>
 
-            <tr>
-                <td>Mercoledì</td>
-                <td>Orario in aggiornamento</td>
-                <td>Orario in aggiornamento</td>
-            </tr>
+        <tr>
+            <td>Giovedì</td>
+            <td>Da definire</td>
+            <td>Orario in aggiornamento</td>
+        </tr>
 
-            <tr>
-                <td>Giovedì</td>
-                <td>Orario in aggiornamento</td>
-                <td>Orario in aggiornamento</td>
-            </tr>
-
-            <tr>
-                <td>Venerdì</td>
-                <td>Orario in aggiornamento</td>
-                <td>Orario in aggiornamento</td>
-            </tr>
-
-        </tbody>
+        <tr>
+            <td>Venerdì</td>
+            <td>Da definire</td>
+            <td>Orario in aggiornamento</td>
+        </tr>
 
     </table>
 
-</div>
-
-<a href="#top" class="top-link">↑ Torna in alto</a>
-
+    <a href="#top" class="top-link">
+        ↑ Torna su
+    </a>
 
 </section>
 
-<section class="year-section" id="secondo-anno">
 
+<section class="schedule" id="secondo-anno">
 
-<div class="year-title">
-    <h2>2️⃣ Orario 2° anno</h2>
-
-    <p>
-        Orario delle lezioni del secondo anno di Ingegneria Meccanica.
-    </p>
-</div>
-
-<div class="schedule">
-
-    <h3>🗓️ Settimana delle lezioni</h3>
-
-    <p>
-        Orario in aggiornamento sulla base delle comunicazioni ufficiali del corso.
-    </p>
+    <h3>2° Anno</h3>
 
     <table>
 
-        <thead>
-            <tr>
-                <th>Giorno</th>
-                <th>Mattina</th>
-                <th>Pomeriggio</th>
-            </tr>
-        </thead>
+        <tr>
+            <th>Giorno</th>
+            <th>Orario</th>
+            <th>Informazioni</th>
+        </tr>
 
-        <tbody>
+        <tr>
+            <td>Lunedì</td>
+            <td>Da definire</td>
+            <td>Orario in aggiornamento</td>
+        </tr>
 
-            <tr>
-                <td>Lunedì</td>
-                <td>Orario in aggiornamento</td>
-                <td>Orario in aggiornamento</td>
-            </tr>
+        <tr>
+            <td>Martedì</td>
+            <td>Da definire</td>
+            <td>Orario in aggiornamento</td>
+        </tr>
 
-            <tr>
-                <td>Martedì</td>
-                <td>Orario in aggiornamento</td>
-                <td>Orario in aggiornamento</td>
-            </tr>
+        <tr>
+            <td>Mercoledì</td>
+            <td>Da definire</td>
+            <td>Orario in aggiornamento</td>
+        </tr>
 
-            <tr>
-                <td>Mercoledì</td>
-                <td>Orario in aggiornamento</td>
-                <td>Orario in aggiornamento</td>
-            </tr>
+        <tr>
+            <td>Giovedì</td>
+            <td>Da definire</td>
+            <td>Orario in aggiornamento</td>
+        </tr>
 
-            <tr>
-                <td>Giovedì</td>
-                <td>Orario in aggiornamento</td>
-                <td>Orario in aggiornamento</td>
-            </tr>
-
-            <tr>
-                <td>Venerdì</td>
-                <td>Orario in aggiornamento</td>
-                <td>Orario in aggiornamento</td>
-            </tr>
-
-        </tbody>
+        <tr>
+            <td>Venerdì</td>
+            <td>Da definire</td>
+            <td>Orario in aggiornamento</td>
+        </tr>
 
     </table>
 
-</div>
-
-<a href="#top" class="top-link">↑ Torna in alto</a>
-
+    <a href="#top" class="top-link">
+        ↑ Torna su
+    </a>
 
 </section>
 
-<section class="year-section" id="terzo-anno">
 
+<section class="schedule" id="terzo-anno">
 
-<div class="year-title">
-    <h2>3️⃣ Orario 3° anno</h2>
-
-    <p>
-        Orario delle lezioni del terzo anno di Ingegneria Meccanica.
-    </p>
-</div>
-
-<div class="schedule">
-
-    <h3>🗓️ Settimana delle lezioni</h3>
-
-    <p>
-        Orario in aggiornamento sulla base delle comunicazioni ufficiali del corso.
-    </p>
+    <h3>3° Anno</h3>
 
     <table>
 
-        <thead>
-            <tr>
-                <th>Giorno</th>
-                <th>Mattina</th>
-                <th>Pomeriggio</th>
-            </tr>
-        </thead>
+        <tr>
+            <th>Giorno</th>
+            <th>Orario</th>
+            <th>Informazioni</th>
+        </tr>
 
-        <tbody>
+        <tr>
+            <td>Lunedì</td>
+            <td>Da definire</td>
+            <td>Orario in aggiornamento</td>
+        </tr>
 
-            <tr>
-                <td>Lunedì</td>
-                <td>Orario in aggiornamento</td>
-                <td>Orario in aggiornamento</td>
-            </tr>
+        <tr>
+            <td>Martedì</td>
+            <td>Da definire</td>
+            <td>Orario in aggiornamento</td>
+        </tr>
 
-            <tr>
-                <td>Martedì</td>
-                <td>Orario in aggiornamento</td>
-                <td>Orario in aggiornamento</td>
-            </tr>
+        <tr>
+            <td>Mercoledì</td>
+            <td>Da definire</td>
+            <td>Orario in aggiornamento</td>
+        </tr>
 
-            <tr>
-                <td>Mercoledì</td>
-                <td>Orario in aggiornamento</td>
-                <td>Orario in aggiornamento</td>
-            </tr>
+        <tr>
+            <td>Giovedì</td>
+            <td>Da definire</td>
+            <td>Orario in aggiornamento</td>
+        </tr>
 
-            <tr>
-                <td>Giovedì</td>
-                <td>Orario in aggiornamento</td>
-                <td>Orario in aggiornamento</td>
-            </tr>
-
-            <tr>
-                <td>Venerdì</td>
-                <td>Orario in aggiornamento</td>
-                <td>Orario in aggiornamento</td>
-            </tr>
-
-        </tbody>
+        <tr>
+            <td>Venerdì</td>
+            <td>Da definire</td>
+            <td>Orario in aggiornamento</td>
+        </tr>
 
     </table>
 
-</div>
-
-<a href="#top" class="top-link">↑ Torna in alto</a>
-
+    <a href="#top" class="top-link">
+        ↑ Torna su
+    </a>
 
 </section>
+
+
+<section class="academic-calendar">
+
+    <h2>
+        📅 Calendario accademico
+    </h2>
+
+    <div class="calendar-row">
+
+        <span class="calendar-date">
+            21 settembre 2026
+        </span>
+
+        <span>
+            Inizio lezioni
+        </span>
+
+    </div>
+
+    <div class="calendar-row">
+
+        <span class="calendar-date">
+            2–6 novembre 2026
+        </span>
+
+        <span>
+            Pausa esoneri
+        </span>
+
+    </div>
+
+    <div class="calendar-row">
+
+        <span class="calendar-date">
+            21–23 dicembre 2026
+        </span>
+
+        <span>
+            Recupero lezioni
+        </span>
+
+    </div>
+
+    <div class="calendar-row">
+
+        <span class="calendar-date">
+            24 dicembre 2026–6 gennaio 2027
+        </span>
+
+        <span>
+            Festività natalizie
+        </span>
+
+    </div>
+
+    <div class="calendar-row">
+
+        <span class="calendar-date">
+            7–8 gennaio 2027
+        </span>
+
+        <span>
+            Recupero lezioni
+        </span>
+
+    </div>
+
+    <div class="calendar-row">
+
+        <span class="calendar-date">
+            8 gennaio 2027
+        </span>
+
+        <span>
+            Fine lezioni
+        </span>
+
+    </div>
+
+    <div class="calendar-row">
+
+        <span class="calendar-date">
+            11 gennaio–26 febbraio 2027
+        </span>
+
+        <span>
+            Periodo esami
+        </span>
+
+    </div>
+
+</section>
+
 
 </main>
 
 <footer>
-    <p>
-        Azione Universitaria PoliBa — Ingegneria Meccanica
-    </p>
+
+
+<p>
+    <strong>Azione Universitaria PoliBa</strong>
+</p>
+
+<p>
+    La tua voce. La nostra rappresentanza.
+</p>
+
+<p>
+    © 2026 Azione Universitaria PoliBa
+</p>
+
+
 </footer>
 
 </body>
