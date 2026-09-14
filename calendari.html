@@ -17,63 +17,60 @@
     }
 
     body {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: Arial, sans-serif;
         background: #f4f7fb;
         color: #1d2a3a;
         line-height: 1.6;
     }
 
     header {
-        background: #ffffff;
-        padding: 18px 7%;
+        background: white;
+        padding: 20px 7%;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-        position: sticky;
-        top: 0;
-        z-index: 100;
+        justify-content: space-between;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.06);
     }
 
     .logo {
-        font-size: 21px;
-        font-weight: 800;
         color: #1557b0;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .back {
         text-decoration: none;
-    }
-
-    nav {
-        display: flex;
-        gap: 25px;
-        flex-wrap: wrap;
-    }
-
-    nav a {
-        text-decoration: none;
-        color: #26384d;
-        font-weight: 600;
-        transition: 0.2s;
-    }
-
-    nav a:hover {
         color: #1557b0;
+        font-weight: bold;
+        border: 2px solid #1557b0;
+        padding: 9px 16px;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    .back:hover {
+        background: #1557b0;
+        color: white;
     }
 
     .hero {
         background: linear-gradient(135deg, #1557b0, #2879d8);
         color: white;
-        padding: 70px 7%;
+        padding: 55px 7%;
         text-align: center;
     }
 
-    .hero h1 {
-        font-size: 42px;
+    .hero-icon {
+        font-size: 48px;
         margin-bottom: 12px;
     }
 
+    .hero h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
     .hero p {
-        max-width: 780px;
-        margin: auto;
         font-size: 18px;
         opacity: 0.95;
     }
@@ -81,134 +78,205 @@
     .container {
         width: 86%;
         max-width: 1150px;
-        margin: 45px auto 70px;
+        margin: 45px auto;
     }
 
-    .intro {
-        text-align: center;
-        margin-bottom: 35px;
-    }
-
-    .intro h2 {
-        color: #183b68;
+    .section-title {
         font-size: 28px;
-        margin-bottom: 8px;
-    }
-
-    .intro p {
-        color: #65758a;
+        color: #1557b0;
+        margin-bottom: 20px;
     }
 
     .courses {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: 22px;
+        margin-bottom: 45px;
     }
 
-    .course-card {
+    .course {
         background: white;
-        padding: 28px;
         border-radius: 18px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-        transition: transform 0.2s, box-shadow 0.2s;
-        display: flex;
-        flex-direction: column;
+        padding: 25px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+        border-top: 4px solid #1557b0;
     }
 
-    .course-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 28px rgba(0,0,0,0.10);
+    .course-icon {
+        font-size: 34px;
+        margin-bottom: 8px;
     }
 
-    .course-card h2 {
-        color: #183b68;
+    .course h3 {
+        color: #102a49;
         font-size: 21px;
+        margin-bottom: 8px;
+    }
+
+    .course p {
+        color: #5b6470;
+        margin-bottom: 16px;
+    }
+
+    .years {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .year-button {
+        display: inline-block;
+        text-decoration: none;
+        background: #1557b0;
+        color: white;
+        padding: 9px 14px;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    .year-button:hover {
+        background: #0f4388;
+    }
+
+    .schedule-box {
+        background: white;
+        border-radius: 18px;
+        padding: 28px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+        margin-bottom: 45px;
+        border-left: 6px solid #1557b0;
+    }
+
+    .schedule-box h3 {
+        color: #102a49;
+        font-size: 23px;
         margin-bottom: 10px;
     }
 
-    .course-card p {
-        color: #65758a;
-        margin-bottom: 22px;
-        flex-grow: 1;
+    .schedule-box p {
+        color: #5b6470;
+        margin-bottom: 18px;
     }
 
-    .course-card a {
-        display: inline-block;
-        background: #1557b0;
-        color: white;
-        text-decoration: none;
-        padding: 11px 18px;
-        border-radius: 9px;
-        font-weight: bold;
-        text-align: center;
-        transition: 0.2s;
+    .schedule-steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
     }
 
-    .course-card a:hover {
-        background: #124a96;
+    .step {
+        background: #f4f7fb;
+        border-radius: 14px;
+        padding: 18px;
     }
 
-    .back {
-        text-align: center;
-        margin-top: 45px;
-    }
-
-    .back a {
-        display: inline-block;
-        background: #ffffff;
+    .step-number {
         color: #1557b0;
-        text-decoration: none;
-        padding: 12px 22px;
-        border-radius: 10px;
+        font-size: 24px;
         font-weight: bold;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-        transition: 0.2s;
+        margin-bottom: 5px;
     }
 
-    .back a:hover {
-        transform: translateY(-2px);
+    .step strong {
+        color: #102a49;
+    }
+
+    .step p {
+        font-size: 14px;
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+
+    .academic-calendar {
+        background: white;
+        border-radius: 18px;
+        padding: 28px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+        margin-bottom: 45px;
+    }
+
+    .academic-calendar h3 {
+        color: #102a49;
+        font-size: 23px;
+        margin-bottom: 18px;
+    }
+
+    .calendar-list {
+        display: grid;
+        gap: 12px;
+    }
+
+    .calendar-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 15px 18px;
+        background: #f4f7fb;
+        border-radius: 12px;
+    }
+
+    .calendar-item strong {
+        color: #1557b0;
+    }
+
+    .calendar-item span {
+        color: #4b5563;
+        text-align: right;
+    }
+
+    .info-box {
+        background: #eaf2ff;
+        border-left: 5px solid #1557b0;
+        border-radius: 18px;
+        padding: 25px;
+        margin-bottom: 45px;
+    }
+
+    .info-box h3 {
+        color: #1557b0;
+        margin-bottom: 8px;
+    }
+
+    .info-box p {
+        color: #435266;
     }
 
     footer {
         background: #102a49;
         color: white;
         text-align: center;
-        padding: 35px 7%;
-        margin-top: 70px;
+        padding: 28px 20px;
+        margin-top: 60px;
     }
 
     footer p {
-        opacity: 0.85;
-        font-size: 14px;
-        margin: 4px 0;
+        margin-bottom: 5px;
     }
 
-    @media (max-width: 850px) {
+    @media (max-width: 750px) {
 
         header {
-            flex-direction: column;
-            gap: 12px;
+            padding: 16px 5%;
         }
 
-        nav {
-            justify-content: center;
-            gap: 15px;
+        .logo {
+            font-size: 18px;
         }
 
-        .hero h1 {
-            font-size: 34px;
+        .back {
+            padding: 8px 12px;
+            font-size: 14px;
         }
-
-    }
-
-    @media (max-width: 600px) {
 
         .hero {
-            padding: 55px 6%;
+            padding: 45px 6%;
         }
 
         .hero h1 {
-            font-size: 30px;
+            font-size: 32px;
         }
 
         .hero p {
@@ -217,12 +285,30 @@
 
         .container {
             width: 90%;
+            margin: 35px auto;
         }
 
-        .course-card {
-            padding: 23px;
+        .courses {
+            grid-template-columns: 1fr;
         }
 
+        .schedule-steps {
+            grid-template-columns: 1fr;
+        }
+
+        .section-title {
+            font-size: 24px;
+        }
+
+        .calendar-item {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+        }
+
+        .calendar-item span {
+            text-align: left;
+        }
     }
 
 </style>
@@ -235,18 +321,13 @@
 <header>
 
 
-<a href="index.html" class="logo">
+<div class="logo">
     Azione Universitaria PoliBa
-</a>
+</div>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="calendari.html">Calendari</a>
-    <a href="matricole.html">Matricole</a>
-    <a href="avvisi.html">Avvisi</a>
-    <a href="rappresentanza.html">Rappresentanza</a>
-    <a href="segnalazioni.html">Segnalazioni</a>
-</nav>
+<a href="index.html" class="back">
+    ← Torna alla Home
+</a>
 
 
 </header>
@@ -254,12 +335,14 @@
 <section class="hero">
 
 
-<h1>📅 Calendari dei corsi</h1>
+<div class="hero-icon">
+    📅
+</div>
+
+<h1>Calendari</h1>
 
 <p>
-    Scegli il tuo corso di laurea per consultare
-    il calendario delle lezioni e le informazioni
-    utili alla tua organizzazione universitaria.
+    Seleziona il tuo corso e consulta gli orari delle lezioni
 </p>
 
 
@@ -268,146 +351,482 @@
 <main class="container">
 
 
-<div class="intro">
+<h2 class="section-title">
+    📚 Seleziona il tuo corso e il tuo anno
+</h2>
 
-    <h2>Scegli il tuo corso</h2>
-
-    <p>
-        Accedi alla pagina dedicata al tuo percorso di studi.
-    </p>
-
-</div>
 
 <div class="courses">
 
-    <div class="course-card">
 
-        <h2>💻 Ingegneria Informatica</h2>
+    <article class="course">
 
-        <p>
-            Ingegneria Informatica e dell'Automazione.
-        </p>
+        <div class="course-icon">
+            📊
+        </div>
 
-        <a href="informatica.html">
-            Vai al corso →
-        </a>
-
-    </div>
-
-    <div class="course-card">
-
-        <h2>⚙️ Ingegneria Gestionale</h2>
+        <h3>
+            Ingegneria Gestionale
+        </h3>
 
         <p>
-            Organizzazione, innovazione, economia
-            e gestione dei sistemi industriali.
+            Consulta gli orari delle lezioni per il tuo anno di corso.
         </p>
 
-        <a href="gestionale.html">
-            Vai al corso →
-        </a>
+        <div class="years">
 
-    </div>
+            <a href="gestionale.html#anno1" class="year-button">
+                1° anno
+            </a>
 
-    <div class="course-card">
+            <a href="gestionale.html#anno2" class="year-button">
+                2° anno
+            </a>
 
-        <h2>🩺 Ingegneria dei Sistemi Medicali</h2>
+            <a href="gestionale.html#anno3" class="year-button">
+                3° anno
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <article class="course">
+
+        <div class="course-icon">
+            💻
+        </div>
+
+        <h3>
+            Ingegneria Informatica
+        </h3>
 
         <p>
-            Tecnologie, ingegneria e applicazioni
-            nel settore biomedicale.
+            Consulta gli orari delle lezioni per il tuo anno di corso.
         </p>
 
-        <a href="medicali.html">
-            Vai al corso →
-        </a>
+        <div class="years">
 
-    </div>
+            <a href="informatica.html#anno1" class="year-button">
+                1° anno
+            </a>
 
-    <div class="course-card">
+            <a href="informatica.html#anno2" class="year-button">
+                2° anno
+            </a>
 
-        <h2>🌍 Management Engineering for Innovation</h2>
+            <a href="informatica.html#anno3" class="year-button">
+                3° anno
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <article class="course">
+
+        <div class="course-icon">
+            🩺
+        </div>
+
+        <h3>
+            Ingegneria dei Sistemi Medicali
+        </h3>
 
         <p>
-            Corso internazionale in lingua inglese
-            con percorso di mobilità all'estero.
+            Consulta gli orari delle lezioni per il tuo anno di corso.
         </p>
 
-        <a href="management.html">
-            Vai al corso →
-        </a>
+        <div class="years">
 
-    </div>
+            <a href="medicali.html#anno1" class="year-button">
+                1° anno
+            </a>
 
-    <div class="course-card">
+            <a href="medicali.html#anno2" class="year-button">
+                2° anno
+            </a>
 
-        <h2>⚙️ Ingegneria Meccanica</h2>
+            <a href="medicali.html#anno3" class="year-button">
+                3° anno
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <article class="course">
+
+        <div class="course-icon">
+            🌍
+        </div>
+
+        <h3>
+            Management Engineering for Innovation
+        </h3>
 
         <p>
-            Progettazione, produzione, energia,
-            materiali e sistemi meccanici.
+            Corso internazionale in lingua inglese.
         </p>
 
-        <a href="meccanica.html">
-            Vai al corso →
-        </a>
+        <div class="years">
 
-    </div>
+            <a href="management.html#anno1" class="year-button">
+                1° anno
+            </a>
 
-    <div class="course-card">
+            <a href="management.html#anno2" class="year-button">
+                2° anno
+            </a>
 
-        <h2>🏗️ Ingegneria Civile e Ambientale</h2>
+        </div>
+
+    </article>
+
+
+    <article class="course">
+
+        <div class="course-icon">
+            ⚙️
+        </div>
+
+        <h3>
+            Ingegneria Meccanica
+        </h3>
 
         <p>
-            Costruzioni, infrastrutture, territorio,
-            ambiente e sostenibilità.
+            Consulta gli orari delle lezioni per il tuo anno di corso.
         </p>
 
-        <a href="civile.html">
-            Vai al corso →
-        </a>
+        <div class="years">
 
-    </div>
+            <a href="meccanica.html#anno1" class="year-button">
+                1° anno
+            </a>
 
-    <div class="course-card">
+            <a href="meccanica.html#anno2" class="year-button">
+                2° anno
+            </a>
 
-        <h2>🏠 Ingegneria Edile</h2>
+            <a href="meccanica.html#anno3" class="year-button">
+                3° anno
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <article class="course">
+
+        <div class="course-icon">
+            🏗️
+        </div>
+
+        <h3>
+            Ingegneria Civile
+        </h3>
 
         <p>
-            Progettazione edilizia, materiali,
-            costruzioni, recupero e sostenibilità.
+            Consulta gli orari delle lezioni per il tuo anno di corso.
         </p>
 
-        <a href="edile.html">
-            Vai al corso →
-        </a>
+        <div class="years">
 
-    </div>
+            <a href="civile.html#anno1" class="year-button">
+                1° anno
+            </a>
 
-    <div class="course-card">
+            <a href="civile.html#anno2" class="year-button">
+                2° anno
+            </a>
 
-        <h2>📡 Ingegneria Elettronica e delle Tecnologie Internet</h2>
+            <a href="civile.html#anno3" class="year-button">
+                3° anno
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <article class="course">
+
+        <div class="course-icon">
+            🏢
+        </div>
+
+        <h3>
+            Ingegneria Edile
+        </h3>
 
         <p>
-            Elettronica, telecomunicazioni, informatica,
-            automatica e tecnologie digitali.
+            Consulta gli orari delle lezioni per il tuo anno di corso.
         </p>
 
-        <a href="elettronica-ti.html">
-            Vai al corso →
-        </a>
+        <div class="years">
 
-    </div>
+            <a href="edile.html#anno1" class="year-button">
+                1° anno
+            </a>
+
+            <a href="edile.html#anno2" class="year-button">
+                2° anno
+            </a>
+
+            <a href="edile.html#anno3" class="year-button">
+                3° anno
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <article class="course">
+
+        <div class="course-icon">
+            ⚡
+        </div>
+
+        <h3>
+            Ingegneria Elettronica
+        </h3>
+
+        <p>
+            Consulta gli orari delle lezioni per il tuo anno di corso.
+        </p>
+
+        <div class="years">
+
+            <a href="elettronica-ti.html#anno1" class="year-button">
+                1° anno
+            </a>
+
+            <a href="elettronica-ti.html#anno2" class="year-button">
+                2° anno
+            </a>
+
+            <a href="elettronica-ti.html#anno3" class="year-button">
+                3° anno
+            </a>
+
+        </div>
+
+    </article>
+
 
 </div>
 
-<div class="back">
 
-    <a href="index.html">
-        ← Torna alla Home
+<h2 class="section-title">
+    🕐 Orari delle lezioni
+</h2>
+
+
+<section class="schedule-box">
+
+    <h3>
+        Trova rapidamente il tuo orario
+    </h3>
+
+    <p>
+        Scegli prima il tuo corso e poi l'anno di interesse.
+        Nella pagina dedicata troverai la sezione relativa all'orario
+        delle lezioni.
+    </p>
+
+
+    <div class="schedule-steps">
+
+        <div class="step">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <strong>
+                Scegli il corso
+            </strong>
+
+            <p>
+                Individua il tuo corso di laurea tra quelli disponibili.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <strong>
+                Scegli l'anno
+            </strong>
+
+            <p>
+                Apri il pulsante corrispondente al tuo anno di corso.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <strong>
+                Consulta l'orario
+            </strong>
+
+            <p>
+                Trova giorni, orari e informazioni sulle lezioni.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<h2 class="section-title">
+    📅 Calendario accademico
+</h2>
+
+
+<section class="academic-calendar">
+
+    <h3>
+        Anno Accademico 2026/2027
+    </h3>
+
+
+    <div class="calendar-list">
+
+
+        <div class="calendar-item">
+
+            <strong>
+                Inizio lezioni
+            </strong>
+
+            <span>
+                21 settembre 2026
+            </span>
+
+        </div>
+
+
+        <div class="calendar-item">
+
+            <strong>
+                Pausa esoneri
+            </strong>
+
+            <span>
+                2–6 novembre 2026
+            </span>
+
+        </div>
+
+
+        <div class="calendar-item">
+
+            <strong>
+                Recupero lezioni
+            </strong>
+
+            <span>
+                21–23 dicembre 2026
+            </span>
+
+        </div>
+
+
+        <div class="calendar-item">
+
+            <strong>
+                Festività natalizie
+            </strong>
+
+            <span>
+                24 dicembre 2026–6 gennaio 2027
+            </span>
+
+        </div>
+
+
+        <div class="calendar-item">
+
+            <strong>
+                Recupero lezioni
+            </strong>
+
+            <span>
+                7–8 gennaio 2027
+            </span>
+
+        </div>
+
+
+        <div class="calendar-item">
+
+            <strong>
+                Fine lezioni
+            </strong>
+
+            <span>
+                8 gennaio 2027
+            </span>
+
+        </div>
+
+
+        <div class="calendar-item">
+
+            <strong>
+                Periodo esami
+            </strong>
+
+            <span>
+                11 gennaio–26 febbraio 2027
+            </span>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<section class="info-box">
+
+    <h3>
+        📢 Hai trovato un errore nell'orario?
+    </h3>
+
+    <p>
+        Se noti un problema, una sovrapposizione o un'informazione
+        da correggere, puoi inviare una segnalazione alla rappresentanza
+        studentesca.
+    </p>
+
+    <br>
+
+    <a href="segnalazioni.html" class="year-button">
+        Invia una segnalazione
     </a>
 
-</div>
+</section>
 
 
 </main>
@@ -416,11 +835,11 @@
 
 
 <p>
-    © 2026 Azione Universitaria PoliBa
+    <strong>Azione Universitaria PoliBa</strong>
 </p>
 
 <p>
-    Informazione, rappresentanza e servizi per gli studenti.
+    La tua voce. La nostra rappresentanza.
 </p>
 
 
