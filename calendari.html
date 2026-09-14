@@ -115,78 +115,23 @@
 
     .course p {
         color: #5b6470;
-        margin-bottom: 16px;
+        margin-bottom: 18px;
     }
 
-    .years {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .year-button {
+    .course-button {
         display: inline-block;
         text-decoration: none;
         background: #1557b0;
         color: white;
-        padding: 9px 14px;
+        padding: 10px 16px;
         border-radius: 10px;
         font-weight: bold;
         font-size: 14px;
         transition: 0.3s;
     }
 
-    .year-button:hover {
+    .course-button:hover {
         background: #0f4388;
-    }
-
-    .schedule-box {
-        background: white;
-        border-radius: 18px;
-        padding: 28px;
-        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
-        margin-bottom: 45px;
-        border-left: 6px solid #1557b0;
-    }
-
-    .schedule-box h3 {
-        color: #102a49;
-        font-size: 23px;
-        margin-bottom: 10px;
-    }
-
-    .schedule-box p {
-        color: #5b6470;
-        margin-bottom: 18px;
-    }
-
-    .schedule-steps {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-    }
-
-    .step {
-        background: #f4f7fb;
-        border-radius: 14px;
-        padding: 18px;
-    }
-
-    .step-number {
-        color: #1557b0;
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 5px;
-    }
-
-    .step strong {
-        color: #102a49;
-    }
-
-    .step p {
-        font-size: 14px;
-        margin-top: 5px;
-        margin-bottom: 0;
     }
 
     .academic-calendar {
@@ -292,10 +237,6 @@
             grid-template-columns: 1fr;
         }
 
-        .schedule-steps {
-            grid-template-columns: 1fr;
-        }
-
         .section-title {
             font-size: 24px;
         }
@@ -309,6 +250,7 @@
         .calendar-item span {
             text-align: left;
         }
+
     }
 
 </style>
@@ -339,10 +281,12 @@
     📅
 </div>
 
-<h1>Calendari</h1>
+<h1>
+    Calendari
+</h1>
 
 <p>
-    Seleziona il tuo corso e consulta gli orari delle lezioni
+    Consulta il calendario accademico e gli orari delle lezioni
 </p>
 
 
@@ -352,7 +296,7 @@
 
 
 <h2 class="section-title">
-    📚 Seleziona il tuo corso e il tuo anno
+    📚 Seleziona il tuo corso
 </h2>
 
 
@@ -370,24 +314,12 @@
         </h3>
 
         <p>
-            Consulta gli orari delle lezioni per il tuo anno di corso.
+            Calendario e orari delle lezioni di Ingegneria Gestionale.
         </p>
 
-        <div class="years">
-
-            <a href="gestionale.html#anno1" class="year-button">
-                1° anno
-            </a>
-
-            <a href="gestionale.html#anno2" class="year-button">
-                2° anno
-            </a>
-
-            <a href="gestionale.html#anno3" class="year-button">
-                3° anno
-            </a>
-
-        </div>
+        <a href="gestionale.html" class="course-button">
+            Apri calendario
+        </a>
 
     </article>
 
@@ -403,24 +335,12 @@
         </h3>
 
         <p>
-            Consulta gli orari delle lezioni per il tuo anno di corso.
+            Calendario e orari delle lezioni di Ingegneria Informatica.
         </p>
 
-        <div class="years">
-
-            <a href="informatica.html#anno1" class="year-button">
-                1° anno
-            </a>
-
-            <a href="informatica.html#anno2" class="year-button">
-                2° anno
-            </a>
-
-            <a href="informatica.html#anno3" class="year-button">
-                3° anno
-            </a>
-
-        </div>
+        <a href="informatica.html" class="course-button">
+            Apri calendario
+        </a>
 
     </article>
 
@@ -436,24 +356,12 @@
         </h3>
 
         <p>
-            Consulta gli orari delle lezioni per il tuo anno di corso.
+            Calendario e orari delle lezioni di Ingegneria dei Sistemi Medicali.
         </p>
 
-        <div class="years">
-
-            <a href="medicali.html#anno1" class="year-button">
-                1° anno
-            </a>
-
-            <a href="medicali.html#anno2" class="year-button">
-                2° anno
-            </a>
-
-            <a href="medicali.html#anno3" class="year-button">
-                3° anno
-            </a>
-
-        </div>
+        <a href="medicali.html" class="course-button">
+            Apri calendario
+        </a>
 
     </article>
 
@@ -469,20 +377,12 @@
         </h3>
 
         <p>
-            Corso internazionale in lingua inglese.
+            Calendario e orari delle lezioni del corso internazionale.
         </p>
 
-        <div class="years">
-
-            <a href="management.html#anno1" class="year-button">
-                1° anno
-            </a>
-
-            <a href="management.html#anno2" class="year-button">
-                2° anno
-            </a>
-
-        </div>
+        <a href="management.html" class="course-button">
+            Apri calendario
+        </a>
 
     </article>
 
@@ -498,24 +398,12 @@
         </h3>
 
         <p>
-            Consulta gli orari delle lezioni per il tuo anno di corso.
+            Calendario e orari delle lezioni di Ingegneria Meccanica.
         </p>
 
-        <div class="years">
-
-            <a href="meccanica.html#anno1" class="year-button">
-                1° anno
-            </a>
-
-            <a href="meccanica.html#anno2" class="year-button">
-                2° anno
-            </a>
-
-            <a href="meccanica.html#anno3" class="year-button">
-                3° anno
-            </a>
-
-        </div>
+        <a href="meccanica.html" class="course-button">
+            Apri calendario
+        </a>
 
     </article>
 
@@ -531,24 +419,12 @@
         </h3>
 
         <p>
-            Consulta gli orari delle lezioni per il tuo anno di corso.
+            Calendario e orari delle lezioni di Ingegneria Civile.
         </p>
 
-        <div class="years">
-
-            <a href="civile.html#anno1" class="year-button">
-                1° anno
-            </a>
-
-            <a href="civile.html#anno2" class="year-button">
-                2° anno
-            </a>
-
-            <a href="civile.html#anno3" class="year-button">
-                3° anno
-            </a>
-
-        </div>
+        <a href="civile.html" class="course-button">
+            Apri calendario
+        </a>
 
     </article>
 
@@ -564,24 +440,12 @@
         </h3>
 
         <p>
-            Consulta gli orari delle lezioni per il tuo anno di corso.
+            Calendario e orari delle lezioni di Ingegneria Edile.
         </p>
 
-        <div class="years">
-
-            <a href="edile.html#anno1" class="year-button">
-                1° anno
-            </a>
-
-            <a href="edile.html#anno2" class="year-button">
-                2° anno
-            </a>
-
-            <a href="edile.html#anno3" class="year-button">
-                3° anno
-            </a>
-
-        </div>
+        <a href="edile.html" class="course-button">
+            Apri calendario
+        </a>
 
     </article>
 
@@ -597,104 +461,17 @@
         </h3>
 
         <p>
-            Consulta gli orari delle lezioni per il tuo anno di corso.
+            Calendario e orari delle lezioni di Ingegneria Elettronica.
         </p>
 
-        <div class="years">
-
-            <a href="elettronica-ti.html#anno1" class="year-button">
-                1° anno
-            </a>
-
-            <a href="elettronica-ti.html#anno2" class="year-button">
-                2° anno
-            </a>
-
-            <a href="elettronica-ti.html#anno3" class="year-button">
-                3° anno
-            </a>
-
-        </div>
+        <a href="elettronica-ti.html" class="course-button">
+            Apri calendario
+        </a>
 
     </article>
 
 
 </div>
-
-
-<h2 class="section-title">
-    🕐 Orari delle lezioni
-</h2>
-
-
-<section class="schedule-box">
-
-    <h3>
-        Trova rapidamente il tuo orario
-    </h3>
-
-    <p>
-        Scegli prima il tuo corso e poi l'anno di interesse.
-        Nella pagina dedicata troverai la sezione relativa all'orario
-        delle lezioni.
-    </p>
-
-
-    <div class="schedule-steps">
-
-        <div class="step">
-
-            <div class="step-number">
-                01
-            </div>
-
-            <strong>
-                Scegli il corso
-            </strong>
-
-            <p>
-                Individua il tuo corso di laurea tra quelli disponibili.
-            </p>
-
-        </div>
-
-
-        <div class="step">
-
-            <div class="step-number">
-                02
-            </div>
-
-            <strong>
-                Scegli l'anno
-            </strong>
-
-            <p>
-                Apri il pulsante corrispondente al tuo anno di corso.
-            </p>
-
-        </div>
-
-
-        <div class="step">
-
-            <div class="step-number">
-                03
-            </div>
-
-            <strong>
-                Consulta l'orario
-            </strong>
-
-            <p>
-                Trova giorni, orari e informazioni sulle lezioni.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
 
 
 <h2 class="section-title">
@@ -822,7 +599,7 @@
 
     <br>
 
-    <a href="segnalazioni.html" class="year-button">
+    <a href="segnalazioni.html" class="course-button">
         Invia una segnalazione
     </a>
 
