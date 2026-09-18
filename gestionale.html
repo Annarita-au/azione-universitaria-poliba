@@ -122,6 +122,7 @@
 
     .year-section {
         scroll-margin-top: 100px;
+        margin-bottom: 60px;
     }
 
     .day {
@@ -185,9 +186,18 @@
     }
 
     .empty {
-        padding: 20px;
-        color: #98a2b3;
+        padding: 22px 20px;
+        color: #667085;
         font-style: italic;
+    }
+
+    .notice {
+        background: #fff8e7;
+        border: 1px solid #f2d28b;
+        color: #7a5700;
+        border-radius: 14px;
+        padding: 18px 20px;
+        margin-bottom: 25px;
     }
 
     .calendar {
@@ -321,12 +331,12 @@
     <div class="year-menu">
         <a href="#primo-anno" class="year-card">
             <span class="year-number">1° Anno</span>
-            <small>Consulta l'orario</small>
+            <small>Orario non ancora disponibile</small>
         </a>
 
         <a href="#secondo-anno" class="year-card">
             <span class="year-number">2° Anno</span>
-            <small>Orario in aggiornamento</small>
+            <small>Consulta l'orario</small>
         </a>
 
         <a href="#terzo-anno" class="year-card">
@@ -341,6 +351,15 @@
 
     <div class="year-section" id="primo-anno">
         <h2 class="section-title">1° Anno</h2>
+
+        <div class="notice">
+            <strong>📢 Orario non ancora disponibile</strong><br>
+            L'orario delle lezioni del 1° anno non è ancora stato pubblicato.
+        </div>
+    </div>
+
+    <div class="year-section" id="secondo-anno">
+        <h2 class="section-title">2° Anno</h2>
 
         <div class="day">
             <div class="day-header">Lunedì</div>
@@ -536,17 +555,6 @@
                 <div class="time">16:10 – 17:50</div>
                 <div class="subject">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - SCIENZA DELLE COSTRUZIONI (2° Modulo)</div>
                 <div class="room">Aula C</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="year-section" id="secondo-anno">
-        <h2 class="section-title">2° Anno</h2>
-
-        <div class="day">
-            <div class="day-header">Orario in aggiornamento</div>
-            <div class="empty">
-                L'orario ufficiale del 2° anno sarà inserito appena verificato.
             </div>
         </div>
     </div>
