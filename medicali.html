@@ -23,202 +23,195 @@
         font-family: Arial, sans-serif;
         background: #f4f7fb;
         color: #1d2a3a;
-        line-height: 1.6;
+        line-height: 1.5;
     }
 
     header {
         background: white;
-        padding: 20px 7%;
+        padding: 18px 7%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.06);
     }
 
     .logo {
-        font-size: 21px;
-        font-weight: bold;
         color: #1557b0;
+        font-size: 22px;
+        font-weight: bold;
     }
 
-    .back-btn {
+    .back {
         text-decoration: none;
-        background: #1557b0;
-        color: white;
-        padding: 10px 18px;
-        border-radius: 10px;
+        color: #1557b0;
         font-weight: bold;
+        background: #eef5ff;
+        padding: 10px 16px;
+        border-radius: 10px;
     }
 
     .hero {
         background: linear-gradient(135deg, #1557b0, #2879d8);
         color: white;
-        padding: 60px 7%;
         text-align: center;
+        padding: 55px 20px;
     }
 
     .hero-icon {
-        font-size: 48px;
-        margin-bottom: 10px;
+        font-size: 50px;
+        margin-bottom: 12px;
     }
 
     .hero h1 {
-        font-size: 38px;
-        margin-bottom: 10px;
+        font-size: 34px;
+        margin-bottom: 8px;
     }
 
     .hero p {
-        font-size: 18px;
+        font-size: 17px;
         opacity: 0.95;
     }
 
     .container {
         width: 86%;
-        max-width: 1150px;
-        margin: 45px auto;
+        max-width: 1100px;
+        margin: 40px auto;
     }
 
     .section-title {
         color: #1557b0;
-        font-size: 28px;
-        margin-bottom: 25px;
+        font-size: 26px;
+        margin-bottom: 20px;
     }
 
     .year-menu {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        margin-bottom: 55px;
+        gap: 18px;
+        margin-bottom: 45px;
     }
 
     .year-card {
         background: white;
-        padding: 25px;
-        border-radius: 18px;
         border-top: 5px solid #1557b0;
-        box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        border-radius: 16px;
+        padding: 22px;
         text-align: center;
-        transition: 0.2s;
-    }
-
-    .year-card:hover {
-        transform: translateY(-4px);
-    }
-
-    .year-card h3 {
-        color: #1557b0;
-        margin-bottom: 10px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
     }
 
     .year-card a {
-        display: inline-block;
-        margin-top: 10px;
-        background: #1557b0;
-        color: white;
         text-decoration: none;
-        padding: 9px 16px;
-        border-radius: 9px;
-        font-weight: bold;
-    }
-
-    .schedule {
-        background: white;
-        border-left: 6px solid #1557b0;
-        border-radius: 18px;
-        padding: 28px;
-        margin-bottom: 40px;
-        box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-    }
-
-    .schedule h3 {
         color: #1557b0;
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-
-    .group-note {
-        background: #eef5ff;
-        border-radius: 10px;
-        padding: 12px 15px;
-        margin-bottom: 20px;
         font-weight: bold;
-        color: #1557b0;
+        font-size: 18px;
     }
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        overflow: hidden;
-        border-radius: 10px;
+    .year-card span {
+        display: block;
+        color: #687789;
+        font-size: 14px;
+        margin-top: 6px;
     }
 
-    th {
+    .year-section {
+        margin-bottom: 55px;
+        scroll-margin-top: 25px;
+    }
+
+    .year-heading {
         background: #1557b0;
         color: white;
-        padding: 13px;
-        text-align: left;
+        border-radius: 16px 16px 0 0;
+        padding: 18px 22px;
+        font-size: 23px;
     }
 
-    td {
-        padding: 13px;
-        border-bottom: 1px solid #e5eaf0;
-        vertical-align: top;
+    .day {
+        background: white;
+        margin-bottom: 18px;
+        border-radius: 0 0 16px 16px;
+        padding: 20px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
     }
 
-    tr:last-child td {
-        border-bottom: none;
+    .day-title {
+        color: #1557b0;
+        font-size: 21px;
+        font-weight: bold;
+        margin-bottom: 14px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #e6edf6;
     }
 
-    .mobile-lessons {
-        display: none;
-    }
-
-    .lesson-card {
+    .lesson {
         background: #f7faff;
-        border: 1px solid #dce8f7;
-        border-radius: 14px;
-        padding: 16px;
+        border-left: 5px solid #2879d8;
+        border-radius: 12px;
+        padding: 15px 17px;
         margin-bottom: 12px;
     }
 
-    .lesson-time {
+    .lesson:last-child {
+        margin-bottom: 0;
+    }
+
+    .time {
+        color: #1557b0;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .subject {
+        font-size: 17px;
+        font-weight: bold;
+        color: #1d2a3a;
+    }
+
+    .details {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 9px;
+    }
+
+    .tag {
+        background: white;
+        border: 1px solid #dce6f2;
+        border-radius: 20px;
+        padding: 5px 10px;
+        font-size: 13px;
+        color: #536579;
+    }
+
+    .empty {
+        color: #8996a5;
+        font-style: italic;
+        padding: 5px 0;
+    }
+
+    .top-link {
+        display: block;
+        width: fit-content;
+        margin: 20px auto 0;
+        text-decoration: none;
         color: #1557b0;
         font-weight: bold;
-        font-size: 17px;
-        margin-bottom: 6px;
-    }
-
-    .lesson-subject {
-        font-weight: bold;
-        font-size: 16px;
-        margin-bottom: 7px;
-    }
-
-    .lesson-info {
-        font-size: 14px;
-        color: #536273;
-        margin-top: 4px;
     }
 
     .calendar {
         background: white;
-        padding: 30px;
-        border-radius: 18px;
-        box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-        margin-top: 50px;
-    }
-
-    .calendar h2 {
-        color: #1557b0;
-        margin-bottom: 20px;
+        border-left: 6px solid #1557b0;
+        border-radius: 16px;
+        padding: 25px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+        margin-bottom: 50px;
     }
 
     .calendar-item {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
         padding: 13px 0;
-        border-bottom: 1px solid #e5eaf0;
+        border-bottom: 1px solid #e6edf6;
     }
 
     .calendar-item:last-child {
@@ -229,56 +222,30 @@
         color: #1557b0;
     }
 
-    .top-link {
-        display: inline-block;
-        margin-top: 20px;
-        color: #1557b0;
-        font-weight: bold;
-        text-decoration: none;
-    }
-
     footer {
         background: #102a49;
         color: white;
         text-align: center;
-        padding: 30px 7%;
-        margin-top: 60px;
-    }
-
-    @media (max-width: 800px) {
-        .year-menu {
-            grid-template-columns: 1fr;
-        }
-
-        .hero h1 {
-            font-size: 30px;
-        }
-
-        .container {
-            width: 92%;
-        }
+        padding: 25px;
+        margin-top: 50px;
     }
 
     @media (max-width: 700px) {
         header {
-            padding: 16px 5%;
+            padding: 15px 5%;
         }
 
         .logo {
             font-size: 17px;
         }
 
-        .back-btn {
-            padding: 8px 12px;
-            font-size: 14px;
+        .back {
+            font-size: 13px;
+            padding: 8px 11px;
         }
 
         .hero {
-            padding: 45px 5%;
-        }
-
-        .hero-icon {
-            font-size: 42px;
+            padding: 40px 18px;
         }
 
         .hero h1 {
@@ -286,50 +253,59 @@
         }
 
         .hero p {
-            font-size: 16px;
+            font-size: 15px;
         }
 
         .container {
             width: 92%;
-            margin: 35px auto;
+            margin: 30px auto;
         }
 
         .section-title {
-            font-size: 24px;
+            font-size: 23px;
         }
 
-        .schedule {
-            padding: 20px 16px;
-            margin-bottom: 30px;
+        .year-menu {
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 35px;
         }
 
-        .schedule h3 {
-            font-size: 21px;
+        .year-card {
+            padding: 18px;
         }
 
-        .schedule table {
-            display: none;
+        .year-heading {
+            font-size: 20px;
+            padding: 16px;
         }
 
-        .mobile-lessons {
-            display: block;
+        .day {
+            padding: 15px;
+        }
+
+        .day-title {
+            font-size: 19px;
+        }
+
+        .lesson {
+            padding: 14px;
+        }
+
+        .time {
+            font-size: 17px;
+        }
+
+        .subject {
+            font-size: 16px;
         }
 
         .calendar {
-            padding: 22px 18px;
-        }
-
-        .calendar-item {
-            display: block;
-        }
-
-        .calendar-item strong {
-            display: block;
-            margin-bottom: 4px;
+            padding: 20px;
         }
     }
 </style>
-```
+
 
 </head>
 
@@ -337,650 +313,570 @@
 
 <header>
     <div class="logo">Azione Universitaria PoliBa</div>
-    <a href="calendari.html" class="back-btn">← Torna ai Calendari</a>
+    <a class="back" href="calendari.html">← Torna ai Calendari</a>
 </header>
 
 <section class="hero">
     <div class="hero-icon">🩺</div>
     <h1>Ingegneria dei Sistemi Medicali</h1>
-    <p>Orari delle lezioni e calendario accademico</p>
+    <p>Orario delle lezioni e calendario accademico</p>
 </section>
 
 <div class="container">
 
-```
+
 <h2 class="section-title">📚 Seleziona il tuo anno</h2>
 
 <div class="year-menu">
     <div class="year-card">
-        <h3>1° Anno</h3>
-        <p>Consulta l'orario delle lezioni</p>
-        <a href="#primo-anno">Vai all'orario</a>
+        <a href="#primo-anno">1° Anno</a>
+        <span>Laurea Triennale</span>
     </div>
 
     <div class="year-card">
-        <h3>2° Anno</h3>
-        <p>Consulta l'orario delle lezioni</p>
-        <a href="#secondo-anno">Vai all'orario</a>
+        <a href="#secondo-anno">2° Anno</a>
+        <span>Laurea Triennale</span>
     </div>
 
     <div class="year-card">
-        <h3>3° Anno</h3>
-        <p>Consulta l'orario delle lezioni</p>
-        <a href="#terzo-anno">Vai all'orario</a>
+        <a href="#terzo-anno">3° Anno</a>
+        <span>Laurea Triennale</span>
     </div>
 </div>
 
-<h2 class="section-title">🕐 Orario delle lezioni</h2>
 
 <!-- PRIMO ANNO -->
-<section class="schedule" id="primo-anno">
-    <h3>1° Anno</h3>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Giorno</th>
-                <th>Orario</th>
-                <th>Materia</th>
-                <th>Gruppo / Aula</th>
-            </tr>
-        </thead>
+<section class="year-section" id="primo-anno">
 
-        <tbody>
-            <tr>
-                <td>Lunedì</td>
-                <td>14:30 – 18:40</td>
-                <td>Insegnamenti corsi comuni</td>
-                <td>—</td>
-            </tr>
-
-            <tr>
-                <td>Martedì</td>
-                <td>08:30 – 11:50</td>
-                <td>Insegnamenti corsi comuni</td>
-                <td>—</td>
-            </tr>
-
-            <tr>
-                <td>Martedì</td>
-                <td>11:50 – 13:55</td>
-                <td>Citologia, Istologia e Anatomia Umana – Citologia e Istologia</td>
-                <td>Iniziali cognome A–K · Aula B</td>
-            </tr>
-
-            <tr>
-                <td>Mercoledì</td>
-                <td>08:30 – 13:30</td>
-                <td>Insegnamenti corsi comuni</td>
-                <td>—</td>
-            </tr>
-
-            <tr>
-                <td>Mercoledì</td>
-                <td>11:50 – 13:55</td>
-                <td>Citologia, Istologia e Anatomia Umana – Citologia e Istologia</td>
-                <td>Iniziali cognome L–Z · Aula E</td>
-            </tr>
-
-            <tr>
-                <td>Giovedì</td>
-                <td>14:30 – 17:50</td>
-                <td>Insegnamenti corsi comuni</td>
-                <td>—</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="mobile-lessons">
-        <div class="lesson-card">
-            <div class="lesson-time">Lunedì · 14:30 – 18:40</div>
-            <div class="lesson-subject">Insegnamenti corsi comuni</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Martedì · 08:30 – 11:50</div>
-            <div class="lesson-subject">Insegnamenti corsi comuni</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Martedì · 11:50 – 13:55</div>
-            <div class="lesson-subject">Citologia, Istologia e Anatomia Umana – Citologia e Istologia</div>
-            <div class="lesson-info">👥 Cognomi A–K</div>
-            <div class="lesson-info">📍 Aula B</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Mercoledì · 08:30 – 13:30</div>
-            <div class="lesson-subject">Insegnamenti corsi comuni</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Mercoledì · 11:50 – 13:55</div>
-            <div class="lesson-subject">Citologia, Istologia e Anatomia Umana – Citologia e Istologia</div>
-            <div class="lesson-info">👥 Cognomi L–Z</div>
-            <div class="lesson-info">📍 Aula E</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Giovedì · 14:30 – 17:50</div>
-            <div class="lesson-subject">Insegnamenti corsi comuni</div>
-        </div>
+    <div class="year-heading">
+        🕐 1° Anno
     </div>
+
+    <div class="day">
+
+        <div class="day-title">Lunedì</div>
+
+        <div class="lesson">
+            <div class="time">14:30 – 18:40</div>
+            <div class="subject">Insegnamenti corsi comuni</div>
+        </div>
+
+    </div>
+
+
+    <div class="day">
+
+        <div class="day-title">Martedì</div>
+
+        <div class="lesson">
+            <div class="time">08:30 – 11:50</div>
+            <div class="subject">Insegnamenti corsi comuni</div>
+        </div>
+
+        <div class="lesson">
+            <div class="time">11:50 – 13:55</div>
+            <div class="subject">Citologia, Istologia e Anatomia Umana – Citologia e Istologia</div>
+
+            <div class="details">
+                <span class="tag">👥 Cognomi A–K</span>
+                <span class="tag">📍 Aula B</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="day">
+
+        <div class="day-title">Mercoledì</div>
+
+        <div class="lesson">
+            <div class="time">08:30 – 13:30</div>
+            <div class="subject">Insegnamenti corsi comuni</div>
+        </div>
+
+        <div class="lesson">
+            <div class="time">11:50 – 13:55</div>
+            <div class="subject">Citologia, Istologia e Anatomia Umana – Citologia e Istologia</div>
+
+            <div class="details">
+                <span class="tag">👥 Cognomi L–Z</span>
+                <span class="tag">📍 Aula E</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="day">
+
+        <div class="day-title">Giovedì</div>
+
+        <div class="lesson">
+            <div class="time">14:30 – 17:50</div>
+            <div class="subject">Insegnamenti corsi comuni</div>
+        </div>
+
+    </div>
+
+
+    <div class="day">
+
+        <div class="day-title">Venerdì</div>
+        <div class="empty">Nessuna lezione indicata.</div>
+
+    </div>
+
+    <a class="top-link" href="#top">↑ Torna su</a>
+
 </section>
+
 
 <!-- SECONDO ANNO -->
-<section class="schedule" id="secondo-anno">
-    <h3>2° Anno</h3>
 
-    <div class="group-note">👥 Orario distinto per iniziali del cognome: A–K / L–Z</div>
+<section class="year-section" id="secondo-anno">
 
-    <table>
-        <thead>
-            <tr>
-                <th>Giorno</th>
-                <th>Orario</th>
-                <th>Materia</th>
-                <th>Gruppo / Aula</th>
-            </tr>
-        </thead>
+    <div class="year-heading">
+        🕐 2° Anno
+    </div>
 
-        <tbody>
-            <tr>
-                <td>Lunedì</td>
-                <td>08:30 – 10:10</td>
-                <td>Principi ed Applicazioni di Ingegneria Meccanica – Biofluidodinamica</td>
-                <td>A–K · Aula M</td>
-            </tr>
 
-            <tr>
-                <td>Lunedì</td>
-                <td>10:10 – 11:50</td>
-                <td>Principi ed Applicazioni di Ingegneria Meccanica – Dispositivi e Sistemi Meccanici</td>
-                <td>A–K · Aula M</td>
-            </tr>
+    <div class="day">
 
-            <tr>
-                <td>Lunedì</td>
-                <td>16:10 – 18:40</td>
-                <td>Principi ed Applicazioni di Ingegneria Meccanica – Biofluidodinamica</td>
-                <td>A–K · Aula M</td>
-            </tr>
+        <div class="day-title">Lunedì · Gruppo A–K</div>
 
-            <tr>
-                <td>Martedì</td>
-                <td>14:30 – 16:10</td>
-                <td>Campi Elettromagnetici e Teoria dei Segnali – Teoria dei Segnali</td>
-                <td>A–K · Aula M</td>
-            </tr>
-
-            <tr>
-                <td>Martedì</td>
-                <td>16:10 – 18:15</td>
-                <td>Propedeutica Biochimica e Biochimica – Propedeutica Biochimica</td>
-                <td>A–K · Aula M</td>
-            </tr>
-
-            <tr>
-                <td>Mercoledì</td>
-                <td>14:30 – 17:00</td>
-                <td>Campi Elettromagnetici e Teoria dei Segnali – Teoria dei Segnali</td>
-                <td>A–K · Aula M</td>
-            </tr>
-
-            <tr>
-                <td>Mercoledì</td>
-                <td>17:00 – 18:40</td>
-                <td>Principi ed Applicazioni di Ingegneria Elettrica – Circuiti Elettrici</td>
-                <td>A–K · Aula M</td>
-            </tr>
-
-            <tr>
-                <td>Giovedì</td>
-                <td>11:00 – 13:30</td>
-                <td>Principi ed Applicazioni di Ingegneria Elettrica – Circuiti Elettrici</td>
-                <td>A–K · Aula M</td>
-            </tr>
-
-            <tr>
-                <td>Giovedì</td>
-                <td>14:30 – 16:10</td>
-                <td>Propedeutica Biochimica e Biochimica – Biochimica</td>
-                <td>A–K · Aula M</td>
-            </tr>
-
-            <tr>
-                <td>Venerdì</td>
-                <td>11:00 – 13:30</td>
-                <td>Principi ed Applicazioni di Ingegneria Meccanica – Dispositivi e Sistemi Meccanici</td>
-                <td>A–K · Aula M</td>
-            </tr>
-
-            <tr>
-                <td>Venerdì</td>
-                <td>14:30 – 17:00</td>
-                <td>Propedeutica Biochimica e Biochimica – Biochimica</td>
-                <td>A–K · Aula M</td>
-            </tr>
-
-            <tr>
-                <td>Lunedì</td>
-                <td>11:50 – 13:30</td>
-                <td>Campi Elettromagnetici e Teoria dei Segnali – Teoria dei Segnali</td>
-                <td>L–Z · Aula H</td>
-            </tr>
-
-            <tr>
-                <td>Lunedì</td>
-                <td>14:30 – 17:00</td>
-                <td>Principi ed Applicazioni di Ingegneria Meccanica – Biofluidodinamica</td>
-                <td>L–Z · Aula H</td>
-            </tr>
-
-            <tr>
-                <td>Lunedì</td>
-                <td>14:30 – 16:10</td>
-                <td>Principi ed Applicazioni di Ingegneria Elettrica – Circuiti Elettrici</td>
-                <td>L–Z · Aula H</td>
-            </tr>
-
-            <tr>
-                <td>Martedì</td>
-                <td>14:30 – 16:10</td>
-                <td>Principi ed Applicazioni di Ingegneria Meccanica – Biofluidodinamica</td>
-                <td>L–Z · Aula H</td>
-            </tr>
-
-            <tr>
-                <td>Martedì</td>
-                <td>11:00 – 13:30</td>
-                <td>Propedeutica Biochimica e Biochimica – Biochimica</td>
-                <td>L–Z · Aula H</td>
-            </tr>
-
-            <tr>
-                <td>Martedì</td>
-                <td>17:00 – 18:40</td>
-                <td>Propedeutica Biochimica e Biochimica – Biochimica</td>
-                <td>L–Z · Aula H</td>
-            </tr>
-
-            <tr>
-                <td>Mercoledì</td>
-                <td>08:30 – 11:00</td>
-                <td>Principi ed Applicazioni di Ingegneria Meccanica – Dispositivi e Sistemi Meccanici</td>
-                <td>L–Z · Aula B</td>
-            </tr>
-
-            <tr>
-                <td>Mercoledì</td>
-                <td>16:10 – 18:15</td>
-                <td>Propedeutica Biochimica e Biochimica – Biochimica</td>
-                <td>L–Z · Aula B</td>
-            </tr>
-
-            <tr>
-                <td>Giovedì</td>
-                <td>08:30 – 11:00</td>
-                <td>Principi ed Applicazioni di Ingegneria Elettrica – Circuiti Elettrici</td>
-                <td>L–Z · Aula H</td>
-            </tr>
-
-            <tr>
-                <td>Giovedì</td>
-                <td>11:00 – 13:30</td>
-                <td>Campi Elettromagnetici e Teoria dei Segnali – Teoria dei Segnali</td>
-                <td>L–Z · Aula H</td>
-            </tr>
-
-            <tr>
-                <td>Giovedì</td>
-                <td>14:30 – 16:10</td>
-                <td>Principi ed Applicazioni di Ingegneria Elettrica – Circuiti Elettrici</td>
-                <td>L–Z · Aula H</td>
-            </tr>
-
-            <tr>
-                <td>Venerdì</td>
-                <td>16:10 – 17:50</td>
-                <td>Principi ed Applicazioni di Ingegneria Meccanica – Dispositivi e Sistemi Meccanici</td>
-                <td>L–Z · Aula H</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="mobile-lessons">
-
-        <div class="lesson-card">
-            <div class="lesson-time">Lunedì · 08:30 – 10:10</div>
-            <div class="lesson-subject">Principi ed Applicazioni di Ingegneria Meccanica – Biofluidodinamica</div>
-            <div class="lesson-info">👥 Cognomi A–K</div>
-            <div class="lesson-info">📍 Aula M</div>
+        <div class="lesson">
+            <div class="time">08:30 – 10:10</div>
+            <div class="subject">Principi ed Applicazioni di Ingegneria Meccanica – Biofluidodinamica</div>
+            <div class="details">
+                <span class="tag">👥 A–K</span>
+                <span class="tag">📍 Aula M</span>
+            </div>
         </div>
 
-        <div class="lesson-card">
-            <div class="lesson-time">Lunedì · 10:10 – 11:50</div>
-            <div class="lesson-subject">Principi ed Applicazioni di Ingegneria Meccanica – Dispositivi e Sistemi Meccanici</div>
-            <div class="lesson-info">👥 Cognomi A–K</div>
-            <div class="lesson-info">📍 Aula M</div>
+        <div class="lesson">
+            <div class="time">10:10 – 11:50</div>
+            <div class="subject">Principi ed Applicazioni di Ingegneria Meccanica – Dispositivi e Sistemi Meccanici</div>
+            <div class="details">
+                <span class="tag">👥 A–K</span>
+                <span class="tag">📍 Aula M</span>
+            </div>
         </div>
 
-        <div class="lesson-card">
-            <div class="lesson-time">Lunedì · 11:50 – 13:30</div>
-            <div class="lesson-subject">Campi Elettromagnetici e Teoria dei Segnali – Teoria dei Segnali</div>
-            <div class="lesson-info">👥 Cognomi L–Z</div>
-            <div class="lesson-info">📍 Aula H</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Lunedì · 14:30 – 17:00</div>
-            <div class="lesson-subject">Principi ed Applicazioni di Ingegneria Meccanica – Biofluidodinamica</div>
-            <div class="lesson-info">👥 Cognomi L–Z</div>
-            <div class="lesson-info">📍 Aula H</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Lunedì · 14:30 – 16:10</div>
-            <div class="lesson-subject">Principi ed Applicazioni di Ingegneria Elettrica – Circuiti Elettrici</div>
-            <div class="lesson-info">👥 Cognomi L–Z</div>
-            <div class="lesson-info">📍 Aula H</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Lunedì · 16:10 – 18:40</div>
-            <div class="lesson-subject">Principi ed Applicazioni di Ingegneria Meccanica – Biofluidodinamica</div>
-            <div class="lesson-info">👥 Cognomi A–K</div>
-            <div class="lesson-info">📍 Aula M</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Martedì · 11:00 – 13:30</div>
-            <div class="lesson-subject">Propedeutica Biochimica e Biochimica – Biochimica</div>
-            <div class="lesson-info">👥 Cognomi L–Z</div>
-            <div class="lesson-info">📍 Aula H</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Martedì · 14:30 – 16:10</div>
-            <div class="lesson-subject">Campi Elettromagnetici e Teoria dei Segnali – Teoria dei Segnali</div>
-            <div class="lesson-info">👥 Cognomi A–K</div>
-            <div class="lesson-info">📍 Aula M</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Martedì · 14:30 – 16:10</div>
-            <div class="lesson-subject">Principi ed Applicazioni di Ingegneria Meccanica – Biofluidodinamica</div>
-            <div class="lesson-info">👥 Cognomi L–Z</div>
-            <div class="lesson-info">📍 Aula H</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Martedì · 16:10 – 18:15</div>
-            <div class="lesson-subject">Propedeutica Biochimica e Biochimica – Propedeutica Biochimica</div>
-            <div class="lesson-info">👥 Cognomi A–K</div>
-            <div class="lesson-info">📍 Aula M</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Martedì · 17:00 – 18:40</div>
-            <div class="lesson-subject">Propedeutica Biochimica e Biochimica – Biochimica</div>
-            <div class="lesson-info">👥 Cognomi L–Z</div>
-            <div class="lesson-info">📍 Aula H</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Mercoledì · 08:30 – 11:00</div>
-            <div class="lesson-subject">Principi ed Applicazioni di Ingegneria Meccanica – Dispositivi e Sistemi Meccanici</div>
-            <div class="lesson-info">👥 Cognomi L–Z</div>
-            <div class="lesson-info">📍 Aula B</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Mercoledì · 14:30 – 17:00</div>
-            <div class="lesson-subject">Campi Elettromagnetici e Teoria dei Segnali – Teoria dei Segnali</div>
-            <div class="lesson-info">👥 Cognomi A–K</div>
-            <div class="lesson-info">📍 Aula M</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Mercoledì · 16:10 – 18:15</div>
-            <div class="lesson-subject">Propedeutica Biochimica e Biochimica – Biochimica</div>
-            <div class="lesson-info">👥 Cognomi L–Z</div>
-            <div class="lesson-info">📍 Aula B</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Mercoledì · 17:00 – 18:40</div>
-            <div class="lesson-subject">Principi ed Applicazioni di Ingegneria Elettrica – Circuiti Elettrici</div>
-            <div class="lesson-info">👥 Cognomi A–K</div>
-            <div class="lesson-info">📍 Aula M</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Giovedì · 08:30 – 11:00</div>
-            <div class="lesson-subject">Principi ed Applicazioni di Ingegneria Elettrica – Circuiti Elettrici</div>
-            <div class="lesson-info">👥 Cognomi L–Z</div>
-            <div class="lesson-info">📍 Aula H</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Giovedì · 11:00 – 13:30</div>
-            <div class="lesson-subject">Campi Elettromagnetici e Teoria dei Segnali – Teoria dei Segnali</div>
-            <div class="lesson-info">👥 Cognomi L–Z</div>
-            <div class="lesson-info">📍 Aula H</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Giovedì · 11:00 – 13:30</div>
-            <div class="lesson-subject">Principi ed Applicazioni di Ingegneria Elettrica – Circuiti Elettrici</div>
-            <div class="lesson-info">👥 Cognomi A–K</div>
-            <div class="lesson-info">📍 Aula M</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Giovedì · 14:30 – 16:10</div>
-            <div class="lesson-subject">Propedeutica Biochimica e Biochimica – Biochimica</div>
-            <div class="lesson-info">👥 Cognomi A–K</div>
-            <div class="lesson-info">📍 Aula M</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Venerdì · 11:00 – 13:30</div>
-            <div class="lesson-subject">Principi ed Applicazioni di Ingegneria Meccanica – Dispositivi e Sistemi Meccanici</div>
-            <div class="lesson-info">👥 Cognomi A–K</div>
-            <div class="lesson-info">📍 Aula M</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Venerdì · 14:30 – 17:00</div>
-            <div class="lesson-subject">Propedeutica Biochimica e Biochimica – Biochimica</div>
-            <div class="lesson-info">👥 Cognomi A–K</div>
-            <div class="lesson-info">📍 Aula M</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Venerdì · 16:10 – 17:50</div>
-            <div class="lesson-subject">Principi ed Applicazioni di Ingegneria Meccanica – Dispositivi e Sistemi Meccanici</div>
-            <div class="lesson-info">👥 Cognomi L–Z</div>
-            <div class="lesson-info">📍 Aula H</div>
+        <div class="lesson">
+            <div class="time">16:10 – 18:40</div>
+            <div class="subject">Principi ed Applicazioni di Ingegneria Meccanica – Biofluidodinamica</div>
+            <div class="details">
+                <span class="tag">👥 A–K</span>
+                <span class="tag">📍 Aula M</span>
+            </div>
         </div>
 
     </div>
+
+
+    <div class="day">
+
+        <div class="day-title">Martedì · Gruppo A–K</div>
+
+        <div class="lesson">
+            <div class="time">14:30 – 16:10</div>
+            <div class="subject">Campi Elettromagnetici e Teoria dei Segnali – Teoria dei Segnali</div>
+            <div class="details">
+                <span class="tag">👥 A–K</span>
+                <span class="tag">📍 Aula M</span>
+            </div>
+        </div>
+
+        <div class="lesson">
+            <div class="time">16:10 – 18:15</div>
+            <div class="subject">Propedeutica Biochimica e Biochimica – Propedeutica Biochimica</div>
+            <div class="details">
+                <span class="tag">👥 A–K</span>
+                <span class="tag">📍 Aula M</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="day">
+
+        <div class="day-title">Mercoledì · Gruppo A–K</div>
+
+        <div class="lesson">
+            <div class="time">14:30 – 17:00</div>
+            <div class="subject">Campi Elettromagnetici e Teoria dei Segnali – Teoria dei Segnali</div>
+            <div class="details">
+                <span class="tag">👥 A–K</span>
+                <span class="tag">📍 Aula M</span>
+            </div>
+        </div>
+
+        <div class="lesson">
+            <div class="time">17:00 – 18:40</div>
+            <div class="subject">Principi ed Applicazioni di Ingegneria Elettrica – Circuiti Elettrici</div>
+            <div class="details">
+                <span class="tag">👥 A–K</span>
+                <span class="tag">📍 Aula M</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="day">
+
+        <div class="day-title">Giovedì · Gruppo A–K</div>
+
+        <div class="lesson">
+            <div class="time">11:00 – 13:30</div>
+            <div class="subject">Principi ed Applicazioni di Ingegneria Elettrica – Circuiti Elettrici</div>
+            <div class="details">
+                <span class="tag">👥 A–K</span>
+                <span class="tag">📍 Aula M</span>
+            </div>
+        </div>
+
+        <div class="lesson">
+            <div class="time">14:30 – 16:10</div>
+            <div class="subject">Propedeutica Biochimica e Biochimica – Biochimica</div>
+            <div class="details">
+                <span class="tag">👥 A–K</span>
+                <span class="tag">📍 Aula M</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="day">
+
+        <div class="day-title">Venerdì · Gruppo A–K</div>
+
+        <div class="lesson">
+            <div class="time">11:00 – 13:30</div>
+            <div class="subject">Principi ed Applicazioni di Ingegneria Meccanica – Dispositivi e Sistemi Meccanici</div>
+            <div class="details">
+                <span class="tag">👥 A–K</span>
+                <span class="tag">📍 Aula M</span>
+            </div>
+        </div>
+
+        <div class="lesson">
+            <div class="time">14:30 – 17:00</div>
+            <div class="subject">Propedeutica Biochimica e Biochimica – Biochimica</div>
+            <div class="details">
+                <span class="tag">👥 A–K</span>
+                <span class="tag">📍 Aula M</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="day">
+
+        <div class="day-title">Lunedì · Gruppo L–Z</div>
+
+        <div class="lesson">
+            <div class="time">11:50 – 13:30</div>
+            <div class="subject">Campi Elettromagnetici e Teoria dei Segnali – Teoria dei Segnali</div>
+            <div class="details">
+                <span class="tag">👥 L–Z</span>
+                <span class="tag">📍 Aula H</span>
+            </div>
+        </div>
+
+        <div class="lesson">
+            <div class="time">14:30 – 17:00</div>
+            <div class="subject">Principi ed Applicazioni di Ingegneria Meccanica – Biofluidodinamica</div>
+            <div class="details">
+                <span class="tag">👥 L–Z</span>
+                <span class="tag">📍 Aula H</span>
+            </div>
+        </div>
+
+        <div class="lesson">
+            <div class="time">14:30 – 16:10</div>
+            <div class="subject">Principi ed Applicazioni di Ingegneria Elettrica – Circuiti Elettrici</div>
+            <div class="details">
+                <span class="tag">👥 L–Z</span>
+                <span class="tag">📍 Aula H</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="day">
+
+        <div class="day-title">Martedì · Gruppo L–Z</div>
+
+        <div class="lesson">
+            <div class="time">11:00 – 13:30</div>
+            <div class="subject">Propedeutica Biochimica e Biochimica – Biochimica</div>
+            <div class="details">
+                <span class="tag">👥 L–Z</span>
+                <span class="tag">📍 Aula H</span>
+            </div>
+        </div>
+
+        <div class="lesson">
+            <div class="time">14:30 – 17:00</div>
+            <div class="subject">Principi ed Applicazioni di Ingegneria Meccanica – Biofluidodinamica</div>
+            <div class="details">
+                <span class="tag">👥 L–Z</span>
+                <span class="tag">📍 Aula H</span>
+            </div>
+        </div>
+
+        <div class="lesson">
+            <div class="time">17:00 – 18:40</div>
+            <div class="subject">Propedeutica Biochimica e Biochimica – Biochimica</div>
+            <div class="details">
+                <span class="tag">👥 L–Z</span>
+                <span class="tag">📍 Aula H</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="day">
+
+        <div class="day-title">Mercoledì · Gruppo L–Z</div>
+
+        <div class="lesson">
+            <div class="time">08:30 – 11:00</div>
+            <div class="subject">Principi ed Applicazioni di Ingegneria Meccanica – Dispositivi e Sistemi Meccanici</div>
+            <div class="details">
+                <span class="tag">👥 L–Z</span>
+                <span class="tag">📍 Aula B</span>
+            </div>
+        </div>
+
+        <div class="lesson">
+            <div class="time">16:10 – 18:15</div>
+            <div class="subject">Propedeutica Biochimica e Biochimica – Biochimica</div>
+            <div class="details">
+                <span class="tag">👥 L–Z</span>
+                <span class="tag">📍 Aula B</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="day">
+
+        <div class="day-title">Giovedì · Gruppo L–Z</div>
+
+        <div class="lesson">
+            <div class="time">08:30 – 11:00</div>
+            <div class="subject">Principi ed Applicazioni di Ingegneria Elettrica – Circuiti Elettrici</div>
+            <div class="details">
+                <span class="tag">👥 L–Z</span>
+                <span class="tag">📍 Aula H</span>
+            </div>
+        </div>
+
+        <div class="lesson">
+            <div class="time">11:00 – 13:30</div>
+            <div class="subject">Campi Elettromagnetici e Teoria dei Segnali – Teoria dei Segnali</div>
+            <div class="details">
+                <span class="tag">👥 L–Z</span>
+                <span class="tag">📍 Aula H</span>
+            </div>
+        </div>
+
+        <div class="lesson">
+            <div class="time">14:30 – 16:10</div>
+            <div class="subject">Principi ed Applicazioni di Ingegneria Elettrica – Circuiti Elettrici</div>
+            <div class="details">
+                <span class="tag">👥 L–Z</span>
+                <span class="tag">📍 Aula H</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="day">
+
+        <div class="day-title">Venerdì · Gruppo L–Z</div>
+
+        <div class="lesson">
+            <div class="time">16:10 – 17:50</div>
+            <div class="subject">Principi ed Applicazioni di Ingegneria Meccanica – Dispositivi e Sistemi Meccanici</div>
+            <div class="details">
+                <span class="tag">👥 L–Z</span>
+                <span class="tag">📍 Aula H</span>
+            </div>
+        </div>
+
+    </div>
+
+    <a class="top-link" href="#top">↑ Torna su</a>
+
 </section>
+
 
 <!-- TERZO ANNO -->
-<section class="schedule" id="terzo-anno">
-    <h3>3° Anno</h3>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Giorno</th>
-                <th>Orario</th>
-                <th>Materia</th>
-                <th>Aula</th>
-            </tr>
-        </thead>
+<section class="year-section" id="terzo-anno">
 
-        <tbody>
-            <tr>
-                <td>Lunedì</td>
-                <td>08:30 – 10:10</td>
-                <td>Fisiologia – Elementi di Biofisica Cellulare</td>
-                <td>Aula E</td>
-            </tr>
+    <div class="year-heading">
+        🕐 3° Anno
+    </div>
 
-            <tr>
-                <td>Lunedì</td>
-                <td>10:10 – 11:50</td>
-                <td>Fondamenti di Automatica – Analisi di Sistemi di Controllo</td>
-                <td>Aula E</td>
-            </tr>
 
-            <tr>
-                <td>Martedì</td>
-                <td>14:30 – 16:10</td>
-                <td>Fisiologia – Elementi di Biofisica Cellulare</td>
-                <td>Aula E</td>
-            </tr>
+    <div class="day">
 
-            <tr>
-                <td>Martedì</td>
-                <td>16:10 – 18:40</td>
-                <td>Interazione della Radiazione con la Materia Biologica</td>
-                <td>Aula E</td>
-            </tr>
+        <div class="day-title">Lunedì</div>
 
-            <tr>
-                <td>Mercoledì</td>
-                <td>08:30 – 11:00</td>
-                <td>Interazione della Radiazione con la Materia Biologica</td>
-                <td>Aula E</td>
-            </tr>
-
-            <tr>
-                <td>Mercoledì</td>
-                <td>11:00 – 13:30</td>
-                <td>Fondamenti di Automatica – Analisi di Sistemi di Controllo</td>
-                <td>Aula E</td>
-            </tr>
-
-            <tr>
-                <td>Giovedì</td>
-                <td>08:30 – 11:00</td>
-                <td>Strumentazione Biomedica</td>
-                <td>Aula E</td>
-            </tr>
-
-            <tr>
-                <td>Giovedì</td>
-                <td>11:50 – 13:30</td>
-                <td>Strumentazione Biomedica</td>
-                <td>Aula E</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="mobile-lessons">
-
-        <div class="lesson-card">
-            <div class="lesson-time">Lunedì · 08:30 – 10:10</div>
-            <div class="lesson-subject">Fisiologia – Elementi di Biofisica Cellulare</div>
-            <div class="lesson-info">📍 Aula E</div>
+        <div class="lesson">
+            <div class="time">08:30 – 10:10</div>
+            <div class="subject">Fisiologia – Elementi di Biofisica Cellulare</div>
+            <div class="details">
+                <span class="tag">📍 Aula E</span>
+            </div>
         </div>
 
-        <div class="lesson-card">
-            <div class="lesson-time">Lunedì · 10:10 – 11:50</div>
-            <div class="lesson-subject">Fondamenti di Automatica – Analisi di Sistemi di Controllo</div>
-            <div class="lesson-info">📍 Aula E</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Martedì · 14:30 – 16:10</div>
-            <div class="lesson-subject">Fisiologia – Elementi di Biofisica Cellulare</div>
-            <div class="lesson-info">📍 Aula E</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Martedì · 16:10 – 18:40</div>
-            <div class="lesson-subject">Interazione della Radiazione con la Materia Biologica</div>
-            <div class="lesson-info">📍 Aula E</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Mercoledì · 08:30 – 11:00</div>
-            <div class="lesson-subject">Interazione della Radiazione con la Materia Biologica</div>
-            <div class="lesson-info">📍 Aula E</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Mercoledì · 11:00 – 13:30</div>
-            <div class="lesson-subject">Fondamenti di Automatica – Analisi di Sistemi di Controllo</div>
-            <div class="lesson-info">📍 Aula E</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Giovedì · 08:30 – 11:00</div>
-            <div class="lesson-subject">Strumentazione Biomedica</div>
-            <div class="lesson-info">📍 Aula E</div>
-        </div>
-
-        <div class="lesson-card">
-            <div class="lesson-time">Giovedì · 11:50 – 13:30</div>
-            <div class="lesson-subject">Strumentazione Biomedica</div>
-            <div class="lesson-info">📍 Aula E</div>
+        <div class="lesson">
+            <div class="time">10:10 – 11:50</div>
+            <div class="subject">Fondamenti di Automatica – Analisi di Sistemi di Controllo</div>
+            <div class="details">
+                <span class="tag">📍 Aula E</span>
+            </div>
         </div>
 
     </div>
+
+
+    <div class="day">
+
+        <div class="day-title">Martedì</div>
+
+        <div class="lesson">
+            <div class="time">14:30 – 16:10</div>
+            <div class="subject">Fisiologia – Elementi di Biofisica Cellulare</div>
+            <div class="details">
+                <span class="tag">📍 Aula E</span>
+            </div>
+        </div>
+
+        <div class="lesson">
+            <div class="time">16:10 – 18:40</div>
+            <div class="subject">Interazione della Radiazione con la Materia Biologica</div>
+            <div class="details">
+                <span class="tag">📍 Aula E</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="day">
+
+        <div class="day-title">Mercoledì</div>
+
+        <div class="lesson">
+            <div class="time">08:30 – 11:00</div>
+            <div class="subject">Interazione della Radiazione con la Materia Biologica</div>
+            <div class="details">
+                <span class="tag">📍 Aula E</span>
+            </div>
+        </div>
+
+        <div class="lesson">
+            <div class="time">11:00 – 13:30</div>
+            <div class="subject">Fondamenti di Automatica – Analisi di Sistemi di Controllo</div>
+            <div class="details">
+                <span class="tag">📍 Aula E</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="day">
+
+        <div class="day-title">Giovedì</div>
+
+        <div class="lesson">
+            <div class="time">08:30 – 11:00</div>
+            <div class="subject">Strumentazione Biomedica</div>
+            <div class="details">
+                <span class="tag">📍 Aula E</span>
+            </div>
+        </div>
+
+        <div class="lesson">
+            <div class="time">11:50 – 13:30</div>
+            <div class="subject">Strumentazione Biomedica</div>
+            <div class="details">
+                <span class="tag">📍 Aula E</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="day">
+
+        <div class="day-title">Venerdì</div>
+        <div class="empty">Nessuna lezione indicata.</div>
+
+    </div>
+
+    <a class="top-link" href="#top">↑ Torna su</a>
+
 </section>
+
 
 <!-- CALENDARIO ACCADEMICO -->
-<section class="calendar">
-    <h2>📅 Calendario accademico</h2>
+
+<h2 class="section-title">📅 Calendario accademico</h2>
+
+<div class="calendar">
 
     <div class="calendar-item">
-        <strong>Inizio lezioni</strong>
-        <span>21 settembre 2026</span>
+        <strong>Inizio lezioni:</strong> 21 settembre 2026
     </div>
 
     <div class="calendar-item">
-        <strong>Pausa esoneri</strong>
-        <span>2 – 6 novembre 2026</span>
+        <strong>Pausa esoneri:</strong> 2–6 novembre 2026
     </div>
 
     <div class="calendar-item">
-        <strong>Recupero lezioni</strong>
-        <span>21 – 23 dicembre 2026</span>
+        <strong>Recupero lezioni:</strong> 21–23 dicembre 2026
     </div>
 
     <div class="calendar-item">
-        <strong>Festività natalizie</strong>
-        <span>24 dicembre 2026 – 6 gennaio 2027</span>
+        <strong>Festività natalizie:</strong> 24 dicembre 2026 – 6 gennaio 2027
     </div>
 
     <div class="calendar-item">
-        <strong>Recupero lezioni</strong>
-        <span>7 – 8 gennaio 2027</span>
+        <strong>Recupero lezioni:</strong> 7–8 gennaio 2027
     </div>
 
     <div class="calendar-item">
-        <strong>Fine lezioni</strong>
-        <span>8 gennaio 2027</span>
+        <strong>Fine lezioni:</strong> 8 gennaio 2027
     </div>
 
     <div class="calendar-item">
-        <strong>Periodo esami</strong>
-        <span>11 gennaio – 26 febbraio 2027</span>
+        <strong>Periodo esami:</strong> 11 gennaio – 26 febbraio 2027
     </div>
 
-    <a href="#top" class="top-link">↑ Torna su</a>
-</section>
+</div>
 
 
 </div>
 
 <footer>
-    <p>© 2026 Azione Universitaria PoliBa</p>
+    <p>Azione Universitaria PoliBa</p>
     <p>La tua voce. La nostra rappresentanza.</p>
 </footer>
 
