@@ -2,611 +2,677 @@
 
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-<title>Ingegneria Civile | Azione Universitaria PoliBa</title>
+<title>Ingegneria Civile e Ambientale | Azione Universitaria PoliBa</title>
 
 <style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+header {
+    background: #ffffff;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.back {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 600;
+}
+
+.hero {
+    background: linear-gradient(135deg, #111827, #374151);
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.hero-icon {
+    font-size: 54px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 45px auto;
+}
+
+.section {
+    margin-bottom: 55px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 28px;
+    color: #111827;
+}
+
+.year-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.year-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+    text-decoration: none;
+    color: #111827;
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.year-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+}
+
+.schedule-section {
+    background: white;
+    border-radius: 18px;
+    padding: 30px;
+    margin-bottom: 35px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+    scroll-margin-top: 100px;
+}
+
+.schedule-section h3 {
+    font-size: 25px;
+    margin-bottom: 25px;
+    color: #111827;
+}
+
+.day {
+    margin-bottom: 28px;
+}
+
+.day:last-child {
+    margin-bottom: 0;
+}
+
+.day h4 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e5e7eb;
+    color: #374151;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th,
+td {
+    padding: 13px 12px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: #f3f4f6;
+    font-size: 14px;
+    color: #374151;
+}
+
+td {
+    font-size: 15px;
+}
+
+.lesson-name {
+    font-weight: 700;
+    color: #111827;
+}
+
+.room {
+    color: #6b7280;
+    font-size: 14px;
+    margin-top: 3px;
+}
+
+.no-lessons {
+    color: #6b7280;
+    font-style: italic;
+    padding: 12px 0;
+}
+
+.mobile-lessons {
+    display: none;
+}
+
+.lesson-card {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
+}
+
+.lesson-time {
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 6px;
+}
+
+.lesson-subject {
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.lesson-room {
+    color: #6b7280;
+    font-size: 14px;
+    margin-top: 3px;
+}
+
+.calendar {
+    background: white;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.calendar-item {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 17px;
+    border: 1px solid #e5e7eb;
+}
+
+.calendar-item strong {
+    display: block;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+footer {
+    margin-top: 60px;
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 25px 20px;
+    font-size: 14px;
+}
+
+@media (max-width: 800px) {
+    .year-selector {
+        grid-template-columns: 1fr;
     }
 
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        font-family: Arial, sans-serif;
-        background: #f4f7fb;
-        color: #1d2a3a;
-        line-height: 1.6;
-    }
-
-    header {
-        background: white;
-        padding: 18px 7%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    }
-
-    .logo {
-        color: #1557b0;
-        font-size: 22px;
-        font-weight: bold;
-    }
-
-    .back {
-        text-decoration: none;
-        background: #1557b0;
-        color: white;
-        padding: 10px 18px;
-        border-radius: 10px;
-        font-weight: bold;
-        transition: 0.2s;
-    }
-
-    .back:hover {
-        background: #0f4691;
-    }
-
-    .hero {
-        background: linear-gradient(135deg, #1557b0, #2879d8);
-        color: white;
-        text-align: center;
-        padding: 65px 20px;
-    }
-
-    .hero-icon {
-        font-size: 48px;
-        margin-bottom: 12px;
+    .calendar-grid {
+        grid-template-columns: 1fr;
     }
 
     .hero h1 {
-        font-size: 38px;
-        margin-bottom: 10px;
+        font-size: 30px;
     }
 
-    .hero p {
-        font-size: 18px;
-        opacity: 0.95;
+    .schedule-section {
+        padding: 22px;
     }
 
-    .container {
-        width: 86%;
-        max-width: 1150px;
-        margin: 45px auto;
+    .table-wrapper {
+        display: none;
     }
 
-    .section-title {
-        color: #1557b0;
-        font-size: 28px;
-        margin-bottom: 22px;
+    .mobile-lessons {
+        display: block;
     }
+}
 
-    .year-menu {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 22px;
-        margin-bottom: 50px;
+@media (min-width: 801px) {
+    .desktop-only {
+        display: block;
     }
-
-    .year-card {
-        background: white;
-        border-top: 5px solid #1557b0;
-        border-radius: 18px;
-        padding: 28px 20px;
-        text-align: center;
-        box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-        transition: 0.2s;
-    }
-
-    .year-card:hover {
-        transform: translateY(-4px);
-    }
-
-    .year-card h3 {
-        color: #1557b0;
-        font-size: 21px;
-        margin-bottom: 10px;
-    }
-
-    .year-card p {
-        color: #64748b;
-        margin-bottom: 18px;
-    }
-
-    .year-card a {
-        display: inline-block;
-        text-decoration: none;
-        background: #1557b0;
-        color: white;
-        padding: 10px 18px;
-        border-radius: 10px;
-        font-weight: bold;
-    }
-
-    .schedule {
-        background: white;
-        border-left: 6px solid #1557b0;
-        border-radius: 18px;
-        padding: 28px;
-        margin-bottom: 35px;
-        box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-        scroll-margin-top: 25px;
-    }
-
-    .schedule h3 {
-        color: #1557b0;
-        font-size: 23px;
-        margin-bottom: 20px;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        overflow: hidden;
-        border-radius: 10px;
-    }
-
-    th {
-        background: #1557b0;
-        color: white;
-        padding: 13px;
-        text-align: left;
-    }
-
-    td {
-        padding: 13px;
-        border-bottom: 1px solid #e5e7eb;
-    }
-
-    tr:last-child td {
-        border-bottom: none;
-    }
-
-    .top-link {
-        display: inline-block;
-        margin-top: 5px;
-        text-decoration: none;
-        color: #1557b0;
-        font-weight: bold;
-    }
-
-    .academic-calendar {
-        background: white;
-        border-radius: 18px;
-        padding: 30px;
-        box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-        margin-top: 45px;
-    }
-
-    .academic-calendar h2 {
-        color: #1557b0;
-        margin-bottom: 22px;
-    }
-
-    .calendar-row {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        padding: 13px 0;
-        border-bottom: 1px solid #e5e7eb;
-    }
-
-    .calendar-row:last-child {
-        border-bottom: none;
-    }
-
-    .calendar-date {
-        font-weight: bold;
-        color: #1557b0;
-        min-width: 250px;
-    }
-
-    footer {
-        background: #102a49;
-        color: white;
-        text-align: center;
-        padding: 30px 20px;
-        margin-top: 60px;
-    }
-
-    footer p {
-        margin: 5px 0;
-    }
-
-    @media (max-width: 800px) {
-
-        .year-menu {
-            grid-template-columns: 1fr;
-        }
-
-        .hero h1 {
-            font-size: 30px;
-        }
-
-        .calendar-row {
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .calendar-date {
-            min-width: auto;
-        }
-
-        header {
-            flex-direction: column;
-            gap: 15px;
-        }
-    }
-
+}
 </style>
-
 
 </head>
 
-<body id="top">
+<body>
 
 <header>
-
-
-<div class="logo">
-    Azione Universitaria PoliBa
-</div>
-
-<a href="calendari.html" class="back">
-    ← Torna ai Calendari
-</a>
-
-
+    <div class="logo">Azione Universitaria PoliBa</div>
+    <a href="calendari.html" class="back">← Torna ai Calendari</a>
 </header>
 
 <section class="hero">
-
-```
-<div class="hero-icon">
-    🏗️
-</div>
-
-<h1>Ingegneria Civile</h1>
-
-<p>
-    Consulta l'orario delle lezioni e il calendario accademico
-</p>
-
-
+    <div class="hero-icon">🏗️</div>
+    <h1>Ingegneria Civile e Ambientale</h1>
+    <p>Orario delle lezioni e calendario accademico</p>
 </section>
 
 <main class="container">
 
+<section class="section">
+    <h2 class="section-title">📚 Seleziona il tuo anno</h2>
 
-<h2 class="section-title">
-    📚 Seleziona il tuo anno
-</h2>
 
-<div class="year-menu">
-
-    <div class="year-card">
-
-        <h3>1° Anno</h3>
-
-        <p>
-            Orario delle lezioni del primo anno
-        </p>
-
-        <a href="#primo-anno">
-            Vai all'orario
-        </a>
-
-    </div>
-
-    <div class="year-card">
-
-        <h3>2° Anno</h3>
-
-        <p>
-            Orario delle lezioni del secondo anno
-        </p>
-
-        <a href="#secondo-anno">
-            Vai all'orario
-        </a>
-
-    </div>
-
-    <div class="year-card">
-
-        <h3>3° Anno</h3>
-
-        <p>
-            Orario delle lezioni del terzo anno
-        </p>
-
-        <a href="#terzo-anno">
-            Vai all'orario
-        </a>
-
-    </div>
-
+<div class="year-selector">
+    <a href="#primo-anno" class="year-card">1° Anno</a>
+    <a href="#secondo-anno" class="year-card">2° Anno</a>
+    <a href="#terzo-anno" class="year-card">3° Anno</a>
 </div>
 
 
-<h2 class="section-title">
-    🕐 Orario delle lezioni
-</h2>
+</section>
+
+<section class="section">
+    <h2 class="section-title">🕐 Orario delle lezioni</h2>
 
 
-<section class="schedule" id="primo-anno">
-
+<div class="schedule-section" id="primo-anno">
     <h3>1° Anno</h3>
 
-    <table>
+    <div class="day">
+        <h4>Lunedì</h4>
+        <div class="table-wrapper">
+            <table>
+                <tr><th>Orario</th><th>Insegnamento</th><th>Aula</th></tr>
+                <tr><td>08:50 - 10:30</td><td class="lesson-name">TOPOGRAFIA E CARTOGRAFIA DIGITALE_TA</td><td>Aula 1</td></tr>
+                <tr><td>09:20 - 13:30</td><td class="lesson-name">DISEGNO E RAPPRESENTAZIONE DEL TERRITORIO</td><td>Aula AD (Ex Talent Garden)</td></tr>
+                <tr><td>14:30 - 19:00</td><td class="lesson-name">INSEGNAMENTI CORSI COMUNI</td><td>-</td></tr>
+            </table>
+        </div>
 
-        <tr>
-            <th>Giorno</th>
-            <th>Orario</th>
-            <th>Informazioni</th>
-        </tr>
+        <div class="mobile-lessons">
+            <div class="lesson-card"><div class="lesson-time">08:50 - 10:30</div><div class="lesson-subject">TOPOGRAFIA E CARTOGRAFIA DIGITALE_TA</div><div class="lesson-room">Aula 1</div></div>
+            <div class="lesson-card"><div class="lesson-time">09:20 - 13:30</div><div class="lesson-subject">DISEGNO E RAPPRESENTAZIONE DEL TERRITORIO</div><div class="lesson-room">Aula AD (Ex Talent Garden)</div></div>
+            <div class="lesson-card"><div class="lesson-time">14:30 - 19:00</div><div class="lesson-subject">INSEGNAMENTI CORSI COMUNI</div><div class="lesson-room">-</div></div>
+        </div>
+    </div>
 
-        <tr>
-            <td>Lunedì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
+    <div class="day">
+        <h4>Martedì</h4>
+        <div class="table-wrapper">
+            <table>
+                <tr><th>Orario</th><th>Insegnamento</th><th>Aula</th></tr>
+                <tr><td>08:30 - 11:50</td><td class="lesson-name">INSEGNAMENTI CORSI COMUNI</td><td>-</td></tr>
+                <tr><td>08:50 - 11:20</td><td class="lesson-name">GEOLOGIA TECNICA E AMBIENTALE</td><td>Aula 1</td></tr>
+                <tr><td>11:20 - 13:00</td><td class="lesson-name">DIRITTO EUROPEO DELL'AMBIENTE</td><td>Aula 1</td></tr>
+                <tr><td>14:30 - 18:40</td><td class="lesson-name">DISEGNO</td><td>Aula AD (Ex Talent Garden)</td></tr>
+            </table>
+        </div>
 
-        <tr>
-            <td>Martedì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
+        <div class="mobile-lessons">
+            <div class="lesson-card"><div class="lesson-time">08:30 - 11:50</div><div class="lesson-subject">INSEGNAMENTI CORSI COMUNI</div><div class="lesson-room">-</div></div>
+            <div class="lesson-card"><div class="lesson-time">08:50 - 11:20</div><div class="lesson-subject">GEOLOGIA TECNICA E AMBIENTALE</div><div class="lesson-room">Aula 1</div></div>
+            <div class="lesson-card"><div class="lesson-time">11:20 - 13:00</div><div class="lesson-subject">DIRITTO EUROPEO DELL'AMBIENTE</div><div class="lesson-room">Aula 1</div></div>
+            <div class="lesson-card"><div class="lesson-time">14:30 - 18:40</div><div class="lesson-subject">DISEGNO</div><div class="lesson-room">Aula AD (Ex Talent Garden)</div></div>
+        </div>
+    </div>
 
-        <tr>
-            <td>Mercoledì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
+    <div class="day">
+        <h4>Mercoledì</h4>
+        <div class="table-wrapper">
+            <table>
+                <tr><th>Orario</th><th>Insegnamento</th><th>Aula</th></tr>
+                <tr><td>08:30 - 13:30</td><td class="lesson-name">INSEGNAMENTI CORSI COMUNI</td><td>-</td></tr>
+                <tr><td>08:50 - 11:20</td><td class="lesson-name">DIRITTO EUROPEO DELL'AMBIENTE</td><td>Aula 1</td></tr>
+                <tr><td>11:20 - 13:00</td><td class="lesson-name">GEOLOGIA TECNICA E AMBIENTALE</td><td>Aula 1</td></tr>
+            </table>
+        </div>
 
-        <tr>
-            <td>Giovedì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
+        <div class="mobile-lessons">
+            <div class="lesson-card"><div class="lesson-time">08:30 - 13:30</div><div class="lesson-subject">INSEGNAMENTI CORSI COMUNI</div><div class="lesson-room">-</div></div>
+            <div class="lesson-card"><div class="lesson-time">08:50 - 11:20</div><div class="lesson-subject">DIRITTO EUROPEO DELL'AMBIENTE</div><div class="lesson-room">Aula 1</div></div>
+            <div class="lesson-card"><div class="lesson-time">11:20 - 13:00</div><div class="lesson-subject">GEOLOGIA TECNICA E AMBIENTALE</div><div class="lesson-room">Aula 1</div></div>
+        </div>
+    </div>
 
-        <tr>
-            <td>Venerdì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
+    <div class="day">
+        <h4>Giovedì</h4>
+        <div class="table-wrapper">
+            <table>
+                <tr><th>Orario</th><th>Insegnamento</th><th>Aula</th></tr>
+                <tr><td>09:40 - 12:10</td><td class="lesson-name">TOPOGRAFIA E CARTOGRAFIA DIGITALE_TA</td><td>Aula 1</td></tr>
+                <tr><td>14:00 - 15:40</td><td class="lesson-name">MECCANICA TEORICA E APPLICATA - MECCANICA RAZIONALE (I Modulo)</td><td>Aula G2</td></tr>
+                <tr><td>14:30 - 18:40</td><td class="lesson-name">INSEGNAMENTI CORSI COMUNI</td><td>-</td></tr>
+            </table>
+        </div>
 
-    </table>
+        <div class="mobile-lessons">
+            <div class="lesson-card"><div class="lesson-time">09:40 - 12:10</div><div class="lesson-subject">TOPOGRAFIA E CARTOGRAFIA DIGITALE_TA</div><div class="lesson-room">Aula 1</div></div>
+            <div class="lesson-card"><div class="lesson-time">14:00 - 15:40</div><div class="lesson-subject">MECCANICA TEORICA E APPLICATA - MECCANICA RAZIONALE (I Modulo)</div><div class="lesson-room">Aula G2</div></div>
+            <div class="lesson-card"><div class="lesson-time">14:30 - 18:40</div><div class="lesson-subject">INSEGNAMENTI CORSI COMUNI</div><div class="lesson-room">-</div></div>
+        </div>
+    </div>
 
-    <a href="#top" class="top-link">
-        ↑ Torna su
-    </a>
+    <div class="day">
+        <h4>Venerdì</h4>
+        <div class="no-lessons">Nessuna lezione</div>
+    </div>
+</div>
 
-</section>
-
-
-<section class="schedule" id="secondo-anno">
-
+<div class="schedule-section" id="secondo-anno">
     <h3>2° Anno</h3>
 
-    <table>
+    <div class="day">
+        <h4>Lunedì</h4>
+        <div class="table-wrapper">
+            <table>
+                <tr><th>Orario</th><th>Insegnamento</th><th>Aula</th></tr>
+                <tr><td>08:30 - 10:10</td><td class="lesson-name">GEOLOGIA APPLICATA</td><td>Aula 2</td></tr>
+                <tr><td>08:50 - 10:30</td><td class="lesson-name">TOPOGRAFIA E CARTOGRAFIA DIGITALE_TA</td><td>Aula 1</td></tr>
+                <tr><td>10:10 - 13:30</td><td class="lesson-name">MECCANICA RAZIONALE</td><td>Aula 2</td></tr>
+                <tr><td>14:30 - 16:10</td><td class="lesson-name">TOPOGRAFIA</td><td>Aula 2</td></tr>
+                <tr><td>16:10 - 18:40</td><td class="lesson-name">TRATTAMENTO DEGLI AERIFORMI</td><td>Aula 2</td></tr>
+            </table>
+        </div>
 
-        <tr>
-            <th>Giorno</th>
-            <th>Orario</th>
-            <th>Informazioni</th>
-        </tr>
+        <div class="mobile-lessons">
+            <div class="lesson-card"><div class="lesson-time">08:30 - 10:10</div><div class="lesson-subject">GEOLOGIA APPLICATA</div><div class="lesson-room">Aula 2</div></div>
+            <div class="lesson-card"><div class="lesson-time">08:50 - 10:30</div><div class="lesson-subject">TOPOGRAFIA E CARTOGRAFIA DIGITALE_TA</div><div class="lesson-room">Aula 1</div></div>
+            <div class="lesson-card"><div class="lesson-time">10:10 - 13:30</div><div class="lesson-subject">MECCANICA RAZIONALE</div><div class="lesson-room">Aula 2</div></div>
+            <div class="lesson-card"><div class="lesson-time">14:30 - 16:10</div><div class="lesson-subject">TOPOGRAFIA</div><div class="lesson-room">Aula 2</div></div>
+            <div class="lesson-card"><div class="lesson-time">16:10 - 18:40</div><div class="lesson-subject">TRATTAMENTO DEGLI AERIFORMI</div><div class="lesson-room">Aula 2</div></div>
+        </div>
+    </div>
 
-        <tr>
-            <td>Lunedì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
+    <div class="day">
+        <h4>Martedì</h4>
+        <div class="table-wrapper">
+            <table>
+                <tr><th>Orario</th><th>Insegnamento</th><th>Aula</th></tr>
+                <tr><td>08:30 - 11:00</td><td class="lesson-name">GEOLOGIA APPLICATA</td><td>Aula 2</td></tr>
+                <tr><td>08:50 - 11:20</td><td class="lesson-name">GEOLOGIA TECNICA E AMBIENTALE</td><td>Aula 1</td></tr>
+                <tr><td>11:00 - 13:30</td><td class="lesson-name">INGEGNERIA DEL TERRITORIO</td><td>Aula 2</td></tr>
+                <tr><td>11:20 - 13:00</td><td class="lesson-name">DIRITTO EUROPEO DELL'AMBIENTE</td><td>Aula 1</td></tr>
+                <tr><td>14:30 - 17:00</td><td class="lesson-name">MECCANICA RAZIONALE</td><td>Aula 2</td></tr>
+                <tr><td>17:00 - 18:40</td><td class="lesson-name">TRATTAMENTO DEGLI AERIFORMI</td><td>Aula 2</td></tr>
+            </table>
+        </div>
 
-        <tr>
-            <td>Martedì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
+        <div class="mobile-lessons">
+            <div class="lesson-card"><div class="lesson-time">08:30 - 11:00</div><div class="lesson-subject">GEOLOGIA APPLICATA</div><div class="lesson-room">Aula 2</div></div>
+            <div class="lesson-card"><div class="lesson-time">08:50 - 11:20</div><div class="lesson-subject">GEOLOGIA TECNICA E AMBIENTALE</div><div class="lesson-room">Aula 1</div></div>
+            <div class="lesson-card"><div class="lesson-time">11:00 - 13:30</div><div class="lesson-subject">INGEGNERIA DEL TERRITORIO</div><div class="lesson-room">Aula 2</div></div>
+            <div class="lesson-card"><div class="lesson-time">11:20 - 13:00</div><div class="lesson-subject">DIRITTO EUROPEO DELL'AMBIENTE</div><div class="lesson-room">Aula 1</div></div>
+            <div class="lesson-card"><div class="lesson-time">14:30 - 17:00</div><div class="lesson-subject">MECCANICA RAZIONALE</div><div class="lesson-room">Aula 2</div></div>
+            <div class="lesson-card"><div class="lesson-time">17:00 - 18:40</div><div class="lesson-subject">TRATTAMENTO DEGLI AERIFORMI</div><div class="lesson-room">Aula 2</div></div>
+        </div>
+    </div>
 
-        <tr>
-            <td>Mercoledì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
+    <div class="day">
+        <h4>Mercoledì</h4>
+        <div class="table-wrapper">
+            <table>
+                <tr><th>Orario</th><th>Insegnamento</th><th>Aula</th></tr>
+                <tr><td>08:30 - 11:00</td><td class="lesson-name">SCIENZA E TECNOLOGIA DEI MATERIALI</td><td>Aula 2</td></tr>
+                <tr><td>08:50 - 11:20</td><td class="lesson-name">DIRITTO EUROPEO DELL'AMBIENTE</td><td>Aula 1</td></tr>
+                <tr><td>11:00 - 13:30</td><td class="lesson-name">MECCANICA RAZIONALE</td><td>Aula 2</td></tr>
+                <tr><td>11:20 - 13:00</td><td class="lesson-name">GEOLOGIA TECNICA E AMBIENTALE</td><td>Aula 1</td></tr>
+                <tr><td>14:30 - 16:10</td><td class="lesson-name">CARTOGRAFIA E GIS + TRATTAMENTO DELLE OSSERVAZIONI TOPOGRAFICHE - CARTOGRAFIA E GIS</td><td>Aula 2</td></tr>
+                <tr><td>16:10 - 17:50</td><td class="lesson-name">CARTOGRAFIA E GIS + TRATTAMENTO DELLE OSSERVAZIONI TOPOGRAFICHE - TRATTAMENTO DELLE OSSERVAZIONI TOPOGRAFICHE</td><td>Aula 2</td></tr>
+            </table>
+        </div>
 
-        <tr>
-            <td>Giovedì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
+        <div class="mobile-lessons">
+            <div class="lesson-card"><div class="lesson-time">08:30 - 11:00</div><div class="lesson-subject">SCIENZA E TECNOLOGIA DEI MATERIALI</div><div class="lesson-room">Aula 2</div></div>
+            <div class="lesson-card"><div class="lesson-time">08:50 - 11:20</div><div class="lesson-subject">DIRITTO EUROPEO DELL'AMBIENTE</div><div class="lesson-room">Aula 1</div></div>
+            <div class="lesson-card"><div class="lesson-time">11:00 - 13:30</div><div class="lesson-subject">MECCANICA RAZIONALE</div><div class="lesson-room">Aula 2</div></div>
+            <div class="lesson-card"><div class="lesson-time">11:20 - 13:00</div><div class="lesson-subject">GEOLOGIA TECNICA E AMBIENTALE</div><div class="lesson-room">Aula 1</div></div>
+            <div class="lesson-card"><div class="lesson-time">14:30 - 16:10</div><div class="lesson-subject">CARTOGRAFIA E GIS + TRATTAMENTO DELLE OSSERVAZIONI TOPOGRAFICHE - CARTOGRAFIA E GIS</div><div class="lesson-room">Aula 2</div></div>
+            <div class="lesson-card"><div class="lesson-time">16:10 - 17:50</div><div class="lesson-subject">CARTOGRAFIA E GIS + TRATTAMENTO DELLE OSSERVAZIONI TOPOGRAFICHE - TRATTAMENTO DELLE OSSERVAZIONI TOPOGRAFICHE</div><div class="lesson-room">Aula 2</div></div>
+        </div>
+    </div>
 
-        <tr>
-            <td>Venerdì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
+    <div class="day">
+        <h4>Giovedì</h4>
+        <div class="table-wrapper">
+            <table>
+                <tr><th>Orario</th><th>Insegnamento</th><th>Aula</th></tr>
+                <tr><td>08:30 - 11:00</td><td class="lesson-name">CARTOGRAFIA E GIS + TRATTAMENTO DELLE OSSERVAZIONI TOPOGRAFICHE - CARTOGRAFIA E GIS</td><td>Aula 2</td></tr>
+                <tr><td>09:40 - 12:10</td><td class="lesson-name">TOPOGRAFIA E CARTOGRAFIA DIGITALE_TA</td><td>Aula 1</td></tr>
+                <tr><td>11:00 - 13:30</td><td class="lesson-name">CARTOGRAFIA E GIS + TRATTAMENTO DELLE OSSERVAZIONI TOPOGRAFICHE - TRATTAMENTO DELLE OSSERVAZIONI TOPOGRAFICHE</td><td>Aula 2</td></tr>
+                <tr><td>14:00 - 15:40</td><td class="lesson-name">MECCANICA TEORICA E APPLICATA - MECCANICA RAZIONALE (I Modulo)</td><td>Aula G2</td></tr>
+                <tr><td>14:30 - 16:10</td><td class="lesson-name">INGEGNERIA DEL TERRITORIO</td><td>Aula 2</td></tr>
+            </table>
+        </div>
 
-    </table>
+        <div class="mobile-lessons">
+            <div class="lesson-card"><div class="lesson-time">08:30 - 11:00</div><div class="lesson-subject">CARTOGRAFIA E GIS + TRATTAMENTO DELLE OSSERVAZIONI TOPOGRAFICHE - CARTOGRAFIA E GIS</div><div class="lesson-room">Aula 2</div></div>
+            <div class="lesson-card"><div class="lesson-time">09:40 - 12:10</div><div class="lesson-subject">TOPOGRAFIA E CARTOGRAFIA DIGITALE_TA</div><div class="lesson-room">Aula 1</div></div>
+            <div class="lesson-card"><div class="lesson-time">11:00 - 13:30</div><div class="lesson-subject">CARTOGRAFIA E GIS + TRATTAMENTO DELLE OSSERVAZIONI TOPOGRAFICHE - TRATTAMENTO DELLE OSSERVAZIONI TOPOGRAFICHE</div><div class="lesson-room">Aula 2</div></div>
+            <div class="lesson-card"><div class="lesson-time">14:00 - 15:40</div><div class="lesson-subject">MECCANICA TEORICA E APPLICATA - MECCANICA RAZIONALE (I Modulo)</div><div class="lesson-room">Aula G2</div></div>
+            <div class="lesson-card"><div class="lesson-time">14:30 - 16:10</div><div class="lesson-subject">INGEGNERIA DEL TERRITORIO</div><div class="lesson-room">Aula 2</div></div>
+        </div>
+    </div>
 
-    <a href="#top" class="top-link">
-        ↑ Torna su
-    </a>
+    <div class="day">
+        <h4>Venerdì</h4>
+        <div class="table-wrapper">
+            <table>
+                <tr><th>Orario</th><th>Insegnamento</th><th>Aula</th></tr>
+                <tr><td>08:30 - 10:10</td><td class="lesson-name">SCIENZA E TECNOLOGIA DEI MATERIALI</td><td>Aula 2</td></tr>
+                <tr><td>10:10 - 12:40</td><td class="lesson-name">TOPOGRAFIA</td><td>Aula 2</td></tr>
+            </table>
+        </div>
 
-</section>
+        <div class="mobile-lessons">
+            <div class="lesson-card"><div class="lesson-time">08:30 - 10:10</div><div class="lesson-subject">SCIENZA E TECNOLOGIA DEI MATERIALI</div><div class="lesson-room">Aula 2</div></div>
+            <div class="lesson-card"><div class="lesson-time">10:10 - 12:40</div><div class="lesson-subject">TOPOGRAFIA</div><div class="lesson-room">Aula 2</div></div>
+        </div>
+    </div>
+</div>
 
-
-<section class="schedule" id="terzo-anno">
-
+<div class="schedule-section" id="terzo-anno">
     <h3>3° Anno</h3>
 
-    <table>
+    <div class="day">
+        <h4>Lunedì</h4>
+        <div class="table-wrapper">
+            <table>
+                <tr><th>Orario</th><th>Insegnamento</th><th>Aula</th></tr>
+                <tr><td>08:30 - 11:50</td><td class="lesson-name">GEOTECNICA</td><td>Aula Q</td></tr>
+                <tr><td>08:50 - 10:30</td><td class="lesson-name">TOPOGRAFIA E CARTOGRAFIA DIGITALE_TA</td><td>Aula 1</td></tr>
+                <tr><td>11:50 - 13:30</td><td class="lesson-name">COSTRUZIONI IDRAULICHE</td><td>Aula Q</td></tr>
+                <tr><td>14:30 - 16:10</td><td class="lesson-name">COSTRUZIONI IDRAULICHE</td><td>Aula Q</td></tr>
+                <tr><td>16:10 - 18:40</td><td class="lesson-name">TRATTAMENTO DEGLI AERIFORMI</td><td>Aula 2</td></tr>
+            </table>
+        </div>
 
-        <tr>
-            <th>Giorno</th>
-            <th>Orario</th>
-            <th>Informazioni</th>
-        </tr>
+        <div class="mobile-lessons">
+            <div class="lesson-card"><div class="lesson-time">08:30 - 11:50</div><div class="lesson-subject">GEOTECNICA</div><div class="lesson-room">Aula Q</div></div>
+            <div class="lesson-card"><div class="lesson-time">08:50 - 10:30</div><div class="lesson-subject">TOPOGRAFIA E CARTOGRAFIA DIGITALE_TA</div><div class="lesson-room">Aula 1</div></div>
+            <div class="lesson-card"><div class="lesson-time">11:50 - 13:30</div><div class="lesson-subject">COSTRUZIONI IDRAULICHE</div><div class="lesson-room">Aula Q</div></div>
+            <div class="lesson-card"><div class="lesson-time">14:30 - 16:10</div><div class="lesson-subject">COSTRUZIONI IDRAULICHE</div><div class="lesson-room">Aula Q</div></div>
+            <div class="lesson-card"><div class="lesson-time">16:10 - 18:40</div><div class="lesson-subject">TRATTAMENTO DEGLI AERIFORMI</div><div class="lesson-room">Aula 2</div></div>
+        </div>
+    </div>
 
-        <tr>
-            <td>Lunedì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
+    <div class="day">
+        <h4>Martedì</h4>
+        <div class="table-wrapper">
+            <table>
+                <tr><th>Orario</th><th>Insegnamento</th><th>Aula</th></tr>
+                <tr><td>08:30 - 11:00</td><td class="lesson-name">COSTRUZIONI IDRAULICHE</td><td>Aula Q</td></tr>
+                <tr><td>08:50 - 11:20</td><td class="lesson-name">GEOLOGIA TECNICA E AMBIENTALE</td><td>Aula 1</td></tr>
+                <tr><td>11:00 - 13:30</td><td class="lesson-name">GEOTECNICA</td><td>Aula Q</td></tr>
+                <tr><td>11:20 - 13:00</td><td class="lesson-name">DIRITTO EUROPEO DELL'AMBIENTE</td><td>Aula 1</td></tr>
+                <tr><td>17:00 - 18:40</td><td class="lesson-name">TRATTAMENTO DEGLI AERIFORMI</td><td>Aula 2</td></tr>
+            </table>
+        </div>
 
-        <tr>
-            <td>Martedì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
+        <div class="mobile-lessons">
+            <div class="lesson-card"><div class="lesson-time">08:30 - 11:00</div><div class="lesson-subject">COSTRUZIONI IDRAULICHE</div><div class="lesson-room">Aula Q</div></div>
+            <div class="lesson-card"><div class="lesson-time">08:50 - 11:20</div><div class="lesson-subject">GEOLOGIA TECNICA E AMBIENTALE</div><div class="lesson-room">Aula 1</div></div>
+            <div class="lesson-card"><div class="lesson-time">11:00 - 13:30</div><div class="lesson-subject">GEOTECNICA</div><div class="lesson-room">Aula Q</div></div>
+            <div class="lesson-card"><div class="lesson-time">11:20 - 13:00</div><div class="lesson-subject">DIRITTO EUROPEO DELL'AMBIENTE</div><div class="lesson-room">Aula 1</div></div>
+            <div class="lesson-card"><div class="lesson-time">17:00 - 18:40</div><div class="lesson-subject">TRATTAMENTO DEGLI AERIFORMI</div><div class="lesson-room">Aula 2</div></div>
+        </div>
+    </div>
 
-        <tr>
-            <td>Mercoledì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
+    <div class="day">
+        <h4>Mercoledì</h4>
+        <div class="table-wrapper">
+            <table>
+                <tr><th>Orario</th><th>Insegnamento</th><th>Aula</th></tr>
+                <tr><td>08:30 - 11:00</td><td class="lesson-name">GEOTECNICA</td><td>Aula Q</td></tr>
+                <tr><td>08:50 - 11:20</td><td class="lesson-name">DIRITTO EUROPEO DELL'AMBIENTE</td><td>Aula 1</td></tr>
+                <tr><td>11:00 - 13:30</td><td class="lesson-name">COSTRUZIONI IDRAULICHE</td><td>Aula Q</td></tr>
+                <tr><td>11:20 - 13:00</td><td class="lesson-name">GEOLOGIA TECNICA E AMBIENTALE</td><td>Aula 1</td></tr>
+                <tr><td>14:30 - 17:00</td><td class="lesson-name">GEOINGEGNERIA AMBIENTALE</td><td>Aula Q</td></tr>
+            </table>
+        </div>
 
-        <tr>
-            <td>Giovedì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
+        <div class="mobile-lessons">
+            <div class="lesson-card"><div class="lesson-time">08:30 - 11:00</div><div class="lesson-subject">GEOTECNICA</div><div class="lesson-room">Aula Q</div></div>
+            <div class="lesson-card"><div class="lesson-time">08:50 - 11:20</div><div class="lesson-subject">DIRITTO EUROPEO DELL'AMBIENTE</div><div class="lesson-room">Aula 1</div></div>
+            <div class="lesson-card"><div class="lesson-time">11:00 - 13:30</div><div class="lesson-subject">COSTRUZIONI IDRAULICHE</div><div class="lesson-room">Aula Q</div></div>
+            <div class="lesson-card"><div class="lesson-time">11:20 - 13:00</div><div class="lesson-subject">GEOLOGIA TECNICA E AMBIENTALE</div><div class="lesson-room">Aula 1</div></div>
+            <div class="lesson-card"><div class="lesson-time">14:30 - 17:00</div><div class="lesson-subject">GEOINGEGNERIA AMBIENTALE</div><div class="lesson-room">Aula Q</div></div>
+        </div>
+    </div>
 
-        <tr>
-            <td>Venerdì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
+    <div class="day">
+        <h4>Giovedì</h4>
+        <div class="table-wrapper">
+            <table>
+                <tr><th>Orario</th><th>Insegnamento</th><th>Aula</th></tr>
+                <tr><td>08:30 - 11:00</td><td class="lesson-name">GEOINGEGNERIA AMBIENTALE</td><td>Aula Q</td></tr>
+                <tr><td>09:40 - 12:10</td><td class="lesson-name">TOPOGRAFIA E CARTOGRAFIA DIGITALE_TA</td><td>Aula 1</td></tr>
+                <tr><td>11:00 - 13:30</td><td class="lesson-name">RISORSE IDRICHE</td><td>Aula Q</td></tr>
+                <tr><td>14:00 - 15:40</td><td class="lesson-name">MECCANICA TEORICA E APPLICATA - MECCANICA RAZIONALE (I Modulo)</td><td>Aula G2</td></tr>
+                <tr><td>14:30 - 17:00</td><td class="lesson-name">MOBILITA' SOSTENIBILE</td><td>Aula Q</td></tr>
+            </table>
+        </div>
 
-    </table>
+        <div class="mobile-lessons">
+            <div class="lesson-card"><div class="lesson-time">08:30 - 11:00</div><div class="lesson-subject">GEOINGEGNERIA AMBIENTALE</div><div class="lesson-room">Aula Q</div></div>
+            <div class="lesson-card"><div class="lesson-time">09:40 - 12:10</div><div class="lesson-subject">TOPOGRAFIA E CARTOGRAFIA DIGITALE_TA</div><div class="lesson-room">Aula 1</div></div>
+            <div class="lesson-card"><div class="lesson-time">11:00 - 13:30</div><div class="lesson-subject">RISORSE IDRICHE</div><div class="lesson-room">Aula Q</div></div>
+            <div class="lesson-card"><div class="lesson-time">14:00 - 15:40</div><div class="lesson-subject">MECCANICA TEORICA E APPLICATA - MECCANICA RAZIONALE (I Modulo)</div><div class="lesson-room">Aula G2</div></div>
+            <div class="lesson-card"><div class="lesson-time">14:30 - 17:00</div><div class="lesson-subject">MOBILITA' SOSTENIBILE</div><div class="lesson-room">Aula Q</div></div>
+        </div>
+    </div>
 
-    <a href="#top" class="top-link">
-        ↑ Torna su
-    </a>
+    <div class="day">
+        <h4>Venerdì</h4>
+        <div class="table-wrapper">
+            <table>
+                <tr><th>Orario</th><th>Insegnamento</th><th>Aula</th></tr>
+                <tr><td>08:30 - 11:50</td><td class="lesson-name">GEOINGEGNERIA AMBIENTALE</td><td>Aula Q</td></tr>
+                <tr><td>11:50 - 13:30</td><td class="lesson-name">MOBILITA' SOSTENIBILE</td><td>Aula Q</td></tr>
+                <tr><td>14:30 - 16:10</td><td class="lesson-name">RISORSE IDRICHE</td><td>Aula Q</td></tr>
+            </table>
+        </div>
+
+        <div class="mobile-lessons">
+            <div class="lesson-card"><div class="lesson-time">08:30 - 11:50</div><div class="lesson-subject">GEOINGEGNERIA AMBIENTALE</div><div class="lesson-room">Aula Q</div></div>
+            <div class="lesson-card"><div class="lesson-time">11:50 - 13:30</div><div class="lesson-subject">MOBILITA' SOSTENIBILE</div><div class="lesson-room">Aula Q</div></div>
+            <div class="lesson-card"><div class="lesson-time">14:30 - 16:10</div><div class="lesson-subject">RISORSE IDRICHE</div><div class="lesson-room">Aula Q</div></div>
+        </div>
+    </div>
+</div>
+
 
 </section>
 
+<section class="section">
+    <h2 class="section-title">📅 Calendario accademico</h2>
 
-<section class="academic-calendar">
 
-    <h2>
-        📅 Calendario accademico
-    </h2>
-
-    <div class="calendar-row">
-
-        <span class="calendar-date">
+<div class="calendar">
+    <div class="calendar-grid">
+        <div class="calendar-item">
+            <strong>Inizio lezioni</strong>
             21 settembre 2026
-        </span>
+        </div>
 
-        <span>
-            Inizio lezioni
-        </span>
-
-    </div>
-
-    <div class="calendar-row">
-
-        <span class="calendar-date">
+        <div class="calendar-item">
+            <strong>Pausa esoneri</strong>
             2–6 novembre 2026
-        </span>
+        </div>
 
-        <span>
-            Pausa esoneri
-        </span>
-
-    </div>
-
-    <div class="calendar-row">
-
-        <span class="calendar-date">
+        <div class="calendar-item">
+            <strong>Recupero lezioni</strong>
             21–23 dicembre 2026
-        </span>
+        </div>
 
-        <span>
-            Recupero lezioni
-        </span>
+        <div class="calendar-item">
+            <strong>Festività natalizie</strong>
+            24 dicembre 2026 – 6 gennaio 2027
+        </div>
 
-    </div>
-
-    <div class="calendar-row">
-
-        <span class="calendar-date">
-            24 dicembre 2026–6 gennaio 2027
-        </span>
-
-        <span>
-            Festività natalizie
-        </span>
-
-    </div>
-
-    <div class="calendar-row">
-
-        <span class="calendar-date">
+        <div class="calendar-item">
+            <strong>Recupero lezioni</strong>
             7–8 gennaio 2027
-        </span>
+        </div>
 
-        <span>
-            Recupero lezioni
-        </span>
-
-    </div>
-
-    <div class="calendar-row">
-
-        <span class="calendar-date">
+        <div class="calendar-item">
+            <strong>Fine lezioni</strong>
             8 gennaio 2027
-        </span>
+        </div>
 
-        <span>
-            Fine lezioni
-        </span>
-
+        <div class="calendar-item">
+            <strong>Periodo esami</strong>
+            11 gennaio – 26 febbraio 2027
+        </div>
     </div>
+</div>
 
-    <div class="calendar-row">
-
-        <span class="calendar-date">
-            11 gennaio–26 febbraio 2027
-        </span>
-
-        <span>
-            Periodo esami
-        </span>
-
-    </div>
 
 </section>
-
 
 </main>
 
 <footer>
-
-
-<p>
-    <strong>Azione Universitaria PoliBa</strong>
-</p>
-
-<p>
-    La tua voce. La nostra rappresentanza.
-</p>
-
-<p>
-    © 2026 Azione Universitaria PoliBa
-</p>
-
-
+    <p>© 2026 Azione Universitaria PoliBa · La tua voce. La nostra rappresentanza.</p>
 </footer>
 
 </body>
