@@ -18,46 +18,38 @@
     body {
         font-family: Arial, Helvetica, sans-serif;
         background: #f4f7fb;
-        color: #1f2937;
-        line-height: 1.6;
+        color: #172033;
+        line-height: 1.5;
     }
 
     header {
-        background: #ffffff;
-        border-bottom: 1px solid #e5e7eb;
-        padding: 18px 6%;
+        background: white;
+        padding: 18px 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #e7ebf2;
         position: sticky;
         top: 0;
-        z-index: 100;
-    }
-
-    .header-inner {
-        max-width: 1150px;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
+        z-index: 10;
     }
 
     .logo {
         font-size: 20px;
         font-weight: 800;
         color: #155eef;
-        text-decoration: none;
     }
 
     .back {
-        color: #155eef;
         text-decoration: none;
-        font-weight: 700;
-        font-size: 14px;
+        color: #475467;
+        font-weight: 600;
     }
 
     .hero {
-        background: linear-gradient(135deg, #155eef, #2563eb);
+        background: linear-gradient(135deg, #155eef, #0040c1);
         color: white;
-        padding: 60px 6%;
+        padding: 60px 7%;
         text-align: center;
     }
 
@@ -72,27 +64,27 @@
     }
 
     .hero p {
-        font-size: 17px;
+        font-size: 18px;
         opacity: 0.92;
     }
 
     main {
-        max-width: 1150px;
-        margin: auto;
-        padding: 45px 6%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 45px 20px 70px;
     }
 
     section {
-        margin-bottom: 50px;
+        margin-bottom: 55px;
     }
 
     .section-title {
-        font-size: 27px;
-        margin-bottom: 24px;
-        color: #111827;
+        font-size: 28px;
+        margin-bottom: 25px;
+        color: #101828;
     }
 
-    .year-grid {
+    .year-menu {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 18px;
@@ -100,211 +92,141 @@
 
     .year-card {
         background: white;
-        border: 1px solid #e5e7eb;
-        border-radius: 18px;
-        padding: 24px;
+        border-radius: 16px;
+        padding: 25px;
         text-align: center;
         text-decoration: none;
-        color: #111827;
-        font-weight: 800;
-        box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
-        transition: transform 0.2s, box-shadow 0.2s;
+        color: #172033;
+        font-weight: 700;
+        border: 1px solid #e4e7ec;
+        box-shadow: 0 5px 18px rgba(16, 24, 40, 0.06);
+        transition: 0.2s;
     }
 
     .year-card:hover {
         transform: translateY(-3px);
-        box-shadow: 0 10px 28px rgba(15, 23, 42, 0.1);
+        border-color: #155eef;
     }
 
-    .schedule-section {
-        margin-top: 35px;
-    }
-
-    .schedule-title {
-        font-size: 24px;
-        margin-bottom: 18px;
-        color: #155eef;
-    }
-
-    .schedule-table-wrapper {
-        background: white;
-        border-radius: 18px;
-        overflow-x: auto;
-        box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
-        border: 1px solid #e5e7eb;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        min-width: 800px;
-    }
-
-    th {
-        background: #eef4ff;
-        color: #155eef;
-        padding: 15px 12px;
-        font-size: 14px;
-        text-align: left;
-    }
-
-    td {
-        padding: 14px 12px;
-        border-top: 1px solid #e5e7eb;
-        vertical-align: top;
-        font-size: 14px;
-    }
-
-    .time {
-        width: 115px;
-        font-weight: 800;
-        color: #111827;
-        white-space: nowrap;
-    }
-
-    .lesson {
-        font-weight: 700;
-        color: #111827;
-    }
-
-    .room {
+    .year-number {
         display: block;
-        margin-top: 5px;
-        color: #64748b;
-        font-size: 13px;
-        font-weight: 600;
-    }
-
-    .mobile-days {
-        display: none;
-    }
-
-    .day-card {
-        background: white;
-        border: 1px solid #e5e7eb;
-        border-radius: 18px;
-        padding: 18px;
-        margin-bottom: 18px;
-        box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
-    }
-
-    .day-title {
-        font-size: 20px;
+        font-size: 25px;
         color: #155eef;
-        margin-bottom: 14px;
-        font-weight: 800;
-    }
-
-    .lesson-card {
-        border-top: 1px solid #e5e7eb;
-        padding: 14px 0;
-    }
-
-    .lesson-card:first-child {
-        border-top: none;
-        padding-top: 0;
-    }
-
-    .lesson-time {
-        font-weight: 800;
-        color: #111827;
         margin-bottom: 5px;
     }
 
-    .lesson-name {
-        font-weight: 700;
-        color: #111827;
+    .year-card small {
+        color: #667085;
+        font-weight: 500;
     }
 
-    .lesson-room {
-        color: #64748b;
+    .year-section {
+        scroll-margin-top: 100px;
+    }
+
+    .day {
+        background: white;
+        border: 1px solid #e4e7ec;
+        border-radius: 18px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        box-shadow: 0 5px 18px rgba(16, 24, 40, 0.05);
+    }
+
+    .day-header {
+        background: #f8faff;
+        padding: 16px 20px;
+        border-bottom: 1px solid #e4e7ec;
+        font-size: 20px;
+        font-weight: 800;
+        color: #155eef;
+    }
+
+    .lesson {
+        display: grid;
+        grid-template-columns: 150px 1fr auto;
+        gap: 20px;
+        align-items: center;
+        padding: 18px 20px;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .lesson:last-child {
+        border-bottom: none;
+    }
+
+    .time {
+        font-weight: 800;
+        color: #155eef;
+        white-space: nowrap;
+    }
+
+    .subject {
+        font-weight: 700;
+        color: #172033;
+    }
+
+    .group {
+        display: inline-block;
+        margin-top: 6px;
         font-size: 13px;
-        margin-top: 4px;
-        font-weight: 600;
+        font-weight: 700;
+        color: #475467;
+    }
+
+    .room {
+        background: #eef4ff;
+        color: #155eef;
+        padding: 7px 11px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 700;
+        white-space: nowrap;
     }
 
     .empty {
-        color: #64748b;
+        padding: 20px;
+        color: #98a2b3;
         font-style: italic;
-        padding: 10px 0;
     }
 
     .calendar {
         background: white;
-        border: 1px solid #e5e7eb;
         border-radius: 18px;
-        padding: 25px;
-        box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
+        border: 1px solid #e4e7ec;
+        overflow: hidden;
+        box-shadow: 0 5px 18px rgba(16, 24, 40, 0.05);
     }
 
-    .calendar-item {
-        display: flex;
-        gap: 18px;
-        padding: 14px 0;
-        border-bottom: 1px solid #e5e7eb;
+    .calendar-row {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        border-bottom: 1px solid #edf0f5;
     }
 
-    .calendar-item:last-child {
+    .calendar-row:last-child {
         border-bottom: none;
     }
 
-    .calendar-date {
-        min-width: 210px;
-        font-weight: 800;
+    .calendar-row strong,
+    .calendar-row span {
+        padding: 16px 20px;
+    }
+
+    .calendar-row strong {
+        background: #f8faff;
         color: #155eef;
     }
 
-    .calendar-event {
-        color: #374151;
-    }
-
     footer {
-        background: #111827;
-        color: white;
+        background: #101828;
+        color: #d0d5dd;
         text-align: center;
-        padding: 28px 6%;
-        margin-top: 30px;
-    }
-
-    footer p {
+        padding: 25px 20px;
         font-size: 14px;
-        opacity: 0.8;
     }
 
-    @media (max-width: 800px) {
-        .hero h1 {
-            font-size: 30px;
-        }
-
-        .year-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .schedule-table-wrapper {
-            display: none;
-        }
-
-        .mobile-days {
-            display: block;
-        }
-
-        .calendar-item {
-            flex-direction: column;
-            gap: 3px;
-        }
-
-        .calendar-date {
-            min-width: auto;
-        }
-    }
-
-    @media (min-width: 801px) {
-        .mobile-days {
-            display: none;
-        }
-    }
-
-    @media (max-width: 500px) {
+    @media (max-width: 700px) {
         header {
             padding: 15px 5%;
         }
@@ -314,60 +236,81 @@
         }
 
         .back {
-            font-size: 13px;
+            font-size: 14px;
         }
 
         .hero {
-            padding: 45px 5%;
-        }
-
-        .hero-icon {
-            font-size: 42px;
+            padding: 45px 20px;
         }
 
         .hero h1 {
-            font-size: 27px;
+            font-size: 30px;
         }
 
         .hero p {
-            font-size: 15px;
+            font-size: 16px;
         }
 
         main {
-            padding: 35px 5%;
+            padding: 35px 15px 55px;
         }
 
         .section-title {
             font-size: 24px;
         }
 
-        .schedule-title {
-            font-size: 21px;
+        .year-menu {
+            grid-template-columns: 1fr;
         }
 
-        .day-card {
-            padding: 16px;
+        .lesson {
+            display: block;
+            padding: 17px;
+        }
+
+        .time {
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        .subject {
+            display: block;
+            margin-bottom: 9px;
+        }
+
+        .room {
+            display: inline-block;
+        }
+
+        .calendar-row {
+            grid-template-columns: 1fr;
+        }
+
+        .calendar-row strong {
+            padding-bottom: 5px;
+        }
+
+        .calendar-row span {
+            padding-top: 5px;
         }
     }
 </style>
-```
+
 
 </head>
 
 <body>
 
 <header>
-    <div class="header-inner">
-        <a href="index.html" class="logo">Azione Universitaria PoliBa</a>
-        <a href="calendari.html" class="back">← Torna ai Calendari</a>
-    </div>
+    <div class="logo">Azione Universitaria PoliBa</div>
+    <a class="back" href="calendari.html">← Torna ai Calendari</a>
 </header>
 
-<div class="hero">
+<section class="hero">
     <div class="hero-icon">📊</div>
     <h1>Ingegneria Gestionale</h1>
     <p>Orario delle lezioni e calendario accademico</p>
-</div>
+</section>
 
 <main>
 
@@ -375,1065 +318,387 @@
 <section>
     <h2 class="section-title">📚 Seleziona il tuo anno</h2>
 
-    <div class="year-grid">
-        <a href="#primo-anno" class="year-card">1° Anno</a>
-        <a href="#secondo-anno" class="year-card">2° Anno</a>
-        <a href="#terzo-anno" class="year-card">3° Anno</a>
+    <div class="year-menu">
+        <a href="#primo-anno" class="year-card">
+            <span class="year-number">1° Anno</span>
+            <small>Consulta l'orario</small>
+        </a>
+
+        <a href="#secondo-anno" class="year-card">
+            <span class="year-number">2° Anno</span>
+            <small>Orario in aggiornamento</small>
+        </a>
+
+        <a href="#terzo-anno" class="year-card">
+            <span class="year-number">3° Anno</span>
+            <small>Consulta l'orario</small>
+        </a>
     </div>
 </section>
 
 <section>
     <h2 class="section-title">🕐 Orario delle lezioni</h2>
 
-    <!-- 1° ANNO -->
-    <div class="schedule-section" id="primo-anno">
-        <h3 class="schedule-title">1° Anno</h3>
+    <div class="year-section" id="primo-anno">
+        <h2 class="section-title">1° Anno</h2>
 
-        <div class="schedule-table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Orario</th>
-                        <th>Lunedì</th>
-                        <th>Martedì</th>
-                        <th>Mercoledì</th>
-                        <th>Giovedì</th>
-                        <th>Venerdì</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="time">08:30 – 10:10</td>
-                        <td>
-                            <span class="lesson">BASI DI DATI</span>
-                            <span class="room">Aula L</span>
-                        </td>
-                        <td>
-                            <span class="lesson">FLUIDODINAMICA E SISTEMI ENERGETICI - SISTEMI ENERGETICI (2° Modulo)</span>
-                            <span class="room">Aula 5</span>
-                        </td>
-                        <td>
-                            <span class="lesson">FLUIDODINAMICA E SISTEMI ENERGETICI - SISTEMI ENERGETICI (2° Modulo)</span>
-                            <span class="room">Aula 5</span>
-                        </td>
-                        <td rowspan="2">
-                            <span class="lesson">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - ELEMENTI DI MECCANICA DELLE MACCHINE (1° Modulo)</span>
-                            <span class="room">Aula L</span>
-                        </td>
-                        <td>
-                            <span class="lesson">SISTEMI ENERGETICI SOSTENIBILI - MACCHINE PER L'ENERGIA (1 Modulo)</span>
-                            <span class="room">Aula L</span>
-                        </td>
-                    </tr>
+        <div class="day">
+            <div class="day-header">Lunedì</div>
 
-                    <tr>
-                        <td class="time">10:10 – 11:50</td>
-                        <td>
-                            <span class="lesson">SISTEMI ENERGETICI SOSTENIBILI - MACCHINE PER L'ENERGIA (1 Modulo)</span>
-                            <span class="room">Aula L</span>
-                        </td>
-                        <td>
-                            <span class="lesson">FLUIDODINAMICA E SISTEMI ENERGETICI - FLUIDODINAMICA (1° Modulo)</span>
-                            <span class="room">Aula 5</span>
-                        </td>
-                        <td>
-                            <span class="lesson">FLUIDODINAMICA E SISTEMI ENERGETICI - FLUIDODINAMICA (1° Modulo)</span>
-                            <span class="room">Aula 5</span>
-                        </td>
-                        <td>
-                            <span class="lesson">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - SCIENZA DELLE COSTRUZIONI (2° Modulo)</span>
-                            <span class="room">Aula L</span>
-                        </td>
-                        <td></td>
-                    </tr>
+            <div class="lesson">
+                <div class="time">08:30 – 10:10</div>
+                <div class="subject">BASI DI DATI</div>
+                <div class="room">Aula L</div>
+            </div>
 
-                    <tr>
-                        <td class="time">11:50 – 13:30</td>
-                        <td>
-                            <span class="lesson">SISTEMI ENERGETICI SOSTENIBILI - SISTEMI PER LE ENERGIE RINNOVABILI (2 Modulo)</span>
-                            <span class="room">Aula L</span>
-                        </td>
-                        <td>
-                            <span class="lesson">METODI DI RAPPRESENTAZIONE TECNICA</span>
-                            <span class="room">A-K · Aula L</span>
-                        </td>
-                        <td>
-                            <span class="lesson">FLUIDODINAMICA E SISTEMI ENERGETICI - FLUIDODINAMICA (1° Modulo)</span>
-                            <span class="room">Aula 5</span>
-                        </td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">SISTEMI ECONOMICI - MICROECONOMIA (1 Modulo)</span>
-                            <span class="room">Aula L</span>
-                        </td>
-                    </tr>
+            <div class="lesson">
+                <div class="time">10:10 – 11:50</div>
+                <div class="subject">SISTEMI ENERGETICI SOSTENIBILI - MACCHINE PER L'ENERGIA (1 Modulo)</div>
+                <div class="room">Aula L</div>
+            </div>
 
-                    <tr>
-                        <td class="time">11:50 – 12:40</td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">METODI DI RAPPRESENTAZIONE TECNICA</span>
-                            <span class="room">L-Z · Aula D</span>
-                        </td>
-                        <td>
-                            <span class="lesson">IDRAULICA AMBIENTALE</span>
-                            <span class="room">Aula 7</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">12:40 – 13:30</td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">METODI DI RAPPRESENTAZIONE TECNICA</span>
-                            <span class="room">L-Z · Aula D</span>
-                        </td>
-                        <td>
-                            <span class="lesson">IDRAULICA AMBIENTALE</span>
-                            <span class="room">Aula 7</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">14:30 – 16:10</td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">SISTEMI ECONOMICI - MICROECONOMIA (1 Modulo)</span>
-                            <span class="room">Aula L</span>
-                        </td>
-                        <td>
-                            <span class="lesson">METODI DI RAPPRESENTAZIONE TECNICA</span>
-                            <span class="room">A-K · Aula L</span>
-                        </td>
-                        <td>
-                            <span class="lesson">IDRAULICA AMBIENTALE</span>
-                            <span class="room">Aula 4</span>
-                        </td>
-                        <td>
-                            <span class="lesson">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - ELEMENTI DI MECCANICA DELLE MACCHINE (1° Modulo)</span>
-                            <span class="room">Aula C</span>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">14:30 – 15:20</td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">METODI DI RAPPRESENTAZIONE TECNICA</span>
-                            <span class="room">L-Z · Aula G</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">15:20 – 17:00</td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">METODI DI RAPPRESENTAZIONE TECNICA</span>
-                            <span class="room">A-K · Aula L</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">15:20 – 16:10</td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">METODI DI RAPPRESENTAZIONE TECNICA</span>
-                            <span class="room">L-Z · Aula G</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">16:10 – 18:40</td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">BASI DI DATI</span>
-                            <span class="room">Aula L</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - SCIENZA DELLE COSTRUZIONI (2° Modulo)</span>
-                            <span class="room">Aula C</span>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">17:00 – 19:30</td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">SISTEMI ENERGETICI SOSTENIBILI - SISTEMI PER LE ENERGIE RINNOVABILI (2 Modulo)</span>
-                            <span class="room">Aula L</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="lesson">
+                <div class="time">11:50 – 13:30</div>
+                <div class="subject">SISTEMI ENERGETICI SOSTENIBILI - SISTEMI PER LE ENERGIE RINNOVABILI (2 Modulo)</div>
+                <div class="room">Aula L</div>
+            </div>
         </div>
 
-        <div class="mobile-days">
+        <div class="day">
+            <div class="day-header">Martedì</div>
 
-            <div class="day-card">
-                <div class="day-title">Lunedì</div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">08:30 – 10:10</div>
-                    <div class="lesson-name">BASI DI DATI</div>
-                    <div class="lesson-room">Aula L</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">10:10 – 11:50</div>
-                    <div class="lesson-name">SISTEMI ENERGETICI SOSTENIBILI - MACCHINE PER L'ENERGIA (1 Modulo)</div>
-                    <div class="lesson-room">Aula L</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">11:50 – 13:30</div>
-                    <div class="lesson-name">SISTEMI ENERGETICI SOSTENIBILI - SISTEMI PER LE ENERGIE RINNOVABILI (2 Modulo)</div>
-                    <div class="lesson-room">Aula L</div>
-                </div>
+            <div class="lesson">
+                <div class="time">08:30 – 10:10</div>
+                <div class="subject">FLUIDODINAMICA E SISTEMI ENERGETICI - SISTEMI ENERGETICI (2° Modulo)</div>
+                <div class="room">Aula 5</div>
             </div>
 
-            <div class="day-card">
-                <div class="day-title">Martedì</div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">08:30 – 10:10</div>
-                    <div class="lesson-name">FLUIDODINAMICA E SISTEMI ENERGETICI - SISTEMI ENERGETICI (2° Modulo)</div>
-                    <div class="lesson-room">Aula 5</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">10:10 – 11:50</div>
-                    <div class="lesson-name">FLUIDODINAMICA E SISTEMI ENERGETICI - FLUIDODINAMICA (1° Modulo)</div>
-                    <div class="lesson-room">Aula 5</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">11:50 – 13:30</div>
-                    <div class="lesson-name">METODI DI RAPPRESENTAZIONE TECNICA</div>
-                    <div class="lesson-room">A-K · Aula L</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">11:50 – 12:40</div>
-                    <div class="lesson-name">METODI DI RAPPRESENTAZIONE TECNICA</div>
-                    <div class="lesson-room">L-Z · Aula D</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">12:40 – 13:30</div>
-                    <div class="lesson-name">METODI DI RAPPRESENTAZIONE TECNICA</div>
-                    <div class="lesson-room">L-Z · Aula D</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">14:30 – 16:10</div>
-                    <div class="lesson-name">SISTEMI ECONOMICI - MICROECONOMIA (1 Modulo)</div>
-                    <div class="lesson-room">Aula L</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">16:10 – 18:40</div>
-                    <div class="lesson-name">BASI DI DATI</div>
-                    <div class="lesson-room">Aula L</div>
-                </div>
+            <div class="lesson">
+                <div class="time">10:10 – 11:50</div>
+                <div class="subject">FLUIDODINAMICA E SISTEMI ENERGETICI - FLUIDODINAMICA (1° Modulo)</div>
+                <div class="room">Aula 5</div>
             </div>
 
-            <div class="day-card">
-                <div class="day-title">Mercoledì</div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">08:30 – 11:00</div>
-                    <div class="lesson-name">FLUIDODINAMICA E SISTEMI ENERGETICI - SISTEMI ENERGETICI (2° Modulo)</div>
-                    <div class="lesson-room">Aula 5</div>
+            <div class="lesson">
+                <div class="time">11:50 – 13:30</div>
+                <div class="subject">
+                    METODI DI RAPPRESENTAZIONE TECNICA
+                    <span class="group">A-K</span>
                 </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">11:00 – 13:30</div>
-                    <div class="lesson-name">FLUIDODINAMICA E SISTEMI ENERGETICI - FLUIDODINAMICA (1° Modulo)</div>
-                    <div class="lesson-room">Aula 5</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">11:00 – 11:50</div>
-                    <div class="lesson-name">IDRAULICA AMBIENTALE</div>
-                    <div class="lesson-room">Aula 7</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">11:50 – 13:30</div>
-                    <div class="lesson-name">IDRAULICA AMBIENTALE</div>
-                    <div class="lesson-room">Aula 7</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">14:30 – 15:20</div>
-                    <div class="lesson-name">METODI DI RAPPRESENTAZIONE TECNICA</div>
-                    <div class="lesson-room">A-K · Aula L</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">14:30 – 15:20</div>
-                    <div class="lesson-name">METODI DI RAPPRESENTAZIONE TECNICA</div>
-                    <div class="lesson-room">L-Z · Aula G</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">15:20 – 17:00</div>
-                    <div class="lesson-name">METODI DI RAPPRESENTAZIONE TECNICA</div>
-                    <div class="lesson-room">A-K · Aula L</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">15:20 – 17:00</div>
-                    <div class="lesson-name">METODI DI RAPPRESENTAZIONE TECNICA</div>
-                    <div class="lesson-room">L-Z · Aula G</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">17:00 – 19:30</div>
-                    <div class="lesson-name">SISTEMI ENERGETICI SOSTENIBILI - SISTEMI PER LE ENERGIE RINNOVABILI (2 Modulo)</div>
-                    <div class="lesson-room">Aula L</div>
-                </div>
+                <div class="room">Aula L</div>
             </div>
 
-            <div class="day-card">
-                <div class="day-title">Giovedì</div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">08:30 – 11:00</div>
-                    <div class="lesson-name">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - ELEMENTI DI MECCANICA DELLE MACCHINE (1° Modulo)</div>
-                    <div class="lesson-room">Aula L</div>
+            <div class="lesson">
+                <div class="time">11:50 – 12:40</div>
+                <div class="subject">
+                    METODI DI RAPPRESENTAZIONE TECNICA
+                    <span class="group">L-Z</span>
                 </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">11:00 – 13:30</div>
-                    <div class="lesson-name">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - SCIENZA DELLE COSTRUZIONI (2° Modulo)</div>
-                    <div class="lesson-room">Aula L</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">14:30 – 16:10</div>
-                    <div class="lesson-name">IDRAULICA AMBIENTALE</div>
-                    <div class="lesson-room">Aula 4</div>
-                </div>
+                <div class="room">Aula D</div>
             </div>
 
-            <div class="day-card">
-                <div class="day-title">Venerdì</div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">08:30 – 11:00</div>
-                    <div class="lesson-name">SISTEMI ENERGETICI SOSTENIBILI - MACCHINE PER L'ENERGIA (1 Modulo)</div>
-                    <div class="lesson-room">Aula L</div>
+            <div class="lesson">
+                <div class="time">12:40 – 13:30</div>
+                <div class="subject">
+                    METODI DI RAPPRESENTAZIONE TECNICA
+                    <span class="group">L-Z</span>
                 </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">11:00 – 13:30</div>
-                    <div class="lesson-name">SISTEMI ECONOMICI - MICROECONOMIA (1 Modulo)</div>
-                    <div class="lesson-room">Aula L</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">14:30 – 16:10</div>
-                    <div class="lesson-name">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - ELEMENTI DI MECCANICA DELLE MACCHINE (1° Modulo)</div>
-                    <div class="lesson-room">Aula C</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">16:10 – 17:50</div>
-                    <div class="lesson-name">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - SCIENZA DELLE COSTRUZIONI (2° Modulo)</div>
-                    <div class="lesson-room">Aula C</div>
-                </div>
+                <div class="room">Aula D</div>
             </div>
 
+            <div class="lesson">
+                <div class="time">14:30 – 16:10</div>
+                <div class="subject">SISTEMI ECONOMICI - MICROECONOMIA (1 Modulo)</div>
+                <div class="room">Aula L</div>
+            </div>
+
+            <div class="lesson">
+                <div class="time">16:10 – 18:40</div>
+                <div class="subject">BASI DI DATI</div>
+                <div class="room">Aula L</div>
+            </div>
+        </div>
+
+        <div class="day">
+            <div class="day-header">Mercoledì</div>
+
+            <div class="lesson">
+                <div class="time">08:30 – 11:00</div>
+                <div class="subject">FLUIDODINAMICA E SISTEMI ENERGETICI - SISTEMI ENERGETICI (2° Modulo)</div>
+                <div class="room">Aula 5</div>
+            </div>
+
+            <div class="lesson">
+                <div class="time">11:00 – 13:30</div>
+                <div class="subject">FLUIDODINAMICA E SISTEMI ENERGETICI - FLUIDODINAMICA (1° Modulo)</div>
+                <div class="room">Aula 5</div>
+            </div>
+
+            <div class="lesson">
+                <div class="time">11:00 – 11:50</div>
+                <div class="subject">IDRAULICA AMBIENTALE</div>
+                <div class="room">Aula 7</div>
+            </div>
+
+            <div class="lesson">
+                <div class="time">11:50 – 13:30</div>
+                <div class="subject">IDRAULICA AMBIENTALE</div>
+                <div class="room">Aula 7</div>
+            </div>
+
+            <div class="lesson">
+                <div class="time">14:30 – 15:20</div>
+                <div class="subject">
+                    METODI DI RAPPRESENTAZIONE TECNICA
+                    <span class="group">A-K</span>
+                </div>
+                <div class="room">Aula L</div>
+            </div>
+
+            <div class="lesson">
+                <div class="time">14:30 – 15:20</div>
+                <div class="subject">
+                    METODI DI RAPPRESENTAZIONE TECNICA
+                    <span class="group">L-Z</span>
+                </div>
+                <div class="room">Aula G</div>
+            </div>
+
+            <div class="lesson">
+                <div class="time">15:20 – 17:00</div>
+                <div class="subject">
+                    METODI DI RAPPRESENTAZIONE TECNICA
+                    <span class="group">A-K</span>
+                </div>
+                <div class="room">Aula L</div>
+            </div>
+
+            <div class="lesson">
+                <div class="time">15:20 – 17:00</div>
+                <div class="subject">
+                    METODI DI RAPPRESENTAZIONE TECNICA
+                    <span class="group">L-Z</span>
+                </div>
+                <div class="room">Aula G</div>
+            </div>
+
+            <div class="lesson">
+                <div class="time">17:00 – 19:30</div>
+                <div class="subject">SISTEMI ENERGETICI SOSTENIBILI - SISTEMI PER LE ENERGIE RINNOVABILI (2 Modulo)</div>
+                <div class="room">Aula L</div>
+            </div>
+        </div>
+
+        <div class="day">
+            <div class="day-header">Giovedì</div>
+
+            <div class="lesson">
+                <div class="time">08:30 – 11:00</div>
+                <div class="subject">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - ELEMENTI DI MECCANICA DELLE MACCHINE (1° Modulo)</div>
+                <div class="room">Aula L</div>
+            </div>
+
+            <div class="lesson">
+                <div class="time">11:00 – 13:30</div>
+                <div class="subject">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - SCIENZA DELLE COSTRUZIONI (2° Modulo)</div>
+                <div class="room">Aula L</div>
+            </div>
+
+            <div class="lesson">
+                <div class="time">14:30 – 16:10</div>
+                <div class="subject">IDRAULICA AMBIENTALE</div>
+                <div class="room">Aula 4</div>
+            </div>
+        </div>
+
+        <div class="day">
+            <div class="day-header">Venerdì</div>
+
+            <div class="lesson">
+                <div class="time">08:30 – 11:00</div>
+                <div class="subject">SISTEMI ENERGETICI SOSTENIBILI - MACCHINE PER L'ENERGIA (1 Modulo)</div>
+                <div class="room">Aula L</div>
+            </div>
+
+            <div class="lesson">
+                <div class="time">11:00 – 13:30</div>
+                <div class="subject">SISTEMI ECONOMICI - MICROECONOMIA (1 Modulo)</div>
+                <div class="room">Aula L</div>
+            </div>
+
+            <div class="lesson">
+                <div class="time">14:30 – 16:10</div>
+                <div class="subject">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - ELEMENTI DI MECCANICA DELLE MACCHINE (1° Modulo)</div>
+                <div class="room">Aula C</div>
+            </div>
+
+            <div class="lesson">
+                <div class="time">16:10 – 17:50</div>
+                <div class="subject">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - SCIENZA DELLE COSTRUZIONI (2° Modulo)</div>
+                <div class="room">Aula C</div>
+            </div>
         </div>
     </div>
 
-    <!-- 2° ANNO -->
-    <div class="schedule-section" id="secondo-anno">
-        <h3 class="schedule-title">2° Anno</h3>
+    <div class="year-section" id="secondo-anno">
+        <h2 class="section-title">2° Anno</h2>
 
-        <div class="schedule-table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Orario</th>
-                        <th>Lunedì</th>
-                        <th>Martedì</th>
-                        <th>Mercoledì</th>
-                        <th>Giovedì</th>
-                        <th>Venerdì</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="time">08:30 – 10:10</td>
-                        <td>
-                            <span class="lesson">BASI DI DATI</span>
-                            <span class="room">Aula L</span>
-                        </td>
-                        <td>
-                            <span class="lesson">FLUIDODINAMICA E SISTEMI ENERGETICI - SISTEMI ENERGETICI (2° Modulo)</span>
-                            <span class="room">Aula 5</span>
-                        </td>
-                        <td>
-                            <span class="lesson">FLUIDODINAMICA E SISTEMI ENERGETICI - SISTEMI ENERGETICI (2° Modulo)</span>
-                            <span class="room">Aula 5</span>
-                        </td>
-                        <td>
-                            <span class="lesson">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - ELEMENTI DI MECCANICA DELLE MACCHINE (1° Modulo)</span>
-                            <span class="room">Aula L</span>
-                        </td>
-                        <td>
-                            <span class="lesson">SISTEMI ENERGETICI SOSTENIBILI - MACCHINE PER L'ENERGIA (1 Modulo)</span>
-                            <span class="room">Aula L</span>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">10:10 – 11:50</td>
-                        <td>
-                            <span class="lesson">SISTEMI ENERGETICI SOSTENIBILI - MACCHINE PER L'ENERGIA (1 Modulo)</span>
-                            <span class="room">Aula L</span>
-                        </td>
-                        <td>
-                            <span class="lesson">FLUIDODINAMICA E SISTEMI ENERGETICI - FLUIDODINAMICA (1° Modulo)</span>
-                            <span class="room">Aula 5</span>
-                        </td>
-                        <td>
-                            <span class="lesson">FLUIDODINAMICA E SISTEMI ENERGETICI - FLUIDODINAMICA (1° Modulo)</span>
-                            <span class="room">Aula 5</span>
-                        </td>
-                        <td>
-                            <span class="lesson">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - SCIENZA DELLE COSTRUZIONI (2° Modulo)</span>
-                            <span class="room">Aula L</span>
-                        </td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">11:50 – 13:30</td>
-                        <td>
-                            <span class="lesson">SISTEMI ENERGETICI SOSTENIBILI - SISTEMI PER LE ENERGIE RINNOVABILI (2 Modulo)</span>
-                            <span class="room">Aula L</span>
-                        </td>
-                        <td>
-                            <span class="lesson">METODI DI RAPPRESENTAZIONE TECNICA</span>
-                            <span class="room">A-K · Aula L</span>
-                        </td>
-                        <td>
-                            <span class="lesson">FLUIDODINAMICA E SISTEMI ENERGETICI - FLUIDODINAMICA (1° Modulo)</span>
-                            <span class="room">Aula 5</span>
-                        </td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">SISTEMI ECONOMICI - MICROECONOMIA (1 Modulo)</span>
-                            <span class="room">Aula L</span>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">11:00 – 13:30</td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">IDRAULICA AMBIENTALE</span>
-                            <span class="room">Aula 7</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">11:50 – 12:40</td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">METODI DI RAPPRESENTAZIONE TECNICA</span>
-                            <span class="room">L-Z · Aula D</span>
-                        </td>
-                        <td>
-                            <span class="lesson">IDRAULICA AMBIENTALE</span>
-                            <span class="room">Aula 7</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">12:40 – 13:30</td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">METODI DI RAPPRESENTAZIONE TECNICA</span>
-                            <span class="room">L-Z · Aula D</span>
-                        </td>
-                        <td>
-                            <span class="lesson">IDRAULICA AMBIENTALE</span>
-                            <span class="room">Aula 7</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">14:30 – 16:10</td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">SISTEMI ECONOMICI - MICROECONOMIA (1 Modulo)</span>
-                            <span class="room">Aula L</span>
-                        </td>
-                        <td>
-                            <span class="lesson">METODI DI RAPPRESENTAZIONE TECNICA</span>
-                            <span class="room">A-K · Aula L</span>
-                        </td>
-                        <td>
-                            <span class="lesson">IDRAULICA AMBIENTALE</span>
-                            <span class="room">Aula 4</span>
-                        </td>
-                        <td>
-                            <span class="lesson">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - ELEMENTI DI MECCANICA DELLE MACCHINE (1° Modulo)</span>
-                            <span class="room">Aula C</span>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">14:30 – 15:20</td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">METODI DI RAPPRESENTAZIONE TECNICA</span>
-                            <span class="room">L-Z · Aula G</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">15:20 – 17:00</td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">METODI DI RAPPRESENTAZIONE TECNICA</span>
-                            <span class="room">A-K · Aula L</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">15:20 – 16:10</td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">METODI DI RAPPRESENTAZIONE TECNICA</span>
-                            <span class="room">L-Z · Aula G</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">16:10 – 18:40</td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">BASI DI DATI</span>
-                            <span class="room">Aula L</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - SCIENZA DELLE COSTRUZIONI (2° Modulo)</span>
-                            <span class="room">Aula C</span>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">17:00 – 19:30</td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">SISTEMI ENERGETICI SOSTENIBILI - SISTEMI PER LE ENERGIE RINNOVABILI (2 Modulo)</span>
-                            <span class="room">Aula L</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="mobile-days">
-
-            <div class="day-card">
-                <div class="day-title">Lunedì</div>
-                <div class="lesson-card">
-                    <div class="lesson-time">08:30 – 10:10</div>
-                    <div class="lesson-name">BASI DI DATI</div>
-                    <div class="lesson-room">Aula L</div>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-time">10:10 – 11:50</div>
-                    <div class="lesson-name">SISTEMI ENERGETICI SOSTENIBILI - MACCHINE PER L'ENERGIA (1 Modulo)</div>
-                    <div class="lesson-room">Aula L</div>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-time">11:50 – 13:30</div>
-                    <div class="lesson-name">SISTEMI ENERGETICI SOSTENIBILI - SISTEMI PER LE ENERGIE RINNOVABILI (2 Modulo)</div>
-                    <div class="lesson-room">Aula L</div>
-                </div>
+        <div class="day">
+            <div class="day-header">Orario in aggiornamento</div>
+            <div class="empty">
+                L'orario ufficiale del 2° anno sarà inserito appena verificato.
             </div>
-
-            <div class="day-card">
-                <div class="day-title">Martedì</div>
-                <div class="lesson-card">
-                    <div class="lesson-time">08:30 – 10:10</div>
-                    <div class="lesson-name">FLUIDODINAMICA E SISTEMI ENERGETICI - SISTEMI ENERGETICI (2° Modulo)</div>
-                    <div class="lesson-room">Aula 5</div>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-time">10:10 – 11:50</div>
-                    <div class="lesson-name">FLUIDODINAMICA E SISTEMI ENERGETICI - FLUIDODINAMICA (1° Modulo)</div>
-                    <div class="lesson-room">Aula 5</div>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-time">11:50 – 13:30</div>
-                    <div class="lesson-name">METODI DI RAPPRESENTAZIONE TECNICA</div>
-                    <div class="lesson-room">A-K · Aula L</div>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-time">11:50 – 12:40</div>
-                    <div class="lesson-name">METODI DI RAPPRESENTAZIONE TECNICA</div>
-                    <div class="lesson-room">L-Z · Aula D</div>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-time">12:40 – 13:30</div>
-                    <div class="lesson-name">METODI DI RAPPRESENTAZIONE TECNICA</div>
-                    <div class="lesson-room">L-Z · Aula D</div>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-time">14:30 – 16:10</div>
-                    <div class="lesson-name">SISTEMI ECONOMICI - MICROECONOMIA (1 Modulo)</div>
-                    <div class="lesson-room">Aula L</div>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-time">16:10 – 18:40</div>
-                    <div class="lesson-name">BASI DI DATI</div>
-                    <div class="lesson-room">Aula L</div>
-                </div>
-            </div>
-
-            <div class="day-card">
-                <div class="day-title">Mercoledì</div>
-                <div class="lesson-card">
-                    <div class="lesson-time">08:30 – 11:00</div>
-                    <div class="lesson-name">FLUIDODINAMICA E SISTEMI ENERGETICI - SISTEMI ENERGETICI (2° Modulo)</div>
-                    <div class="lesson-room">Aula 5</div>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-time">11:00 – 13:30</div>
-                    <div class="lesson-name">FLUIDODINAMICA E SISTEMI ENERGETICI - FLUIDODINAMICA (1° Modulo)</div>
-                    <div class="lesson-room">Aula 5</div>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-time">11:00 – 11:50</div>
-                    <div class="lesson-name">IDRAULICA AMBIENTALE</div>
-                    <div class="lesson-room">Aula 7</div>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-time">11:50 – 13:30</div>
-                    <div class="lesson-name">IDRAULICA AMBIENTALE</div>
-                    <div class="lesson-room">Aula 7</div>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-time">14:30 – 15:20</div>
-                    <div class="lesson-name">METODI DI RAPPRESENTAZIONE TECNICA</div>
-                    <div class="lesson-room">A-K · Aula L</div>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-time">14:30 – 15:20</div>
-                    <div class="lesson-name">METODI DI RAPPRESENTAZIONE TECNICA</div>
-                    <div class="lesson-room">L-Z · Aula G</div>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-time">15:20 – 17:00</div>
-                    <div class="lesson-name">METODI DI RAPPRESENTAZIONE TECNICA</div>
-                    <div class="lesson-room">A-K · Aula L</div>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-time">15:20 – 17:00</div>
-                    <div class="lesson-name">METODI DI RAPPRESENTAZIONE TECNICA</div>
-                    <div class="lesson-room">L-Z · Aula G</div>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-time">17:00 – 19:30</div>
-                    <div class="lesson-name">SISTEMI ENERGETICI SOSTENIBILI - SISTEMI PER LE ENERGIE RINNOVABILI (2 Modulo)</div>
-                    <div class="lesson-room">Aula L</div>
-                </div>
-            </div>
-
-            <div class="day-card">
-                <div class="day-title">Giovedì</div>
-                <div class="lesson-card">
-                    <div class="lesson-time">08:30 – 11:00</div>
-                    <div class="lesson-name">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - ELEMENTI DI MECCANICA DELLE MACCHINE (1° Modulo)</div>
-                    <div class="lesson-room">Aula L</div>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-time">11:00 – 13:30</div>
-                    <div class="lesson-name">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - SCIENZA DELLE COSTRUZIONI (2° Modulo)</div>
-                    <div class="lesson-room">Aula L</div>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-time">14:30 – 16:10</div>
-                    <div class="lesson-name">IDRAULICA AMBIENTALE</div>
-                    <div class="lesson-room">Aula 4</div>
-                </div>
-            </div>
-
-            <div class="day-card">
-                <div class="day-title">Venerdì</div>
-                <div class="lesson-card">
-                    <div class="lesson-time">08:30 – 11:00</div>
-                    <div class="lesson-name">SISTEMI ENERGETICI SOSTENIBILI - MACCHINE PER L'ENERGIA (1 Modulo)</div>
-                    <div class="lesson-room">Aula L</div>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-time">11:00 – 13:30</div>
-                    <div class="lesson-name">SISTEMI ECONOMICI - MICROECONOMIA (1 Modulo)</div>
-                    <div class="lesson-room">Aula L</div>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-time">14:30 – 16:10</div>
-                    <div class="lesson-name">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - ELEMENTI DI MECCANICA DELLE MACCHINE (1° Modulo)</div>
-                    <div class="lesson-room">Aula C</div>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-time">16:10 – 17:50</div>
-                    <div class="lesson-name">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - SCIENZA DELLE COSTRUZIONI (2° Modulo)</div>
-                    <div class="lesson-room">Aula C</div>
-                </div>
-            </div>
-
         </div>
     </div>
 
-    <!-- 3° ANNO -->
-    <div class="schedule-section" id="terzo-anno">
-        <h3 class="schedule-title">3° Anno</h3>
+    <div class="year-section" id="terzo-anno">
+        <h2 class="section-title">3° Anno</h2>
 
-        <div class="schedule-table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Orario</th>
-                        <th>Lunedì</th>
-                        <th>Martedì</th>
-                        <th>Mercoledì</th>
-                        <th>Giovedì</th>
-                        <th>Venerdì</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="time">08:30 – 10:10</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">SISTEMI OPERATIVI</span>
-                            <span class="room">Aula N</span>
-                        </td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">09:20 – 11:00</td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">INVESTIMENTI IMMOBILIARI</span>
-                            <span class="room">Sala Riunioni Management</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">10:10 – 11:50</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">IMPIANTI INDUSTRIALI E SICUREZZA DEL LAVORO - IMPIANTI INDUSTRIALI (1° Modulo)</span>
-                            <span class="room">Aula 10</span>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">11:00 – 13:30</td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">IMPIANTI INDUSTRIALI E SICUREZZA DEL LAVORO - IMPIANTI INDUSTRIALI (1° Modulo)</span>
-                            <span class="room">Aula 10</span>
-                        </td>
-                        <td>
-                            <span class="lesson">RISK MANAGEMENT</span>
-                            <span class="room">Aula Magna Orabona</span>
-                        </td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">11:50 – 13:30</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">BUSINESS DATA ANALYTICS</span>
-                            <span class="room">Aula I</span>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">14:30 – 16:10</td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">RISK MANAGEMENT</span>
-                            <span class="room">Aula G</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">14:30 – 17:00</td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">BUSINESS DATA ANALYTICS</span>
-                            <span class="room">Aula N</span>
-                        </td>
-                        <td>
-                            <span class="lesson">MOBILITA' SOSTENIBILE</span>
-                            <span class="room">Aula Q</span>
-                        </td>
-                        <td>
-                            <span class="lesson">QUALITA' E SOSTENIBILITA' DEI PROCESSI NELL'INDUSTRIA 4.0 - QUALITA' E SOSTENIBILITA' DEI PROCESSI</span>
-                            <span class="room">Aula L</span>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">16:10 – 18:40</td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">INVESTIMENTI IMMOBILIARI</span>
-                            <span class="room">Sala Riunioni Management</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">16:10 – 18:40</td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">SISTEMI OPERATIVI</span>
-                            <span class="room">Aula G</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td class="time">17:00 – 18:40</td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <span class="lesson">QUALITA' E SOSTENIBILITA' DEI PROCESSI NELL'INDUSTRIA 4.0 - QUALITA' E SOSTENIBILITA' DEI PROCESSI</span>
-                            <span class="room">Aula N</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="day">
+            <div class="day-header">Lunedì</div>
+            <div class="empty">Nessuna lezione prevista.</div>
         </div>
 
-        <div class="mobile-days">
+        <div class="day">
+            <div class="day-header">Martedì</div>
 
-            <div class="day-card">
-                <div class="day-title">Lunedì</div>
-                <div class="empty">Nessuna lezione.</div>
+            <div class="lesson">
+                <div class="time">14:30 – 16:10</div>
+                <div class="subject">RISK MANAGEMENT</div>
+                <div class="room">Aula G</div>
             </div>
 
-            <div class="day-card">
-                <div class="day-title">Martedì</div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">14:30 – 16:10</div>
-                    <div class="lesson-name">RISK MANAGEMENT</div>
-                    <div class="lesson-room">Aula G</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">16:10 – 18:40</div>
-                    <div class="lesson-name">INVESTIMENTI IMMOBILIARI</div>
-                    <div class="lesson-room">Sala Riunioni Management</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">16:10 – 18:40</div>
-                    <div class="lesson-name">SISTEMI OPERATIVI</div>
-                    <div class="lesson-room">Aula G</div>
-                </div>
+            <div class="lesson">
+                <div class="time">16:10 – 18:40</div>
+                <div class="subject">INVESTIMENTI IMMOBILIARI</div>
+                <div class="room">Sala Riunioni Management</div>
             </div>
 
-            <div class="day-card">
-                <div class="day-title">Mercoledì</div>
+            <div class="lesson">
+                <div class="time">16:10 – 18:40</div>
+                <div class="subject">SISTEMI OPERATIVI</div>
+                <div class="room">Aula G</div>
+            </div>
+        </div>
 
-                <div class="lesson-card">
-                    <div class="lesson-time">09:20 – 11:00</div>
-                    <div class="lesson-name">INVESTIMENTI IMMOBILIARI</div>
-                    <div class="lesson-room">Sala Riunioni Management</div>
-                </div>
+        <div class="day">
+            <div class="day-header">Mercoledì</div>
 
-                <div class="lesson-card">
-                    <div class="lesson-time">11:00 – 13:30</div>
-                    <div class="lesson-name">IMPIANTI INDUSTRIALI E SICUREZZA DEL LAVORO - IMPIANTI INDUSTRIALI (1° Modulo)</div>
-                    <div class="lesson-room">Aula 10</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">14:30 – 17:00</div>
-                    <div class="lesson-name">BUSINESS DATA ANALYTICS</div>
-                    <div class="lesson-room">Aula N</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">17:00 – 18:40</div>
-                    <div class="lesson-name">QUALITA' E SOSTENIBILITA' DEI PROCESSI NELL'INDUSTRIA 4.0 - QUALITA' E SOSTENIBILITA' DEI PROCESSI</div>
-                    <div class="lesson-room">Aula N</div>
-                </div>
+            <div class="lesson">
+                <div class="time">09:20 – 11:00</div>
+                <div class="subject">INVESTIMENTI IMMOBILIARI</div>
+                <div class="room">Sala Riunioni Management</div>
             </div>
 
-            <div class="day-card">
-                <div class="day-title">Giovedì</div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">08:30 – 10:10</div>
-                    <div class="lesson-name">SISTEMI OPERATIVI</div>
-                    <div class="lesson-room">Aula N</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">11:00 – 13:30</div>
-                    <div class="lesson-name">RISK MANAGEMENT</div>
-                    <div class="lesson-room">Aula Magna Orabona</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">14:30 – 17:00</div>
-                    <div class="lesson-name">MOBILITA' SOSTENIBILE</div>
-                    <div class="lesson-room">Aula Q</div>
-                </div>
+            <div class="lesson">
+                <div class="time">11:00 – 13:30</div>
+                <div class="subject">IMPIANTI INDUSTRIALI E SICUREZZA DEL LAVORO - IMPIANTI INDUSTRIALI (1° Modulo)</div>
+                <div class="room">Aula 10</div>
             </div>
 
-            <div class="day-card">
-                <div class="day-title">Venerdì</div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">10:10 – 11:50</div>
-                    <div class="lesson-name">IMPIANTI INDUSTRIALI E SICUREZZA DEL LAVORO - IMPIANTI INDUSTRIALI (1° Modulo)</div>
-                    <div class="lesson-room">Aula 10</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">11:50 – 13:30</div>
-                    <div class="lesson-name">BUSINESS DATA ANALYTICS</div>
-                    <div class="lesson-room">Aula I</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">11:50 – 13:30</div>
-                    <div class="lesson-name">MOBILITA' SOSTENIBILE</div>
-                    <div class="lesson-room">Aula Q</div>
-                </div>
-
-                <div class="lesson-card">
-                    <div class="lesson-time">14:30 – 17:00</div>
-                    <div class="lesson-name">QUALITA' E SOSTENIBILITA' DEI PROCESSI NELL'INDUSTRIA 4.0 - QUALITA' E SOSTENIBILITA' DEI PROCESSI</div>
-                    <div class="lesson-room">Aula L</div>
-                </div>
+            <div class="lesson">
+                <div class="time">14:30 – 17:00</div>
+                <div class="subject">BUSINESS DATA ANALYTICS</div>
+                <div class="room">Aula N</div>
             </div>
 
+            <div class="lesson">
+                <div class="time">17:00 – 18:40</div>
+                <div class="subject">QUALITA' E SOSTENIBILITA' DEI PROCESSI NELL'INDUSTRIA 4.0 - QUALITA' E SOSTENIBILITA' DEI PROCESSI</div>
+                <div class="room">Aula N</div>
+            </div>
+        </div>
+
+        <div class="day">
+            <div class="day-header">Giovedì</div>
+
+            <div class="lesson">
+                <div class="time">08:30 – 10:10</div>
+                <div class="subject">SISTEMI OPERATIVI</div>
+                <div class="room">Aula N</div>
+            </div>
+
+            <div class="lesson">
+                <div class="time">11:00 – 13:30</div>
+                <div class="subject">RISK MANAGEMENT</div>
+                <div class="room">Aula Magna Orabona</div>
+            </div>
+
+            <div class="lesson">
+                <div class="time">14:30 – 17:00</div>
+                <div class="subject">MOBILITA' SOSTENIBILE</div>
+                <div class="room">Aula Q</div>
+            </div>
+        </div>
+
+        <div class="day">
+            <div class="day-header">Venerdì</div>
+
+            <div class="lesson">
+                <div class="time">10:10 – 11:50</div>
+                <div class="subject">IMPIANTI INDUSTRIALI E SICUREZZA DEL LAVORO - IMPIANTI INDUSTRIALI (1° Modulo)</div>
+                <div class="room">Aula 10</div>
+            </div>
+
+            <div class="lesson">
+                <div class="time">11:50 – 13:30</div>
+                <div class="subject">BUSINESS DATA ANALYTICS</div>
+                <div class="room">Aula I</div>
+            </div>
+
+            <div class="lesson">
+                <div class="time">11:50 – 13:30</div>
+                <div class="subject">MOBILITA' SOSTENIBILE</div>
+                <div class="room">Aula Q</div>
+            </div>
+
+            <div class="lesson">
+                <div class="time">14:30 – 17:00</div>
+                <div class="subject">QUALITA' E SOSTENIBILITA' DEI PROCESSI NELL'INDUSTRIA 4.0 - QUALITA' E SOSTENIBILITA' DEI PROCESSI</div>
+                <div class="room">Aula L</div>
+            </div>
         </div>
     </div>
-
 </section>
 
 <section>
     <h2 class="section-title">📅 Calendario accademico</h2>
 
     <div class="calendar">
-
-        <div class="calendar-item">
-            <div class="calendar-date">21 settembre 2026</div>
-            <div class="calendar-event">Inizio delle lezioni</div>
+        <div class="calendar-row">
+            <strong>Inizio lezioni</strong>
+            <span>21 settembre 2026</span>
         </div>
 
-        <div class="calendar-item">
-            <div class="calendar-date">2 – 6 novembre 2026</div>
-            <div class="calendar-event">Pausa esoneri</div>
+        <div class="calendar-row">
+            <strong>Pausa esoneri</strong>
+            <span>2 – 6 novembre 2026</span>
         </div>
 
-        <div class="calendar-item">
-            <div class="calendar-date">21 – 23 dicembre 2026</div>
-            <div class="calendar-event">Recupero lezioni</div>
+        <div class="calendar-row">
+            <strong>Recupero lezioni</strong>
+            <span>21 – 23 dicembre 2026</span>
         </div>
 
-        <div class="calendar-item">
-            <div class="calendar-date">24 dicembre 2026 – 6 gennaio 2027</div>
-            <div class="calendar-event">Festività natalizie</div>
+        <div class="calendar-row">
+            <strong>Festività natalizie</strong>
+            <span>24 dicembre 2026 – 6 gennaio 2027</span>
         </div>
 
-        <div class="calendar-item">
-            <div class="calendar-date">7 – 8 gennaio 2027</div>
-            <div class="calendar-event">Recupero lezioni</div>
+        <div class="calendar-row">
+            <strong>Recupero lezioni</strong>
+            <span>7 – 8 gennaio 2027</span>
         </div>
 
-        <div class="calendar-item">
-            <div class="calendar-date">8 gennaio 2027</div>
-            <div class="calendar-event">Fine delle lezioni</div>
+        <div class="calendar-row">
+            <strong>Fine lezioni</strong>
+            <span>8 gennaio 2027</span>
         </div>
 
-        <div class="calendar-item">
-            <div class="calendar-date">11 gennaio – 26 febbraio 2027</div>
-            <div class="calendar-event">Periodo esami</div>
+        <div class="calendar-row">
+            <strong>Periodo esami</strong>
+            <span>11 gennaio – 26 febbraio 2027</span>
         </div>
-
     </div>
 </section>
 
@@ -1441,7 +706,7 @@
 </main>
 
 <footer>
-    <p>Azione Universitaria PoliBa · La tua voce. La nostra rappresentanza.</p>
+    © 2026 Azione Universitaria PoliBa · La tua voce. La nostra rappresentanza.
 </footer>
 
 </body>
