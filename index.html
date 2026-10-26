@@ -1,4 +1,4 @@
-
+html
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -13,6 +13,10 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             background: #f4f7fb;
@@ -20,13 +24,15 @@
             line-height: 1.6;
         }
 
+        /* HEADER */
         header {
             background: #ffffff;
-            padding: 18px 7%;
+            padding: 12px 4%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            gap: 25px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -40,18 +46,19 @@
             font-weight: 800;
             color: #1557b0;
             text-decoration: none;
+            flex-shrink: 0;
         }
 
         .logo img {
-            width: 55px;
-            height: 55px;
+            width: 58px;
+            height: 58px;
             object-fit: contain;
             flex-shrink: 0;
         }
 
         nav {
             display: flex;
-            gap: 25px;
+            gap: 24px;
             flex-wrap: wrap;
             justify-content: center;
         }
@@ -60,81 +67,115 @@
             text-decoration: none;
             color: #26384d;
             font-weight: 600;
-            transition: 0.2s;
+            transition: color 0.2s;
         }
 
         nav a:hover {
             color: #1557b0;
         }
 
+        /* HERO CON FOTO DI SFONDO */
         .hero {
-            background: linear-gradient(135deg, #1557b0, #2879d8);
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            background-image: url("IMG_1849.jpg");
+            background-size: cover;
+            background-position: center 42%;
             color: white;
-            padding: 100px 7%;
+            min-height: 650px;
+            padding: 105px 7%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+        }
+
+        /* Velo blu semitrasparente sopra la foto */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(13, 57, 115, 0.76);
+            z-index: -1;
         }
 
         .hero-badge {
             display: inline-block;
-            background: rgba(255,255,255,0.15);
-            border: 1px solid rgba(255,255,255,0.25);
-            padding: 8px 16px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 22px;
+            background: transparent;
+            border: none;
+            color: #9bd6ff;
+            padding: 0;
+            margin-bottom: 24px;
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: 2px;
         }
 
         .hero h1 {
-            font-size: 50px;
-            margin-bottom: 18px;
+            max-width: 1200px;
+            font-size: clamp(36px, 5vw, 64px);
+            line-height: 1.15;
+            margin-bottom: 22px;
+            color: #ffffff;
         }
 
         .hero h1 span {
             display: block;
-            font-size: 27px;
+            font-size: clamp(22px, 3vw, 38px);
             font-weight: 600;
-            margin-top: 8px;
+            margin-top: 14px;
+            line-height: 1.3;
         }
 
         .hero p {
-            max-width: 780px;
-            margin: auto;
-            font-size: 19px;
-            opacity: 0.96;
+            max-width: 850px;
+            margin: 0 auto;
+            font-size: 21px;
+            line-height: 1.8;
+            color: #ffffff;
+            opacity: 1;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
         }
 
+        /* PULSANTI PRINCIPALI */
         .buttons {
-            margin-top: 32px;
+            margin-top: 38px;
             display: flex;
             justify-content: center;
-            gap: 15px;
+            align-items: center;
+            gap: 18px;
             flex-wrap: wrap;
         }
 
         .btn {
             display: inline-block;
-            padding: 14px 25px;
-            border-radius: 10px;
+            padding: 17px 27px;
+            border-radius: 12px;
             text-decoration: none;
+            font-size: 17px;
             font-weight: 700;
-            transition: 0.2s;
+            transition: transform 0.2s, background 0.2s;
         }
 
-        .btn-primary {
-            background: white;
-            color: #1557b0;
-        }
-
+        .btn-primary,
         .btn-secondary {
-            border: 2px solid white;
-            color: white;
+            background: #ffffff;
+            color: #1557b0;
+            border: 2px solid #ffffff;
         }
 
         .btn:hover {
             transform: translateY(-3px);
         }
 
+        .btn-primary:hover,
+        .btn-secondary:hover {
+            background: #eaf3ff;
+        }
+
+        /* CONTENUTO PRINCIPALE */
         .container {
             width: 86%;
             max-width: 1150px;
@@ -167,7 +208,7 @@
             border-radius: 18px;
             padding: 28px 22px;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
             text-decoration: none;
             color: inherit;
             transition: transform 0.2s, box-shadow 0.2s;
@@ -175,7 +216,7 @@
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 28px rgba(0,0,0,0.10);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
         }
 
         .card .icon {
@@ -194,12 +235,13 @@
             font-size: 14px;
         }
 
+        /* SEZIONE RAPPRESENTANZA */
         .about {
             margin-top: 65px;
             background: white;
             border-radius: 22px;
             padding: 45px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
         }
 
         .about h2 {
@@ -239,6 +281,7 @@
             color: #59697c;
         }
 
+        /* AVVISI */
         .notice {
             margin-top: 55px;
             background: linear-gradient(135deg, #eaf3ff, #f7fbff);
@@ -271,6 +314,7 @@
             background: #0f468f;
         }
 
+        /* INVITO A SEGNALARE */
         .cta {
             margin-top: 55px;
             background: linear-gradient(135deg, #1557b0, #2879d8);
@@ -296,6 +340,7 @@
             color: #1557b0;
         }
 
+        /* FOOTER */
         footer {
             background: #102a49;
             color: white;
@@ -310,16 +355,31 @@
             margin: 4px 0;
         }
 
+        /* TABLET */
         @media (max-width: 950px) {
-            .about-boxes {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
             header {
                 flex-direction: column;
                 gap: 12px;
+            }
+
+            nav {
+                gap: 18px;
+            }
+
+            .about-boxes {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 600px;
+                padding: 85px 6%;
+            }
+        }
+
+        /* SMARTPHONE */
+        @media (max-width: 600px) {
+            header {
+                padding: 12px 5%;
             }
 
             .logo {
@@ -332,11 +392,24 @@
             }
 
             nav {
-                gap: 15px;
+                gap: 10px 15px;
+                font-size: 14px;
             }
 
             .hero {
-                padding: 65px 6%;
+                min-height: 600px;
+                padding: 70px 6%;
+                background-position: center center;
+            }
+
+            .hero::before {
+                background: rgba(13, 57, 115, 0.80);
+            }
+
+            .hero-badge {
+                font-size: 13px;
+                letter-spacing: 1.4px;
+                margin-bottom: 20px;
             }
 
             .hero h1 {
@@ -344,19 +417,49 @@
             }
 
             .hero h1 span {
-                font-size: 22px;
+                font-size: 23px;
             }
 
             .hero p {
                 font-size: 16px;
+                line-height: 1.7;
+            }
+
+            .buttons {
+                width: 100%;
+                gap: 12px;
+                margin-top: 28px;
+            }
+
+            .hero .btn {
+                width: 100%;
+                max-width: 340px;
+                padding: 14px 16px;
+                font-size: 15px;
             }
 
             .container {
                 width: 90%;
+                margin: 40px auto;
+            }
+
+            .section-title h2,
+            .about h2,
+            .cta h2 {
+                font-size: 26px;
             }
 
             .about {
                 padding: 30px 20px;
+                margin-top: 45px;
+            }
+
+            .about-boxes {
+                gap: 14px;
+            }
+
+            .notice {
+                padding: 24px 20px;
             }
 
             .cta {
@@ -385,6 +488,7 @@
     </nav>
 </header>
 
+<!-- HERO: FOTO DI GRUPPO COME SFONDO -->
 <section class="hero">
 
     <div class="hero-badge">💙 DALLA PARTE DEGLI STUDENTI</div>
