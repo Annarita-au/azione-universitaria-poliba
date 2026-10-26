@@ -1,843 +1,250 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-<title>Ingegneria dei Sistemi Medicali | Azione Universitaria PoliBa</title>
-
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ingegneria dei Sistemi Medicali | Azione Universitaria PoliBa</title>
+  <style>
     * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    html {
-        scroll-behavior: smooth;
+      box-sizing: border-box;
     }
 
     body {
-        font-family: Arial, sans-serif;
-        background: #f4f7fb;
-        color: #1d2a3a;
-        line-height: 1.6;
+      margin: 0;
+      background: #f4f7fb;
+      font-family: Arial, sans-serif;
+      color: #243247;
+      line-height: 1.6;
     }
 
     header {
-        background: white;
-        padding: 18px 7%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-        position: sticky;
-        top: 0;
-        z-index: 100;
+      background: #123c69;
+      color: white;
+      padding: 18px 20px;
+    }
+
+    .header-content {
+      max-width: 1050px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
     }
 
     .logo {
-        color: #1557b0;
-        font-size: 20px;
-        font-weight: bold;
+      font-size: 18px;
+      font-weight: bold;
     }
 
-    .back-btn {
-        text-decoration: none;
-        color: #1557b0;
-        font-weight: bold;
-        background: #eef5ff;
-        padding: 9px 15px;
-        border-radius: 10px;
-        transition: 0.2s;
-    }
-
-    .back-btn:hover {
-        background: #dceaff;
+    header a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     .hero {
-        background: linear-gradient(135deg, #1557b0, #2879d8);
-        color: white;
-        padding: 55px 7%;
-        text-align: center;
-    }
-
-    .hero-icon {
-        font-size: 48px;
-        margin-bottom: 12px;
+      background: linear-gradient(135deg, #123c69, #1d70a2);
+      color: white;
+      text-align: center;
+      padding: 45px 20px;
     }
 
     .hero h1 {
-        font-size: 34px;
-        margin-bottom: 10px;
+      font-size: clamp(26px, 4vw, 36px);
+      margin: 0 0 10px;
     }
 
     .hero p {
-        font-size: 17px;
-        opacity: 0.95;
+      margin: 0;
     }
 
-    .container {
-        width: 86%;
-        max-width: 1150px;
-        margin: 45px auto;
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 18px;
     }
 
-    .section-title {
-        color: #1557b0;
-        font-size: 26px;
-        margin-bottom: 22px;
+    .section {
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 16px rgba(20, 48, 80, 0.07);
     }
 
-    .year-menu {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 18px;
-        margin-bottom: 50px;
+    h2 {
+      color: #123c69;
+      font-size: 23px;
+      margin-top: 0;
+    }
+
+    .year-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
     }
 
     .year-card {
-        background: white;
-        border-top: 5px solid #1557b0;
-        border-radius: 18px;
-        padding: 25px 18px;
-        text-align: center;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.07);
-        transition: 0.2s;
-    }
-
-    .year-card:hover {
-        transform: translateY(-3px);
+      border: 1px solid #dce6f1;
+      border-radius: 12px;
+      padding: 20px 14px;
+      text-align: center;
+      background: #f8fbff;
     }
 
     .year-card h3 {
-        color: #1557b0;
-        margin-bottom: 8px;
+      color: #123c69;
+      margin-top: 0;
+      font-size: 19px;
     }
 
-    .year-card p {
-        color: #5d6b7a;
-        font-size: 14px;
-        margin-bottom: 16px;
+    .button {
+      display: inline-block;
+      background: #1769aa;
+      color: white;
+      padding: 11px 16px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      transition: background 0.2s;
     }
 
-    .year-card a {
-        display: inline-block;
-        text-decoration: none;
-        background: #1557b0;
-        color: white;
-        padding: 10px 16px;
-        border-radius: 10px;
-        font-weight: bold;
-        font-size: 14px;
+    .button:hover {
+      background: #104c7d;
     }
 
-    .schedule {
-        background: white;
-        border-left: 6px solid #1557b0;
-        border-radius: 18px;
-        padding: 28px;
-        margin-bottom: 40px;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.07);
-        scroll-margin-top: 100px;
+    .secondary {
+      display: inline-block;
+      background: #e8f1fa;
+      color: #123c69;
+      padding: 11px 16px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
     }
 
-    .schedule h2 {
-        color: #1557b0;
-        margin-bottom: 8px;
-        font-size: 24px;
-    }
-
-    .schedule-subtitle {
-        color: #6a7785;
-        margin-bottom: 25px;
-        font-size: 14px;
-    }
-
-    .day {
-        margin-bottom: 28px;
-    }
-
-    .day:last-child {
-        margin-bottom: 0;
-    }
-
-    .day-title {
-        color: #1557b0;
-        font-size: 19px;
-        font-weight: bold;
-        margin-bottom: 12px;
-        padding-bottom: 7px;
-        border-bottom: 2px solid #e5edf7;
-    }
-
-    .lesson {
-        background: #f7faff;
-        border: 1px solid #dfe9f5;
-        border-radius: 13px;
-        padding: 15px 17px;
-        margin-bottom: 10px;
-    }
-
-    .lesson:last-child {
-        margin-bottom: 0;
-    }
-
-    .lesson-time {
-        font-weight: bold;
-        color: #1557b0;
-        font-size: 15px;
-        margin-bottom: 5px;
-    }
-
-    .lesson-name {
-        font-weight: bold;
-        color: #1d2a3a;
-        font-size: 15px;
-        line-height: 1.4;
-    }
-
-    .lesson-info {
-        margin-top: 7px;
-        color: #687789;
-        font-size: 13px;
-    }
-
-    .empty-day {
-        color: #8a96a3;
-        font-size: 14px;
-        font-style: italic;
-        padding: 8px 0;
-    }
-
-    .calendar {
-        background: white;
-        border-radius: 18px;
-        padding: 30px;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.07);
-        margin-top: 50px;
-    }
-
-    .calendar h2 {
-        color: #1557b0;
-        margin-bottom: 22px;
-    }
-
-    .calendar-list {
-        list-style: none;
-    }
-
-    .calendar-list li {
-        padding: 12px 0;
-        border-bottom: 1px solid #e5ebf2;
-    }
-
-    .calendar-list li:last-child {
-        border-bottom: none;
-    }
-
-    .calendar-list strong {
-        color: #1557b0;
-    }
-
-    .top-link {
-        display: block;
-        text-align: center;
-        margin: 35px 0;
-        color: #1557b0;
-        text-decoration: none;
-        font-weight: bold;
+    .secondary:hover {
+      background: #d6e6f5;
     }
 
     footer {
-        background: #102a49;
-        color: white;
+      text-align: center;
+      padding: 25px 18px;
+      color: #607086;
+      font-size: 14px;
+    }
+
+    @media (max-width: 650px) {
+      .year-list {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 20px;
+      }
+
+      .hero {
+        padding: 35px 18px;
+      }
+
+      .header-content {
+        flex-direction: column;
         text-align: center;
-        padding: 25px 7%;
-        margin-top: 60px;
-        font-size: 14px;
+      }
     }
-
-    @media (max-width: 950px) {
-        .year-menu {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    @media (max-width: 800px) {
-        header {
-            padding: 15px 5%;
-        }
-
-        .logo {
-            font-size: 17px;
-        }
-
-        .back-btn {
-            font-size: 13px;
-            padding: 8px 11px;
-        }
-
-        .hero {
-            padding: 42px 5%;
-        }
-
-        .hero h1 {
-            font-size: 27px;
-        }
-
-        .hero p {
-            font-size: 15px;
-        }
-
-        .container {
-            width: 92%;
-            margin: 35px auto;
-        }
-
-        .year-menu {
-            grid-template-columns: 1fr;
-            gap: 14px;
-            margin-bottom: 35px;
-        }
-
-        .year-card {
-            padding: 20px;
-        }
-
-        .schedule {
-            padding: 20px 16px;
-            border-left-width: 5px;
-            margin-bottom: 28px;
-        }
-
-        .schedule h2 {
-            font-size: 21px;
-        }
-
-        .day-title {
-            font-size: 18px;
-        }
-
-        .lesson {
-            padding: 14px;
-        }
-
-        .lesson-time {
-            font-size: 14px;
-        }
-
-        .lesson-name {
-            font-size: 14px;
-        }
-
-        .lesson-info {
-            font-size: 12px;
-        }
-
-        .calendar {
-            padding: 22px 18px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .hero-icon {
-            font-size: 42px;
-        }
-
-        .hero h1 {
-            font-size: 24px;
-        }
-
-        .section-title {
-            font-size: 23px;
-        }
-
-        .schedule {
-            padding: 18px 13px;
-        }
-
-        .lesson {
-            padding: 13px;
-        }
-    }
-</style>
-
-
+  </style>
 </head>
 
-<body id="top">
-
-
-<header>
-    <div class="logo">Azione Universitaria PoliBa</div>
-    <a href="calendari.html" class="back-btn">← Torna ai Calendari</a>
-</header>
-
-<section class="hero">
-    <div class="hero-icon">🩺</div>
-    <h1>Ingegneria dei Sistemi Medicali</h1>
-    <p>Orario delle lezioni e calendario accademico</p>
-</section>
-
-<main class="container">
-
-    <h2 class="section-title">📚 Seleziona il tuo anno</h2>
-
-    <div class="year-menu">
-
-        <div class="year-card">
-            <h3>1° Anno</h3>
-            <p>Orario delle lezioni</p>
-            <a href="#primo-anno">Vai all'orario</a>
-        </div>
-
-        <div class="year-card">
-            <h3>2° Anno A-K</h3>
-            <p>Gruppo A-K</p>
-            <a href="#secondo-anno-ak">Vai all'orario</a>
-        </div>
-
-        <div class="year-card">
-            <h3>2° Anno L-Z</h3>
-            <p>Gruppo L-Z</p>
-            <a href="#secondo-anno-lz">Vai all'orario</a>
-        </div>
-
-        <div class="year-card">
-            <h3>3° Anno</h3>
-            <p>Orario delle lezioni</p>
-            <a href="#terzo-anno">Vai all'orario</a>
-        </div>
-
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">Azione Universitaria PoliBa</div>
+      <a href="index.html">← Torna alla home</a>
     </div>
+  </header>
 
-    <h2 class="section-title">🕐 Orario delle lezioni</h2>
+  <section class="hero">
+    <h1>Ingegneria dei Sistemi Medicali</h1>
+    <p>Orari delle lezioni e calendario accademico</p>
+  </section>
 
-    <section class="schedule" id="primo-anno">
+  <main>
+    <section class="section">
+      <h2>Orari delle lezioni</h2>
+      <p>
+        Seleziona il tuo anno e, per il secondo anno, il gruppo di cognomi
+        corrispondente per consultare l'orario ufficiale.
+      </p>
 
-        <h2>1° Anno</h2>
-        <p class="schedule-subtitle">
-            I semestre — A.A. 2026/2027
-        </p>
-
-        <div class="day">
-            <div class="day-title">Lunedì</div>
-
-            <div class="lesson">
-                <div class="lesson-time">14:30 – 18:40</div>
-                <div class="lesson-name">INSEGNAMENTI CORSI COMUNI</div>
-            </div>
+      <div class="year-list">
+        <div class="year-card">
+          <h3>1° anno</h3>
+          <p>Orario delle lezioni</p>
+          <a
+            class="button"
+            href="https://poliba.prod.up.cineca.it/calendarioPubblico/linkCalendarioId=68b188f5dfe6dd001e941c96"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Consulta l'orario</a>
         </div>
 
-        <div class="day">
-            <div class="day-title">Martedì</div>
-
-            <div class="lesson">
-                <div class="lesson-time">08:30 – 11:50</div>
-                <div class="lesson-name">INSEGNAMENTI CORSI COMUNI</div>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-time">11:50 – 13:55</div>
-                <div class="lesson-name">
-                    CITOLOGIA, ISTOLOGIA E ANATOMIA UMANA - CITOLOGIA E ISTOLOGIA
-                </div>
-                <div class="lesson-info">
-                    Iniziali cognome A-K · Aula B-D
-                </div>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-time">11:50 – 13:55</div>
-                <div class="lesson-name">
-                    CITOLOGIA, ISTOLOGIA E ANATOMIA UMANA - CITOLOGIA E ISTOLOGIA
-                </div>
-                <div class="lesson-info">
-                    Iniziali cognome L-Z · Aula E-M
-                </div>
-            </div>
+        <div class="year-card">
+          <h3>2° anno · Cognomi A–K</h3>
+          <p>Orario delle lezioni</p>
+          <a
+            class="button"
+            href="https://poliba.prod.up.cineca.it/calendarioPubblico/linkCalendarioId=68b6a421f58ed5001e31ac2d"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Consulta l'orario</a>
         </div>
 
-        <div class="day">
-            <div class="day-title">Mercoledì</div>
-
-            <div class="lesson">
-                <div class="lesson-time">08:30 – 13:30</div>
-                <div class="lesson-name">INSEGNAMENTI CORSI COMUNI</div>
-            </div>
+        <div class="year-card">
+          <h3>2° anno · Cognomi L–Z</h3>
+          <p>Orario delle lezioni</p>
+          <a
+            class="button"
+            href="https://poliba.prod.up.cineca.it/calendarioPubblico/linkCalendarioId=68b6af08aa83ee001d1357de"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Consulta l'orario</a>
         </div>
 
-        <div class="day">
-            <div class="day-title">Giovedì</div>
-
-            <div class="lesson">
-                <div class="lesson-time">14:30 – 17:50</div>
-                <div class="lesson-name">INSEGNAMENTI CORSI COMUNI</div>
-            </div>
+        <div class="year-card">
+          <h3>3° anno</h3>
+          <p>Orario delle lezioni</p>
+          <a
+            class="button"
+            href="https://poliba.prod.up.cineca.it/calendarioPubblico/linkCalendarioId=68b6b1c16408ef001987665e"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Consulta l'orario</a>
         </div>
-
-        <div class="day">
-            <div class="day-title">Venerdì</div>
-            <div class="empty-day">Nessuna lezione prevista.</div>
-        </div>
-
+      </div>
     </section>
 
-    <section class="schedule" id="secondo-anno-ak">
-
-        <h2>2° Anno — A-K</h2>
-        <p class="schedule-subtitle">
-            I semestre — A.A. 2026/2027
-        </p>
-
-        <div class="day">
-            <div class="day-title">Lunedì</div>
-
-            <div class="lesson">
-                <div class="lesson-time">08:30 – 10:10</div>
-                <div class="lesson-name">
-                    PRINCIPI ED APPLICAZIONI DI INGEGNERIA MECCANICA - BIOFLUIDODINAMICA
-                </div>
-                <div class="lesson-info">Aula M · Gruppo A-K</div>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-time">10:10 – 11:50</div>
-                <div class="lesson-name">
-                    PRINCIPI ED APPLICAZIONI DI INGEGNERIA MECCANICA - DISPOSITIVI E SISTEMI MECCANICI
-                </div>
-                <div class="lesson-info">Aula M · Gruppo A-K</div>
-            </div>
-        </div>
-
-        <div class="day">
-            <div class="day-title">Martedì</div>
-
-            <div class="lesson">
-                <div class="lesson-time">14:30 – 16:10</div>
-                <div class="lesson-name">
-                    CAMPI ELETTROMAGNETICI E TEORIA DEI SEGNALI - TEORIA DEI SEGNALI
-                </div>
-                <div class="lesson-info">Aula M · Gruppo A-K</div>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-time">16:10 – 18:15</div>
-                <div class="lesson-name">
-                    PROPEDEUTICA BIOCHIMICA E BIOCHIMICA - PROPEDEUTICA BIOCHIMICA
-                </div>
-                <div class="lesson-info">Aula M · Gruppo A-K</div>
-            </div>
-        </div>
-
-        <div class="day">
-            <div class="day-title">Mercoledì</div>
-
-            <div class="lesson">
-                <div class="lesson-time">14:30 – 17:00</div>
-                <div class="lesson-name">
-                    CAMPI ELETTROMAGNETICI E TEORIA DEI SEGNALI - TEORIA DEI SEGNALI
-                </div>
-                <div class="lesson-info">Aula M · Gruppo A-K</div>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-time">17:00 – 18:40</div>
-                <div class="lesson-name">
-                    PRINCIPI ED APPLICAZIONI DI INGEGNERIA ELETTRICA - CIRCUITI ELETTRICI
-                </div>
-                <div class="lesson-info">Aula M · Gruppo A-K</div>
-            </div>
-        </div>
-
-        <div class="day">
-            <div class="day-title">Giovedì</div>
-
-            <div class="lesson">
-                <div class="lesson-time">11:00 – 13:30</div>
-                <div class="lesson-name">
-                    PRINCIPI ED APPLICAZIONI DI INGEGNERIA ELETTRICA - CIRCUITI ELETTRICI
-                </div>
-                <div class="lesson-info">Aula M · Gruppo A-K</div>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-time">14:30 – 16:10</div>
-                <div class="lesson-name">
-                    PROPEDEUTICA BIOCHIMICA E BIOCHIMICA - BIOCHIMICA
-                </div>
-                <div class="lesson-info">Aula M · Gruppo A-K</div>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-time">16:10 – 18:40</div>
-                <div class="lesson-name">
-                    PRINCIPI ED APPLICAZIONI DI INGEGNERIA MECCANICA - BIOFLUIDODINAMICA
-                </div>
-                <div class="lesson-info">Aula M · Gruppo A-K</div>
-            </div>
-        </div>
-
-        <div class="day">
-            <div class="day-title">Venerdì</div>
-
-            <div class="lesson">
-                <div class="lesson-time">11:00 – 13:30</div>
-                <div class="lesson-name">
-                    PRINCIPI ED APPLICAZIONI DI INGEGNERIA MECCANICA - DISPOSITIVI E SISTEMI MECCANICI
-                </div>
-                <div class="lesson-info">Aula M · Gruppo A-K</div>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-time">14:30 – 17:00</div>
-                <div class="lesson-name">
-                    PROPEDEUTICA BIOCHIMICA E BIOCHIMICA - BIOCHIMICA
-                </div>
-                <div class="lesson-info">Aula M · Gruppo A-K</div>
-            </div>
-        </div>
-
+    <section class="section">
+      <h2>Calendario accademico</h2>
+      <p>
+        Consulta il calendario ufficiale del Politecnico di Bari per
+        verificare le date delle lezioni, le pause didattiche e le sessioni
+        d'esame.
+      </p>
+      <a
+        class="secondary"
+        href="https://www.poliba.it/it/node/1560"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Consulta il calendario accademico</a>
     </section>
+  </main>
 
-    <section class="schedule" id="secondo-anno-lz">
-
-        <h2>2° Anno — L-Z</h2>
-        <p class="schedule-subtitle">
-            I semestre — A.A. 2026/2027
-        </p>
-
-        <div class="day">
-            <div class="day-title">Lunedì</div>
-            <div class="empty-day">Nessuna lezione prevista.</div>
-        </div>
-
-        <div class="day">
-            <div class="day-title">Martedì</div>
-
-            <div class="lesson">
-                <div class="lesson-time">11:50 – 13:30</div>
-                <div class="lesson-name">
-                    CAMPI ELETTROMAGNETICI E TEORIA DEI SEGNALI - TEORIA DEI SEGNALI
-                </div>
-                <div class="lesson-info">Aula H · Gruppo L-Z</div>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-time">14:30 – 17:00</div>
-                <div class="lesson-name">
-                    PRINCIPI ED APPLICAZIONI DI INGEGNERIA MECCANICA - BIOFLUIDODINAMICA
-                </div>
-                <div class="lesson-info">Aula H · Gruppo L-Z</div>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-time">17:00 – 18:40</div>
-                <div class="lesson-name">
-                    PRINCIPI ED APPLICAZIONI DI INGEGNERIA ELETTRICA - CIRCUITI ELETTRICI
-                </div>
-                <div class="lesson-info">Aula H · Gruppo L-Z</div>
-            </div>
-        </div>
-
-        <div class="day">
-            <div class="day-title">Mercoledì</div>
-
-            <div class="lesson">
-                <div class="lesson-time">14:30 – 16:10</div>
-                <div class="lesson-name">
-                    PRINCIPI ED APPLICAZIONI DI INGEGNERIA MECCANICA - BIOFLUIDODINAMICA
-                </div>
-                <div class="lesson-info">Aula H · Gruppo L-Z</div>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-time">16:10 – 18:15</div>
-                <div class="lesson-name">
-                    PROPEDEUTICA BIOCHIMICA E BIOCHIMICA - BIOCHIMICA
-                </div>
-                <div class="lesson-info">Aula H · Gruppo L-Z</div>
-            </div>
-        </div>
-
-        <div class="day">
-            <div class="day-title">Giovedì</div>
-
-            <div class="lesson">
-                <div class="lesson-time">08:30 – 11:00</div>
-                <div class="lesson-name">
-                    PRINCIPI ED APPLICAZIONI DI INGEGNERIA MECCANICA - DISPOSITIVI E SISTEMI MECCANICI
-                </div>
-                <div class="lesson-info">Aula B · Gruppo L-Z</div>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-time">11:00 – 13:30</div>
-                <div class="lesson-name">
-                    PROPEDEUTICA BIOCHIMICA E BIOCHIMICA - BIOCHIMICA
-                </div>
-                <div class="lesson-info">Aula B · Gruppo L-Z</div>
-            </div>
-        </div>
-
-        <div class="day">
-            <div class="day-title">Venerdì</div>
-            <div class="empty-day">Nessuna lezione prevista.</div>
-        </div>
-
-    </section>
-
-    <section class="schedule" id="terzo-anno">
-
-        <h2>3° Anno</h2>
-        <p class="schedule-subtitle">
-            I semestre — A.A. 2026/2027
-        </p>
-
-        <div class="day">
-            <div class="day-title">Lunedì</div>
-
-            <div class="lesson">
-                <div class="lesson-time">08:30 – 10:10</div>
-                <div class="lesson-name">
-                    INTERAZIONE DELLA RADIAZIONE CON LA MATERIA BIOLOGICA
-                </div>
-                <div class="lesson-info">Aula E</div>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-time">10:10 – 11:50</div>
-                <div class="lesson-name">
-                    FONDAMENTI DI AUTOMATICA - ANALISI DI SISTEMI DI CONTROLLO
-                </div>
-                <div class="lesson-info">Aula E</div>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-time">11:50 – 13:30</div>
-                <div class="lesson-name">
-                    STRUMENTAZIONE BIOMEDICALE
-                </div>
-                <div class="lesson-info">Aula E</div>
-            </div>
-        </div>
-
-        <div class="day">
-            <div class="day-title">Martedì</div>
-            <div class="empty-day">Nessuna lezione prevista.</div>
-        </div>
-
-        <div class="day">
-            <div class="day-title">Mercoledì</div>
-
-            <div class="lesson">
-                <div class="lesson-time">14:30 – 16:10</div>
-                <div class="lesson-name">
-                    FISIOLOGIA - ELEMENTI DI BIOFISICA CELLULARE
-                </div>
-                <div class="lesson-info">Aula E</div>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-time">16:10 – 18:40</div>
-                <div class="lesson-name">
-                    INTERAZIONE DELLA RADIAZIONE CON LA MATERIA BIOLOGICA
-                </div>
-                <div class="lesson-info">Aula E</div>
-            </div>
-        </div>
-
-        <div class="day">
-            <div class="day-title">Giovedì</div>
-
-            <div class="lesson">
-                <div class="lesson-time">08:30 – 11:00</div>
-                <div class="lesson-name">
-                    FISIOLOGIA - ELEMENTI DI BIOFISICA CELLULARE
-                </div>
-                <div class="lesson-info">Aula E</div>
-            </div>
-
-            <div class="lesson">
-                <div class="lesson-time">11:00 – 13:30</div>
-                <div class="lesson-name">
-                    FONDAMENTI DI AUTOMATICA - ANALISI DI SISTEMI DI CONTROLLO
-                </div>
-                <div class="lesson-info">Aula E</div>
-            </div>
-        </div>
-
-        <div class="day">
-            <div class="day-title">Venerdì</div>
-
-            <div class="lesson">
-                <div class="lesson-time">08:30 – 11:00</div>
-                <div class="lesson-name">
-                    STRUMENTAZIONE BIOMEDICALE
-                </div>
-                <div class="lesson-info">Aula E</div>
-            </div>
-        </div>
-
-    </section>
-
-    <section class="calendar">
-
-        <h2>📅 Calendario accademico</h2>
-
-        <ul class="calendar-list">
-
-            <li>
-                <strong>Inizio lezioni:</strong>
-                21 settembre 2026
-            </li>
-
-            <li>
-                <strong>Pausa esoneri:</strong>
-                2–6 novembre 2026
-            </li>
-
-            <li>
-                <strong>Recupero lezioni:</strong>
-                21–23 dicembre 2026
-            </li>
-
-            <li>
-                <strong>Festività natalizie:</strong>
-                24 dicembre 2026 – 6 gennaio 2027
-            </li>
-
-            <li>
-                <strong>Recupero lezioni:</strong>
-                7–8 gennaio 2027
-            </li>
-
-            <li>
-                <strong>Fine lezioni:</strong>
-                8 gennaio 2027
-            </li>
-
-            <li>
-                <strong>Periodo esami:</strong>
-                11 gennaio – 26 febbraio 2027
-            </li>
-
-        </ul>
-
-    </section>
-
-    <a href="#top" class="top-link">↑ Torna su</a>
-
-</main>
-
-<footer>
-    © 2026 Azione Universitaria PoliBa · La tua voce. La nostra rappresentanza.
-</footer>
-
-
+  <footer>
+    Azione Universitaria PoliBa · Informazioni utili per gli studenti
+  </footer>
 </body>
 </html>
