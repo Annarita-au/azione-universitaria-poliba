@@ -1,10 +1,11 @@
-html
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ingegneria Civile e Ambientale | Azione Universitaria PoliBa</title>
+  <title>Management Engineering for Innovation | Azione Universitaria PoliBa</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -85,7 +86,7 @@ html
 
     .year-list {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 15px;
       margin-top: 20px;
     }
@@ -138,6 +139,11 @@ html
       background: #d6e6f5;
     }
 
+    .year-note {
+      color: #526277;
+      margin: 0;
+    }
+
     footer {
       text-align: center;
       padding: 25px 18px;
@@ -165,6 +171,7 @@ html
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -175,11 +182,12 @@ html
   </header>
 
   <section class="hero">
-    <h1>🏗️ Ingegneria Civile e Ambientale</h1>
+    <h1>🌍 Management Engineering for Innovation</h1>
     <p>Orari delle lezioni e calendario accademico</p>
   </section>
 
   <main>
+
     <section class="section">
       <h2>🕐 Orario delle lezioni</h2>
       <p>Seleziona il tuo anno per consultare l'orario ufficiale sul portale del Politecnico di Bari.</p>
@@ -187,23 +195,22 @@ html
       <div class="year-list">
         <div class="year-card">
           <h3>1° anno</h3>
-          <a class="button" href="https://poliba.prod.up.cineca.it/calendarioPubblico/linkCalendarioId=68c92db1f3e94100914b4131" target="_blank" rel="noopener noreferrer">Apri orario ↗</a>
+          <a class="button"
+             href="https://poliba.prod.up.cineca.it/calendarioPubblico/linkCalendarioId=6aad67357c735b00dbda90de"
+             target="_blank"
+             rel="noopener noreferrer">Apri orario ↗</a>
         </div>
 
         <div class="year-card">
           <h3>2° anno</h3>
-          <a class="button" href="https://poliba.prod.up.cineca.it/calendarioPubblico/linkCalendarioId=68c947cae3e17a0069c50673" target="_blank" rel="noopener noreferrer">Apri orario ↗</a>
-        </div>
-
-        <div class="year-card">
-          <h3>3° anno</h3>
-          <a class="button" href="https://poliba.prod.up.cineca.it/calendarioPubblico/linkCalendarioId=68c94b5e400b650073c2b9a7" target="_blank" rel="noopener noreferrer">Apri orario ↗</a>
+          <p class="year-note">Orario ufficiale non ancora disponibile.</p>
         </div>
       </div>
     </section>
 
     <section class="section">
       <h2>📅 Calendario accademico</h2>
+
       <ul class="calendar-list">
         <li><strong>Inizio lezioni:</strong> 21 settembre 2026</li>
         <li><strong>Pausa esoneri:</strong> 2–6 novembre 2026</li>
@@ -213,8 +220,13 @@ html
         <li><strong>Fine lezioni:</strong> 8 gennaio 2027</li>
         <li><strong>Periodo esami:</strong> 11 gennaio – 26 febbraio 2027</li>
       </ul>
-      <a class="button secondary-button" href="https://www.poliba.it/it/node/1560" target="_blank" rel="noopener noreferrer">Consulta il calendario ufficiale ↗</a>
+
+      <a class="button secondary-button"
+         href="https://www.poliba.it/it/node/1560"
+         target="_blank"
+         rel="noopener noreferrer">Consulta il calendario ufficiale ↗</a>
     </section>
+
   </main>
 
   <footer>
