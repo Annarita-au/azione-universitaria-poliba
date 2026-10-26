@@ -4,66 +4,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0756ad">
-  <meta name="description" content="Azione Universitaria PoliBa: informazioni, rappresentanza e supporto per gli studenti del Politecnico di Bari.">
+  <meta name="theme-color" content="#073875">
   <title>Azione Universitaria PoliBa</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <style>
     :root {
-      --blue: #0756ad;
-      --blue-dark: #07336d;
-      --blue-deep: #06264f;
-      --blue-light: #eaf5ff;
-      --text: #123968;
-      --muted: #54749c;
+      --blue: #06468f;
+      --dark: #062d60;
+      --cyan: #16bce9;
+      --light: #eef8ff;
+      --text: #173e70;
       --white: #fff;
-      --radius: 14px;
-      --shadow: 0 5px 18px rgba(15, 76, 140, .08);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Inter', sans-serif;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
-      background: #f4f9ff;
-      line-height: 1.6;
+      background: #f3faff;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { text-decoration: none; color: inherit; }
 
     .container {
-      width: min(1120px, 90%);
-      margin: 0 auto;
+      width: min(1180px, 90%);
+      margin: auto;
     }
-
-    /* NAVIGAZIONE */
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255,255,255,.97);
-      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      background: white;
+      position: relative;
+      z-index: 5;
+      box-shadow: 0 2px 12px #082d6010;
     }
 
-    .navbar {
+    .nav {
       min-height: 76px;
       display: flex;
       align-items: center;
@@ -76,812 +54,561 @@
       align-items: center;
       gap: 11px;
       color: var(--blue);
-      font-size: 17px;
       font-weight: 800;
+      font-size: 15px;
       line-height: 1.15;
       flex-shrink: 0;
     }
 
-    .brand-mark {
-      width: 48px;
-      height: 48px;
+    .logo {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
       display: grid;
       place-items: center;
-      border-radius: 50%;
+      background: var(--blue);
       color: white;
-      background: linear-gradient(135deg, #1683ee, #06438e);
-      font-size: 23px;
-      font-weight: 800;
-      letter-spacing: -2px;
-      border: 2px solid #dcecff;
+      font-size: 20px;
+      font-weight: 900;
     }
 
     nav {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
       gap: 25px;
       flex-wrap: wrap;
     }
 
     nav a {
-      color: #173963;
-      font-size: 12px;
+      color: #073875;
+      font-size: 13px;
       font-weight: 700;
-      padding: 27px 0 23px;
-      border-bottom: 3px solid transparent;
-      transition: color .2s, border-color .2s;
+      padding: 10px 0;
     }
 
-    nav a:hover {
-      color: var(--blue);
-      border-bottom-color: var(--blue);
+    nav a:hover,
+    nav a.active {
+      color: #0879ed;
+      border-bottom: 2px solid #0879ed;
     }
-
-    /* HERO - TESTO PIÙ IN BASSO */
 
     .hero {
-      position: relative;
-      isolation: isolate;
-      min-height: 660px;
+      min-height: 480px;
       display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      text-align: center;
+      align-items: center;
       color: white;
-      background-image:
-        linear-gradient(
-          to bottom,
-          rgba(4, 35, 76, .08) 0%,
-          rgba(4, 35, 76, .18) 28%,
-          rgba(3, 35, 78, .76) 62%,
-          rgba(3, 45, 99, .98) 100%
-        ),
-        url("IMG_1849.jpeg");
-      background-size: cover;
-      background-position: center 42%;
-      padding: 240px 20px 42px;
+      background:
+        linear-gradient(90deg,
+          rgba(3, 34, 77, .98) 0%,
+          rgba(3, 44, 94, .88) 42%,
+          rgba(3, 44, 94, .30) 100%),
+        url("IMG_1849.jpeg") center 42% / cover no-repeat;
+      padding: 65px 0;
     }
 
-    .hero-content {
-      width: min(850px, 100%);
-      margin: 0 auto;
-    }
+    .hero-content { max-width: 610px; }
 
-    .hero-label {
-      display: inline-block;
-      color: #75ddff;
-      font-size: 13px;
+    .eyebrow {
+      color: var(--cyan);
+      font-size: 15px;
       font-weight: 800;
-      letter-spacing: .7px;
-      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: .4px;
+      margin-bottom: 14px;
     }
 
-    .hero h1 {
-      font-size: clamp(32px, 4.4vw, 48px);
-      line-height: 1.15;
-      font-weight: 800;
-      letter-spacing: -1.4px;
-      margin-bottom: 4px;
-      text-shadow: 0 2px 12px rgba(0,0,0,.18);
+    h1 {
+      font-size: clamp(38px, 5vw, 58px);
+      line-height: 1.04;
+      margin: 0 0 12px;
+      letter-spacing: -1.5px;
     }
 
     .hero h2 {
-      font-size: clamp(21px, 2.7vw, 29px);
-      line-height: 1.3;
-      margin-bottom: 12px;
-      font-weight: 700;
+      color: white;
+      font-size: clamp(20px, 2.5vw, 27px);
+      margin: 0 0 14px;
     }
 
-    .hero-description {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 14px;
+    .hero p {
       line-height: 1.65;
-      color: #f3f8ff;
+      font-size: 15px;
+      max-width: 540px;
+      margin-bottom: 22px;
     }
 
-    .hero-buttons {
+    .buttons {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       gap: 12px;
-      margin-top: 23px;
     }
 
-    .button {
+    .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
-      min-height: 43px;
-      padding: 11px 21px;
+      padding: 12px 19px;
       border-radius: 30px;
+      border: 1px solid white;
+      color: white;
+      font-size: 13px;
+      font-weight: 800;
+      transition: .2s;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn.primary {
+      background: white;
+      color: var(--blue);
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 17px;
+      padding: 8px 14px;
+      border: 1px solid #2496df;
+      border-radius: 25px;
       font-size: 12px;
       font-weight: 700;
-      border: 1px solid transparent;
-      transition: transform .2s, background .2s;
     }
 
-    .button:hover {
-      transform: translateY(-2px);
-    }
+    section { padding: 54px 0; }
 
-    .button-white {
-      background: white;
-      color: var(--blue-dark);
-    }
-
-    .button-outline {
-      border-color: rgba(255,255,255,.8);
-      color: white;
-      background: rgba(255,255,255,.04);
-    }
-
-    .hero-hashtag {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 4px 14px;
-      border: 1px solid rgba(255,255,255,.35);
-      border-radius: 24px;
-      font-size: 11px;
-      font-weight: 700;
-      color: white;
-      background: rgba(0,0,0,.1);
-    }
-
-    /* CARD */
-
-    .quick-section {
-      padding: 34px 0 30px;
-      background: linear-gradient(180deg, #f4f9ff, #eaf5ff);
-    }
-
-    .section-heading {
+    .section-title {
       text-align: center;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
     }
 
-    .section-heading h2 {
-      font-size: clamp(25px, 3vw, 31px);
-      line-height: 1.25;
-      color: var(--blue-dark);
-      margin-bottom: 4px;
-      letter-spacing: -.6px;
+    .section-title h2 {
+      margin: 0 0 8px;
+      font-size: 31px;
+      color: var(--blue);
     }
 
-    .section-heading p {
-      max-width: 550px;
-      margin: 0 auto;
-      font-size: 14px;
-      color: var(--muted);
+    .section-title p {
+      margin: 0;
+      color: #5278a8;
+      line-height: 1.6;
     }
 
-    .cards-grid {
+    .features { background: var(--light); }
+
+    .cards {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
-    .info-card {
-      min-height: 166px;
+    .card {
       background: white;
-      border: 1px solid #edf4fd;
-      border-radius: var(--radius);
-      padding: 20px 22px;
-      box-shadow: var(--shadow);
+      border: 1px solid #e0effc;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 5px 15px #0b4d8510;
       transition: transform .2s, box-shadow .2s;
     }
 
-    .info-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 9px 25px rgba(15,76,140,.12);
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px #0b4d8518;
     }
 
-    .card-icon {
-      width: 45px;
-      height: 45px;
+    .icon {
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
       display: grid;
       place-items: center;
-      border-radius: 50%;
       color: white;
       font-size: 21px;
-      margin-bottom: 8px;
-      background: #0876e8;
+      margin-bottom: 13px;
+      background: #0878e8;
     }
 
-    .green { background: #16b98b; }
-    .orange { background: #ffab2f; }
-    .purple { background: #8150e8; }
-    .red { background: #f3485b; }
-    .sky { background: #43b7ef; }
+    .green { background: #08aa70; }
+    .orange { background: #ff9f08; }
+    .purple { background: #8054d8; }
+    .red { background: #ee4053; }
+    .cyan { background: #06b8e5; }
 
-    .info-card h3 {
-      font-size: 15px;
-      line-height: 1.3;
-      color: var(--blue-dark);
-      margin-bottom: 5px;
+    .card h3 {
+      color: var(--blue);
+      margin: 0 0 7px;
+      font-size: 18px;
     }
 
-    .info-card p {
-      font-size: 12px;
+    .card p {
+      font-size: 14px;
       line-height: 1.55;
-      color: var(--muted);
-      margin-bottom: 9px;
+      color: #52729b;
+      margin: 0 0 13px;
     }
 
     .card-link {
-      color: #0065d9;
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 800;
+      color: #0878e8;
     }
 
-    .card-link:hover {
-      text-decoration: underline;
+    .representation {
+      background: linear-gradient(180deg, #f4fbff, #e9f7ff);
     }
 
-    /* RAPPRESENTANZA */
-
-    .about-section {
-      padding: 36px 0 20px;
-      background: linear-gradient(180deg, #eaf5ff, #f3f9ff);
-    }
-
-    .about-layout {
+    .representation-grid {
       display: grid;
-      grid-template-columns: 1.55fr 1fr;
-      gap: 35px;
+      grid-template-columns: 1.2fr .8fr;
       align-items: center;
+      gap: 48px;
     }
 
-    .about-copy h2 {
-      color: var(--blue-dark);
-      font-size: clamp(25px, 3vw, 31px);
-      line-height: 1.25;
-      margin-bottom: 6px;
-      letter-spacing: -.6px;
+    .representation h2 {
+      font-size: 30px;
+      color: var(--blue);
+      margin: 0 0 12px;
     }
 
-    .about-copy > p {
-      max-width: 580px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.65;
+    .representation p {
+      color: #52729b;
+      line-height: 1.7;
     }
 
-    .values-grid {
+    .values {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 17px;
-      margin-top: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 25px;
     }
 
-    .value-item .card-icon {
-      width: 38px;
-      height: 38px;
-      font-size: 18px;
-      margin-bottom: 6px;
+    .value h3 {
+      color: var(--blue);
+      font-size: 15px;
+      margin: 10px 0 6px;
     }
 
-    .value-item h3 {
-      color: var(--blue-dark);
-      font-size: 12px;
-      margin-bottom: 3px;
-    }
+    .value p { font-size: 12px; line-height: 1.5; margin: 0; }
 
-    .value-item p {
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.55;
-    }
-
-    .about-image-wrap {
-      position: relative;
-      padding-bottom: 15px;
-    }
-
-    .about-image {
-      width: 100%;
-      height: 220px;
-      display: block;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 13px;
-      box-shadow: var(--shadow);
-    }
-
-    .about-image-link {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap;
-      background: var(--blue-dark);
-      color: white;
-      padding: 10px 21px;
-      border-radius: 25px;
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    .about-image-link:hover {
-      background: var(--blue);
-    }
-
-    /* AVVISI */
-
-    .notice-bar {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-top: 20px;
-      padding: 13px 18px;
+    .photo-card {
+      min-height: 300px;
       border-radius: 12px;
-      background: #dceeff;
+      background:
+        linear-gradient(0deg, rgba(4, 42, 87, .55), transparent 55%),
+        url("IMG_1849.jpeg") center / cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 22px;
+      box-shadow: 0 8px 22px #0b4d8515;
     }
 
-    .notice-icon {
-      font-size: 23px;
-      flex-shrink: 0;
-    }
-
-    .notice-text {
-      flex: 1;
-    }
-
-    .notice-text h3 {
-      font-size: 13px;
-      color: var(--blue-dark);
-    }
-
-    .notice-text p {
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .button-blue {
+    .photo-card .btn {
       background: var(--blue);
-      color: white;
+      border-color: var(--blue);
     }
 
-    .button-blue:hover {
-      background: var(--blue-dark);
-    }
-
-    /* SEGNALAZIONI */
-
-    .report-banner {
+    .notice {
       display: flex;
       align-items: center;
-      gap: 16px;
-      margin-top: 10px;
-      padding: 17px 20px;
-      border-radius: 13px;
+      gap: 18px;
+      padding: 18px 22px;
+      margin-top: 18px;
+      border: 1px solid #b9e1ff;
+      border-radius: 10px;
+      background: #dff2ff;
+    }
+
+    .notice .icon { flex-shrink: 0; margin: 0; }
+
+    .notice-content { flex: 1; }
+
+    .notice h3 {
+      color: var(--blue);
+      font-size: 16px;
+      margin: 0 0 4px;
+    }
+
+    .notice p {
+      color: #52729b;
+      font-size: 13px;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .notice .btn {
+      background: #0878e8;
+      border-color: #0878e8;
+      white-space: nowrap;
+    }
+
+    .notice.dark {
+      background: #07468d;
+      border-color: #07468d;
       color: white;
-      background: linear-gradient(110deg, #0755ae, #2585e2);
     }
 
-    .report-icon {
-      width: 45px;
-      height: 45px;
-      flex-shrink: 0;
-      display: grid;
-      place-items: center;
-      background: rgba(255,255,255,.2);
-      border-radius: 50%;
-      font-size: 23px;
+    .notice.dark h3,
+    .notice.dark p { color: white; }
+
+    .notice.dark .icon {
+      background: white;
+      color: #0878e8;
     }
 
-    .report-copy {
-      flex: 1;
+    .notice.dark .btn {
+      background: white;
+      color: var(--blue);
+      border-color: white;
     }
-
-    .report-copy h2 {
-      font-size: 17px;
-      line-height: 1.35;
-      margin-bottom: 3px;
-    }
-
-    .report-copy p {
-      font-size: 11px;
-      line-height: 1.6;
-      color: #f0f7ff;
-    }
-
-    /* FOOTER */
 
     footer {
-      padding: 22px 0;
-      background: linear-gradient(110deg, #06264f, #0a3d78);
+      background: linear-gradient(110deg, #052858, #06488f);
       color: white;
+      padding: 30px 0;
     }
 
     .footer-inner {
-      display: grid;
-      grid-template-columns: 1fr 2fr 1fr;
+      display: flex;
       align-items: center;
-      gap: 20px;
+      justify-content: space-between;
+      gap: 25px;
     }
 
-    .footer-mark {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: white;
-      color: var(--blue-dark);
-      font-size: 21px;
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
       font-weight: 800;
-      letter-spacing: -2px;
+    }
+
+    .footer-brand .logo {
+      background: white;
+      color: var(--blue);
     }
 
     .footer-center {
       text-align: center;
-      font-size: 10px;
-      color: #d8e8ff;
+      font-size: 12px;
+      line-height: 1.8;
     }
 
-    .footer-center strong {
-      display: block;
-      color: white;
-      font-size: 12px;
-      margin-bottom: 4px;
-    }
+    .footer-center small { color: #a7d9ff; }
 
     .footer-links {
       display: flex;
       flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 10px;
-      font-size: 10px;
+      gap: 18px;
+      font-size: 12px;
     }
 
-    .footer-links a:hover {
-      text-decoration: underline;
-    }
-
-    /* TABLET */
+    .footer-links a:hover { text-decoration: underline; }
 
     @media (max-width: 850px) {
-      .navbar {
-        padding: 12px 0;
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      nav {
-        justify-content: center;
-        gap: 18px;
-      }
-
-      nav a {
-        padding: 8px 0;
-      }
-
-      .hero {
-        min-height: 650px;
-        padding: 230px 6% 40px;
-        background-position: center 40%;
-      }
-
-      .about-layout {
-        gap: 22px;
-      }
-
-      .info-card {
-        padding: 17px;
-      }
+      .nav { padding: 15px 0; align-items: flex-start; flex-direction: column; }
+      nav { gap: 17px; }
+      .hero { min-height: 440px; }
+      .cards { grid-template-columns: repeat(2, 1fr); }
+      .representation-grid { gap: 28px; }
+      .values { grid-template-columns: 1fr; }
+      .footer-inner { flex-wrap: wrap; }
     }
-
-    /* SMARTPHONE */
 
     @media (max-width: 600px) {
-      .container {
-        width: 90%;
-      }
-
-      .navbar {
-        gap: 10px;
-      }
-
-      .brand {
-        font-size: 15px;
-      }
-
-      .brand-mark {
-        width: 42px;
-        height: 42px;
-        font-size: 20px;
-      }
-
-      nav {
-        gap: 9px 15px;
-      }
-
-      nav a {
-        font-size: 11px;
-      }
-
+      .container { width: 90%; }
+      .nav { gap: 12px; }
+      nav { gap: 8px 16px; }
+      nav a { font-size: 12px; }
       .hero {
-        min-height: 690px;
-        padding: 250px 6% 35px;
-        background-position: center 40%;
+        min-height: 480px;
+        padding: 45px 0;
+        background-position: 58% center;
       }
-
-      .hero h1 {
-        font-size: 34px;
-        letter-spacing: -.8px;
-      }
-
-      .hero h2 {
-        font-size: 21px;
-      }
-
-      .hero-description {
-        font-size: 13px;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 20px;
-      }
-
-      .hero-buttons .button {
-        width: min(290px, 100%);
-      }
-
-      .cards-grid {
-        grid-template-columns: 1fr;
-        gap: 13px;
-      }
-
-      .info-card {
-        min-height: auto;
-        padding: 18px;
-      }
-
-      .about-layout {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
-      .values-grid {
-        gap: 12px;
-      }
-
-      .about-image {
-        height: 220px;
-      }
-
-      .notice-bar {
-        flex-wrap: wrap;
-      }
-
-      .notice-text {
-        min-width: 70%;
-      }
-
-      .notice-bar .button {
-        margin-left: 39px;
-      }
-
-      .report-banner {
-        align-items: flex-start;
-        flex-wrap: wrap;
-      }
-
-      .report-copy {
-        min-width: calc(100% - 65px);
-      }
-
-      .report-banner .button {
-        margin-left: 61px;
-      }
-
-      .footer-inner {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        gap: 13px;
-      }
-
-      .footer-links {
-        justify-content: center;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after {
-        transition-duration: .01ms !important;
-      }
+      .hero-content { max-width: 100%; }
+      h1 { font-size: 39px; }
+      .hero p { font-size: 14px; }
+      .buttons { align-items: flex-start; flex-direction: column; }
+      .btn { width: fit-content; max-width: 100%; }
+      section { padding: 40px 0; }
+      .section-title h2, .representation h2 { font-size: 26px; }
+      .cards { grid-template-columns: 1fr; }
+      .representation-grid { grid-template-columns: 1fr; }
+      .photo-card { min-height: 240px; }
+      .notice { align-items: flex-start; flex-wrap: wrap; padding: 17px; }
+      .notice-content { min-width: 65%; }
+      .notice .btn { margin-left: 0; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .footer-center { text-align: left; }
     }
   </style>
 </head>
-
 <body>
 
-  <header>
-    <div class="container navbar">
-      <a class="brand" href="#home" aria-label="Azione Universitaria PoliBa, homepage">
-        <span class="brand-mark">AU</span>
-        <span>Azione<br>Universitaria PoliBa</span>
-      </a>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="logo">AU</span>
+      <span>Azione<br>Universitaria PoliBa</span>
+    </a>
+    <nav aria-label="Navigazione principale">
+      <a class="active" href="index.html">Home</a>
+      <a href="calendari.html">Calendari</a>
+      <a href="matricole.html">Matricole</a>
+      <a href="avvisi.html">Avvisi</a>
+      <a href="rappresentanza.html">Rappresentanza</a>
+      <a href="segnalazioni.html">Segnalazioni</a>
+    </nav>
+  </div>
+</header>
 
-      <nav aria-label="Navigazione principale">
-        <a href="#home">Home</a>
-        <a href="#calendari">Calendari</a>
-        <a href="#matricole">Matricole</a>
-        <a href="#avvisi">Avvisi</a>
-        <a href="#rappresentanza">Rappresentanza</a>
-        <a href="#segnalazioni">Segnalazioni</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero" id="home">
+<main>
+  <section class="hero">
+    <div class="container">
       <div class="hero-content">
-        <span class="hero-label">♥ DALLA PARTE DEGLI STUDENTI</span>
+        <div class="eyebrow">♥ Dalla parte degli studenti</div>
         <h1>Azione Universitaria PoliBa</h1>
         <h2>La tua voce. La nostra rappresentanza.</h2>
-
-        <p class="hero-description">
+        <p>
           Uno spazio pensato dagli studenti per gli studenti del Politecnico
-          di Bari: informazioni, strumenti, rappresentanza e supporto per
-          vivere al meglio il percorso universitario.
+          di Bari: informazioni, strumenti, rappresentanza e supporto
+          per vivere al meglio il percorso universitario.
         </p>
-
-        <div class="hero-buttons">
-          <a class="button button-white" href="#calendari">▦ &nbsp; Consulta i Calendari</a>
-          <a class="button button-outline" href="#matricole">🎓 &nbsp; Guida alle Matricole</a>
-          <a class="button button-outline" href="#segnalazioni">⚠ &nbsp; Segnala un problema</a>
+        <div class="buttons">
+          <a class="btn primary" href="calendari.html">▦ Consulta i Calendari</a>
+          <a class="btn" href="matricole.html">🎓 Guida alle Matricole</a>
+          <a class="btn" href="segnalazioni.html">⚠ Segnala un problema</a>
         </div>
-
-        <span class="hero-hashtag">#SempreDallaParteDelloStudente 💙</span>
-      </div>
-    </section>
-
-    <section class="quick-section" id="servizi">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Cosa trovi sul sito</h2>
-          <p>Trova rapidamente le informazioni e gli strumenti utili durante la tua vita universitaria.</p>
-        </div>
-
-        <div class="cards-grid">
-          <article class="info-card" id="calendari">
-            <div class="card-icon">▦</div>
-            <h3>Calendari</h3>
-            <p>Consulta i calendari e accedi alle pagine dei principali corsi di laurea.</p>
-            <a class="card-link" href="#calendari">Vai ai calendari →</a>
-          </article>
-
-          <article class="info-card" id="matricole">
-            <div class="card-icon green">🎓</div>
-            <h3>Matricole</h3>
-            <p>Una guida pratica per orientarti nei primi passi della vita universitaria.</p>
-            <a class="card-link" href="#matricole">Scopri la guida →</a>
-          </article>
-
-          <article class="info-card" id="avvisi">
-            <div class="card-icon orange">📢</div>
-            <h3>Avvisi</h3>
-            <p>Le comunicazioni e le iniziative di Azione Universitaria PoliBa.</p>
-            <a class="card-link" href="#aggiornamenti">Leggi gli avvisi →</a>
-          </article>
-
-          <article class="info-card">
-            <div class="card-icon purple">👥</div>
-            <h3>Rappresentanza</h3>
-            <p>Scopri il nostro lavoro e il ruolo della rappresentanza studentesca.</p>
-            <a class="card-link" href="#rappresentanza">Scopri di più →</a>
-          </article>
-
-          <article class="info-card">
-            <div class="card-icon red">▤</div>
-            <h3>Segnalazioni</h3>
-            <p>Raccontaci un problema, una difficoltà o una proposta per il tuo percorso universitario.</p>
-            <a class="card-link" href="#segnalazioni">Fai una segnalazione →</a>
-          </article>
-
-          <article class="info-card">
-            <div class="card-icon sky">♥</div>
-            <h3>Insieme agli studenti</h3>
-            <p>Crediamo nell'ascolto, nella partecipazione e in una rappresentanza presente e concreta.</p>
-            <a class="card-link" href="#rappresentanza">Conosci il nostro impegno →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="about-section" id="rappresentanza">
-      <div class="container">
-        <div class="about-layout">
-          <div class="about-copy">
-            <h2>Dalla parte degli studenti</h2>
-            <p>
-              La rappresentanza non significa soltanto essere presenti negli
-              organi universitari. Significa ascoltare gli studenti, raccogliere
-              le loro esigenze e lavorare perché abbiano spazio e risposte.
-            </p>
-
-            <div class="values-grid">
-              <div class="value-item">
-                <div class="card-icon">♧</div>
-                <h3>Ascolto</h3>
-                <p>Partiamo dalle esigenze reali degli studenti.</p>
-              </div>
-
-              <div class="value-item">
-                <div class="card-icon green">📢</div>
-                <h3>Rappresentanza</h3>
-                <p>Portiamo le istanze degli studenti nelle sedi competenti.</p>
-              </div>
-
-              <div class="value-item">
-                <div class="card-icon purple">👥</div>
-                <h3>Partecipazione</h3>
-                <p>Crediamo in un'università in cui gli studenti possano proporre e contribuire al cambiamento.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="about-image-wrap">
-            <img
-              class="about-image"
-              src="IMG_1849.jpeg"
-              alt="Studenti al Politecnico di Bari"
-              loading="lazy"
-            >
-            <a class="about-image-link" href="#segnalazioni">Partecipa anche tu →</a>
-          </div>
-        </div>
-
-        <div class="notice-bar" id="aggiornamenti">
-          <div class="notice-icon">📢</div>
-          <div class="notice-text">
-            <h3>Resta aggiornato</h3>
-            <p>Consulta la sezione Avvisi e i calendari per trovare le informazioni disponibili e le comunicazioni utili.</p>
-          </div>
-          <a class="button button-blue" href="#avvisi">Vai agli Avvisi</a>
-        </div>
-
-        <div class="report-banner" id="segnalazioni">
-          <div class="report-icon">✉</div>
-          <div class="report-copy">
-            <h2>Hai qualcosa da segnalarci?</h2>
-            <p>
-              Un problema con la didattica, un'organizzazione che non funziona,
-              una proposta o una situazione che vuoi portare all'attenzione
-              della rappresentanza? Le esigenze degli studenti meritano ascolto.
-            </p>
-          </div>
-          <a class="button button-white" href="mailto:">✎ &nbsp; Invia una segnalazione</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <a class="footer-mark" href="#home" aria-label="Torna all'inizio">AU</a>
-
-      <div class="footer-center">
-        <strong>Azione Universitaria PoliBa</strong>
-        #azioneuniversitaria &nbsp; #SEMPREDallaPartedelloStudente
-        <br>
-        © 2026 Azione Universitaria PoliBa
-      </div>
-
-      <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="#rappresentanza">Rappresentanza</a>
-        <a href="#segnalazioni">Segnalazioni</a>
+        <div class="tag">#SempreDallaParteDelloStudente ♥</div>
       </div>
     </div>
-  </footer>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <div class="section-title">
+        <h2>Cosa trovi sul sito</h2>
+        <p>Trova rapidamente le informazioni e gli strumenti utili durante la tua vita universitaria.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="icon">▦</div>
+          <h3>Calendari</h3>
+          <p>Consulta i calendari e accedi alle pagine dei principali corsi di laurea.</p>
+          <a class="card-link" href="calendari.html">Vai ai calendari →</a>
+        </article>
+
+        <article class="card">
+          <div class="icon green">♧</div>
+          <h3>Matricole</h3>
+          <p>Una guida pratica per orientarti nei primi passi della vita universitaria.</p>
+          <a class="card-link" href="matricole.html">Scopri la guida →</a>
+        </article>
+
+        <article class="card">
+          <div class="icon orange">⚑</div>
+          <h3>Avvisi</h3>
+          <p>Le comunicazioni e le iniziative di Azione Universitaria PoliBa.</p>
+          <a class="card-link" href="avvisi.html">Leggi gli avvisi →</a>
+        </article>
+
+        <article class="card">
+          <div class="icon purple">♟</div>
+          <h3>Rappresentanza</h3>
+          <p>Scopri il nostro lavoro e il ruolo della rappresentanza studentesca.</p>
+          <a class="card-link" href="rappresentanza.html">Scopri di più →</a>
+        </article>
+
+        <article class="card">
+          <div class="icon red">▤</div>
+          <h3>Segnalazioni</h3>
+          <p>Raccontaci un problema, una difficoltà o una proposta per il tuo percorso universitario.</p>
+          <a class="card-link" href="segnalazioni.html">Fai una segnalazione →</a>
+        </article>
+
+        <article class="card">
+          <div class="icon cyan">♡</div>
+          <h3>Insieme agli studenti</h3>
+          <p>Crediamo nell'ascolto, nella partecipazione e in una rappresentanza presente e concreta.</p>
+          <a class="card-link" href="rappresentanza.html">Conosci il nostro impegno →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="representation">
+    <div class="container">
+      <div class="representation-grid">
+        <div>
+          <h2>Dalla parte degli studenti</h2>
+          <p>
+            La rappresentanza non significa soltanto essere presenti negli
+            organi universitari. Significa ascoltare gli studenti, raccogliere
+            le loro esigenze e lavorare perché abbiano spazio e risposte.
+          </p>
+
+          <div class="values">
+            <div class="value">
+              <div class="icon">♧</div>
+              <h3>Ascolto</h3>
+              <p>Partiamo dalle esigenze reali degli studenti.</p>
+            </div>
+            <div class="value">
+              <div class="icon green">⚑</div>
+              <h3>Rappresentanza</h3>
+              <p>Portiamo le istanze degli studenti nelle sedi competenti.</p>
+            </div>
+            <div class="value">
+              <div class="icon purple">♟</div>
+              <h3>Partecipazione</h3>
+              <p>Crediamo in un'università in cui gli studenti possano proporre e contribuire al cambiamento.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <a class="btn" href="rappresentanza.html">Partecipa anche tu →</a>
+        </div>
+      </div>
+
+      <div class="notice">
+        <div class="icon">⚑</div>
+        <div class="notice-content">
+          <h3>Resta aggiornato</h3>
+          <p>Consulta la sezione Avvisi e i calendari per trovare le informazioni disponibili e le comunicazioni utili.</p>
+        </div>
+        <a class="btn" href="avvisi.html">Vai agli Avvisi →</a>
+      </div>
+
+      <div class="notice dark">
+        <div class="icon">✉</div>
+        <div class="notice-content">
+          <h3>Hai qualcosa da segnalarci?</h3>
+          <p>Un problema con la didattica, un'organizzazione che non funziona, una proposta o una situazione che vuoi portare all'attenzione della rappresentanza? Le esigenze degli studenti meritano ascolto.</p>
+        </div>
+        <a class="btn" href="segnalazioni.html">✎ Invia una segnalazione →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <a class="footer-brand" href="index.html">
+      <span class="logo">AU</span>
+    </a>
+
+    <div class="footer-center">
+      <strong>Azione Universitaria PoliBa</strong><br>
+      <small>#azioneuniversitaria &nbsp; #SEMPREDallaParteDelloStudente</small><br>
+      © 2026 Azione Universitaria PoliBa
+    </div>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="rappresentanza.html">Rappresentanza</a>
+      <a href="segnalazioni.html">Segnalazioni</a>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
