@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -45,10 +46,6 @@
       font-size: 14px;
     }
 
-    header a:hover {
-      text-decoration: underline;
-    }
-
     .hero {
       background: linear-gradient(135deg, #123c69, #1d70a2);
       color: white;
@@ -87,11 +84,6 @@
       font-size: 23px;
     }
 
-    .section-intro {
-      color: #526277;
-      margin-bottom: 20px;
-    }
-
     .year-list {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -108,14 +100,9 @@
     }
 
     .year-card h3 {
-      margin: 0 0 10px;
+      margin: 0 0 14px;
       color: #123c69;
       font-size: 19px;
-    }
-
-    .year-card p {
-      margin: 0 0 15px;
-      color: #526277;
     }
 
     .button {
@@ -127,94 +114,11 @@
       border-radius: 9px;
       font-weight: bold;
       font-size: 14px;
-      margin: 4px;
       transition: background 0.2s;
     }
 
     .button:hover {
       background: #104c7d;
-    }
-
-    .secondary-button {
-      background: #e8f1fa;
-      color: #123c69;
-      border: 1px solid #dce6f1;
-    }
-
-    .secondary-button:hover {
-      background: #d6e6f5;
-    }
-
-    .notice {
-      background: #fff8e8;
-      border-left: 5px solid #e0a400;
-      border-radius: 10px;
-      padding: 16px 18px;
-      margin-bottom: 20px;
-      color: #5e4b16;
-    }
-
-    .schedule {
-      border: 1px solid #dce6f1;
-      border-radius: 12px;
-      padding: 18px;
-      margin-top: 18px;
-      background: #fff;
-    }
-
-    .schedule h3 {
-      margin: 0 0 15px;
-      color: #123c69;
-      font-size: 19px;
-    }
-
-    .table-wrap {
-      width: 100%;
-      overflow-x: auto;
-    }
-
-    table {
-      width: 100%;
-      min-width: 570px;
-      border-collapse: collapse;
-    }
-
-    th {
-      background: #123c69;
-      color: white;
-      padding: 11px;
-      text-align: left;
-    }
-
-    td {
-      padding: 11px;
-      border-bottom: 1px solid #e2e7ee;
-      vertical-align: top;
-    }
-
-    tr:last-child td {
-      border-bottom: none;
-    }
-
-    .time {
-      color: #123c69;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-
-    .subject {
-      font-weight: bold;
-      color: #243247;
-    }
-
-    .location {
-      color: #526277;
-    }
-
-    .empty-day {
-      color: #697685;
-      font-style: italic;
-      margin: 0;
     }
 
     .calendar-list {
@@ -226,13 +130,18 @@
       margin-bottom: 8px;
     }
 
-    .top-link {
-      display: block;
-      text-align: center;
-      margin: 25px 0;
+    .secondary-button {
+      background: #e8f1fa;
       color: #123c69;
-      text-decoration: none;
-      font-weight: bold;
+    }
+
+    .secondary-button:hover {
+      background: #d6e6f5;
+    }
+
+    .year-note {
+      color: #526277;
+      margin: 0;
     }
 
     footer {
@@ -242,49 +151,28 @@
       font-size: 13px;
     }
 
-    footer p {
-      margin: 3px 0;
-    }
-
     @media (max-width: 650px) {
-      .header-content {
-        justify-content: center;
-        text-align: center;
-      }
-
-      .hero {
-        padding: 35px 18px;
-      }
-
-      main {
-        margin: 22px auto;
-        padding: 0 12px;
+      .year-list {
+        grid-template-columns: 1fr;
       }
 
       .section {
         padding: 20px;
       }
 
-      .year-list {
-        grid-template-columns: 1fr;
+      .hero {
+        padding: 35px 18px;
       }
 
-      .schedule {
-        padding: 14px;
-      }
-
-      h2 {
-        font-size: 21px;
-      }
-
-      .button {
-        max-width: 100%;
+      .header-content {
+        justify-content: center;
+        text-align: center;
       }
     }
   </style>
 </head>
 
-<body id="top">
+<body>
 
   <header>
     <div class="header-content">
@@ -302,218 +190,21 @@
 
     <section class="section">
       <h2>🕐 Orario delle lezioni</h2>
-      <p class="section-intro">
-        Seleziona il tuo anno per consultare l'orario. Per il primo anno è disponibile
-        il collegamento al calendario ufficiale del Politecnico di Bari.
-      </p>
+      <p>Seleziona il tuo anno per consultare l'orario ufficiale sul portale del Politecnico di Bari.</p>
 
       <div class="year-list">
         <div class="year-card">
           <h3>1° anno</h3>
-          <a class="button" href="#primo-anno">Vai all'orario</a>
-          <a class="button secondary-button"
+          <a class="button"
              href="https://poliba.prod.up.cineca.it/calendarioPubblico/linkCalendarioId=6aad67357c735b00dbda90de"
-             target="_blank" rel="noopener noreferrer">Apri orario ufficiale ↗</a>
+             target="_blank"
+             rel="noopener noreferrer">Apri orario ↗</a>
         </div>
 
         <div class="year-card">
           <h3>2° anno</h3>
-          <a class="button" href="#secondo-anno">Vai all'orario</a>
+          <p class="year-note">Orario ufficiale non ancora disponibile.</p>
         </div>
-      </div>
-    </section>
-
-    <section class="section" id="primo-anno">
-      <h2>📚 Orario delle lezioni — 1° anno</h2>
-
-      <div class="notice">
-        <strong>⚠️ Esempio di visualizzazione</strong><br>
-        Gli orari riportati qui sotto sono esempi per mostrare la struttura della pagina
-        e non rappresentano l'orario ufficiale dell'A.A. 2026/2027.
-        Consulta il calendario CINECA tramite il pulsante del primo anno.
-      </div>
-
-      <div class="schedule">
-        <h3>📅 Lunedì</h3>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Orario</th>
-                <th>Materia</th>
-                <th>Classe</th>
-                <th>Aula</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="time">10:50 – 13:30</td>
-                <td class="subject">Basics of Machine Learning and Artificial Intelligence</td>
-                <td>N – Bari (2021)</td>
-                <td class="location">Aula 13 – 2° piano</td>
-              </tr>
-              <tr>
-                <td class="time">14:30 – 17:00</td>
-                <td class="subject">General Physics</td>
-                <td>N – Bari (2021)</td>
-                <td class="location">Aula 13</td>
-              </tr>
-              <tr>
-                <td class="time">17:00 – 18:40</td>
-                <td class="subject">Chemistry</td>
-                <td>N – Bari (2021)</td>
-                <td class="location">Aula 13</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="schedule">
-        <h3>📅 Martedì</h3>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Orario</th>
-                <th>Materia</th>
-                <th>Classe</th>
-                <th>Aula</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="time">08:20 – 10:00</td>
-                <td class="subject">General Physics</td>
-                <td>N – Bari (2021)</td>
-                <td class="location">Aula 24</td>
-              </tr>
-              <tr>
-                <td class="time">10:00 – 11:40</td>
-                <td class="subject">Economics and Business Organization</td>
-                <td>N – Bari (2021)</td>
-                <td class="location">Aula 24</td>
-              </tr>
-              <tr>
-                <td class="time">11:40 – 13:30</td>
-                <td class="subject">Computer Science for Engineering</td>
-                <td>N – Bari (2021)</td>
-                <td class="location">Aula 24</td>
-              </tr>
-              <tr>
-                <td class="time">14:30 – 16:10</td>
-                <td class="subject">Basics of Machine Learning and Artificial Intelligence</td>
-                <td>N – Bari (2021)</td>
-                <td class="location">Aula 13</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="schedule">
-        <h3>📅 Mercoledì</h3>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Orario</th>
-                <th>Materia</th>
-                <th>Classe</th>
-                <th>Aula</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="time">08:20 – 10:50</td>
-                <td class="subject">General Physics</td>
-                <td>N – Bari (2021)</td>
-                <td class="location">Aula 13</td>
-              </tr>
-              <tr>
-                <td class="time">10:50 – 13:30</td>
-                <td class="subject">Chemistry</td>
-                <td>N – Bari (2021)</td>
-                <td class="location">Aula 13</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="schedule">
-        <h3>📅 Giovedì</h3>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Orario</th>
-                <th>Materia</th>
-                <th>Classe</th>
-                <th>Aula</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="time">10:50 – 13:30</td>
-                <td class="subject">Computer Science for Engineering</td>
-                <td>N – Bari (2021)</td>
-                <td class="location">Aula 13</td>
-              </tr>
-              <tr>
-                <td class="time">14:30 – 16:10</td>
-                <td class="subject">General Physics</td>
-                <td>N – Bari (2021)</td>
-                <td class="location">Aula 13</td>
-              </tr>
-              <tr>
-                <td class="time">16:10 – 18:40</td>
-                <td class="subject">Economics and Business Organization</td>
-                <td>N – Bari (2021)</td>
-                <td class="location">Aula 13</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="schedule">
-        <h3>📅 Venerdì</h3>
-        <p class="empty-day">Nessuna lezione indicata nell'esempio.</p>
-      </div>
-    </section>
-
-    <section class="section" id="secondo-anno">
-      <h2>📚 Orario delle lezioni — 2° anno</h2>
-
-      <div class="notice">
-        <strong>📌 Orario in aggiornamento</strong><br>
-        L'orario ufficiale del secondo anno verrà inserito non appena sarà disponibile.
-      </div>
-
-      <div class="schedule">
-        <h3>📅 Lunedì</h3>
-        <p class="empty-day">Orario in aggiornamento.</p>
-      </div>
-
-      <div class="schedule">
-        <h3>📅 Martedì</h3>
-        <p class="empty-day">Orario in aggiornamento.</p>
-      </div>
-
-      <div class="schedule">
-        <h3>📅 Mercoledì</h3>
-        <p class="empty-day">Orario in aggiornamento.</p>
-      </div>
-
-      <div class="schedule">
-        <h3>📅 Giovedì</h3>
-        <p class="empty-day">Orario in aggiornamento.</p>
-      </div>
-
-      <div class="schedule">
-        <h3>📅 Venerdì</h3>
-        <p class="empty-day">Orario in aggiornamento.</p>
       </div>
     </section>
 
@@ -532,15 +223,14 @@
 
       <a class="button secondary-button"
          href="https://www.poliba.it/it/node/1560"
-         target="_blank" rel="noopener noreferrer">Consulta il calendario ufficiale ↗</a>
+         target="_blank"
+         rel="noopener noreferrer">Consulta il calendario ufficiale ↗</a>
     </section>
-
-    <a href="#top" class="top-link">↑ Torna su</a>
 
   </main>
 
   <footer>
-    <p>Azione Universitaria PoliBa · Informazioni utili per gli studenti</p>
+    Azione Universitaria PoliBa · Informazioni utili per gli studenti
   </footer>
 
 </body>
