@@ -1,721 +1,249 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ingegneria Gestionale | Azione Universitaria PoliBa</title>
 
-
-<title>Ingegneria Gestionale | Azione Universitaria PoliBa</title>
-
-<style>
+  <style>
     * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: #f4f7fb;
-        color: #172033;
-        line-height: 1.5;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #243247;
+      line-height: 1.6;
     }
 
     header {
-        background: white;
-        padding: 18px 7%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #e7ebf2;
-        position: sticky;
-        top: 0;
-        z-index: 10;
+      background: #123c69;
+      color: white;
+      padding: 18px 20px;
+    }
+
+    .header-content {
+      max-width: 1050px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
     .logo {
-        font-size: 20px;
-        font-weight: 800;
-        color: #155eef;
+      font-weight: bold;
+      font-size: 18px;
     }
 
-    .back {
-        text-decoration: none;
-        color: #475467;
-        font-weight: 600;
+    header a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    header a:hover {
+      text-decoration: underline;
     }
 
     .hero {
-        background: linear-gradient(135deg, #155eef, #0040c1);
-        color: white;
-        padding: 60px 7%;
-        text-align: center;
-    }
-
-    .hero-icon {
-        font-size: 48px;
-        margin-bottom: 12px;
+      background: linear-gradient(135deg, #123c69, #1d70a2);
+      color: white;
+      padding: 45px 20px;
+      text-align: center;
     }
 
     .hero h1 {
-        font-size: 38px;
-        margin-bottom: 10px;
+      margin: 0 0 10px;
+      font-size: clamp(26px, 4vw, 36px);
     }
 
     .hero p {
-        font-size: 18px;
-        opacity: 0.92;
+      margin: 0;
+      font-size: 16px;
+      opacity: 0.95;
     }
 
     main {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 45px 20px 70px;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 18px;
     }
 
-    section {
-        margin-bottom: 55px;
+    .section {
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 16px rgba(20, 48, 80, 0.07);
     }
 
-    .section-title {
-        font-size: 28px;
-        margin-bottom: 25px;
-        color: #101828;
+    h2 {
+      margin-top: 0;
+      color: #123c69;
+      font-size: 23px;
     }
 
-    .year-menu {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
+    .year-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+      margin-top: 20px;
     }
 
     .year-card {
-        background: white;
-        border-radius: 16px;
-        padding: 25px;
-        text-align: center;
-        text-decoration: none;
-        color: #172033;
-        font-weight: 700;
-        border: 1px solid #e4e7ec;
-        box-shadow: 0 5px 18px rgba(16, 24, 40, 0.06);
-        transition: 0.2s;
+      border: 1px solid #dce6f1;
+      border-radius: 12px;
+      padding: 20px 14px;
+      text-align: center;
+      background: #f8fbff;
     }
 
-    .year-card:hover {
-        transform: translateY(-3px);
-        border-color: #155eef;
+    .year-card h3 {
+      margin: 0 0 14px;
+      color: #123c69;
+      font-size: 19px;
     }
 
-    .year-number {
-        display: block;
-        font-size: 25px;
-        color: #155eef;
-        margin-bottom: 5px;
+    .button {
+      display: inline-block;
+      background: #1769aa;
+      color: white;
+      text-decoration: none;
+      padding: 11px 16px;
+      border-radius: 9px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: background 0.2s;
     }
 
-    .year-card small {
-        color: #667085;
-        font-weight: 500;
+    .button:hover {
+      background: #104c7d;
     }
 
-    .year-section {
-        scroll-margin-top: 100px;
-        margin-bottom: 60px;
+    .calendar-list {
+      padding-left: 20px;
+      margin-bottom: 20px;
     }
 
-    .day {
-        background: white;
-        border: 1px solid #e4e7ec;
-        border-radius: 18px;
-        margin-bottom: 20px;
-        overflow: hidden;
-        box-shadow: 0 5px 18px rgba(16, 24, 40, 0.05);
+    .calendar-list li {
+      margin-bottom: 8px;
     }
 
-    .day-header {
-        background: #f8faff;
-        padding: 16px 20px;
-        border-bottom: 1px solid #e4e7ec;
-        font-size: 20px;
-        font-weight: 800;
-        color: #155eef;
+    .secondary-button {
+      background: #e8f1fa;
+      color: #123c69;
     }
 
-    .lesson {
-        display: grid;
-        grid-template-columns: 150px 1fr auto;
-        gap: 20px;
-        align-items: center;
-        padding: 18px 20px;
-        border-bottom: 1px solid #edf0f5;
-    }
-
-    .lesson:last-child {
-        border-bottom: none;
-    }
-
-    .time {
-        font-weight: 800;
-        color: #155eef;
-        white-space: nowrap;
-    }
-
-    .subject {
-        font-weight: 700;
-        color: #172033;
-    }
-
-    .group {
-        display: inline-block;
-        margin-top: 6px;
-        font-size: 13px;
-        font-weight: 700;
-        color: #475467;
-    }
-
-    .room {
-        background: #eef4ff;
-        color: #155eef;
-        padding: 7px 11px;
-        border-radius: 8px;
-        font-size: 14px;
-        font-weight: 700;
-        white-space: nowrap;
-    }
-
-    .empty {
-        padding: 22px 20px;
-        color: #667085;
-        font-style: italic;
-    }
-
-    .notice {
-        background: #fff8e7;
-        border: 1px solid #f2d28b;
-        color: #7a5700;
-        border-radius: 14px;
-        padding: 18px 20px;
-        margin-bottom: 25px;
-    }
-
-    .calendar {
-        background: white;
-        border-radius: 18px;
-        border: 1px solid #e4e7ec;
-        overflow: hidden;
-        box-shadow: 0 5px 18px rgba(16, 24, 40, 0.05);
-    }
-
-    .calendar-row {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        border-bottom: 1px solid #edf0f5;
-    }
-
-    .calendar-row:last-child {
-        border-bottom: none;
-    }
-
-    .calendar-row strong,
-    .calendar-row span {
-        padding: 16px 20px;
-    }
-
-    .calendar-row strong {
-        background: #f8faff;
-        color: #155eef;
+    .secondary-button:hover {
+      background: #d6e6f5;
     }
 
     footer {
-        background: #101828;
-        color: #d0d5dd;
+      text-align: center;
+      padding: 25px 18px;
+      color: #66758a;
+      font-size: 13px;
+    }
+
+    @media (max-width: 650px) {
+      .year-list {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 20px;
+      }
+
+      .hero {
+        padding: 35px 18px;
+      }
+
+      .header-content {
+        justify-content: center;
         text-align: center;
-        padding: 25px 20px;
-        font-size: 14px;
+      }
     }
-
-    @media (max-width: 700px) {
-        header {
-            padding: 15px 5%;
-        }
-
-        .logo {
-            font-size: 17px;
-        }
-
-        .back {
-            font-size: 14px;
-        }
-
-        .hero {
-            padding: 45px 20px;
-        }
-
-        .hero h1 {
-            font-size: 30px;
-        }
-
-        .hero p {
-            font-size: 16px;
-        }
-
-        main {
-            padding: 35px 15px 55px;
-        }
-
-        .section-title {
-            font-size: 24px;
-        }
-
-        .year-menu {
-            grid-template-columns: 1fr;
-        }
-
-        .lesson {
-            display: block;
-            padding: 17px;
-        }
-
-        .time {
-            display: block;
-            margin-bottom: 7px;
-        }
-
-        .subject {
-            display: block;
-            margin-bottom: 9px;
-        }
-
-        .room {
-            display: inline-block;
-        }
-
-        .calendar-row {
-            grid-template-columns: 1fr;
-        }
-
-        .calendar-row strong {
-            padding-bottom: 5px;
-        }
-
-        .calendar-row span {
-            padding-top: 5px;
-        }
-    }
-</style>
-
-
+  </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">Azione Universitaria PoliBa</div>
-    <a class="back" href="calendari.html">← Torna ai Calendari</a>
-</header>
-
-<section class="hero">
-    <div class="hero-icon">📊</div>
-    <h1>Ingegneria Gestionale</h1>
-    <p>Orario delle lezioni e calendario accademico</p>
-</section>
-
-<main>
-
-
-<section>
-    <h2 class="section-title">📚 Seleziona il tuo anno</h2>
-
-    <div class="year-menu">
-        <a href="#primo-anno" class="year-card">
-            <span class="year-number">1° Anno</span>
-            <small>Orario non ancora disponibile</small>
-        </a>
-
-        <a href="#secondo-anno" class="year-card">
-            <span class="year-number">2° Anno</span>
-            <small>Consulta l'orario</small>
-        </a>
-
-        <a href="#terzo-anno" class="year-card">
-            <span class="year-number">3° Anno</span>
-            <small>Consulta l'orario</small>
-        </a>
+  <header>
+    <div class="header-content">
+      <div class="logo">Azione Universitaria PoliBa</div>
+      <a href="calendari.html">← Torna ai calendari</a>
     </div>
-</section>
+  </header>
 
-<section>
-    <h2 class="section-title">🕐 Orario delle lezioni</h2>
+  <section class="hero">
+    <h1>⚙️ Ingegneria Gestionale</h1>
+    <p>Orari delle lezioni e calendario accademico</p>
+  </section>
 
-    <div class="year-section" id="primo-anno">
-        <h2 class="section-title">1° Anno</h2>
+  <main>
 
-        <div class="notice">
-            <strong>📢 Orario non ancora disponibile</strong><br>
-            L'orario delle lezioni del 1° anno non è ancora stato pubblicato.
-        </div>
-    </div>
+    <section class="section">
+      <h2>🕐 Orario delle lezioni</h2>
+      <p>Seleziona il tuo anno per consultare l'orario ufficiale sul portale del Politecnico di Bari.</p>
 
-    <div class="year-section" id="secondo-anno">
-        <h2 class="section-title">2° Anno</h2>
+      <div class="year-list">
 
-        <div class="day">
-            <div class="day-header">Lunedì</div>
-
-            <div class="lesson">
-                <div class="time">08:30 – 10:10</div>
-                <div class="subject">BASI DI DATI</div>
-                <div class="room">Aula L</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">10:10 – 11:50</div>
-                <div class="subject">SISTEMI ENERGETICI SOSTENIBILI - MACCHINE PER L'ENERGIA (1 Modulo)</div>
-                <div class="room">Aula L</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">11:50 – 13:30</div>
-                <div class="subject">SISTEMI ENERGETICI SOSTENIBILI - SISTEMI PER LE ENERGIE RINNOVABILI (2 Modulo)</div>
-                <div class="room">Aula L</div>
-            </div>
+        <div class="year-card">
+          <h3>1° anno</h3>
+          <a class="button"
+             href="https://poliba.prod.up.cineca.it/calendarioPubblico/linkCalendarioId=68cd3dc335194e0037d9ba20"
+             target="_blank"
+             rel="noopener noreferrer">Apri orario ↗</a>
         </div>
 
-        <div class="day">
-            <div class="day-header">Martedì</div>
-
-            <div class="lesson">
-                <div class="time">08:30 – 10:10</div>
-                <div class="subject">FLUIDODINAMICA E SISTEMI ENERGETICI - SISTEMI ENERGETICI (2° Modulo)</div>
-                <div class="room">Aula 5</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">10:10 – 11:50</div>
-                <div class="subject">FLUIDODINAMICA E SISTEMI ENERGETICI - FLUIDODINAMICA (1° Modulo)</div>
-                <div class="room">Aula 5</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">11:50 – 13:30</div>
-                <div class="subject">
-                    METODI DI RAPPRESENTAZIONE TECNICA
-                    <span class="group">A-K</span>
-                </div>
-                <div class="room">Aula L</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">11:50 – 12:40</div>
-                <div class="subject">
-                    METODI DI RAPPRESENTAZIONE TECNICA
-                    <span class="group">L-Z</span>
-                </div>
-                <div class="room">Aula D</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">12:40 – 13:30</div>
-                <div class="subject">
-                    METODI DI RAPPRESENTAZIONE TECNICA
-                    <span class="group">L-Z</span>
-                </div>
-                <div class="room">Aula D</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">14:30 – 16:10</div>
-                <div class="subject">SISTEMI ECONOMICI - MICROECONOMIA (1 Modulo)</div>
-                <div class="room">Aula L</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">16:10 – 18:40</div>
-                <div class="subject">BASI DI DATI</div>
-                <div class="room">Aula L</div>
-            </div>
+        <div class="year-card">
+          <h3>2° anno</h3>
+          <a class="button"
+             href="https://poliba.prod.up.cineca.it/calendarioPubblico/linkCalendarioId=68cd3e8c35194e0037d9ba38"
+             target="_blank"
+             rel="noopener noreferrer">Apri orario ↗</a>
         </div>
 
-        <div class="day">
-            <div class="day-header">Mercoledì</div>
-
-            <div class="lesson">
-                <div class="time">08:30 – 11:00</div>
-                <div class="subject">FLUIDODINAMICA E SISTEMI ENERGETICI - SISTEMI ENERGETICI (2° Modulo)</div>
-                <div class="room">Aula 5</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">11:00 – 13:30</div>
-                <div class="subject">FLUIDODINAMICA E SISTEMI ENERGETICI - FLUIDODINAMICA (1° Modulo)</div>
-                <div class="room">Aula 5</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">11:00 – 11:50</div>
-                <div class="subject">IDRAULICA AMBIENTALE</div>
-                <div class="room">Aula 7</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">11:50 – 13:30</div>
-                <div class="subject">IDRAULICA AMBIENTALE</div>
-                <div class="room">Aula 7</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">14:30 – 15:20</div>
-                <div class="subject">
-                    METODI DI RAPPRESENTAZIONE TECNICA
-                    <span class="group">A-K</span>
-                </div>
-                <div class="room">Aula L</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">14:30 – 15:20</div>
-                <div class="subject">
-                    METODI DI RAPPRESENTAZIONE TECNICA
-                    <span class="group">L-Z</span>
-                </div>
-                <div class="room">Aula G</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">15:20 – 17:00</div>
-                <div class="subject">
-                    METODI DI RAPPRESENTAZIONE TECNICA
-                    <span class="group">A-K</span>
-                </div>
-                <div class="room">Aula L</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">15:20 – 17:00</div>
-                <div class="subject">
-                    METODI DI RAPPRESENTAZIONE TECNICA
-                    <span class="group">L-Z</span>
-                </div>
-                <div class="room">Aula G</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">17:00 – 19:30</div>
-                <div class="subject">SISTEMI ENERGETICI SOSTENIBILI - SISTEMI PER LE ENERGIE RINNOVABILI (2 Modulo)</div>
-                <div class="room">Aula L</div>
-            </div>
+        <div class="year-card">
+          <h3>3° anno</h3>
+          <a class="button"
+             href="https://poliba.prod.up.cineca.it/calendarioPubblico/linkCalendarioId=68cd3ee8d90a8a001a8fb083"
+             target="_blank"
+             rel="noopener noreferrer">Apri orario ↗</a>
         </div>
 
-        <div class="day">
-            <div class="day-header">Giovedì</div>
+      </div>
+    </section>
 
-            <div class="lesson">
-                <div class="time">08:30 – 11:00</div>
-                <div class="subject">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - ELEMENTI DI MECCANICA DELLE MACCHINE (1° Modulo)</div>
-                <div class="room">Aula L</div>
-            </div>
+    <section class="section">
+      <h2>📅 Calendario accademico</h2>
 
-            <div class="lesson">
-                <div class="time">11:00 – 13:30</div>
-                <div class="subject">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - SCIENZA DELLE COSTRUZIONI (2° Modulo)</div>
-                <div class="room">Aula L</div>
-            </div>
+      <ul class="calendar-list">
+        <li><strong>Inizio lezioni:</strong> 21 settembre 2026</li>
+        <li><strong>Pausa esoneri:</strong> 2–6 novembre 2026</li>
+        <li><strong>Recupero lezioni:</strong> 21–23 dicembre 2026</li>
+        <li><strong>Festività natalizie:</strong> 24 dicembre 2026 – 6 gennaio 2027</li>
+        <li><strong>Recupero lezioni:</strong> 7–8 gennaio 2027</li>
+        <li><strong>Fine lezioni:</strong> 8 gennaio 2027</li>
+        <li><strong>Periodo esami:</strong> 11 gennaio – 26 febbraio 2027</li>
+      </ul>
 
-            <div class="lesson">
-                <div class="time">14:30 – 16:10</div>
-                <div class="subject">IDRAULICA AMBIENTALE</div>
-                <div class="room">Aula 4</div>
-            </div>
-        </div>
+      <a class="button secondary-button"
+         href="https://www.poliba.it/it/node/1560"
+         target="_blank"
+         rel="noopener noreferrer">Consulta il calendario ufficiale ↗</a>
+    </section>
 
-        <div class="day">
-            <div class="day-header">Venerdì</div>
+  </main>
 
-            <div class="lesson">
-                <div class="time">08:30 – 11:00</div>
-                <div class="subject">SISTEMI ENERGETICI SOSTENIBILI - MACCHINE PER L'ENERGIA (1 Modulo)</div>
-                <div class="room">Aula L</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">11:00 – 13:30</div>
-                <div class="subject">SISTEMI ECONOMICI - MICROECONOMIA (1 Modulo)</div>
-                <div class="room">Aula L</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">14:30 – 16:10</div>
-                <div class="subject">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - ELEMENTI DI MECCANICA DELLE MACCHINE (1° Modulo)</div>
-                <div class="room">Aula C</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">16:10 – 17:50</div>
-                <div class="subject">ELEMENTI DI MECCANICA DELLE MACCHINE E SCIENZA DELLE COSTRUZIONI - SCIENZA DELLE COSTRUZIONI (2° Modulo)</div>
-                <div class="room">Aula C</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="year-section" id="terzo-anno">
-        <h2 class="section-title">3° Anno</h2>
-
-        <div class="day">
-            <div class="day-header">Lunedì</div>
-            <div class="empty">Nessuna lezione prevista.</div>
-        </div>
-
-        <div class="day">
-            <div class="day-header">Martedì</div>
-
-            <div class="lesson">
-                <div class="time">14:30 – 16:10</div>
-                <div class="subject">RISK MANAGEMENT</div>
-                <div class="room">Aula G</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">16:10 – 18:40</div>
-                <div class="subject">INVESTIMENTI IMMOBILIARI</div>
-                <div class="room">Sala Riunioni Management</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">16:10 – 18:40</div>
-                <div class="subject">SISTEMI OPERATIVI</div>
-                <div class="room">Aula G</div>
-            </div>
-        </div>
-
-        <div class="day">
-            <div class="day-header">Mercoledì</div>
-
-            <div class="lesson">
-                <div class="time">09:20 – 11:00</div>
-                <div class="subject">INVESTIMENTI IMMOBILIARI</div>
-                <div class="room">Sala Riunioni Management</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">11:00 – 13:30</div>
-                <div class="subject">IMPIANTI INDUSTRIALI E SICUREZZA DEL LAVORO - IMPIANTI INDUSTRIALI (1° Modulo)</div>
-                <div class="room">Aula 10</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">14:30 – 17:00</div>
-                <div class="subject">BUSINESS DATA ANALYTICS</div>
-                <div class="room">Aula N</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">17:00 – 18:40</div>
-                <div class="subject">QUALITA' E SOSTENIBILITA' DEI PROCESSI NELL'INDUSTRIA 4.0 - QUALITA' E SOSTENIBILITA' DEI PROCESSI</div>
-                <div class="room">Aula N</div>
-            </div>
-        </div>
-
-        <div class="day">
-            <div class="day-header">Giovedì</div>
-
-            <div class="lesson">
-                <div class="time">08:30 – 10:10</div>
-                <div class="subject">SISTEMI OPERATIVI</div>
-                <div class="room">Aula N</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">11:00 – 13:30</div>
-                <div class="subject">RISK MANAGEMENT</div>
-                <div class="room">Aula Magna Orabona</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">14:30 – 17:00</div>
-                <div class="subject">MOBILITA' SOSTENIBILE</div>
-                <div class="room">Aula Q</div>
-            </div>
-        </div>
-
-        <div class="day">
-            <div class="day-header">Venerdì</div>
-
-            <div class="lesson">
-                <div class="time">10:10 – 11:50</div>
-                <div class="subject">IMPIANTI INDUSTRIALI E SICUREZZA DEL LAVORO - IMPIANTI INDUSTRIALI (1° Modulo)</div>
-                <div class="room">Aula 10</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">11:50 – 13:30</div>
-                <div class="subject">BUSINESS DATA ANALYTICS</div>
-                <div class="room">Aula I</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">11:50 – 13:30</div>
-                <div class="subject">MOBILITA' SOSTENIBILE</div>
-                <div class="room">Aula Q</div>
-            </div>
-
-            <div class="lesson">
-                <div class="time">14:30 – 17:00</div>
-                <div class="subject">QUALITA' E SOSTENIBILITA' DEI PROCESSI NELL'INDUSTRIA 4.0 - QUALITA' E SOSTENIBILITA' DEI PROCESSI</div>
-                <div class="room">Aula L</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
-    <h2 class="section-title">📅 Calendario accademico</h2>
-
-    <div class="calendar">
-        <div class="calendar-row">
-            <strong>Inizio lezioni</strong>
-            <span>21 settembre 2026</span>
-        </div>
-
-        <div class="calendar-row">
-            <strong>Pausa esoneri</strong>
-            <span>2 – 6 novembre 2026</span>
-        </div>
-
-        <div class="calendar-row">
-            <strong>Recupero lezioni</strong>
-            <span>21 – 23 dicembre 2026</span>
-        </div>
-
-        <div class="calendar-row">
-            <strong>Festività natalizie</strong>
-            <span>24 dicembre 2026 – 6 gennaio 2027</span>
-        </div>
-
-        <div class="calendar-row">
-            <strong>Recupero lezioni</strong>
-            <span>7 – 8 gennaio 2027</span>
-        </div>
-
-        <div class="calendar-row">
-            <strong>Fine lezioni</strong>
-            <span>8 gennaio 2027</span>
-        </div>
-
-        <div class="calendar-row">
-            <strong>Periodo esami</strong>
-            <span>11 gennaio – 26 febbraio 2027</span>
-        </div>
-    </div>
-</section>
-
-
-</main>
-
-<footer>
-    © 2026 Azione Universitaria PoliBa · La tua voce. La nostra rappresentanza.
-</footer>
+  <footer>
+    Azione Universitaria PoliBa · Informazioni utili per gli studenti
+  </footer>
 
 </body>
 </html>
