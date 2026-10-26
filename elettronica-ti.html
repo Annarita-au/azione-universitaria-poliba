@@ -1,613 +1,248 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-<title>Ingegneria Elettronica | Azione Universitaria PoliBa</title>
-
-<style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ingegneria Elettronica e delle Tecnologie Internet | Azione Universitaria PoliBa</title>
+  <style>
     * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    html {
-        scroll-behavior: smooth;
+      box-sizing: border-box;
     }
 
     body {
-        font-family: Arial, sans-serif;
-        background: #f4f7fb;
-        color: #1d2a3a;
-        line-height: 1.6;
+      margin: 0;
+      background: #f4f7fb;
+      font-family: Arial, sans-serif;
+      color: #243247;
+      line-height: 1.6;
     }
 
     header {
-        background: white;
-        padding: 18px 7%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      background: #123c69;
+      color: white;
+      padding: 18px 20px;
+    }
+
+    .header-content {
+      max-width: 1050px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
     }
 
     .logo {
-        color: #1557b0;
-        font-size: 22px;
-        font-weight: bold;
+      font-size: 18px;
+      font-weight: bold;
     }
 
-    .back {
-        text-decoration: none;
-        background: #1557b0;
-        color: white;
-        padding: 10px 18px;
-        border-radius: 10px;
-        font-weight: bold;
-        transition: 0.2s;
-    }
-
-    .back:hover {
-        background: #0f4691;
+    header a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     .hero {
-        background: linear-gradient(135deg, #1557b0, #2879d8);
-        color: white;
-        text-align: center;
-        padding: 65px 20px;
-    }
-
-    .hero-icon {
-        font-size: 48px;
-        margin-bottom: 12px;
+      background: linear-gradient(135deg, #123c69, #1d70a2);
+      color: white;
+      text-align: center;
+      padding: 45px 20px;
     }
 
     .hero h1 {
-        font-size: 38px;
-        margin-bottom: 10px;
+      font-size: clamp(26px, 4vw, 36px);
+      margin: 0 0 10px;
     }
 
     .hero p {
-        font-size: 18px;
-        opacity: 0.95;
+      margin: 0;
     }
 
-    .container {
-        width: 86%;
-        max-width: 1150px;
-        margin: 45px auto;
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 18px;
     }
 
-    .section-title {
-        color: #1557b0;
-        font-size: 28px;
-        margin-bottom: 22px;
+    .section {
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 16px rgba(20, 48, 80, 0.07);
     }
 
-    .year-menu {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 22px;
-        margin-bottom: 50px;
+    h2 {
+      color: #123c69;
+      font-size: 23px;
+      margin-top: 0;
+    }
+
+    .year-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
     }
 
     .year-card {
-        background: white;
-        border-top: 5px solid #1557b0;
-        border-radius: 18px;
-        padding: 28px 20px;
-        text-align: center;
-        box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-        transition: 0.2s;
-    }
-
-    .year-card:hover {
-        transform: translateY(-4px);
+      border: 1px solid #dce6f1;
+      border-radius: 12px;
+      padding: 20px 14px;
+      text-align: center;
+      background: #f8fbff;
     }
 
     .year-card h3 {
-        color: #1557b0;
-        font-size: 21px;
-        margin-bottom: 10px;
+      color: #123c69;
+      margin-top: 0;
+      font-size: 19px;
     }
 
-    .year-card p {
-        color: #64748b;
-        margin-bottom: 18px;
+    .button {
+      display: inline-block;
+      background: #1769aa;
+      color: white;
+      padding: 11px 16px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      transition: background 0.2s;
     }
 
-    .year-card a {
-        display: inline-block;
-        text-decoration: none;
-        background: #1557b0;
-        color: white;
-        padding: 10px 18px;
-        border-radius: 10px;
-        font-weight: bold;
+    .button:hover {
+      background: #104c7d;
     }
 
-    .schedule {
-        background: white;
-        border-left: 6px solid #1557b0;
-        border-radius: 18px;
-        padding: 28px;
-        margin-bottom: 35px;
-        box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-        scroll-margin-top: 25px;
+    .secondary {
+      display: inline-block;
+      background: #e8f1fa;
+      color: #123c69;
+      padding: 11px 16px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
     }
 
-    .schedule h3 {
-        color: #1557b0;
-        font-size: 23px;
-        margin-bottom: 20px;
+    .secondary:hover {
+      background: #d6e6f5;
     }
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        overflow: hidden;
-        border-radius: 10px;
+    .calendar-list {
+      padding-left: 20px;
+      margin-bottom: 0;
     }
 
-    th {
-        background: #1557b0;
-        color: white;
-        padding: 13px;
-        text-align: left;
-    }
-
-    td {
-        padding: 13px;
-        border-bottom: 1px solid #e5e7eb;
-    }
-
-    tr:last-child td {
-        border-bottom: none;
-    }
-
-    .top-link {
-        display: inline-block;
-        margin-top: 5px;
-        text-decoration: none;
-        color: #1557b0;
-        font-weight: bold;
-    }
-
-    .academic-calendar {
-        background: white;
-        border-radius: 18px;
-        padding: 30px;
-        box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-        margin-top: 45px;
-    }
-
-    .academic-calendar h2 {
-        color: #1557b0;
-        margin-bottom: 22px;
-    }
-
-    .calendar-row {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        padding: 13px 0;
-        border-bottom: 1px solid #e5e7eb;
-    }
-
-    .calendar-row:last-child {
-        border-bottom: none;
-    }
-
-    .calendar-date {
-        font-weight: bold;
-        color: #1557b0;
-        min-width: 250px;
+    .calendar-list li {
+      margin-bottom: 8px;
     }
 
     footer {
-        background: #102a49;
-        color: white;
+      text-align: center;
+      padding: 25px 18px;
+      color: #607086;
+      font-size: 14px;
+    }
+
+    @media (max-width: 650px) {
+      .year-list {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 20px;
+      }
+
+      .hero {
+        padding: 35px 18px;
+      }
+
+      .header-content {
+        flex-direction: column;
         text-align: center;
-        padding: 30px 20px;
-        margin-top: 60px;
+      }
     }
-
-    footer p {
-        margin: 5px 0;
-    }
-
-    @media (max-width: 800px) {
-
-        .year-menu {
-            grid-template-columns: 1fr;
-        }
-
-        .hero h1 {
-            font-size: 30px;
-        }
-
-        .calendar-row {
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .calendar-date {
-            min-width: auto;
-        }
-
-        header {
-            flex-direction: column;
-            gap: 15px;
-        }
-    }
-
-</style>
-
-
+  </style>
 </head>
 
-<body id="top">
-
-<header>
-
-
-<div class="logo">
-    Azione Universitaria PoliBa
-</div>
-
-<a href="calendari.html" class="back">
-    ← Torna ai Calendari
-</a>
-
-
-</header>
-
-<section class="hero">
-
-
-<div class="hero-icon">
-    ⚡
-</div>
-
-<h1>Ingegneria Elettronica</h1>
-
-<p>
-    Consulta l'orario delle lezioni e il calendario accademico
-</p>
-
-
-</section>
-
-<main class="container">
-
-
-<h2 class="section-title">
-    📚 Seleziona il tuo anno
-</h2>
-
-<div class="year-menu">
-
-    <div class="year-card">
-
-        <h3>1° Anno</h3>
-
-        <p>
-            Orario delle lezioni del primo anno
-        </p>
-
-        <a href="#primo-anno">
-            Vai all'orario
-        </a>
-
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">Azione Universitaria PoliBa</div>
+      <a href="index.html">← Torna alla home</a>
     </div>
-
-    <div class="year-card">
-
-        <h3>2° Anno</h3>
-
-        <p>
-            Orario delle lezioni del secondo anno
-        </p>
-
-        <a href="#secondo-anno">
-            Vai all'orario
-        </a>
-
-    </div>
-
-    <div class="year-card">
-
-        <h3>3° Anno</h3>
-
-        <p>
-            Orario delle lezioni del terzo anno
-        </p>
-
-        <a href="#terzo-anno">
-            Vai all'orario
-        </a>
-
-    </div>
-
-</div>
-
-
-<h2 class="section-title">
-    🕐 Orario delle lezioni
-</h2>
-
-
-<section class="schedule" id="primo-anno">
-
-    <h3>1° Anno</h3>
-
-    <table>
-
-        <tr>
-            <th>Giorno</th>
-            <th>Orario</th>
-            <th>Informazioni</th>
-        </tr>
-
-        <tr>
-            <td>Lunedì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
-
-        <tr>
-            <td>Martedì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
-
-        <tr>
-            <td>Mercoledì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
-
-        <tr>
-            <td>Giovedì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
-
-        <tr>
-            <td>Venerdì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
-
-    </table>
-
-    <a href="#top" class="top-link">
-        ↑ Torna su
-    </a>
-
-</section>
-
-
-<section class="schedule" id="secondo-anno">
-
-    <h3>2° Anno</h3>
-
-    <table>
-
-        <tr>
-            <th>Giorno</th>
-            <th>Orario</th>
-            <th>Informazioni</th>
-        </tr>
-
-        <tr>
-            <td>Lunedì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
-
-        <tr>
-            <td>Martedì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
-
-        <tr>
-            <td>Mercoledì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
-
-        <tr>
-            <td>Giovedì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
-
-        <tr>
-            <td>Venerdì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
-
-    </table>
-
-    <a href="#top" class="top-link">
-        ↑ Torna su
-    </a>
-
-</section>
-
-
-<section class="schedule" id="terzo-anno">
-
-    <h3>3° Anno</h3>
-
-    <table>
-
-        <tr>
-            <th>Giorno</th>
-            <th>Orario</th>
-            <th>Informazioni</th>
-        </tr>
-
-        <tr>
-            <td>Lunedì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
-
-        <tr>
-            <td>Martedì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
-
-        <tr>
-            <td>Mercoledì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
-
-        <tr>
-            <td>Giovedì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
-
-        <tr>
-            <td>Venerdì</td>
-            <td>Da definire</td>
-            <td>Orario in aggiornamento</td>
-        </tr>
-
-    </table>
-
-    <a href="#top" class="top-link">
-        ↑ Torna su
-    </a>
-
-</section>
-
-
-<section class="academic-calendar">
-
-    <h2>
-        📅 Calendario accademico
-    </h2>
-
-    <div class="calendar-row">
-
-        <span class="calendar-date">
-            21 settembre 2026
-        </span>
-
-        <span>
-            Inizio lezioni
-        </span>
-
-    </div>
-
-    <div class="calendar-row">
-
-        <span class="calendar-date">
-            2–6 novembre 2026
-        </span>
-
-        <span>
-            Pausa esoneri
-        </span>
-
-    </div>
-
-    <div class="calendar-row">
-
-        <span class="calendar-date">
-            21–23 dicembre 2026
-        </span>
-
-        <span>
-            Recupero lezioni
-        </span>
-
-    </div>
-
-    <div class="calendar-row">
-
-        <span class="calendar-date">
-            24 dicembre 2026–6 gennaio 2027
-        </span>
-
-        <span>
-            Festività natalizie
-        </span>
-
-    </div>
-
-    <div class="calendar-row">
-
-        <span class="calendar-date">
-            7–8 gennaio 2027
-        </span>
-
-        <span>
-            Recupero lezioni
-        </span>
-
-    </div>
-
-    <div class="calendar-row">
-
-        <span class="calendar-date">
-            8 gennaio 2027
-        </span>
-
-        <span>
-            Fine lezioni
-        </span>
-
-    </div>
-
-    <div class="calendar-row">
-
-        <span class="calendar-date">
-            11 gennaio–26 febbraio 2027
-        </span>
-
-        <span>
-            Periodo esami
-        </span>
-
-    </div>
-
-</section>
-
-
-</main>
-
-<footer>
-
-
-<p>
-    <strong>Azione Universitaria PoliBa</strong>
-</p>
-
-<p>
-    La tua voce. La nostra rappresentanza.
-</p>
-
-<p>
-    © 2026 Azione Universitaria PoliBa
-</p>
-
-
-</footer>
-
+  </header>
+
+  <section class="hero">
+    <h1>Ingegneria Elettronica e delle Tecnologie Internet</h1>
+    <p>Orari delle lezioni e calendario accademico</p>
+  </section>
+
+  <main>
+    <section class="section">
+      <h2>Orari delle lezioni</h2>
+      <p>
+        Seleziona il tuo anno di corso per consultare l'orario ufficiale
+        pubblicato dal Politecnico di Bari.
+      </p>
+
+      <div class="year-list">
+        <div class="year-card">
+          <h3>1° anno</h3>
+          <p>Orario delle lezioni</p>
+          <a
+            class="button"
+            href="https://poliba.prod.up.cineca.it/calendarioPubblico/linkCalendarioId=68b0704bdfe6dd001e9412c7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Consulta l'orario</a>
+        </div>
+
+        <div class="year-card">
+          <h3>2° anno</h3>
+          <p>Orario delle lezioni</p>
+          <a
+            class="button"
+            href="https://poliba.prod.up.cineca.it/calendarioPubblico/linkCalendarioId=68b162dafc488a0019357d01"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Consulta l'orario</a>
+        </div>
+
+        <div class="year-card">
+          <h3>3° anno</h3>
+          <p>Orario delle lezioni</p>
+          <a
+            class="button"
+            href="https://poliba.prod.up.cineca.it/calendarioPubblico/linkCalendarioId=68b18d77bffbb1001e867dd1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Consulta l'orario</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Calendario accademico</h2>
+      <p>
+        Consulta il calendario ufficiale del Politecnico di Bari per
+        verificare le date delle lezioni, le pause didattiche e le sessioni
+        d'esame.
+      </p>
+      <a
+        class="secondary"
+        href="https://www.poliba.it/it/node/1560"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Consulta il calendario accademico</a>
+    </section>
+  </main>
+
+  <footer>
+    Azione Universitaria PoliBa · Informazioni utili per gli studenti
+  </footer>
 </body>
 </html>
