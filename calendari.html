@@ -1,625 +1,473 @@
+ 
 <!DOCTYPE html>
-
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendari | Azione Universitaria PoliBa</title>
 
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-<title>Calendari | Azione Universitaria PoliBa</title>
-
-<style>
-
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    body {
-        font-family: Arial, sans-serif;
-        background: #f4f7fb;
-        color: #1d2a3a;
-        line-height: 1.6;
-    }
-
-    header {
-        background: white;
-        padding: 20px 7%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-    }
-
-    .logo {
-        color: #1557b0;
-        font-size: 22px;
-        font-weight: bold;
-    }
-
-    .back {
-        text-decoration: none;
-        color: #1557b0;
-        font-weight: bold;
-        border: 2px solid #1557b0;
-        padding: 9px 16px;
-        border-radius: 10px;
-        transition: 0.3s;
-    }
-
-    .back:hover {
-        background: #1557b0;
-        color: white;
-    }
-
-    .hero {
-        background: linear-gradient(135deg, #1557b0, #2879d8);
-        color: white;
-        padding: 55px 7%;
-        text-align: center;
-    }
-
-    .hero-icon {
-        font-size: 48px;
-        margin-bottom: 12px;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-        margin-bottom: 10px;
-    }
-
-    .hero p {
-        font-size: 18px;
-        opacity: 0.95;
-    }
-
-    .container {
-        width: 86%;
-        max-width: 1150px;
-        margin: 45px auto;
-    }
-
-    .section-title {
-        font-size: 28px;
-        color: #1557b0;
-        margin-bottom: 20px;
-    }
-
-    .courses {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 22px;
-        margin-bottom: 45px;
-    }
-
-    .course {
-        background: white;
-        border-radius: 18px;
-        padding: 25px;
-        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
-        border-top: 4px solid #1557b0;
-    }
-
-    .course-icon {
-        font-size: 34px;
-        margin-bottom: 8px;
-    }
-
-    .course h3 {
-        color: #102a49;
-        font-size: 21px;
-        margin-bottom: 8px;
-    }
-
-    .course p {
-        color: #5b6470;
-        margin-bottom: 18px;
-    }
-
-    .course-button {
-        display: inline-block;
-        text-decoration: none;
-        background: #1557b0;
-        color: white;
-        padding: 10px 16px;
-        border-radius: 10px;
-        font-weight: bold;
-        font-size: 14px;
-        transition: 0.3s;
-    }
-
-    .course-button:hover {
-        background: #0f4388;
-    }
-
-    .academic-calendar {
-        background: white;
-        border-radius: 18px;
-        padding: 28px;
-        box-shadow: 0 5px 18px rgba(0,0,0,0.07);
-        margin-bottom: 45px;
-    }
-
-    .academic-calendar h3 {
-        color: #102a49;
-        font-size: 23px;
-        margin-bottom: 18px;
-    }
-
-    .calendar-list {
-        display: grid;
-        gap: 12px;
-    }
-
-    .calendar-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
-        padding: 15px 18px;
-        background: #f4f7fb;
-        border-radius: 12px;
-    }
-
-    .calendar-item strong {
-        color: #1557b0;
-    }
-
-    .calendar-item span {
-        color: #4b5563;
-        text-align: right;
-    }
-
-    .info-box {
-        background: #eaf2ff;
-        border-left: 5px solid #1557b0;
-        border-radius: 18px;
-        padding: 25px;
-        margin-bottom: 45px;
-    }
-
-    .info-box h3 {
-        color: #1557b0;
-        margin-bottom: 8px;
-    }
-
-    .info-box p {
-        color: #435266;
-    }
-
-    footer {
-        background: #102a49;
-        color: white;
-        text-align: center;
-        padding: 28px 20px;
-        margin-top: 60px;
-    }
-
-    footer p {
-        margin-bottom: 5px;
-    }
-
-    @media (max-width: 750px) {
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1d2a3a;
+            line-height: 1.6;
+        }
 
         header {
-            padding: 16px 5%;
+            background: white;
+            padding: 20px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
         }
 
         .logo {
-            font-size: 18px;
+            color: #1557b0;
+            font-size: 22px;
+            font-weight: bold;
         }
 
         .back {
-            padding: 8px 12px;
-            font-size: 14px;
+            text-decoration: none;
+            color: #1557b0;
+            font-weight: bold;
+            border: 2px solid #1557b0;
+            padding: 9px 16px;
+            border-radius: 10px;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+
+        .back:hover {
+            background: #1557b0;
+            color: white;
         }
 
         .hero {
-            padding: 45px 6%;
+            background: linear-gradient(135deg, #1557b0, #2879d8);
+            color: white;
+            padding: 55px 7%;
+            text-align: center;
+        }
+
+        .hero-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
         }
 
         .hero h1 {
-            font-size: 32px;
+            font-size: 40px;
+            margin-bottom: 10px;
         }
 
         .hero p {
-            font-size: 16px;
+            font-size: 18px;
+            opacity: 0.95;
         }
 
         .container {
-            width: 90%;
-            margin: 35px auto;
-        }
-
-        .courses {
-            grid-template-columns: 1fr;
+            width: 86%;
+            max-width: 1150px;
+            margin: 45px auto;
         }
 
         .section-title {
-            font-size: 24px;
+            font-size: 28px;
+            color: #1557b0;
+            margin-bottom: 20px;
+        }
+
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            margin-bottom: 45px;
+        }
+
+        .course {
+            background: white;
+            border-radius: 18px;
+            padding: 25px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+            border-top: 4px solid #1557b0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .course-icon {
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        .course h3 {
+            color: #102a49;
+            font-size: 21px;
+            margin-bottom: 8px;
+        }
+
+        .course p {
+            color: #5b6470;
+            margin-bottom: 18px;
+            flex-grow: 1;
+        }
+
+        .course-button {
+            display: inline-block;
+            text-decoration: none;
+            background: #1557b0;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .course-button:hover {
+            background: #0f4388;
+        }
+
+        .official-note {
+            background: #eaf2ff;
+            border-left: 5px solid #1557b0;
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin: -20px 0 40px;
+            color: #435266;
+        }
+
+        .official-note a {
+            color: #1557b0;
+            font-weight: bold;
+        }
+
+        .academic-calendar {
+            background: white;
+            border-radius: 18px;
+            padding: 28px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+            margin-bottom: 45px;
+        }
+
+        .academic-calendar h3 {
+            color: #102a49;
+            font-size: 23px;
+            margin-bottom: 18px;
+        }
+
+        .calendar-list {
+            display: grid;
+            gap: 12px;
         }
 
         .calendar-item {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding: 15px 18px;
+            background: #f4f7fb;
+            border-radius: 12px;
+        }
+
+        .calendar-item strong {
+            color: #1557b0;
         }
 
         .calendar-item span {
-            text-align: left;
+            color: #4b5563;
+            text-align: right;
         }
 
-    }
+        .official-calendar-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #1557b0;
+            font-weight: bold;
+        }
 
-</style>
+        .info-box {
+            background: #eaf2ff;
+            border-left: 5px solid #1557b0;
+            border-radius: 18px;
+            padding: 25px;
+            margin-bottom: 45px;
+        }
 
+        .info-box h3 {
+            color: #1557b0;
+            margin-bottom: 8px;
+        }
 
+        .info-box p {
+            color: #435266;
+            margin-bottom: 18px;
+        }
+
+        footer {
+            background: #102a49;
+            color: white;
+            text-align: center;
+            padding: 28px 20px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 750px) {
+            header {
+                padding: 16px 5%;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .back {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 45px 6%;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .container {
+                width: 90%;
+                margin: 35px auto;
+            }
+
+            .courses {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .calendar-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .calendar-item span {
+                text-align: left;
+            }
+
+            .academic-calendar {
+                padding: 22px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .back {
+                align-self: flex-start;
+            }
+
+            .course {
+                padding: 21px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-
-
-<div class="logo">
-    Azione Universitaria PoliBa
-</div>
-
-<a href="index.html" class="back">
-    ← Torna alla Home
-</a>
-
-
+    <div class="logo">Azione Universitaria PoliBa</div>
+    <a href="index.html" class="back">← Torna alla Home</a>
 </header>
 
 <section class="hero">
-
-
-<div class="hero-icon">
-    📅
-</div>
-
-<h1>
-    Calendari
-</h1>
-
-<p>
-    Consulta il calendario accademico e gli orari delle lezioni
-</p>
-
-
+    <div class="hero-icon">📅</div>
+    <h1>Orari e calendari</h1>
+    <p>Trova il tuo corso e consulta gli orari ufficiali del Politecnico di Bari</p>
 </section>
 
 <main class="container">
 
+    <h2 class="section-title">📚 Seleziona il tuo corso</h2>
 
-<h2 class="section-title">
-    📚 Seleziona il tuo corso
-</h2>
-
-
-<div class="courses">
-
-
-    <article class="course">
-
-        <div class="course-icon">
-            📊
-        </div>
-
-        <h3>
-            Ingegneria Gestionale
-        </h3>
-
-        <p>
-            Calendario e orari delle lezioni di Ingegneria Gestionale.
-        </p>
-
-        <a href="gestionale.html" class="course-button">
-            Apri calendario
+    <div class="official-note">
+        Gli orari sono pubblicati sul sito ufficiale del Politecnico di Bari.
+        Dopo aver selezionato il tuo corso, scegli l'anno di frequenza per
+        consultare il relativo orario.
+        <br><br>
+        <a href="https://www.poliba.it/it/node/14671" target="_blank" rel="noopener noreferrer">
+            Vai alla pagina ufficiale degli orari →
         </a>
-
-    </article>
-
-
-    <article class="course">
-
-        <div class="course-icon">
-            💻
-        </div>
-
-        <h3>
-            Ingegneria Informatica
-        </h3>
-
-        <p>
-            Calendario e orari delle lezioni di Ingegneria Informatica.
-        </p>
-
-        <a href="informatica.html" class="course-button">
-            Apri calendario
-        </a>
-
-    </article>
-
-
-    <article class="course">
-
-        <div class="course-icon">
-            🩺
-        </div>
-
-        <h3>
-            Ingegneria dei Sistemi Medicali
-        </h3>
-
-        <p>
-            Calendario e orari delle lezioni di Ingegneria dei Sistemi Medicali.
-        </p>
-
-        <a href="medicali.html" class="course-button">
-            Apri calendario
-        </a>
-
-    </article>
-
-
-    <article class="course">
-
-        <div class="course-icon">
-            🌍
-        </div>
-
-        <h3>
-            Management Engineering for Innovation
-        </h3>
-
-        <p>
-            Calendario e orari delle lezioni del corso internazionale.
-        </p>
-
-        <a href="management.html" class="course-button">
-            Apri calendario
-        </a>
-
-    </article>
-
-
-    <article class="course">
-
-        <div class="course-icon">
-            ⚙️
-        </div>
-
-        <h3>
-            Ingegneria Meccanica
-        </h3>
-
-        <p>
-            Calendario e orari delle lezioni di Ingegneria Meccanica.
-        </p>
-
-        <a href="meccanica.html" class="course-button">
-            Apri calendario
-        </a>
-
-    </article>
-
-
-    <article class="course">
-
-        <div class="course-icon">
-            🏗️
-        </div>
-
-        <h3>
-            Ingegneria Civile
-        </h3>
-
-        <p>
-            Calendario e orari delle lezioni di Ingegneria Civile.
-        </p>
-
-        <a href="civile.html" class="course-button">
-            Apri calendario
-        </a>
-
-    </article>
-
-
-    <article class="course">
-
-        <div class="course-icon">
-            🏢
-        </div>
-
-        <h3>
-            Ingegneria Edile
-        </h3>
-
-        <p>
-            Calendario e orari delle lezioni di Ingegneria Edile.
-        </p>
-
-        <a href="edile.html" class="course-button">
-            Apri calendario
-        </a>
-
-    </article>
-
-
-    <article class="course">
-
-        <div class="course-icon">
-            ⚡
-        </div>
-
-        <h3>
-            Ingegneria Elettronica
-        </h3>
-
-        <p>
-            Calendario e orari delle lezioni di Ingegneria Elettronica.
-        </p>
-
-        <a href="elettronica-ti.html" class="course-button">
-            Apri calendario
-        </a>
-
-    </article>
-
-
-</div>
-
-
-<h2 class="section-title">
-    📅 Calendario accademico
-</h2>
-
-
-<section class="academic-calendar">
-
-    <h3>
-        Anno Accademico 2026/2027
-    </h3>
-
-
-    <div class="calendar-list">
-
-
-        <div class="calendar-item">
-
-            <strong>
-                Inizio lezioni
-            </strong>
-
-            <span>
-                21 settembre 2026
-            </span>
-
-        </div>
-
-
-        <div class="calendar-item">
-
-            <strong>
-                Pausa esoneri
-            </strong>
-
-            <span>
-                2–6 novembre 2026
-            </span>
-
-        </div>
-
-
-        <div class="calendar-item">
-
-            <strong>
-                Recupero lezioni
-            </strong>
-
-            <span>
-                21–23 dicembre 2026
-            </span>
-
-        </div>
-
-
-        <div class="calendar-item">
-
-            <strong>
-                Festività natalizie
-            </strong>
-
-            <span>
-                24 dicembre 2026–6 gennaio 2027
-            </span>
-
-        </div>
-
-
-        <div class="calendar-item">
-
-            <strong>
-                Recupero lezioni
-            </strong>
-
-            <span>
-                7–8 gennaio 2027
-            </span>
-
-        </div>
-
-
-        <div class="calendar-item">
-
-            <strong>
-                Fine lezioni
-            </strong>
-
-            <span>
-                8 gennaio 2027
-            </span>
-
-        </div>
-
-
-        <div class="calendar-item">
-
-            <strong>
-                Periodo esami
-            </strong>
-
-            <span>
-                11 gennaio–26 febbraio 2027
-            </span>
-
-        </div>
-
+    </div>
+
+    <div class="courses">
+
+        <article class="course">
+            <div class="course-icon">📊</div>
+            <h3>Ingegneria Gestionale</h3>
+            <p>Consulta gli orari delle lezioni aggiornati sul sito ufficiale del PoliBa.</p>
+            <a href="https://www.poliba.it/it/node/14671" class="course-button" target="_blank" rel="noopener noreferrer">
+                Consulta orario ufficiale ↗
+            </a>
+        </article>
+
+        <article class="course">
+            <div class="course-icon">💻</div>
+            <h3>Ingegneria Informatica</h3>
+            <p>Consulta gli orari delle lezioni aggiornati sul sito ufficiale del PoliBa.</p>
+            <a href="https://www.poliba.it/it/node/14671" class="course-button" target="_blank" rel="noopener noreferrer">
+                Consulta orario ufficiale ↗
+            </a>
+        </article>
+
+        <article class="course">
+            <div class="course-icon">🩺</div>
+            <h3>Ingegneria dei Sistemi Medicali</h3>
+            <p>Consulta gli orari delle lezioni aggiornati sul sito ufficiale del PoliBa.</p>
+            <a href="https://www.poliba.it/it/node/14671" class="course-button" target="_blank" rel="noopener noreferrer">
+                Consulta orario ufficiale ↗
+            </a>
+        </article>
+
+        <article class="course">
+            <div class="course-icon">🌍</div>
+            <h3>Management Engineering for Innovation</h3>
+            <p>Consulta gli orari disponibili per il corso internazionale sul sito ufficiale del PoliBa.</p>
+            <a href="https://www.poliba.it/it/node/14671" class="course-button" target="_blank" rel="noopener noreferrer">
+                Consulta orario ufficiale ↗
+            </a>
+        </article>
+
+        <article class="course">
+            <div class="course-icon">⚙️</div>
+            <h3>Ingegneria Meccanica</h3>
+            <p>Consulta gli orari delle lezioni aggiornati sul sito ufficiale del PoliBa.</p>
+            <a href="https://www.poliba.it/it/node/14671" class="course-button" target="_blank" rel="noopener noreferrer">
+                Consulta orario ufficiale ↗
+            </a>
+        </article>
+
+        <article class="course">
+            <div class="course-icon">🏗️</div>
+            <h3>Ingegneria Civile</h3>
+            <p>Consulta gli orari delle lezioni di Ingegneria Civile e Ambientale sul sito ufficiale.</p>
+            <a href="https://www.poliba.it/it/node/14671" class="course-button" target="_blank" rel="noopener noreferrer">
+                Consulta orario ufficiale ↗
+            </a>
+        </article>
+
+        <article class="course">
+            <div class="course-icon">🏢</div>
+            <h3>Ingegneria Edile</h3>
+            <p>Consulta gli orari delle lezioni aggiornati sul sito ufficiale del PoliBa.</p>
+            <a href="https://www.poliba.it/it/node/14671" class="course-button" target="_blank" rel="noopener noreferrer">
+                Consulta orario ufficiale ↗
+            </a>
+        </article>
+
+        <article class="course">
+            <div class="course-icon">⚡</div>
+            <h3>Ingegneria Elettronica</h3>
+            <p>Consulta gli orari delle lezioni aggiornati sul sito ufficiale del PoliBa.</p>
+            <a href="https://www.poliba.it/it/node/14671" class="course-button" target="_blank" rel="noopener noreferrer">
+                Consulta orario ufficiale ↗
+            </a>
+        </article>
 
     </div>
 
-</section>
+    <h2 class="section-title">📅 Calendario accademico</h2>
 
+    <section class="academic-calendar">
+        <h3>Anno Accademico 2026/2027</h3>
 
-<section class="info-box">
+        <div class="calendar-list">
 
-    <h3>
-        📢 Hai trovato un errore nell'orario?
-    </h3>
+            <div class="calendar-item">
+                <strong>Inizio lezioni</strong>
+                <span>21 settembre 2026</span>
+            </div>
 
-    <p>
-        Se noti un problema, una sovrapposizione o un'informazione
-        da correggere, puoi inviare una segnalazione alla rappresentanza
-        studentesca.
-    </p>
+            <div class="calendar-item">
+                <strong>Pausa esoneri</strong>
+                <span>2–6 novembre 2026</span>
+            </div>
 
-    <br>
+            <div class="calendar-item">
+                <strong>Recupero lezioni</strong>
+                <span>21–23 dicembre 2026</span>
+            </div>
 
-    <a href="segnalazioni.html" class="course-button">
-        Invia una segnalazione
-    </a>
+            <div class="calendar-item">
+                <strong>Festività natalizie</strong>
+                <span>24 dicembre 2026–6 gennaio 2027</span>
+            </div>
 
-</section>
+            <div class="calendar-item">
+                <strong>Recupero lezioni</strong>
+                <span>7–8 gennaio 2027</span>
+            </div>
 
+            <div class="calendar-item">
+                <strong>Fine lezioni</strong>
+                <span>8 gennaio 2027</span>
+            </div>
+
+            <div class="calendar-item">
+                <strong>Periodo esami</strong>
+                <span>11 gennaio–26 febbraio 2027</span>
+            </div>
+
+        </div>
+
+        <a class="official-calendar-link"
+           href="https://www.poliba.it/it/calendario-anno-accademico-0"
+           target="_blank"
+           rel="noopener noreferrer">
+            Consulta il calendario didattico ufficiale →
+        </a>
+    </section>
+
+    <section class="info-box">
+        <h3>📢 Hai trovato un errore o un problema?</h3>
+        <p>
+            Se noti un collegamento non funzionante o hai un'informazione
+            da segnalare, puoi contattare la rappresentanza studentesca.
+        </p>
+        <a href="segnalazioni.html" class="course-button">
+            Invia una segnalazione
+        </a>
+    </section>
 
 </main>
 
 <footer>
-
-
-<p>
-    <strong>Azione Universitaria PoliBa</strong>
-</p>
-
-<p>
-    La tua voce. La nostra rappresentanza.
-</p>
-
-
+    <p><strong>Azione Universitaria PoliBa</strong></p>
+    <p>La tua voce. La nostra rappresentanza.</p>
 </footer>
 
 </body>
